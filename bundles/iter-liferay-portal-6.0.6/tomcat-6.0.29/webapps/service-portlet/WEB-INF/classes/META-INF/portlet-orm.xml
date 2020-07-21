@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.protecmedia.iter.services.model.impl.ServiceModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="linkId" />
+			<basic name="serviceId" />
+			<basic name="title" />
+			<basic name="imageId" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.protecmedia.iter.services.model.impl.ServiceImpl" name="Service">
+		<table name="Services_Service" />
+		<attributes />
+	</entity>
+</entity-mappings>

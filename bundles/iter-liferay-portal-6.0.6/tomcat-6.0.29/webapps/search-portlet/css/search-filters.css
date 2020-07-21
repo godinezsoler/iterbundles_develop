@@ -1,0 +1,71 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+
+.search-filters .aui-panel-content {
+    /* border: 0; */
+    margin-bottom: 10px;
+}
+
+.search-filters .aui-panel-bd {
+    margin-bottom: 10px;
+    padding: 6px;
+}
+
+.search-filters .aui-form fieldset.left {
+	float: left;
+}
+
+.search-filters .aui-form fieldset.left,
+.search-filters .aui-form fieldset.right {
+	width: 50%;
+}
+
+.search-filters .aui-form fieldset .block-text-label {
+	float: left;
+}
+
+.search-filters .aui-form fieldset.left {
+    float: left;
+}
+
+.search-filters .aui-form fieldset.date label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.search-filters .aui-field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-filters .aui-form fieldset.date input[type="text"] {
+    width: 60px;
+}
+
+.search-filters .aui-form fieldset.date .calendar {
+	cursor: pointer;
+    float: left;
+    margin-left: 5px;
+    margin-top: 19px;
+    width: 16px;
+}
+
+
+.search-filters .display-settings .aui-field-label {   
+    margin-bottom: 5px;
+}
+
+.search-filters .display-settings .aui-field-input {
+    width: 100px;
+}
+
+.search-filters .display-settings .aui-field-submenu {
+	display: block;
+    margin-bottom: 10px;
+}
+
+.search-filters .last .aui-field-content {
+	margin-bottom: 0;
+}

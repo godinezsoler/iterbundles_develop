@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_CaptchaService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCaptcha" qname="operNS:getCaptcha" returnQName="getCaptchaReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="publish" qname="operNS:publish" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setCaptcha" qname="operNS:setCaptcha" returnQName="setCaptchaReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getCaptcha importData publish setCaptcha" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.CaptchaServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CaptchaServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CaptchaServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_CaptchaService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

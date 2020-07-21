@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.advertisement.service.AdvertisementMgrLocalService" class="com.protecmedia.iter.advertisement.service.impl.AdvertisementMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.advertisement.service.AdvertisementMgrLocalServiceUtil" class="com.protecmedia.iter.advertisement.service.AdvertisementMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.advertisement.service.AdvertisementMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.advertisement.service.AdvertisementMgrService" class="com.protecmedia.iter.advertisement.service.impl.AdvertisementMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.advertisement.service.AdvertisementMgrServiceUtil" class="com.protecmedia.iter.advertisement.service.AdvertisementMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.advertisement.service.AdvertisementMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.advertisement.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.advertisement.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.advertisement.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.advertisement.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.advertisement.service.IterPortletInstanceLocalService" />
+	</bean>
+</beans>

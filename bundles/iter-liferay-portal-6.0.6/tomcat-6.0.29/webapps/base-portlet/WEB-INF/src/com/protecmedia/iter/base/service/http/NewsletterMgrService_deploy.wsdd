@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_NewsletterMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addNewsletter" qname="operNS:addNewsletter" returnQName="addNewsletterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addScheduleNewsletter" qname="operNS:addScheduleNewsletter" returnQName="addScheduleNewsletterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addScheduleProducts" qname="operNS:addScheduleProducts" returnQName="addScheduleProductsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addScheduleSMTPServers" qname="operNS:addScheduleSMTPServers" returnQName="addScheduleSMTPServersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addScheduleUser" qname="operNS:addScheduleUser" returnQName="addScheduleUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteNewsletters" qname="operNS:deleteNewsletters" returnQName="deleteNewslettersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteScheduleNewsletters" qname="operNS:deleteScheduleNewsletters" returnQName="deleteScheduleNewslettersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteScheduleUsers" qname="operNS:deleteScheduleUsers" returnQName="deleteScheduleUsersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="exportData" qname="operNS:exportData" returnQName="exportDataReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="params" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLiveServers" qname="operNS:getLiveServers" returnQName="getLiveServersReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNewsletterConfigByName" qname="operNS:getNewsletterConfigByName" returnQName="getNewsletterConfigByNameReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNewsletterConfig" qname="operNS:getNewsletterConfig" returnQName="getNewsletterConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNewsletterSchedulesList" qname="operNS:getNewsletterSchedulesList" returnQName="getNewsletterSchedulesListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="onlyEnabled" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNewslettersXML" qname="operNS:getNewslettersXML" returnQName="getNewslettersXMLReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNewsletters" qname="operNS:getNewsletters" returnQName="getNewslettersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPageTemplates" qname="operNS:getPageTemplates" returnQName="getPageTemplatesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getScheduleNewsletters" qname="operNS:getScheduleNewsletters" returnQName="getScheduleNewslettersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="newsletterid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getScheduleProducts" qname="operNS:getScheduleProducts" returnQName="getScheduleProductsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getScheduleSMTPServers" qname="operNS:getScheduleSMTPServers" returnQName="getScheduleSMTPServersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getScheduleUsers" qname="operNS:getScheduleUsers" returnQName="getScheduleUsersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="initSchedules" qname="operNS:initSchedules" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="requestLiveServers" qname="operNS:requestLiveServers" returnQName="requestLiveServersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="requestSchedule" qname="operNS:requestSchedule" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="enabled" type="tns:boolean"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="days" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="hour" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="requestSendAlertNewsletters" qname="operNS:requestSendAlertNewsletters" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdate" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="schedule" qname="operNS:schedule" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="enabled" type="tns:boolean"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="days" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="hour" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="sendAlertNewsletters" qname="operNS:sendAlertNewsletters" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdate" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendNewsletter" qname="operNS:sendNewsletter" returnQName="sendNewsletterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setNewsletterConfig" qname="operNS:setNewsletterConfig" returnQName="setNewsletterConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="config" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="startAlertNewslettersTask" qname="operNS:startAlertNewslettersTask" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdate" type="tns:dateTime"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateNewsletter" qname="operNS:updateNewsletter" returnQName="updateNewsletterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateScheduleNewsletter" qname="operNS:updateScheduleNewsletter" returnQName="updateScheduleNewsletterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addNewsletter addScheduleNewsletter addScheduleProducts addScheduleSMTPServers addScheduleUser deleteNewsletters deleteScheduleNewsletters deleteScheduleUsers exportData getLiveServers getNewsletterConfig getNewsletterConfigByName getNewsletterSchedulesList getNewsletters getNewslettersXML getPageTemplates getScheduleNewsletters getScheduleProducts getScheduleSMTPServers getScheduleUsers importData initSchedules requestLiveServers requestSchedule requestSendAlertNewsletters schedule sendAlertNewsletters sendNewsletter setNewsletterConfig startAlertNewslettersTask updateNewsletter updateScheduleNewsletter" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.NewsletterMgrServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="NewsletterMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="NewsletterMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_NewsletterMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

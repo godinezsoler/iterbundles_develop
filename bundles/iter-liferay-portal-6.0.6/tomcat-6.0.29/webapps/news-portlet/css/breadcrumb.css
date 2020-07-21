@@ -1,0 +1,27 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+}
+/* ---------------------------------------------*/
+/* ------------ Breadcrumb portlet -------------*/
+/* ---------------------------------------------*/
+
+
+
+
+.breadcrumb-portlet .iter-theme-news-breadcrumb ul, li {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    }
+
+.breadcrumb-portlet .iter-theme-news-breadcrumb li {
+    float:left;
+    line-height:2.3em;
+    padding-left:.75em;
+    color:#777;
+   	}
+   	
+.breadcrumb-config .aui-fieldset {
+	margin: 10px !important;
+}  

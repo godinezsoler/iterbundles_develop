@@ -1,0 +1,64 @@
+<%--
+*Copyright (c) 2012 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+--%>
+
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+<%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
+
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="javax.portlet.PortletPreferences"%>
+<%@page import="javax.portlet.PortletURL"%>
+
+<%@page import="com.protecmedia.iter.news.util.TopicsUtil"%>
+<%@page import="com.protecmedia.iter.base.service.util.GroupMgr"%>
+<%@page import="com.protecmedia.iter.base.service.IterLocalServiceUtil"%>
+<%@page import="com.protecmedia.iter.base.service.util.IterKeys"%>
+
+<%@page import="com.liferay.portal.util.PortalUtil"%>
+<%@page import="com.liferay.portlet.PortletPreferencesFactoryUtil"%>
+<%@page import="com.liferay.portal.service.PortalLocalServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
+<%@page import="com.liferay.portal.kernel.util.GetterUtil"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="com.liferay.portal.kernel.servlet.SessionErrors"%> 
+<%@page import="com.liferay.portal.kernel.servlet.SessionMessages"%>
+
+<portlet:defineObjects />
+<liferay-theme:defineObjects />
+
+<%
+	long companyId = company.getCompanyId();
+	long globalGroupId = company.getGroup().getGroupId();
+	String articleId = (String) renderRequest.getParameter(WebKeys.URL_PARAM_CONTENT_ID);	
+	String environment = IterLocalServiceUtil.getEnvironment();
+	
+	PortletPreferences preferences = renderRequest.getPreferences();
+	String portletResource = ParamUtil.getString(request, "portletResource");
+	if (Validator.isNotNull(portletResource)) 
+	{
+		preferences = PortletPreferencesFactoryUtil.getPortletSetup(request, portletResource);
+	}
+
+	List<String> excludeVocabularyIds = TopicsUtil.getListPreference(preferences, "excludeVocabularyIds");
+	List<String> excludeCategoryIds = TopicsUtil.getListPreference(preferences, "excludeCategoryIds");
+	
+	long modelId = GetterUtil.getInteger(preferences.getValue("modelId", null), 0);
+	int orderType = GetterUtil.getInteger(preferences.getValue("orderType", null), 0);
+	
+	String orderDirection = preferences.getValue("orderDirection", null);
+	String title = preferences.getValue("title", null);
+	
+	//Texto por defecto
+	String defaultTextHTML = preferences.getValue("defaultTextHTML", StringPool.BLANK);
+	boolean showDefaultTextHTML = GetterUtil.getBoolean(preferences.getValue("showDefaultTextHTML", null), false);
+%>

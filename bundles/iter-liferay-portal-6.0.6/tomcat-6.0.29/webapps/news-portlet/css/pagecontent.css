@@ -1,0 +1,101 @@
+.page-content-view-portlet .lfr-tree-controls div, .lfr-tree-controls a {
+	float:left;
+}
+
+.page-content-view-portlet .lfr-tree-controls-item {
+	padding:0 0 6px 6px;
+}
+
+.page-content-view-portlet .lfr-tree-controls-expand  {
+	background-image:url("/html/themes/control_panel/images/trees/expand_all.png");
+}
+
+.page-content-view-portlet .lfr-tree-controls-collapse  {
+	background-image:url("/html/themes/control_panel/images/trees/collapse_all.png");
+}
+
+.page-content-view-portlet .lfr-tree-controls-label  {
+	line-height:17px;
+	padding:0 2px;
+	text-decoration:none;
+}
+
+.page-content-view-portlet .aui-tree-label {
+	text-decoration: none;
+	color: #336699
+}
+
+.page-content-view-portlet .aui-tree-label a {
+	text-decoration: none;
+	color: #336699;
+}
+
+.page-content-view-portlet .aui-tree-label a:hover,
+.page-content-view-portlet .lfr-tree-controls-label:hover {
+	text-decoration: underline;
+	color: #0066CC;
+}
+
+.page-content-view-portlet .node-selected .aui-tree-data-content {
+	background:none repeat scroll 0 0 #EEEEEE;
+}
+
+.page-content-view-portlet .aui-tree-node-selected .aui-tree-label {
+	background: none;
+}
+
+.page-content-view-portlet .lfr-root-node div .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/root.png");
+}
+
+.page-content-view-portlet .lfr-root-node ul .aui-tree-expanded .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page_copy.png");
+}
+
+.page-content-view-portlet .lfr-root-node ul .aui-tree-collapsed .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");
+}
+
+.page-content-view-portlet .lfr-root-node ul .aui-tree-node-leaf .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");	
+}
+
+.lfr-search-container table tr td .checked {
+	background:url("/html/themes/control_panel/images/dockbar/checked.png") no-repeat scroll 0 50% transparent;
+	font-size:0;
+	margin-left:1px;
+	padding:12px 5px 5px 10px;
+	text-indent:-9999em;
+	width:10px;
+}
+
+.page-content-view-portlet .lfr-search-container .portlet-section-header th {
+	background-color:#FFFFFF;
+}
+
+.page-content-view-portlet .lfr-actions .lfr-trigger strong {
+	min-width: 25px;
+	text-align: left;
+}
+
+.page-content-view-portlet .lfr-actions.show-arrow .lfr-trigger strong a {
+	background: none;
+	font-size:0;
+	text-indent:-9999em;
+}
+
+.page-content-view-portlet .lfr-actions .lfr-trigger strong a {
+	padding:2px 5px;
+}
+
+.page-content-view-portlet .lfr-actions .lfr-trigger {
+	padding: 0;
+}
+
+.page-content-edit-portlet .aui-field-label {    
+    margin-bottom: 5px;
+}
+
+.page-content-edit-portlet input[type="text"] {    
+    width: 250px;
+}

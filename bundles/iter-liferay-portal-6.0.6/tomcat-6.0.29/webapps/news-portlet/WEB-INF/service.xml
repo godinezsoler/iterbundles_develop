@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.protecmedia.iter.news">
+	<author>protec</author>
+	<namespace>News</namespace>
+	<!-- Qualification -->
+	<entity name="Qualification" local-service="true" remote-service="true" uuid="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="name" type="String"></column>
+		<column name="groupId" type="long"></column>
+		<!-- Other columns -->
+		<column name="modifiedDate" type="Date"></column>
+		<column name="qualifId" type="String"></column>
+		<finder return-type="Collection" name="GroupFinder">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder return-type="Qualification" name="NameFinder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="name"></finder-column>
+		</finder>
+		<finder return-type="Qualification" name="UuidFinder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="uuid"></finder-column>
+		</finder>
+		<finder return-type="Qualification" name="QualifIdFinder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="qualifId"></finder-column>
+		</finder>
+	</entity>
+	<!-- PageContent -->
+	<entity name="PageContent" local-service="true" remote-service="true" uuid="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="pageContentId" type="String"></column>
+		<column name="contentId" type="String"></column>
+		<column name="contentGroupId" type="long"></column>
+		<column name="qualificationId" type="String"></column>
+		<column name="layoutId" type="String"></column>
+		<column name="groupId" type="long"></column>
+		<!-- Other columns -->
+		<column name="defaultSection" type="boolean"></column>
+		<column name="online" type="boolean"></column>
+		<column name="typeContent" type="String"></column>
+		<column name="orden" type="int"></column>
+		<column name="articleModelId" type="long"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="vigenciahasta" type="Date"></column>
+		<column name="vigenciadesde" type="Date"></column>
+		<order by="asc">
+			<order-column name="orden"></order-column>
+		</order>
+		<finder return-type="PageContent" name="GroupPagecontentId" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="pageContentId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupFinder">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="ContentIdFinder">
+			<finder-column name="contentId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupContentIdFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="PageContentLayoutFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="PageContentLayoutGroupTypeFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="typeContent"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="TeaserViewerFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="qualificationId"></finder-column>
+			<finder-column name="typeContent"></finder-column>
+		</finder>
+		<finder return-type="PageContent" name="GroupLayoutOrden" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="orden"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupLayoutOrdenGT">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="orden" comparator="&gt;"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupLayoutOrdenLT">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="orden" comparator="&lt;"></finder-column>
+		</finder>
+		<finder return-type="PageContent" name="G_A_L" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="typeContent"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="VisiblePageContent">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="online"></finder-column>
+			<finder-column name="vigenciahasta" comparator="&gt;"></finder-column>
+			<finder-column name="vigenciadesde" comparator="&lt;"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="VisiblePageContentAnyGrp">
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="online"></finder-column>
+			<finder-column name="vigenciahasta" comparator="&gt;"></finder-column>
+			<finder-column name="vigenciadesde" comparator="&lt;"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupContentModel">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="articleModelId"></finder-column>
+		</finder>
+		<finder return-type="PageContent" name="GroupContentIdLayoutId">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="layoutId"></finder-column>
+		</finder>
+		<finder return-type="PageContent" name="GroupContentIdDefaultSection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="defaultSection"></finder-column>
+		</finder>
+	</entity>
+	<!--  -->
+	<entity name="ArticlePoll" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="groupId" type="long"></column>
+		<column name="contentId" type="String"></column>
+		<column name="pollId" type="long"></column>
+		<finder return-type="Collection" name="GroupFinder">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder return-type="ArticlePoll" name="GroupContentIdFinder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+		</finder>
+	</entity>
+	<!-- Comments -->
+	<entity name="Comments" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="contentId" type="String"></column>
+		<column name="groupId" type="long"></column>
+		<!-- Other fields -->
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="message" type="String"></column>
+		<column name="email" type="String"></column>
+		<column name="publicationDate" type="Date"></column>
+		<column name="numComment" type="long"></column>
+		<column name="active" type="boolean"></column>
+		<column name="moderated" type="boolean"></column>
+		<order by="desc">
+			<order-column name="publicationDate"></order-column>
+		</order>
+		<finder return-type="Collection" name="GroupContentIdModeratedFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="moderated"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupContentIdActiveFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="active"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupContentIdFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="G_A_NUM_Finder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="numComment"></finder-column>
+		</finder>
+	</entity>
+	<!-- Counters -->
+	<entity name="Counters" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="contentId" type="String"></column>
+		<column name="groupId" type="long"></column>
+		<!-- Other fields -->
+		<column name="counter" type="long"></column>
+		<column name="value" type="long"></column>
+		<column name="counterLast" type="long"></column>
+		<column name="operation" type="int"></column>
+		<column name="date" type="Date"></column>
+		<order by="desc">
+			<order-column name="counter"></order-column>
+		</order>
+		<finder return-type="Counters" name="ContentGroupFinder" unique="true">
+			<finder-column name="contentId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="operation"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupContentIdFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="contentId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupFinder">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="operation"></finder-column>
+		</finder>
+	</entity>
+	<!-- Categorize -->
+	<entity name="Categorize" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="dummy" type="String"></column>
+	</entity>
+	<!-- Categorize -->
+	<entity name="JournalArticle" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="dummy" type="String"></column>
+	</entity>
+	<!-- Metadata -->
+	<entity name="Metadata" local-service="true" remote-service="true" uuid="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<column name="groupId" type="long"></column>
+		<column name="structureName" type="String"></column>
+		<column name="preferences" type="String"></column>
+		<finder return-type="Metadata" name="MetadataFinder" unique="true">
+			<finder-column name="id"></finder-column>
+		</finder>
+		<finder return-type="Metadata" name="MetadataStructureFinder" unique="true">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="structureName"></finder-column>
+		</finder>
+	</entity>
+	<entity name="DLFileEntry" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="Product" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="Layout" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterPortletInstance" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="Catalog" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="MetadataControl" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="DaylyTopicMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="ExternalServices" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<exceptions>
+		<exception>DuplicateQualificationName</exception>
+		<exception>DuplicatePageContentId</exception>
+		<exception>JournalArticleNotApproved</exception>
+		<exception>DuplicateQualification</exception>
+	</exceptions>
+</service-builder>

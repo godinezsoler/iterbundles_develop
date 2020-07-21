@@ -1,0 +1,82 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.modulo-servicios {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;	
+    float:left;
+    width: 100%;
+    -moz-border-radius:5px 5px 5px 5px;
+}
+
+.modulo-servicios .recuadro {
+    float: left;
+    margin:10px;
+}
+
+.modulo-servicios h5 {
+	color: #082E7A;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+.modulo-servicios .servicios li {
+	float: left;
+}
+
+.modulo-servicios .servicios {
+	float: left;	
+}
+
+.modulo-servicios .servicios li a {
+	color: #84909B;
+	display: block;
+	font-size: 11px;
+	line-height: 12px;
+	padding: 5px;
+	text-align: center;
+	width: 70px;
+	text-decoration: none;
+}
+
+.modulo-servicios .servicios li a img{
+	border: 0;
+}
+
+.imagen-servicios img {
+	width: 50px; 
+	height: 50px;
+}
+
+.modulo-servicios ul, .modulo-servicios ul li {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.modulo-servicios ul {
+	margin: 0;
+}
+
+.spacer {
+	clear: both;	
+	display: block;
+	height: 1px;
+	margin: -1px 0 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.servicios-form-elementos fieldset {
+	margin: 10px;
+}
+
+.servicios-form-botones {
+    text-align: center;
+}
+
+.servicios-form-elementos select, .servicios-form-elementos input {
+    width: 350px;
+}
+

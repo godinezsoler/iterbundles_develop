@@ -1,0 +1,26 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.set-page-template {
+	padding: 10px;
+}
+
+.set-page-template {
+	border: 0;
+}
+
+.set-page-template {
+	border: 1px solid #CCCCCC;
+}
+
+.set-page-template .aui-fieldset-legend {
+	font-size: 100%;
+}
+
+.set-page-template .aui-legend {
+	border-bottom: none;
+}
+
+.set-page-template .displaying-page-template-holder .displaying-page-template {
+	color:#4DCF0C;
+}

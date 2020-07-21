@@ -1,0 +1,8 @@
+<%
+	if(!isNewsletterPage)
+	{
+%>		
+		</<%=HtmlOptimizer.isEnabled() ? "section" : "ul"%>>
+<%	
+	}
+%>

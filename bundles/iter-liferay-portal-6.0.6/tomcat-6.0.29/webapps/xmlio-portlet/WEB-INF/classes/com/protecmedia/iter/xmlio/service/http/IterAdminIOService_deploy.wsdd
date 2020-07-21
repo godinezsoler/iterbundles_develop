@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_IterAdminIOService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="abortImport" qname="operNS:abortImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="finishExport" qname="operNS:finishExport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="finishImport" qname="operNS:finishImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="getLastExportError" qname="operNS:getLastExportError" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteID" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importObjects" qname="operNS:importObjects" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="updtIfExist" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="unsetOngoingImportSubprocess" qname="operNS:unsetOngoingImportSubprocess" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="abortImport finishExport finishImport getLastExportError importObjects unsetOngoingImportSubprocess" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.IterAdminIOServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterAdminIOServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterAdminIOServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_IterAdminIOService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

@@ -1,0 +1,19 @@
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="com.protecmedia.iter.base.service.util.IterKeys"%>
+<%
+	String urlRelated = articleData.getLink();
+	String title = articleData.getTitle();
+	String elementRel = Validator.isNotNull(articleData.getLinkRel()) ? String.format("rel=\"%s\"", articleData.getLinkRel()) : StringPool.BLANK;
+	html = "<a " + elementRel + " href=\"" + urlRelated + "\" target=\"_blank\">" + title + "</a>";
+	
+	String currentCssClass 			= TeaserContentUtil.getCSSClass(pageIdx, relatedInternalExternalLinkArticles.size());
+	String elementClass    			= articleData.getLinkclass();
+	String linkType    	   			= IterKeys.EXTERNAL_LINK_TYPE_CLASS;
+	String signedRelatedArticleId 	= "";
+%>
+	 <%@ include file="teaser_container_related_row.jspf" %> 
+	
+<%					
+	pageIdx++;
+%>

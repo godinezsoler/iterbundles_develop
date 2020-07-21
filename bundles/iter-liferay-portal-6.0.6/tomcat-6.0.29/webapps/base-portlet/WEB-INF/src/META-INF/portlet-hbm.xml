@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.protecmedia.iter.base.model.Iter" />
+	<import class="com.protecmedia.iter.base.model.Communities" />
+	<import class="com.protecmedia.iter.base.model.ClonedPortlet" />
+	<import class="com.protecmedia.iter.base.model.ImageResolution" />
+	<import class="com.protecmedia.iter.base.model.DevelopmentTools" />
+	<import class="com.protecmedia.iter.base.model.DLFileEntryMgr" />
+	<import class="com.protecmedia.iter.base.model.ContextVarsMgr" />
+	<import class="com.protecmedia.iter.base.model.NewsletterMgr" />
+	<import class="com.protecmedia.iter.base.model.SMTPServerMgr" />
+	<import class="com.protecmedia.iter.base.model.IterPortletInstance" />
+	<import class="com.protecmedia.iter.base.model.CommentsConfig" />
+	<import class="com.protecmedia.iter.base.model.IterForm" />
+	<import class="com.protecmedia.iter.base.model.IterTabs" />
+	<import class="com.protecmedia.iter.base.model.IterField" />
+	<import class="com.protecmedia.iter.base.model.FormTransform" />
+	<import class="com.protecmedia.iter.base.model.IterPortletPreferences" />
+	<import class="com.protecmedia.iter.base.model.Captcha" />
+	<import class="com.protecmedia.iter.base.model.StatisticMgr" />
+	<import class="com.protecmedia.iter.base.model.WebResource" />
+	<import class="com.protecmedia.iter.base.model.Frames" />
+	<import class="com.protecmedia.iter.base.model.ThemeWebResources" />
+	<import class="com.protecmedia.iter.base.model.GroupConfig" />
+	<import class="com.protecmedia.iter.base.model.ApacheMgr" />
+	<import class="com.protecmedia.iter.base.model.Rss" />
+	<import class="com.protecmedia.iter.base.model.BlockerAdBlock" />
+	<import class="com.protecmedia.iter.base.model.VisitsStatistics" />
+	<import class="com.protecmedia.iter.base.model.Feedback" />
+	<import class="com.protecmedia.iter.base.model.PageRenderer" />
+	<import class="com.protecmedia.iter.base.model.ServerAffinity" />
+	<import class="com.protecmedia.iter.base.model.URLShortener" />
+	<import class="com.protecmedia.iter.base.model.AuthorizationKey" />
+	<import class="com.protecmedia.iter.base.model.LiveServer" />
+	<import class="com.protecmedia.iter.base.model.Cluster" />
+	<class name="com.protecmedia.iter.base.model.impl.IterImpl" table="Base_Iter">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="publicKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cookieKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="environment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.base.model.impl.CommunitiesImpl" table="Base_Communities">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="privateSearchUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="publicSearchUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fuzzySearch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="primarySectionBots" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondarySectionBots" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="noSectionBots" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastUpdated" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="loginconf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registerconf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facebookLanguage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

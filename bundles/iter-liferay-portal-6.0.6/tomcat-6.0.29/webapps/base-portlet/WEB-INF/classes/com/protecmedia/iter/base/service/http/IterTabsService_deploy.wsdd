@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_IterTabsService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addTab" qname="operNS:addTab" returnQName="addTabReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteTabs" qname="operNS:deleteTabs" returnQName="deleteTabsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="editTab" qname="operNS:editTab" returnQName="editTabReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getTabFields" qname="operNS:getTabFields" returnQName="getTabFieldsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="tabId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getTabs" qname="operNS:getTabs" returnQName="getTabsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="formId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateTabOrder" qname="operNS:updateTabOrder" returnQName="updateTabOrderReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addTab deleteTabs editTab getTabFields getTabs updateTabOrder" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.IterTabsServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterTabsServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterTabsServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_IterTabsService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

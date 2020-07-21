@@ -1,0 +1,13 @@
+.publish-to-live {
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+}
+
+.publish-to-live .aui-fieldset-legend {
+	font-size: 100%;
+}
+
+.publish-to-live .aui-legend {
+	border-bottom: none;
+}
+

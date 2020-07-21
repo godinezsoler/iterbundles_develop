@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.0.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_0_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>service-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<portlet-data-handler-class>com.protecmedia.iter.services.dataHandler.ServicesDataHandlerImpl</portlet-data-handler-class>
+		<control-panel-entry-category>content</control-panel-entry-category>
+		<control-panel-entry-weight>2.0</control-panel-entry-weight>
+		<header-portlet-css>/css/general.css</header-portlet-css>
+		<css-class-wrapper>service-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>service-viewer-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/general.css</header-portlet-css>
+		<css-class-wrapper>service-viewer-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>content-map-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
+		<friendly-url-mapping>content</friendly-url-mapping>
+		<friendly-url-routes>geolocation-map-friendly-url-routes.xml</friendly-url-routes>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<css-class-wrapper>content-map-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>facebookportlet</portlet-name>
+		<icon>/icon.png</icon>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/facebook.css</header-portlet-css>
+		<css-class-wrapper>facebook-portlet</css-class-wrapper>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

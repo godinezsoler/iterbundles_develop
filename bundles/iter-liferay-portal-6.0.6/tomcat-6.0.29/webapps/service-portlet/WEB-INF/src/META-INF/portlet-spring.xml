@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.services.service.ServiceLocalService" class="com.protecmedia.iter.services.service.impl.ServiceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.services.service.ServiceLocalServiceUtil" class="com.protecmedia.iter.services.service.ServiceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.services.service.ServiceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.services.service.ServiceService" class="com.protecmedia.iter.services.service.impl.ServiceServiceImpl" />
+	<bean id="com.protecmedia.iter.services.service.ServiceServiceUtil" class="com.protecmedia.iter.services.service.ServiceServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.services.service.ServiceService" />
+	</bean>
+	<bean id="com.protecmedia.iter.services.service.persistence.ServicePersistence" class="com.protecmedia.iter.services.service.persistence.ServicePersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.services.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.services.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.services.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.services.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.services.service.IterPortletInstanceLocalService" />
+	</bean>
+</beans>

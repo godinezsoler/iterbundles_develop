@@ -1,0 +1,87 @@
+<%@page import="com.liferay.portal.kernel.xml.Document"%>
+<%@page import="com.liferay.portal.kernel.xml.SAXReaderUtil"%>
+<%@page import="com.liferay.portal.kernel.xml.Element"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%
+	try
+	{
+		 JournalArticle relatedArticle = JournalArticleLocalServiceUtil.getArticle(globalGroupId, articleData.getContentId() );
+		
+		String relatedLinkName = articleData.getTitle();
+		if (relatedLinkName == null || relatedLinkName.isEmpty())
+		{
+			String headline = PageContentLocalServiceUtil.getWebContentField(relatedArticle, "Headline", locale.toString(), 0);
+			if (headline.isEmpty())
+				relatedLinkName = relatedArticle.getTitle();
+			else
+				relatedLinkName = headline;
+		}
+		
+		String elementClass = articleData.getLinkclass();
+		String requestXML = xmlRequest;
+		if( Validator.isNotNull(elementClass) )
+		{
+			Element classElem = SAXReaderUtil.createElement("link-class");
+			classElem.setText(elementClass);
+			
+			Document requestDom = SAXReaderUtil.read(xmlRequest);
+			requestDom.getRootElement().add( classElem );
+			requestXML = requestDom.asXML();
+		}
+		
+		faTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdRelatedArticle, templateIdRelatedGallery, 
+													   templateIdRelatedPoll, templateIdRelatedMultimedia);
+	
+		raTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdRelatedArticleRestricted, 
+													   templateIdRelatedGalleryRestricted, templateIdRelatedPollRestricted,
+													   templateIdRelatedMultimediaRestricted);
+		
+		PageContent pc = PageContentLocalServiceUtil.getDefaultPageContentByContentId(scopeGroupId, relatedArticle.getArticleId());
+		String[] currentlayoutIds = new String[1];
+		long currentSelectedModelId = -1;
+		if(pc != null)
+		{
+			currentlayoutIds[0] = pc.getLayoutId();
+			currentSelectedModelId = pc.getArticleModelId();
+		}
+		else
+		{
+			currentlayoutIds[0] = layout.getUuid();		
+		}
+		
+		viewMode = PageContentLocalServiceUtil.getArticleContextInfo(scopeGroupId, relatedArticle.getArticleId(), null);
+		
+		templateMode = TeaserContentUtil.getTemplateMode(relatedArticle, modeArticleRelated, modeGalleryRelated, 
+														 modePollRelated, modeMultimediaRelated);
+		
+		html = PageContentLocalServiceUtil.getArticleContent(relatedArticle, faTemplateId, raTemplateId, 
+															 viewMode, themeDisplay, requestXML, templateMode, 
+															 request, pageIdx, relatedInternalExternalLinkArticles.size());	
+		
+		//No borrar
+		/*if (showRedactionTitle)
+		{
+			if(html != null && !html.isEmpty())
+			{
+				html = html.replace(relatedArticle.getTitle(), relatedLinkName);
+				html = TeaserContentUtil.replaceFieldInArticleContentXML(relatedArticle.getTitle(), relatedLinkName, html);
+			}
+		}*/
+		
+		if(Validator.isNotNull(html))
+		{
+			String currentCssClass 			= TeaserContentUtil.getCSSClass(pageIdx, relatedInternalExternalLinkArticles.size(), relatedArticle, request);
+			String linkType    	   			= IterKeys.INTERNAL_LINK_TYPE_CLASS;
+			String signedRelatedArticleId 	= IterURLUtil.getSignedArticleId( articleData.getContentId() );
+	%>
+			<%@ include file="teaser_container_related_row.jspf" %>
+	<%
+			pageIdx++;
+		}
+	}
+	catch (Exception e)
+	{
+		_log.error(e);
+	}
+%>
+	

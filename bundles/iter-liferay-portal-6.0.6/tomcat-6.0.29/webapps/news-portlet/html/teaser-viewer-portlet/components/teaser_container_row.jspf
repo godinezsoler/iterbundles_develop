@@ -1,0 +1,92 @@
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<%@page import="com.liferay.portal.kernel.util.PropsValues"%>
+<%@page import="com.protecmedia.iter.news.util.TeaserContentUtil"%>
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="com.liferay.portal.kernel.util.StringUtil"%>
+<%
+	String structureCSSClass = TeaserContentUtil.getStructureCssClass(teaserContent.getStructureId());
+	
+	String articleId 		 = currentArticle[0];
+	String signedArticleId 	 =  IterURLUtil.getSignedArticleId(articleId);
+	
+	String categoriesCommaSeparated = "";
+	String articleSect = "";
+	if( PropsValues.IS_PREVIEW_ENVIRONMENT && TeaserContentUtil.allowChangePosition(orderBy, defaultLayout, layoutIds) )
+	{
+		categoriesCommaSeparated =  Validator.isNull(categoryIds) ? StringPool.BLANK : "itermeta=\"".concat(StringUtil.merge(categoryIds)).concat("\"");
+		articleSect = (currentArticle.length>2 && Validator.isNull(currentArticle[2])) ? StringPool.BLANK : "itersec=\"".concat(currentArticle[2]).concat("\"");
+	}
+	
+	String tagName = HtmlOptimizer.isEnabled() ? "article" : "li";
+
+	if(isHorizontal)
+	{
+		if(!isNewsletterPage)
+		{
+%>
+			<<%=tagName%> class="<%= structureCSSClass %> article element <%= TeaserContentUtil.getCSSClass(currentIndex, resultsSize, teaserContent, request) %>" style="width: <%= TeaserContentUtil.formatWidth(resultsPageSize) %>%" iteridart="<%= signedArticleId %>" <%=articleSect%> <%=categoriesCommaSeparated%> >
+<%
+		}
+	}
+	else
+	{
+		if(!isNewsletterPage)
+		{
+%>
+			<<%=tagName%> class="<%= structureCSSClass %> article element <%= TeaserContentUtil.getCSSClass(currentIndex, resultsSize, teaserContent, request) %>"  iteridart="<%= signedArticleId %>" <%=articleSect%> <%=categoriesCommaSeparated%> >
+<%
+		}
+	}
+	
+	String articleDiv = "";
+	String articleDiv_class_secondAttr= teaserContentId.equals(contentId) ? "selected" : "";
+	String articleDiv_class		= " class='".concat(structureCSSClass).concat(" ").concat(articleDiv_class_secondAttr).concat(" ").concat(HtmlUtil.getRemovableClass()).concat("' ");
+
+	if( themeDisplay.isSignedIn() && !paged && !isNewsletterPage)
+		articleDiv = "<div id='article".concat(id).concat("' ").concat(articleDiv_class).concat(">");			
+	else
+		articleDiv = "<div".concat(articleDiv_class).concat(">");
+%>	
+	
+	<%= articleDiv %>
+
+<%
+	if(!isNewsletterPage)
+	{
+%>	
+		<span class='teaserItemPosition <%=HtmlUtil.getRemovableClass()%>'><%=currentIndex%></span>
+<%
+	}
+%>
+
+		<%= teaserHTMLContent %>
+
+	</div>
+
+<%		
+	if(!isNewsletterPage && showRelatedContent)
+	{
+%>
+			<div class="relatedContent">
+<%			
+	}
+%>
+
+<%@ include file="../teaser_details.jsp" %>
+
+<%					
+	if(!isNewsletterPage && showRelatedContent)
+	{
+%>
+		</div>
+<%	
+	}
+		
+	if(!isNewsletterPage)
+	{
+%>
+		</<%=tagName%>>
+<%
+	}
+%>

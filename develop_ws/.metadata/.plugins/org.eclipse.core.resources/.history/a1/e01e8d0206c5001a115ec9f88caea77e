@@ -1,0 +1,484 @@
+/**
+ * Copyright (c) 2000-2011 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package com.protecmedia.iter.base.service.impl;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.http.client.ClientProtocolException;
+
+import com.liferay.portal.apache.ApacheUtil;
+import com.liferay.portal.kernel.annotation.Isolation;
+import com.liferay.portal.kernel.annotation.Transactional;
+import com.liferay.portal.kernel.cache.CacheLockMgr;
+import com.liferay.portal.kernel.cache.CacheRegistryUtil;
+import com.liferay.portal.kernel.cache.MultiVMPoolUtil;
+import com.liferay.portal.kernel.error.IterErrorKeys;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.EncryptUtil;
+import com.liferay.portal.kernel.util.IterUserBackupMgr;
+import com.liferay.portal.kernel.util.PropsValues;
+import com.liferay.portal.kernel.util.StreamUtil;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.kernel.util.request.IterRequest;
+import com.liferay.portal.kernel.util.widget.WidgetCallProducer;
+import com.liferay.portal.kernel.webcache.WebCachePoolUtil;
+import com.liferay.portal.kernel.xml.Document;
+import com.liferay.portal.kernel.xml.DocumentException;
+import com.liferay.portal.kernel.xml.SAXReaderUtil;
+import com.liferay.portal.kernel.xml.XMLHelper;
+import com.liferay.portal.model.Layout;
+import com.liferay.portal.service.LayoutLocalServiceUtil;
+import com.liferay.portal.service.PortalLocalServiceUtil;
+import com.liferay.portal.util.PortalUtil;
+import com.protecmedia.iter.base.service.base.DevelopmentToolsLocalServiceBaseImpl;
+import com.protecmedia.iter.base.service.util.HotConfigUtil;
+
+@Transactional(isolation = Isolation.PORTAL, rollbackFor =  {Exception.class} )
+public class DevelopmentToolsLocalServiceImpl extends DevelopmentToolsLocalServiceBaseImpl 
+{
+	private static Log _log = LogFactoryUtil.getLog(DevelopmentToolsLocalServiceImpl.class);
+	
+	public String getLayoutTypeSettings(long plid) throws PortalException, SystemException
+	{
+		Layout layout = LayoutLocalServiceUtil.getLayout(plid);
+		return layout.getTypeSettings();
+	}
+	
+	/**
+	 * @throws SystemException 
+	 * @throws PortalException 
+	 * @throws MalformedURLException 
+	 * 
+	 */
+	public void clearDBCache() throws InterruptedException, PortalException, SystemException, ClientProtocolException, IOException
+	{
+		clearDBCache(true);
+	}
+	public void clearDBCache(boolean notifyCluster) throws InterruptedException, PortalException, SystemException, ClientProtocolException, IOException
+	{
+		boolean detailLocked	= CacheLockMgr.detailWriteTryLock();
+		try
+		{
+			// Eliminar la caché de la base de datos
+			CacheRegistryUtil.clear();
+		}
+		finally
+		{
+			if (detailLocked)
+				CacheLockMgr.detailWriteUnlock();
+		}
+	}
+	
+	/**
+	 * @throws SystemException 
+	 * @throws PortalException 
+	 * @throws MalformedURLException 
+	 * 
+	 */
+	public void clearVMCache() throws InterruptedException, PortalException, SystemException, ClientProtocolException, IOException
+	{
+		clearVMCache(true);
+	}
+	public void clearVMCache(boolean notifyCluster) throws InterruptedException, PortalException, SystemException, ClientProtocolException, IOException
+	{
+		boolean detailLocked	= CacheLockMgr.detailWriteTryLock();
+		try
+		{
+			// Eliminar el contenido cacheado por esta MV
+			WebCachePoolUtil.clear();
+		}
+		finally
+		{
+			if (detailLocked)
+				CacheLockMgr.detailWriteUnlock();
+		}
+	}
+
+    public void clearAllCaches() throws Exception
+    {
+    	MultiVMPoolUtil.clear();
+    }
+    
+    public String returnString(long numValue, boolean bolValue, String strValue, String xmlValue, HttpServletRequest request) throws DocumentException, com.liferay.portal.kernel.error.ServiceError
+    {
+    	Document dom = SAXReaderUtil.read(xmlValue);
+    	
+    	_log.info(numValue);
+    	_log.info(bolValue);
+    	_log.info(strValue);
+    	_log.info(dom.asXML());
+    	_log.info(request.getContentType());
+    	
+    	com.liferay.portal.kernel.error.ErrorRaiser.throwIfFalse(bolValue, IterErrorKeys.XYZ_E_UNEXPECTED_ENVIRONMENT_ZYX, "Unexpected phone number");
+    	
+    	return strValue;
+    }
+    
+    public Document returnXML(long numValue, boolean bolValue, String strValue, String xmlValue, HttpServletRequest request) throws DocumentException, com.liferay.portal.kernel.error.ServiceError
+    {
+    	Document dom = SAXReaderUtil.read(xmlValue);
+    	
+    	_log.info(numValue);
+    	_log.info(bolValue);
+    	_log.info(strValue);
+    	_log.info(dom.asXML());
+    	_log.info(request.getContentType());
+    	
+    	com.liferay.portal.kernel.error.ErrorRaiser.throwIfFalse(bolValue, IterErrorKeys.XYZ_E_UNEXPECTED_ENVIRONMENT_ZYX, "Unexpected phone number");
+    	
+    	return dom;
+    }
+    
+    public void backup(String userId) throws PortalException, SystemException, com.liferay.portal.kernel.error.ServiceError
+    {
+    	PortalUtil.setVirtualHostLayoutSet(IterRequest.getOriginalRequest());
+    	IterUserBackupMgr.backup(userId);
+    }
+    
+    public void getUserBackup(HttpServletRequest request, HttpServletResponse response, String usrId) throws IOException, SecurityException, NoSuchMethodException, InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, NoSuchProviderException
+	{
+    	Document dom = PortalLocalServiceUtil.executeQueryAsDom( String.format("SELECT export_data FROM iterusers_deleted WHERE usrid = '%s'", usrId), new String[]{"export_data"} );
+    	String usrData = XMLHelper.getTextValueOf(dom, "/rs/row/export_data", "");
+    	
+    	usrData = EncryptUtil.decrypt(usrData);
+    	
+    	response.setHeader("Content-Type", "text/csv");
+    	response.setHeader("Content-Disposition", "attachment;filename=\"data.csv\"");
+    	response.setContentType("application/csv");
+    	
+		ServletOutputStream csvout = response.getOutputStream();
+		csvout.write( usrData.getBytes() );
+		csvout.flush();
+	}
+    
+    private static final String WIDGET_SH = new StringBuilder(
+    	"#!/bin/bash																										\n").append(
+    	"																													\n").append(
+    	"date +\"=%%s+(%%N/(10^9))\"																						\n").append(
+    	"curl 'http://%s%s' -H \"Host: www.larazon.es\" -H \"User-Agent: *ITERWEBCMS*\" > /tmp/parallel/p_00.txt	\n").append(	
+    	"date +\"=%%s+(%%N/(10^9))\"																						\n").toString();
+    
+    private static final String PAGE_SH = new StringBuilder(
+    "#!/bin/bash																											\n").append(
+    "																														\n").append(		
+    "date +\"=%%s+(%%N/(10^9))\"																							\n").append(
+    "curl 'http://%s' -H \"Host: www.larazon.es\" -H \"User-Agent: *ITERWEBCMS*\" > /tmp/parallel/p_page.txt		\n").append(
+    "date +\"=%%s+(%%N/(10^9))\"																							\n").append(
+    "echo \"----------------\"																								\n").toString();
+
+    
+    public void measureParallelTesterApache(String apacheFileName, long parallelIterations) throws IOException
+    {
+    	if (parallelIterations < 0)
+    		parallelIterations = 7;
+    	
+    	String pathRoot = new File(PortalUtil.getPortalWebDir()).getParentFile().getAbsolutePath();
+    	String filePath = new StringBuilder(pathRoot).append(File.separatorChar)
+								  .append("base-portlet").append(File.separatorChar)
+								  .append("html").append(File.separatorChar).toString();
+    	
+    	String apacheContent = StreamUtil.toString(new FileInputStream(filePath.concat(apacheFileName)), StringPool.UTF8);
+    	
+    	
+    	String fileName = filePath.concat("widgets.txt");
+    	    	
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+        String currentLine;
+        
+        FileWriter apacheResultFile = new FileWriter( filePath.concat( "apache_results.txt" ) );
+        apacheResultFile.write("Widget\tParallel\tSerial\n");
+        
+        while ((currentLine = in.readLine()) != null) 
+        {
+        	if (!currentLine.trim().isEmpty())
+        	{
+        		 Matcher m = Pattern.compile( String.format("(?m)^.*\\((\\d+)\\)\\((\\d+)\\)\\((\\d+)\\).+%s.*$", currentLine) ).matcher(apacheContent);
+        		 
+        		 int 	counter 		= 0;
+        		 long 	parallelTotal 	= 0;
+        		 long 	serialTotal		= 0;
+        		 
+        	     while (m.find()) 
+        	     {
+        	    	 _log.info("line = " + m.group());
+        	    	 
+        	    	 counter++;
+        	    	 
+        	    	 if (counter > parallelIterations)
+        	    		 serialTotal += Long.valueOf( m.group(2) );
+        	    	 else
+        	    		 parallelTotal += Long.valueOf( m.group(2) );        	    		 
+        	     }
+        	     
+        	     double parallelAverage = (parallelTotal == 0) 	? 0. : (parallelTotal / (Math.min(counter, parallelIterations)*1.));
+        	     double serialAverage 	= (serialTotal == 0) 	? 0. : (serialTotal / ((counter-parallelIterations)*1.)); 
+        	     apacheResultFile.write( String.format("%s\t%.2f\t%.2f\n", currentLine.substring(0, 70), parallelAverage, serialAverage));
+        	}
+        }
+        
+        apacheResultFile.close();
+        
+        in.close();
+    }
+    
+    public void createParallelTester(String internalApacheIP) throws IOException
+    {
+    	String pathRoot = new File(PortalUtil.getPortalWebDir()).getParentFile().getAbsolutePath();
+    	String filePath = new StringBuilder(pathRoot).append(File.separatorChar)
+								  .append("base-portlet").append(File.separatorChar)
+								  .append("html").append(File.separatorChar).toString();
+    	
+    	String fileName = filePath.concat("widgets.txt");
+    	
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+        String currentLine;
+        
+        // Script de las programaciones
+        FileWriter schedulerFile = new FileWriter( filePath.concat( "scheduler.sh" ) );
+        schedulerFile.write( "#!/bin/bash\n\n" );
+
+        // Script de generación de la página
+        FileWriter pageFile = new FileWriter( filePath.concat( "parallel_page.sh" ) );
+        pageFile.write( String.format(PAGE_SH, internalApacheIP) );
+        pageFile.close();
+        
+        // Scripts de cada widget
+        int counter = 0;
+        while ((currentLine = in.readLine()) != null) 
+        {
+        	if (!currentLine.trim().isEmpty())
+        	{
+	        	counter++;
+	        	
+	        	_log.debug(currentLine);
+	        	String scriptName = String.format("parallel_%02d.sh", counter);
+	        	
+	        	// Contenido del script
+	        	FileWriter scriptFile = new FileWriter( filePath.concat( scriptName ) );
+	        	String scriptContent  = String.format(WIDGET_SH, internalApacheIP, currentLine);
+	        	scriptFile.write( scriptContent );
+	        	scriptFile.close();
+	        	
+	        	// Se añade la programación del script
+	        	schedulerFile.write( String.format("echo \"/tmp/parallel/%s >>/tmp/parallel/log_widgets.txt\" | at $1\n", scriptName) );
+        	}
+        }
+        
+        schedulerFile.close();
+		in.close();
+    }
+    
+//    public void simplifyHTML(String inputPath, String outputPath) throws IOException
+//    {
+//    	// Se pierde algo de estilos en el Ranking
+//    	
+//    	String pathRoot = new File(PortalUtil.getPortalWebDir()).getParentFile().getAbsolutePath();
+//    	
+//    	if (Validator.isNull(inputPath))
+//    		inputPath = new StringBuilder(pathRoot).append(File.separatorChar)
+//								  .append("base-portlet").append(File.separatorChar)
+//								  .append("html").append(File.separatorChar)
+//								  .append("simplify_input.html").toString();
+//    	
+//    	if (Validator.isNull(outputPath))
+//    		outputPath = new StringBuilder(pathRoot).append(File.separatorChar)
+//								  .append("base-portlet").append(File.separatorChar)
+//								  .append("html").append(File.separatorChar)
+//								  .append("simplify_output.html").toString();
+//
+//    	// Se carga el HTML en un parser
+//    	File in = new File(inputPath);
+//    	org.jsoup.nodes.Document doc = Jsoup.parse(in, null);
+//
+//    	// Elementos colocados por: Liferay
+//   		doc.getElementsByClass("portlet-dropzone").unwrap();
+//   		doc.getElementsByClass("td-portlet").unwrap();
+//   		doc.getElementsByClass("portlet-content").unwrap();
+//   		doc.getElementsByClass("portlet-content-container").unwrap();
+//   		doc.getElementsByClass("portlet-body").unwrap();
+//   		doc.getElementsByClass("vertical").unwrap();
+//   		doc.getElementsByTag("section").unwrap();
+//   		for (Element a : doc.getElementsByTag("a"))
+//   		{
+//   			if (a.attr("id").matches("p_(.+)"))
+//   				a.unwrap();
+//   		}
+//   		// <div id="p_p_id_alertportlet_">
+//   		// Se elimina el atributo id    		
+//   		
+//   		// Elementos colocados por: ITER
+//   		// <div class="td-article"> 
+//   		// 		String structureCSSClass = TeaserContentUtil.getStructureCssClass(teaserContent.getStructureId());
+//   		// 		teaser_container_row.jspf
+//   		// <div class="spacer"></div> 
+//   		//		Al final de teaser_details.jsp
+//   		for (Element div : doc.getElementsByTag("div"))
+//   		{
+//   			if (div.classNames().size() == 1 && (div.classNames().contains("td-article") || div.classNames().contains("spacer")))
+//   				div.unwrap();
+//   			
+//   			else if (div.id().matches("p_p_id_(.+)") || div.id().matches("(.+)_INSTANCE_(.+)"))
+//   				div.removeAttr("id");
+//   		}
+//   		
+//   		// Elementos colocados por: el programador del sitio
+//   		// LayoutTemplate de los portlets anidados
+////   	<sector class="grid__sector grid__sector--color">
+////	        <div class="grid__view grid__view--12c grid__view--marginBottom" id="main-content" role="main">
+////                <div class="portlet-layout lrrow1 row row--nopadding row--white">
+////                    <div class="portlet-column row row__col row__col_sw_12 row__col_mw_12 row__col_lw_12" id="column-1">
+////                            $processor.processColumn("column-1", "portlet-column-content portlet-column-content-first")
+////                    </div>
+////                </div>
+////	        </div>
+////		</sector>
+//   		
+//   		// JournalTemplate
+////	   	<article class="news news--border news--sw12 news--mw8 news--lw8"> 
+////	   		<div class="news__new news__new--8c"> 
+////	   			<div class="news__new__media"> 
+////	   				<a class="lnk lnknoticia img_lr"   
+////	   				   <div frame="Recorte_8c"> 
+////	   					<img > 
+////	   				   </div> 
+////	   				</a> 
+////	   			 </div> 
+////	   			<h3 class="news__new__tag"> 
+////	   				<a class="lnk">Vivienda </a> 
+////	   				<span class="vertical__new__decoration vertical__new__decoration--tag"></span> 
+////	   			</h3> 
+////	   			<h2 class="news__new__title"> 
+////	   				<a class="custom headline lnknoticia">La compra</a> 
+////	   				<span class="vertical__new__decoration vertical__new__decoration--title"></span> 
+////	   			</h2> 
+////	   			<div class="comments-news"> 
+////	   				<div class="comments-news__icon"></div> 
+////	   					<div class="comments-news__counter"> 
+////	   						<a href="/economia#disqus_thread" data-disqus-identifier="18325273"></a> 
+////	   					</div>| 
+////	   					<span class="comments-news__signature"> L.R.E.&nbsp;</span>| 
+////	   					<span class="comments-news__location">Madrid</span> 
+////	   				</div> 
+////	   				<ul class="categoryList promociones"></ul> 
+////	   			</div> 
+////	   		<div class="related-here"></div> 
+////	   	</article>
+//   		
+//
+//        FileWriter file = new FileWriter(outputPath);
+//        file.write( doc.outerHtml() );
+//        file.close();
+//    }
+    
+    public void testWidgetCall() throws Exception
+    {
+    	ApacheUtil.init();
+    	
+    	// /home
+    	IterRequest.setAttribute(WebKeys.SECTION_PLID, 10156);
+    	
+    	String widgetCallID = "widget 01";
+    	IterRequest.setAttribute("WidgetCallID", widgetCallID);
+    	WidgetCallProducer.produce(null);
+    	
+    	widgetCallID = "widget 02";
+    	IterRequest.setAttribute("WidgetCallID", widgetCallID);
+    	WidgetCallProducer.produce(null);
+    	
+    	widgetCallID = "widget 03";
+    	IterRequest.setAttribute("WidgetCallID", widgetCallID);
+    	WidgetCallProducer.produce(null);
+
+       	widgetCallID = "widget 04";
+    	IterRequest.setAttribute("WidgetCallID", widgetCallID);
+    	WidgetCallProducer.produce(null);
+    	
+       	widgetCallID = "widget 05";
+    	IterRequest.setAttribute("WidgetCallID", widgetCallID);
+    	WidgetCallProducer.produce(null);
+    	
+    	WidgetCallProducer.processPageWidgetCalls();
+    	
+    }
+    
+    private void wait4Properties(String propertyName) throws InterruptedException
+    {
+    	while (!HotConfigUtil.getKey(propertyName, false))
+    	{
+    		Thread.sleep(1000);
+    	}
+    }
+    
+    public void testSelect4Update(String newServer) throws IOException, SQLException, InterruptedException
+    {
+    	_log.info( String.format("Init newServer='%s'", newServer) );
+    	
+    	wait4Properties("iter.select4updt.beforeselect");
+    	
+    	_log.info("Before select");
+    	
+    	String dbServer = "";
+    	List<Object> list = PortalLocalServiceUtil.executeQueryAsList("SELECT server FROM Heartbeat FOR UPDATE");
+    	
+    	if (!list.isEmpty())
+    		dbServer = list.get(0).toString();
+    	
+    	_log.info( String.format("DB server='%s'", dbServer) );
+    	
+    	wait4Properties("iter.select4updt.beforeupdate");
+    	
+    	_log.info( String.format("Before %s", list.isEmpty() ? "insert" : "update") );
+    	
+    	if (list.isEmpty())
+    		PortalLocalServiceUtil.executeUpdateQuery( String.format("INSERT INT Heartbeat (server) VALUES ('%s')", newServer) );
+    	else
+    		PortalLocalServiceUtil.executeUpdateQuery( String.format("UPDATE Heartbeat SET server='%s'", newServer) );
+    	
+    	_log.info("Before return");
+    	
+    	wait4Properties("iter.select4updt.beforereturn");
+    	
+    	_log.info("return");
+    }
+    
+    public void testMaster()
+    {
+    	_log.info("testMaster");
+    }
+}

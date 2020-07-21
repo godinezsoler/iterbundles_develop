@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_CommunitiesService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="importDataLastUpdate" qname="operNS:importDataLastUpdate" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="importDataSearch" qname="operNS:importDataSearch" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="publishLastUpdate" qname="operNS:publishLastUpdate" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="publishSearch" qname="operNS:publishSearch" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importDataLastUpdate importDataSearch publishLastUpdate publishSearch" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.CommunitiesServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CommunitiesServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CommunitiesServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_CommunitiesService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.Services", "com.protecmedia.iter.services.service");

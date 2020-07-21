@@ -1,0 +1,352 @@
+package com.protecmedia.iter.base.service.util;
+
+public class IterErrorKeys
+{
+	/** ITER REGEX**/
+	public static final String ITER_ERROR_REGEX = "^(XYZ_\\w.*_ZYX)([\\w|\\s|\\S]*)";
+	
+	/**ITER TOKEN**/
+	public static final String ITER_INFO_TOKEN = "\nINFO ->";
+	
+	/** ITER BASE **/
+	public static final String XYZ_E_UNEXPECTED_ZYX 						= "XYZ_E_UNEXPECTED_ZYX";
+	public static final String XYZ_E_INVALIDARG_ZYX 						= "XYZ_E_INVALIDARG_ZYX";
+	public static final String XYZ_E_NOT_IMPLEMENTED_ZYX 					= "XYZ_E_NOT_IMPLEMENTED_ZYX";
+	
+	/** Comentarios **/
+	public static final String XYZ_DISQUS_LOGIN_DLFILENTRY_NOT_FOUND_ZYX	= "XYZ_DISQUS_LOGIN_DLFILENTRY_NOT_FOUND_ZYX";
+	public static final String XYZ_DISQUS_LOGIN_PUBLICSECRETKEY_ISNULL_ZYX	= "XYZ_DISQUS_LOGIN_PUBLICSECRETKEY_ISNULL_ZYX";
+	
+	/** Iter **/
+	public static final String XYZ_E_SYSTEM_INFO_ZYX 						= "XYZ_E_SYSTEM_INFO_ZYX";
+	
+	/** ITER DESIGNER **/
+	/** PageTemplate **/
+	public static final String XYZ_E_GET_PAGETEMPLATES_ZYX 					= "XYZ_E_GET_PAGETEMPLATES_ZYX";
+	public static final String XYZ_E_GET_PAGETEMPLATES_BY_TYPE_ZYX 			= "XYZ_E_GET_PAGETEMPLATES_BY_TYPE_ZYX";
+	public static final String XYZ_E_GET_PAGETEMPLATES_BY_TEMPLATEID_ZYX 	= "XYZ_E_GET_PAGETEMPLATES_BY_TEMPLATEID_ZYX";
+	public static final String XYZ_E_LOAD_PAGETEMPLATE_ZYX 					= "XYZ_E_LOAD_PAGETEMPLATE_ZYX";
+	public static final String XYZ_E_ADD_PAGETEMPLATE_ZYX 					= "XYZ_E_ADD_PAGETEMPLATE_ZYX";
+	public static final String XYZ_E_ADD_PAGETEMPLATE_PARENTID_ZYX 			= "XYZ_E_ADD_PAGETEMPLATE_PARENTID_ZYX";
+	public static final String XYZ_E_DELETE_PAGETEMPLATE_ZYX 				= "XYZ_E_DELETE_PAGETEMPLATE_ZYX";
+	public static final String XYZ_E_CLEAR_LAYOUT_ZYX 						= "XYZ_E_CLEAR_LAYOUT_ZYX";
+	public static final String XYZ_E_UPDATE_PAGETEMPLATE_NAME_ZYX 			= "XYZ_E_UPDATE_PAGETEMPLATE_NAME_ZYX";
+	public static final String XYZ_E_GET_URL_PAGETEMPLATE_ZYX 				= "XYZ_E_GET_URL_PAGETEMPLATE_ZYX";
+	public static final String XYZ_E_COMPARE_LAYOUT_PAGETEMPLATE_ZYX		= "XYZ_E_COMPARE_LAYOUT_PAGETEMPLATE_ZYX";
+	
+	/** XMLIO **/
+	/** Live **/
+	public static final String XYZ_E_PUBLISH_GROUP_TO_LIVE_ZYX				= "XYZ_E_PUBLISH_GROUP_TO_LIVE_ZYX";
+	public static final String XYZ_E_PUBLISH_PAGECONTENT_TO_LIVE_ZYX		= "XYZ_E_PUBLISH_PAGECONTENT_TO_LIVE_ZYX";
+	public static final String XYZ_E_PUBLISH_CONTENT_TO_LIVE_ZYX			= "XYZ_E_PUBLISH_CONTENT_TO_LIVE_ZYX";
+	public static final String XYZ_E_PUBLISH_LAYOUT_TO_LIVE_ZYX				= "XYZ_E_PUBLISH_LAYOUT_TO_LIVE_ZYX";
+	public static final String XYZ_E_PUBLISH_INCONSISTENCE_ZYX				= "XYZ_E_PUBLISH_INCONSISTENCE_ZYX";
+	public static final String XYZ_E_CHANGE_LIVE_STATUS_ZYX					= "XYZ_E_CHANGE_LIVE_STATUS_ZYX";
+	public static final String XYZ_E_FTP_REFUSED_CONNECTION_ZYX 			= "XYZ_E_FTP_REFUSED_CONNECTION_ZYX";
+	public static final String XYZ_E_FTP_REMOTE_FILE_NOT_FOUND_ZYX 			= "XYZ_E_FTP_REMOTE_FILE_NOT_FOUND_ZYX";
+	public static final String XYZ_E_FTP_RETRIEVE_FILE_FAILED_ZYX 			= "XYZ_E_FTP_RETRIEVE_FILE_FAILED_ZYX";
+	public static final String XYZ_E_FTP_STORE_FILE_FAILED_ZYX 				= "XYZ_E_FTP_STORE_FILE_FAILED_ZYX";
+	public static final String XYZ_E_FTP_LOGIN_FAILED_ZYX					= "XYZ_E_FTP_LOGIN_FAILED_ZYX";
+	public static final String XYZ_E_PUBLISH_ALREADY_IN_PROCESS_ZYX			= "XYZ_E_PUBLISH_ALREADY_IN_PROCESS_ZYX";
+	public static final String XYZ_E_XPORTCONTENT_EMPTY_ZYX					= "XYZ_E_XPORTCONTENT_EMPTY_ZYX";
+	public static final String XYZ_E_XPORTCONTENT_MALFORMED_ZYX				= "XYZ_E_XPORTCONTENT_MALFORMED_ZYX";
+	public static final String XYZ_E_XPORTCONTENT_ALL_FAILED_ZYX			= "XYZ_E_XPORTCONTENT_ALL_FAILED_ZYX";
+	public static final String XYZ_E_CREATE_NEW_DSTFILE_FAILED_ZYX			= "XYZ_E_CREATE_NEW_DSTFILE_FAILED_ZYX";
+	public static final String XYZ_E_IMPORT_TO_LIVE_FAILED_ZYX				= "XYZ_E_IMPORT_TO_LIVE_FAILED_ZYX";
+	public static final String XYZ_E_IMPORT_FILE_NOT_FOUND_ZYX				= "XYZ_E_IMPORT_FILE_NOT_FOUND_ZYX";
+	public static final String XYZ_E_IMPORT_XML_NOT_FOUND_IN_ZIP_ZYX		= "XYZ_E_IMPORT_XML_NOT_FOUND_IN_ZIP_ZYX";
+	public static final String XYZ_E_IMPORT_XSL_UNAVAILABLE_ZYX				= "XYZ_E_IMPORT_XSL_UNAVAILABLE_ZYX";
+	public static final String XYZ_E_PUBRESPONSE_EMPTY_ZYX					= "XYZ_E_PUBRESPONSE_EMPTY_ZYX";
+	public static final String XYZ_E_PUBRESPONSE_STR_ERROR_ZYX				= "XYZ_E_PUBRESPONSE_STR_ERROR_ZYX";
+	public static final String XYZ_E_IMPORT_INVALID_USRID_ZYX				= "XYZ_E_IMPORT_INVALID_USRID_ZYX";
+	public static final String XYZ_E_IMPORT_INVALID_COMPANYID_ZYX			= "XYZ_E_IMPORT_INVALID_COMPANYID_ZYX";
+	public static final String XYZ_E_IMPORT_INVALID_GRPID_ZYX				= "XYZ_E_IMPORT_INVALID_GRPID_ZYX";
+	public static final String XYZ_E_CONTROL_IN_PROCESS_NOT_EXIST_ZYX		= "XYZ_E_CONTROL_IN_PROCESS_NOT_EXIST_ZYX";
+	public static final String XYZ_E_PUBLISH_POOL_NOT_EXIST_ZYX				= "XYZ_E_PUBLISH_POOL_NOT_EXIST_ZYX";
+	public static final String XYZ_E_PUBLISH_PARTIAL_ALREADY_IN_PROC_ZYX	= "XYZ_E_PUBLISH_PARTIAL_ALREADY_IN_PROC_ZYX";
+	public static final String XYZ_E_PUBLISH_SAME_GRP_ALREADY_IN_PROC_ZYX	= "XYZ_E_PUBLISH_SAME_GRP_ALREADY_IN_PROC_ZYX";
+	public static final String XYZ_E_PUBLISH_GLOBAL_GRP_ALREADY_IN_PROC_ZYX	= "XYZ_E_PUBLISH_GLOBAL_GRP_ALREADY_IN_PROC_ZYX";
+	public static final String XYZ_E_PUBLISH_LOCK_FAILED_ZYX				= "XYZ_E_PUBLISH_LOCK_FAILED_ZYX";
+	public static final String XYZ_E_POOL_IN_PROCESS_ZYX					= "XYZ_E_POOL_IN_PROCESS_ZYX";
+	public static final String XYZ_E_POPULATE_LIVE_ZYX						= "XYZ_E_POPULATE_LIVE_ZYX";
+	public static final String XYZ_E_PUBLISHING_ERROR_ZYX					= "XYZ_E_PUBLISHING_ERROR_ZYX";
+
+		
+	
+	/** LiveConfiguration **/
+	public static final String XYZ_E_GET_REMOTE_SYSTEM_INFO_ZYX				= "XYZ_E_GET_REMOTE_SYSTEM_INFO_ZYX";
+	public static final String XYZ_E_GET_ARCHIVE_BY_COMPANYID_ZYX			= "XYZ_E_GET_ARCHIVE_BY_COMPANYID_ZYX";
+	public static final String XYZ_E_SET_ARCHIVE_BY_COMPANYID_ZYX			= "XYZ_E_SET_ARCHIVE_BY_COMPANYID_ZYX";
+	
+	/** ITER NEWS **/
+	/** PageContent **/
+	public static final String XYZ_E_ADD_PAGECONTENT_ZYX 					= "XYZ_E_ADD_PAGECONTENT_ZYX";
+	public static final String XYZ_E_ADD_PAGECONTENT_ARTICLE_MODEL_ZYX 		= "XYZ_E_ADD_PAGECONTENT_ARTICLE_MODEL_ZYX";
+	public static final String XYZ_E_UPDATE_PAGECONTENT_LAYOUT_ZYX 			= "XYZ_E_UPDATE_PAGECONTENT_LAYOUT_ZYX";
+	public static final String XYZ_E_UPDATE_PAGECONTENT_QUALIFICATION_ZYX 	= "XYZ_E_UPDATE_PAGECONTENT_QUALIFICATION_ZYX";
+	public static final String XYZ_E_UPDATE_PAGECONTENT_ARTICLE_MODEL_ZYX 	= "XYZ_E_UPDATE_PAGECONTENT_ARTICLE_MODEL_ZYX";
+	public static final String XYZ_E_UPDATE_PAGECONTENT_DATE_ZYX 			= "XYZ_E_UPDATE_PAGECONTENT_DATE_ZYX";
+	public static final String XYZ_E_UPDATE_PAGECONTENT_QUALIFICATION_DATE_ZYX = "XYZ_E_UPDATE_PAGECONTENT_QUALIFICATION_DATE_ZYX";
+	public static final String XYZ_E_DELETE_PAGECONTENT_ZYX 				= "XYZ_E_DELETE_PAGECONTENT_ZYX";
+	public static final String XYZ_E_GET_PAGECONTENT_ZYX 					= "XYZ_E_GET_PAGECONTENT_ZYX";
+	public static final String XYZ_E_GET_PAGECONTENT_ID_ZYX 				= "XYZ_E_GET_PAGECONTENT_ID_ZYX";
+	public static final String XYZ_E_INCREASE_ORDER_PAGECONTENT_ZYX 		= "XYZ_E_INCREASE_ORDER_PAGECONTENT_ZYX";
+	public static final String XYZ_E_DECREASE_ORDER_PAGECONTENT_ZYX 		= "XYZ_E_DECREASE_ORDER_PAGECONTENT_ZYX";
+	public static final String XYZ_E_REORDER_PAGECONTENT_ZYX 				= "XYZ_E_REORDER_PAGECONTENT_ZYX";
+	public static final String XYZ_E_ACTIVATE_PAGECONTENT_ZYX 				= "XYZ_E_ACTIVATE_PAGECONTENT_ZYX";
+	public static final String XYZ_E_DEACTIVATE_PAGECONTENT_ZYX 			= "XYZ_E_DEACTIVATE_PAGECONTENT_ZYX";
+	public static final String XYZ_E_CHANGE_PAGECONTENT_POSITION_ZYX 		= "XYZ_E_CHANGE_PAGECONTENT_POSITION_ZYX";
+	public static final String XYZ_E_CHANGE_LAYOUT_ORDER_ZYX 				= "XYZ_E_CHANGE_LAYOUT_ORDER_ZYX";
+	public static final String XYZ_E_GET_VIEWER_URL_ZYX 					= "XYZ_E_GET_VIEWER_URL_ZYX";
+	public static final String XYZ_E_GET_VIEWER_URL_BY_LAYOUT_ZYX 			= "XYZ_E_GET_VIEWER_URL_BY_LAYOUT_ZYX";
+	public static final String XYZ_E_GET_DEFAULT_VIEWER_ZYX 				= "XYZ_E_GET_DEFAULT_VIEWER_ZYX";
+	public static final String XYZ_E_SET_DEFAULT_PAGECONTENT_ZYX			= "XYZ_E_SET_DEFAULT_PAGECONTENT_ZYX";
+	public static final String XYZ_E_NO_SUCH_PAGECONTENT_ZYX				= "XYZ_E_NO_SUCH_PAGECONTENT_ZYX";
+	public static final String XYZ_E_MULTIPLE_GROUP_CONTENT_ZYX 			= "XYZ_E_MULTIPLE_GROUP_CONTENT_ZYX";
+	public static final String XYZ_E_NO_CONTENT_IDS_PROVIDED_TO_PUBLISH_ZYX = "XYZ_E_NO_CONTENT_IDS_PROVIDED_TO_PUBLISH_ZYX";
+	public static final String XYZ_E_NO_LIVE_ENTRY_FOR_CONTENT_ZYX 			= "XYZ_E_NO_LIVE_ENTRY_FOR_CONTENT_ZYX";
+	public static final String XYZ_E_TARGET_NOT_FOUND_ZYX					= "XYZ_E_TARGET_NOT_FOUND_ZYX";
+	public static final String XYZ_E_SOURCE_NOT_FOUND_ZYX					= "XYZ_E_SOURCE_NOT_FOUND_ZYX";
+	
+	/** Qualification **/
+	public static final String XYZ_E_ADD_QUALIFICATION_ZYX 					= "XYZ_E_ADD_QUALIFICATION_ZYX";
+	public static final String XYZ_E_REMOVE_QUALIFICATION_ZYX 				= "XYZ_E_REMOVE_QUALIFICATION_ZYX";
+	public static final String XYZ_E_UPDATE_QUALIFICATION_ZYX 				= "XYZ_E_UPDATE_QUALIFICATION_ZYX";
+	public static final String XYZ_E_GET_QUALIFICATION_ZYX 					= "XYZ_E_GET_QUALIFICATION_ZYX";
+	public static final String XYZ_E_GET_QUALIFICATIONS_ZYX 				= "XYZ_E_GET_QUALIFICATIONS_ZYX";
+	public static final String XYZ_E_NO_SUCH_QUALIFICATION_ZYX 				= "XYZ_E_NO_SUCH_QUALIFICATION_ZYX";
+	public static final String XYZ_E_QUALIFICATION_NOT_FOUND_ZYX 			= "XYZ_E_QUALIFICATION_NOT_FOUND_ZYX";
+
+	/** Categorize **/
+	public static final String XYZ_E_ADD_VOCABULARY_ZYX 					= "XYZ_E_ADD_VOCABULARY_ZYX";
+	public static final String XYZ_E_DELETE_VOCABULARY_ZYX 					= "XYZ_E_DELETE_VOCABULARY_ZYX";
+	public static final String XYZ_E_UPDATE_VOCABULARY_ZYX 					= "XYZ_E_UPDATE_VOCABULARY_ZYX";
+	public static final String XYZ_E_ADD_CATEGORY_ZYX 						= "XYZ_E_ADD_CATEGORY_ZYX";
+	public static final String XYZ_E_UPDATE_CATEGORY_ZYX 					= "XYZ_E_UPDATE_CATEGORY_ZYX";
+	public static final String XYZ_E_DELETE_CATEGORY_ZYX 					= "XYZ_E_DELETE_CATEGORY_ZYX";
+	public static final String XYZ_E_ADD_EXPANDOTABLE_ZYX 					= "XYZ_E_ADD_EXPANDOTABLE_ZYX";
+	public static final String XYZ_E_GET_EXPANDOTABLE_ZYX 					= "XYZ_E_GET_EXPANDOTABLE_ZYX";
+	public static final String XYZ_E_DELETE_EXPANDOTABLE_ZYX 				= "XYZ_E_DELETE_EXPANDOTABLE_ZYX";
+	public static final String XYZ_E_ADD_BOOLEAN_VALUE_ZYX 					= "XYZ_E_ADD_BOOLEAN_VALUE_ZYX";
+	public static final String XYZ_E_ADD_STRING_VALUE_ZYX 					= "XYZ_E_ADD_STRING_VALUE_ZYX";
+	public static final String XYZ_E_ADD_DOUBLE_VALUE_ZYX 					= "XYZ_E_ADD_DOUBLE_VALUE_ZYX";
+	public static final String XYZ_E_ADD_DATE_VALUE_ZYX 					= "XYZ_E_ADD_DATE_VALUE_ZYX";
+	public static final String XYZ_E_GET_CLASSPK_ZYX 						= "XYZ_E_GET_CLASSPK_ZYX";
+	public static final String XYZ_E_UPDATE_WEBCONTENT_CATEGORIES_ZYX 		= "XYZ_E_UPDATE_WEBCONTENT_CATEGORIES_ZYX";
+
+	/** JournalArticle **/
+	public static final String XYZ_E_ADD_CONTENT_ZYX 						= "XYZ_E_ADD_CONTENT_ZYX";
+	public static final String XYZ_E_UPDATE_CONTENT_ZYX 					= "XYZ_E_UPDATE_CONTENT_ZYX";
+	public static final String XYZ_E_DELETE_CONTENT_ZYX 					= "XYZ_E_DELETE_CONTENT_ZYX";
+	
+	/** LIFERAY CORE (ITER-HOOK) **/
+	
+	/** AssetCategoryProperty **/
+	public static final String XYZ_E_ADD_CATEGORY_PROPERTY_ZYX 				= "XYZ_E_ADD_CATEGORY_PROPERTY_ZYX";
+	public static final String XYZ_E_GET_CATEGORY_PROPERTIES_ZYX 			= "XYZ_E_GET_CATEGORY_PROPERTIES_ZYX";
+	public static final String XYZ_E_UPDATE_CATEGORY_PROPERTY_ZYX 			= "XYZ_E_UPDATE_CATEGORY_PROPERTY_ZYX";
+	
+	/** DLFileEntry **/
+	public static final String XYZ_E_ADD_FILEENTRY_ZYX 						= "XYZ_E_ADD_FILEENTRY_ZYX";
+	public static final String XYZ_E_UPDATE_FILEENTRY_ZYX 					= "XYZ_E_UPDATE_FILEENTRY_ZYX";
+	public static final String XYZ_E_DELETE_FILEENTRY_ZYX 					= "XYZ_E_DELETE_FILEENTRY_ZYX";
+	public static final String XYZ_E_DELETE_FILEENTRY_BY_TITLE_ZYX 			= "XYZ_E_DELETE_FILEENTRY_BY_TITLE_ZYX";
+	public static final String XYZ_E_GET_FILEENTRY_BY_TITLE_ZYX 			= "XYZ_E_GET_FILEENTRY_BY_TITLE_ZYX";
+	public static final String XYZ_E_GET_FILEENTRY_BY_UUID_GROUPID_ZYX 		= "XYZ_E_GET_FILEENTRY_BY_UUID_GROUPID_ZYX";
+	
+	/** ExpandoColumn **/
+	public static final String XYZ_E_ADD_COLUMN_ZYX 						= "XYZ_E_ADD_COLUMN_ZYX";
+	public static final String XYZ_E_UPDATE_COLUMN_ZYX 						= "XYZ_E_UPDATE_COLUMN_ZYX";
+	public static final String XYZ_E_DELETE_COLUMN_ZYX 						= "XYZ_E_DELETE_COLUMN_ZYX";
+	
+	/** Group **/
+	public static final String XYZ_E_ADD_GROUP_ZYX 							= "XYZ_E_ADD_GROUP_ZYX";
+	public static final String XYZ_E_UPDATE_GROUP_ZYX 						= "XYZ_E_UPDATE_GROUP_ZYX";
+	public static final String XYZ_E_DELETE_GROUP_ZYX 						= "XYZ_E_DELETE_GROUP_ZYX";
+	public static final String XYZ_E_INVALID_GROUP_NAME_ZYX					= "XYZ_E_INVALID_GROUP_NAME_ZYX";	
+	public static final String XYZ_E_NOTEXIST_GROUP_TO_UPDT_PUBDATE_ZYX		= "XYZ_E_NOTEXIST_TO_UPDT_GROUP_PUBDATE_ZYX";
+	public static final String XYZ_E_NO_GROUP_UPDATES_AFTER_PUBLISHED_ZYX	= "XYZ_E_NO_GROUP_UPDATES_AFTER_PUBLISHED_ZYX";
+		
+	/** JournalStructure **/
+	public static final String XYZ_E_UPDATE_STRUCTURE_ZYX 					= "XYZ_E_UPDATE_STRUCTURE_ZYX";
+	public static final String XYZ_E_GET_STRUCTURE_ZYX 						= "XYZ_E_GET_STRUCTURE_ZYX";
+	
+	/** JournalArticle **/
+	public static final String XYZ_E_GET_ARTICLE_ZYX 						= "XYZ_E_GET_ARTICLE_ZYX";
+	public static final String XYZ_E_QUESTIONPOLL_NOT_WELLFORMED_ZYX		= "XYZ_E_QUESTIONPOLL_NOT_WELLFORMED_ZYX";
+	public static final String XYZ_E_CONTENT_NOT_FOUND_IN_BACK_ZYX			= "XYZ_E_CONTENT_NOT_FOUND_IN_BACK_ZYX";
+	public static final String XYZ_E_CONTENT_NOT_FOUND_IN_LIVE_ZYX			= "XYZ_E_CONTENT_NOT_FOUND_IN_LIVE_ZYX";
+	public static final String XYZ_E_CONTENT_NOT_FOUND_IN_BACK_LIVE_ZYX		= "XYZ_E_CONTENT_NOT_FOUND_IN_BACK_LIVE_ZYX";
+	public static final String XYZ_E_INVALID_URL_ZYX 						= "XYZ_E_INVALID_URL_ZYX";
+	
+	/** Layout **/
+	public static final String XYZ_E_ADD_LAYOUT_ZYX 						= "XYZ_E_ADD_LAYOUT_ZYX";
+	public static final String XYZ_E_UPDATE_NAME_ZYX 						= "XYZ_E_UPDATE_NAME_ZYX";
+	public static final String XYZ_E_UPDATE_LAYOUT_ZYX 						= "XYZ_E_UPDATE_LAYOUT_ZYX";
+	public static final String XYZ_E_DELETE_LAYOUT_ZYX 						= "XYZ_E_DELETE_LAYOUT_ZYX";
+	public static final String XYZ_E_FORM_POSTACTION_LAYOUT_NOT_FOUND_ZYX 	= "XYZ_E_FORM_POSTACTION_LAYOUT_NOT_FOUND_ZYX";
+	public static final String XYZ_E_LAYOUT_NOT_FOUND_IN_LIVE_ZYX			= "XYZ_E_LAYOUT_NOT_FOUND_IN_LIVE_ZYX";
+	
+	/** Apache **/
+	public static final String XYZ_E_APACHE_INVALID_MAXOPERATIONS_ZYX		= "XYZ_E_APACHE_INVALID_MAXOPERATIONS_ZYX";
+	public static final String XYZ_E_APACHE_INVALID_OFFLINETIMEOUT_ZYX		= "XYZ_E_APACHE_INVALID_OFFLINETIMEOUT_ZYX";
+	
+	/** Product **/
+	public static final String XYZ_E_ADD_PRODUCT_ZYX 						= "XYZ_E_ADD_PRODUCT_ZYX";
+	public static final String XYZ_E_UPDATE_PRODUCT_ZYX 					= "XYZ_E_UPDATE_PRODUCT_ZYX";
+	public static final String XYZ_E_DELETE_PRODUCT_ZYX 					= "XYZ_E_DELETE_PRODUCT_ZYX";
+	
+	public static final String XYZ_E_ADD_PRODUCTS_ARTICLE_ZYX 				= "XYZ_E_ADD_PRODUCTS_ARTICLE_ZYX";
+	public static final String XYZ_E_UPDATE_PRODUCTS_ARTICLE_ZYX 			= "XYZ_E_UPDATE_PRODUCTS_ARTICLE_ZYX";
+
+	public static final String XYZ_E_ADD_PRODUCTS_FILEENTRY_ZYX 			= "XYZ_E_ADD_PRODUCTS_FILEENTRY_ZYX";
+	public static final String XYZ_E_UPDATE_PRODUCTS_FILEENTRY_ZYX 			= "XYZ_E_UPDATE_PRODUCTS_FILEENTRY_ZYX";
+	
+	public static final String XYZ_E_GET_PRODUCTS_BY_ARTICLEID_ZYX 			= "XYZ_E_GET_PRODUCTS_BY_ARTICLEID_ZYX";
+	public static final String XYZ_E_GET_PRODUCTS_BY_FILEENTRYID_ZYX 		= "XYZ_E_GET_PRODUCTS_BY_FILEENTRYID_ZYX";
+	
+	/** Mensajes de error propios de Iter **/
+	public static final String ITER_UPDATE_MILENIUM_ITER					= "Su versión de Milenium es demasiado antigua. Contacte con su proveedor para obtener una versión actualizada.";
+	
+	/** Mapa resolucion imagenes **/
+	public static final String XYZ_E_DIMENSIONS_ALREADY_EXIST_ZYX 			= "XYZ_E_DIMENSIONS_ALREADY_EXIST_ZYX";
+
+	/** Tag **/
+	public static final String XYZ_E_INVALID_ADVERTISEMENT_OPERATION_ZYX	= "XYZ_E_INVALID_ADVERTISEMENT_OPERATION_ZYX";
+	public static final String XYZ_E_ONLY_HTML_TYPE_HAS_SUPERID_ZYX			= "XYZ_E_ONLY_HTML_TYPE_HAS_SUPERID_ZYX";
+	public static final String XYZ_E_ONLY_GLOBAL_TYPE_IS_SUPERID_ZYX 		= "XYZ_E_ONLY_GLOBAL_TYPE_IS_SUPERID_ZYX";
+	public static final String XYZ_E_TAG_HAS_REFERENCES_ZYX					= "XYZ_E_TAG_HAS_REFERENCES_ZYX";
+	
+	/** FileEntry **/
+	public static final String XYZ_E_DUPLICATE_IMAGE_NAME_ZYX				= "XYZ_E_DUPLICATE_IMAGE_NAME_ZYX";
+	public static final String XYZ_E_IMAGE_HAS_REFERENCES_ZYX				= "XYZ_E_IMAGE_HAS_REFERENCES_ZYX";
+	
+	/** Context vars **/
+	public static final String XYZ_ITR_UNQ_CTXVAR_GROUPID_NAME_ZYX			= "XYZ_ITR_UNQ_CTXVAR_GROUPID_NAME_ZYX";
+	public static final String XYZ_ITR_SYSTEM_CTXVAR_NAME_ZYX				= "XYZ_ITR_SYSTEM_CTXVAR_NAME_ZYX";
+	
+	/** adslotadtags **/
+	public static final String XYZ_ITR_UNQ_ADSLOT_ADTAGS_SLOTID_TAGID_VIGENCIA_ENABLED_ZYX = "XYZ_ITR_UNQ_ADSLOT_ADTAGS_SLOTID_TAGID_VIGENCIA_ENABLED_ZYX";
+	public static final String XYZ_ITR_UNQ_ADSLOT_ADTAGS_SLOTID_SKINID_VIGENCIA_ENABLED_ZYX = "XYZ_ITR_UNQ_ADSLOT_ADTAGS_SLOTID_SKINID_VIGENCIA_ENABLED_ZYX";
+	public static final String XYZ_ITR_INVALID_DATE_RANGE_ZYX				= "XYZ_ITR_INVALID_DATE_RANGE_ZYX";
+	
+	/** smtpserver **/
+	public static final String XYZ_ITR_SMTPSERVER_HAS_REFERENCES_ZYX										= "XYZ_ITR_SMTPSERVER_HAS_REFERENCES_ZYX";
+	public static final String XYZ_ITR_SMTPSERVER_IS_BEEN_USED_ZYX											= "XYZ_ITR_SMTPSERVER_IS_BEEN_USED_ZYX";
+	public static final String XYZ_ITR_UNQ_SMTPSERVER_HOST_PORT_TLS_AUTH_USER_PASS_GROUPID_ZYX				= "XYZ_ITR_UNQ_SMTPSERVER_HOST_PORT_TLS_AUTH_USER_PASS_GROUPID_ZYX";
+	
+	/** schedule **/
+	public static final String XYZ_ITR_E_SCHEDULE_HAS_NO_SERVERS_ZYX			= "XYZ_ITR_E_SCHEDULE_HAS_NO_SERVERS_ZYX";
+	public static final String XYZ_ITR_E_SCHEDULE_HAS_NO_ENABLED_SERVERS_ZYX	= "XYZ_ITR_E_SCHEDULE_HAS_NO_ENABLED_SERVERS_ZYX";
+	public static final String XYZ_ITR_E_SCHEDULE_HAS_NO_RECIPIENTS_ZYX			= "XYZ_ITR_E_SCHEDULE_HAS_NO_RECIPIENTS_ZYX";
+	public static final String XYZ_ITR_E_SCHEDULE_IMPOSSIBLE_TO_EXECUTE_ZYX		= "XYZ_ITR_E_SCHEDULE_IMPOSSIBLE_TO_EXECUTE_ZYX";
+	
+	/** form **/
+	public static final String XYZ_ITR_E_REGISTER_FORM_ALREADY_EXISTS_ZYX	    = "XYZ_ITR_E_REGISTER_FORM_ALREADY_EXISTS_ZYX";
+	public static final String XYZ_ITR_W_CHANGE_FORMTYPE_ZYX	                = "XYZ_ITR_W_CHANGE_FORMTYPE_ZYX";
+	public static final String XYZ_ITR_W_CHANGE_NAVIGATION_TYPE_ZYX	            = "XYZ_ITR_W_CHANGE_NAVIGATION_TYPE_ZYX";
+	public static final String XYZ_ITR_E_INVALID_FORM_ZYX	                    = "XYZ_ITR_E_INVALID_FORM_ZYX";
+	public static final String XYZ_ITR_E_NO_EXISTS_HANDLER_ENABLED_CRITIC_ZYX	= "XYZ_ITR_E_NO_EXISTS_HANDLER_ENABLED_CRITIC_ZYX";
+	public static final String XYZ_ITR_E_CAPTCHA_UNDEFINED_ZYX					= "XYZ_ITR_E_CAPTCHA_UNDEFINED_ZYX";
+	public static final String XYZ_FORM_NOT_EXISTS_ZYX 							= "XYZ_FORM_NOT_EXISTS_ZYX";
+	public static final String XYZ_ITR_E_FORM_WITHOUT_INPUTCTRLS_ZYX			= "XYZ_ITR_E_FORM_WITHOUT_INPUTCTRLS_ZYX";
+	public static final String XYZ_FORM_NOTFOUND_ZYX							= "XYZ_FORM_NOTFOUND_ZYX";
+		
+	/** form field **/
+	public static final String XYZ_ITR_E_DUPLICATE_FORM_HTMLNAME_ZYX	        = "XYZ_ITR_E_DUPLICATE_FORM_HTMLNAME_ZYX";
+	public static final String XYZ_ITR_E_FORMMETHOD_GET_FIELDTYPE_BINARY_ZYX	= "XYZ_ITR_E_FORMMETHOD_GET_FIELDTYPE_BINARY_ZYX";
+	public static final String XYZ_ITR_E_MULTIPLE_DEFAULT_VALUES_INPUTCTRL_ZYX	= "XYZ_ITR_E_MULTIPLE_DEFAULT_VALUES_INPUTCTRL_ZYX";
+	public static final String XYZ_ITR_E_EMPTY_INPUTCTRL_ZYX	                = "XYZ_ITR_E_EMPTY_INPUTCTRL_ZYX";
+	public static final String XYZ_ITR_E_REQUIRED_FIELDS_ZYX	                = "XYZ_ITR_E_REQUIRED_FIELDS_ZYX";
+	public static final String XYZ_ITR_E_SYSTEM_REQUIRED_FIELDS_ZYX	            = "XYZ_ITR_E_SYSTEM_REQUIRED_FIELDS_ZYX";
+	public static final String XYZ_ITR_E_FIELD_HAS_REFERENCES_ZYX	            = "XYZ_ITR_E_FIELD_HAS_REFERENCES_ZYX";
+	public static final String XYZ_ITR_E_CANT_UPDATE_FIELD_ZYX	            	= "XYZ_ITR_E_CANT_UPDATE_FIELD_ZYX";
+	public static final String XYZ_ITR_E_DUPLICATE_FIELD_ZYX	            	= "XYZ_ITR_E_DUPLICATE_FIELD_ZYX";
+	
+	/**  Portlet preferences **/
+	public static final String XYZ_ITR_E_PREFS_PORTLETITEM_WITH_LINKS_ZYX		= "XYZ_ITR_E_PREFS_PORTLETITEM_WITH_LINKS_ZYX";
+	public static final String XYZ_ITR_E_PREFS_PORTLETITEM_DEFAULT_LAYOUT_ZYX	= "XYZ_ITR_E_PREFS_PORTLETITEM_DEFAULT_LAYOUT_ZYX";
+	
+	/**  Social networks **/
+	public static final String XYZ_ITR_E_SOCIAL_CONFIG_SCOPE_HAS_CONNECTIONS_ZYX	= "XYZ_ITR_E_SOCIAL_CONFIG_SCOPE_HAS_CONNECTIONS_ZYX";
+	public static final String XYZ_ITR_E_SOCIAL_NETWORK_NO_USERNAME_FOUND_ZYX		= "XYZ_ITR_E_SOCIAL_NETWORK_NO_CONNECTION_WITH_USERNAME_ZYX";
+	
+	/** getEntitlements servlet GET error **/
+	public static final String XYZ_UNSUPPORTED_GET_METHOD_ZYX 					= "XYZ_UNSUPPORTED_GET_METHOD_ZYX";
+	public static final String XYZ_ITR_E_UNSUPPORTED_HOST_HEADER_ZYX			= "XYZ_ITR_E_UNSUPPORTED_HOST_HEADER_ZYX";
+	
+	/**  IterAdmin **/
+	public static final String XYZ_ITR_E_LOGIN_EMPTY_USER_OR_PASS_ZYX			= "XYZ_ITR_E_LOGIN_EMPTY_USER_OR_PASS_ZYX";
+	public static final String XYZ_ITR_E_LOGIN_WRONG_USER_OR_PASS_ZYX			= "XYZ_ITR_E_LOGIN_WRONG_USER_OR_PASS_ZYX";
+	public static final String XYZ_ITR_E_FRIENDLYURL_INCORRECT_ZYX				= "XYZ_ITR_E_FRIENDLYURL_INCORRECT_ZYX";
+	
+	/** Proceso de registro **/
+	public static final String XYZ_ITR_E_USERPROFILE_INVALID_ACCESS_ZYX			= "XYZ_ITR_E_USERPROFILE_INVALID_ACCESS_ZYX";
+	public static final String XYZ_ITR_E_UNREGISTERED_USER_ZYX					= "XYZ_ITR_E_UNREGISTERED_USER_ZYX";
+	public static final String XYZ_ITR_UNQ_USER_NAME_ZYX						= "XYZ_ITR_UNQ_USER_NAME_ZYX";
+	public static final String XYZ_ITR_UNQ_EMAIL_ZYX							= "XYZ_ITR_UNQ_EMAIL_ZYX";
+	public static final String XYZ_ITR_UNQ_ABO_ID_ZYX							= "XYZ_ITR_UNQ_ABO_ID_ZYX";
+	public static final String XYZ_ITR_E_EMAIL_NOT_EXISTS_ZYX					= "XYZ_ITR_E_EMAIL_NOT_EXISTS_ZYX";
+	
+	public static final String XYZ_ITR_E_AUTHENTICATION_GROUPID_ZYX				= "XYZ_ITR_E_AUTHENTICATION_GROUPID_ZYX";
+	public static final String XYZ_ITR_E_AUTHENTICATING_USER_ZYX				= "XYZ_ITR_E_AUTHENTICATING_USER_ZYX";
+	public static final String XYZ_ITR_E_AUTHENTICATE_TOKEN_IS_NULL_ZYX			= "XYZ_ITR_E_AUTHENTICATE_TOKEN_IS_NULL_ZYX";
+	
+	public static final String XYZ_ITR_E_REQUIREDFIELD_ZYX						= "XYZ_ITR_E_REQUIREDFIELD_ZYX";
+	public static final String XYZ_ITR_E_CAPTCHAINVALID_ZYX						= "XYZ_ITR_E_CAPTCHAINVALID_ZYX";
+	
+	/** Paywall status portlet **/
+	public static final String XYZ_ITR_E_PAYWALL_STATUS_INVALID_ACCESS_ZYX			= "XYZ_ITR_E_PAYWALL_STATUS_INVALID_ACCESS_ZYX";
+	public static final String XYZ_ITR_E_PAYWALL_UPDATE_STATUS_EMPTY_APACHES_ZYX	= "XYZ_ITR_E_PAYWALL_UPDATE_STATUS_EMPTY_APACHES_ZYX";
+	
+	/** Group_Config **/
+	public static final String XYZ_ITR_E_GROUP_CONFIG_NOT_FOUND_ZYX				= "XYZ_ITR_E_GROUP_CONFIG_NOT_FOUND_ZYX";
+	public static final String XYZ_ITR_E_GROUP_INVALID_CONFIG_ZYX				= "XYZ_ITR_E_GROUP_INVALID_CONFIG_ZYX";
+	
+	/** Login-with **/
+	public static final String XYZ_ITR_E_LOGIN_WITH_TEMPORARY_USER_AFTER_UPDATE_ZYX 	= "XYZ_ITR_E_LOGIN_WITH_TEMPORARY_USER_AFTER_UPDATE_ZYX";
+	
+	/** File **/
+	public static final String XYZ_E_INVALID_FILE_PATH_ZYX	= "XYZ_E_INVALID_FILE_PATH_ZYX";
+	
+	/** Post response **/
+	public static final String XYZ_E_NOT_CORRECT_RESPONSE_ZYX = "XYZ_E_NOT_CORRECT_RESPONSE_ZYX";
+	
+	
+	/** BBDD Forms **/
+	public static final String XYZ_ITR_FK_FORM_HANDLER_EMAIL_SMTPSERVER_ZYX 	= "XYZ_ITR_FK_FORM_HANDLER_EMAIL_SMTPSERVER_ZYX";
+	public static final String XYZ_ITR_FK_FORM_HANDLER_EMAIL_SMTPSERVER2_ZYX 	= "XYZ_ITR_FK_FORM_HANDLER_EMAIL_SMTPSERVER2_ZYX";
+	
+	/** Catalogs **/
+	public static final String XYZ_E_CATALOG_HEADER_ALREADY_EXISTS_ZYX			= "XYZ_E_CATALOG_HEADER_ALREADY_EXISTS_ZYX";
+	public static final String XYZ_E_CATALOG_MENU_ALREADY_EXISTS_ZYX			= "XYZ_E_CATALOG_MENU_ALREADY_EXISTS_ZYX";
+	public static final String XYZ_E_CATALOG_FOOTER_ALREADY_EXISTS_ZYX			= "XYZ_E_CATALOG_FOOTER_ALREADY_EXISTS_ZYX";
+	public static final String XYZ_E_CATALOG_ELEMENT_IS_BEIN_USED_ZYX			= "XYZ_E_CATALOG_ELEMENT_IS_BEIN_USED_ZYX";
+	public static final String XYZ_E_CATALOG_PAGE_PLID_NOT_EXISTS_ZYX			= "XYZ_E_CATALOG_PAGE_PLID_NOT_EXISTS_ZYX";
+	public static final String XYZ_E_CATALOG_INVALID_TYPE_ZYX					= "XYZ_E_CATALOG_INVALID_TYPE_ZYX";
+	
+	/** getEntitlements **/
+	public static final String XYZ_ITR_E_GET_USER_ENTITLEMENTS_ZYX				= "XYZ_ITR_E_GET_USER_ENTITLEMENTS_ZYX";
+	
+	// Importación de usuarios
+		// Descripción de error
+			public static final String XYZ_INVALID_FORMAT_OF_ZYX 		  = "XYZ_INCORRECT_OR_INVALID_FORMAT_OF_ZYX";
+			public static final String XYZ_MISSING_ZYX 					  = "XYZ_MISSING_ZYX";
+			public static final String XYZ_CREATING_DLFILEENTRY_ZYX 	  = "XYZ_XYZ_ERROR_CREATING_DLFILEENTRY_ZYX_ZYX";
+			public static final String XYZ_IMPOSSIBLE_TO_READ_ZYX 		  = "XYZ_IMPOSSIBLE_TO_READ_ZYX";
+			public static final String XYZ_FILEENTRY_NOT_CREATED_ZYX 	  = "XYZ_DLFILEENTRY_NOT_CREATED_ZYX";
+			public static final String XYZ_MISSING_NAME_ZYX 			  = "XYZ_MISSING_NAME_ZYX";
+			public static final String XYZ_MISSING_EMAIL_ZYX 			  = "XYZ_MISSING_EMAIL_ZYX";
+			public static final String XYZ_MISSING_PASSWORD_ZYX 		  = "XYZ_MISSING_PASSWORD_ZYX";
+			public static final String XYZ_USERNAME_REPEATED_ZYX 		  = "XYZ_FIELD_USER_NAME_REPEATED_ZYX";
+			public static final String XYZ_EMAIL_REPEATED_ZYX 			  = "XYZ_FIELD_USER_EMAIL_REPEATED_ZYX";
+			public static final String XYZ_ABOID_REPEATED_ZYX 			  = "XYZ_FIELD_USER_ABOID_REPEATED_ZYX";
+			public static final String XYZ_ORM_EXCEPTION_ZYX 			  = "XYZ_ORM_EXCEPTION_ZYX";
+			public static final String XYZ_NUMBER_FORMAT_ZYX 			  = "XYZ_INCORRECT_NUMBER_FORMAT_ZYX";
+			public static final String XYZ_FILE_NOT_FOUND_ZYX 			  = "XYZ_FILE_NOT_FOUND_ZYX";
+			public static final String XYZ_INPUT_OUTPUT_ZYX 			  = "XYZ_INPUT_OUTPUT_EXCEPTION_ZYX";
+			public static final String XYZ_SQL_ZYX 						  = "XYZ_ERROR_IN_SQL_ZYX";
+			public static final String XYZ_SERVICE_ERROR_ZYX 			  = "XYZ_SERVICE_ERROR_ZYX";	
+			public static final String XYZ_FIELD_NOT_IN_REGISTER_FORM_ZYX = "XYZ_FIELD_NOT_IN_REGISTER_FORM_ZYX"; 
+			public static final String XYZ_FIELD_TOO_LONG_ZYX			  = "XYZ_FIELD_TOO_LONG_ZYX";
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_PageContentService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.news.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.news.iter.protecmedia.com" qname="ns:PageContentSoap" type="java:com.protecmedia.iter.news.model.PageContentSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="activatePageContent" qname="operNS:activatePageContent" returnQName="activatePageContentReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="addPageContentArticleModel" qname="operNS:addPageContentArticleModel" returnQName="addPageContentArticleModelReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sectionId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualification" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleModelId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="position" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="online" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="addPageContentArticleModel" qname="operNS:addPageContentArticleModel" returnQName="addPageContentArticleModelReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sectionId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualification" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleModelId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="position" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="online" type="tns:boolean"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="defaultSection" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="changeLayoutOrder" qname="operNS:changeLayoutOrder" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sourceLayoutPlid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="targetPositionPlid" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="changeLayoutPosition" qname="operNS:changeLayoutPosition" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sourceLayoutPlid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="targetPositionPlid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="afterTarget" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="changePageContentPosition" qname="operNS:changePageContentPosition" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="position" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deactivatePageContent" qname="operNS:deactivatePageContent" returnQName="deactivatePageContentReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="deletePageContent" qname="operNS:deletePageContent" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="deletePageContent" qname="operNS:deletePageContent" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="layoutId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getArticleContextInfo" qname="operNS:getArticleContextInfo" returnQName="getArticleContextInfoReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="urn:http.service.news.iter.protecmedia.com" qname="layoutIds" type="tns:ArrayOf_xsd_string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getViewerUrl" qname="operNS:getViewerUrl" returnQName="getViewerUrlReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalGroupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getViewerUrl" qname="operNS:getViewerUrl" returnQName="getViewerUrlReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalGroupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="layoutId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="insertPageContentArticleModel" qname="operNS:insertPageContentArticleModel" returnQName="insertPageContentArticleModelReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sectionId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualification" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleModelId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentTargetId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="online" type="tns:boolean"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="defaultSection" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="movePageContents" qname="operNS:movePageContents" returnQName="movePageContentsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="model" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="reorderPageContents" qname="operNS:reorderPageContents" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="newOrderXml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="setDefaultPageContent" qname="operNS:setDefaultPageContent" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="defaultSection" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="updatePageContentArticleModel" qname="operNS:updatePageContentArticleModel" returnQName="updatePageContentArticleModelReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleModelId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="updatePageContentDate" qname="operNS:updatePageContentDate" returnQName="updatePageContentDateReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="updatePageContentQualificationDate" qname="operNS:updatePageContentQualificationDate" returnQName="updatePageContentQualificationDateReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualification" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="expirationDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateYear" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMonth" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateDay" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateHour" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="displayDateMinute" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="updatePageContentQualification" qname="operNS:updatePageContentQualification" returnQName="updatePageContentQualificationReturn" returnType="rtns:PageContentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageContentId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualification" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="activatePageContent addPageContentArticleModel changeLayoutOrder changeLayoutPosition changePageContentPosition deactivatePageContent deletePageContent getArticleContextInfo getViewerUrl insertPageContentArticleModel movePageContents reorderPageContents setDefaultPageContent updatePageContentArticleModel updatePageContentDate updatePageContentQualification updatePageContentQualificationDate" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.PageContentServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.news.iter.protecmedia.com,urn:http.service.news.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="PageContentServiceSoap" />
+		<parameter name="wsdlServiceElement" value="PageContentServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_PageContentService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

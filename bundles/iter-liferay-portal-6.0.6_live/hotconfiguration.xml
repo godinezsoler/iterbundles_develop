@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<hotconfiguration>
+	<key name="cluster.heartbeat.test.updtdb">true</key>
+	<key name="cluster.watchdog.test.updtdb">true</key>
+
+	<key name="advertisement.publish.delete.files">false</key>
+	<key name="apache.queue.maxoperations">1</key>
+	<key name="apache.queue.active">false</key>
+	<key name="apache.queue.offlinetimeout">10000</key>
+	<key name="iter.suscriberdata.expires.unit">day</key>
+	<key name="iter.suscriberdata.expires.value">1</key>
+	<key name="iter.suscription.gifttime.unit">day</key>
+	<key name="iter.suscription.gifttime.value">2</key>
+
+	<key name="cluster.heartbeat.test.updtdb">false</key>
+	<key name="cluster.watchdog.test.updtdb">false</key>
+	
+
+	<!--CATEGORIA : GESTION DE CONTENIDOS-->
+	<!--Páginas-->
+	<key name="iter.hide.controlpanel.156">false</key>
+	<key name="iter.hide.controlpanel.xmlioportlet_WAR_xmlioportlet">false</key>
+</hotconfiguration>

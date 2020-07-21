@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_IterService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cacheDb" qname="operNS:cacheDb" returnQName="cacheDbReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cacheMulti" qname="operNS:cacheMulti" returnQName="cacheMultiReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cacheSingle" qname="operNS:cacheSingle" returnQName="cacheSingleReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGlobalJournalTemplates" qname="operNS:getGlobalJournalTemplates" returnQName="getGlobalJournalTemplatesReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLegacyUrlRules" qname="operNS:getLegacyUrlRules" returnQName="getLegacyUrlRulesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="refresh" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMobileVersionConf" qname="operNS:getMobileVersionConf" returnQName="getMobileVersionConfReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSystemInfoEncoded" qname="operNS:getSystemInfoEncoded" returnQName="getSystemInfoEncodedReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSystemInfo" qname="operNS:getSystemInfo" returnQName="getSystemInfoReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSystemInfo" qname="operNS:getSystemInfo" returnQName="getSystemInfoReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSystemProperties" qname="operNS:getSystemProperties" returnQName="getSystemPropertiesReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getTraceLevels" qname="operNS:getTraceLevels" returnQName="getTraceLevelsReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getVirtualHostIterAdmin" qname="operNS:getVirtualHostIterAdmin" returnQName="getVirtualHostIterAdminReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="launchURIPteProcess" qname="operNS:launchURIPteProcess" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="publishToLiveMobileVersionConf" qname="operNS:publishToLiveMobileVersionConf" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="reindex" qname="operNS:reindex" returnQName="reindexReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="saveConfigIterAdmin" qname="operNS:saveConfigIterAdmin" returnQName="saveConfigIterAdminReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="friendly" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="virtual" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="serverAlias" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="staticsServers" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lang" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="useSecureConnection" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="setLegacyUrlRules" qname="operNS:setLegacyUrlRules" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setMobileVersionConf" qname="operNS:setMobileVersionConf" returnQName="setMobileVersionConfReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="stopURIPteProcess" qname="operNS:stopURIPteProcess" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="testIterError" qname="operNS:testIterError" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="echoErrorCode" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="echoErrorMessage" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateLogLevels" qname="operNS:updateLogLevels" returnQName="updateLogLevelsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="cacheDb cacheMulti cacheSingle getGlobalJournalTemplates getLegacyUrlRules getMobileVersionConf getSystemInfo getSystemInfoEncoded getSystemProperties getTraceLevels getVirtualHostIterAdmin importData launchURIPteProcess publishToLiveMobileVersionConf reindex saveConfigIterAdmin setLegacyUrlRules setMobileVersionConf stopURIPteProcess testIterError updateLogLevels" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.IterServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_IterService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

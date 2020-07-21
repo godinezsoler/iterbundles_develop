@@ -1,0 +1,1657 @@
+﻿--- MCM_U_Portlets-en.TXT - Ref. Actu2 6.5.2 - (03/12/2014 16:04:06)
+$LANGUAGE$ IT
+Orientación	Orientation
+Modelo	Model
+Aplicar	Apply
+Procedencia	Source
+Si	Yes
+No	No
+Productos	Products
+X	We
+Error	Error
+¿Desea continuar?	Do you want to continue?
+Disponibles	Available
+Atención	Attention
+Secciones	Sections
+Nombre completo	Full Name
+Usuario	User
+Segundo apellido	Second last name
+Contenido	Content
+Normal	Normal
+Obligatorio	Required
+Visualización	Display
+Identificador	Identifier
+Sí	Yes
+Publicado	Published
+Confirmación	Confirmation
+Lunes	Monday
+Martes	Tuesday
+Miércoles	Wednesday
+Jueves	Thursday
+Viernes	Friday
+Sábado	Saturday
+Domingo	Sunday
+Enero	January
+Febrero	February
+Marzo	March
+Abril	April
+Mayo	May
+Junio	June
+Julio	July
+Agosto	August
+Septiembre	September
+Octubre	October
+Noviembre	November
+Diciembre	December
+Contraseña	Password
+¿Desea borrar los elementos seleccionados?	Do you wish to delete the selected elements?
+Nueva consulta	New query
+Archivo	File
+Servicios	Services
+Fichero no encontrado	File not found
+Recursos	Fillers
+Ubicación	Location
+Artículo	Article
+Paginación	Pagination
+día	day
+Criterio	Criterion
+Cancelado	Canceled
+Puerto	Port
+Avanzado	Advanced
+Nombre de usuario	Username
+Desconocida	Unknown
+Nombre del archivo	File name
+Login	Login
+Registro	Registration
+No hay resultados	There are no results
+Previsualización	Preview
+Continuar	Continue
+Los seleccionados	The selected
+Propiedades del sistema	System properties
+Vínculo externo	External link
+Rango numérico	Numeric range
+En una nueva ventana	In a new window
+Operaciones	Operations
+Error inesperado.	Unexpected error.
+Campo 'aboid' repetido	Campo 'aboid' repetido
+La carpeta de copia de seguridad no se encuentra, o no es posible su escritura	La carpeta de copia de seguridad no se encuentra, o no es posible su escritura
+Es	Is
+Contiene	Contains
+Volver	Return
+No se ha encontrado ningún archivo para importar	No se ha encontrado ningún archivo para importar
+Mensajes	Messages
+URL	URL
+Asunto	Subject
+Publicar	Publish
+Semanas	Weeks
+Prefijo	Prefix
+La sentencia Sql especificada no es válida	La sentencia Sql especificada no es válida
+La sentencia Sql especificada no ha encontrado artículos para borrar	La sentencia Sql especificada no ha encontrado artículos para borrar
+La fecha mínima siempre debe ser menor o igual a la fecha máxima	La fecha mínima siempre debe ser menor o igual a la fecha máxima
+Detalles de la operación	Operation details
+Es igual a	It is the same as
+Es distinto de	It is different from
+Es mayor que	It is greater than
+Es menor que	It is less than
+No contiene	Does not contain
+Instalada	Installed
+Excepción de Mapeo Objeto relacional	Excepción de Mapeo Objeto relacional
+Código suscriptor	Subscriber code
+Formato incorrecto de número	Formato incorrecto de número
+Excepción de entrada o salida	Excepción de entrada o salida
+Error inesperado	Unexpected error
+Modelos web	Web models
+Error de servicio	Error de servicio
+Artículo borrado por el usuario	Artículo borrado por el usuario
+Color de fondo	Background color
+Atributo 'urtTitle' está vacío o no existe	Atributo 'urtTitle' está vacío o no existe
+Añadir campo	Add Field
+Opciones de visualización	Viewing options
+Error en sql: 	Error en sql: 
+Mostrar icono de galerías	Show galleries icon
+Mostrar icono de vídeos	Show videos icon
+Mostrar icono de comentarios	Show comments icon
+Vínculo interno	Internal link
+Etiqueta por defecto	Default label
+Mostrar feeds	Show feeds
+Alias de Facebook	Facebook alias
+Mostrar encabezado	Display header
+Valoraciones	Evaluations
+Tipo de elemento	Element type
+Error leyendo el archivo de vista previa	Error leyendo el archivo de vista previa
+FTP	FTP
+Ruta del FTP	FTP Path
+Usuario del FTP	FTP User
+Id del usuario remoto	Remote User ID
+Nombre del usuario remoto	Remote username
+Contraseña del FTP	FTP Password
+Contraseña del usuario remoto	Remote user password
+Publicar en Live	Publish in Live
+Área de texto	Text area
+Atributo 'path' está vacío o no existe	Atributo 'path' está vacío o no existe
+Error leyendo	Error leyendo
+Funcionalidad no implementada.	Function not implemented.
+Acción posterior	Later action
+Texto para 'Envío correcto'	Text for ‘Correct delivery’
+Texto para 'Envío correcto del formulario de edición de perfil'	Text for ‘Correct delivery of the profile edition form’
+Texto para 'Campo incorrecto'	Text for ‘Incorrect field’
+Texto para 'Fallo en un manejador'	Text for ‘Failure in a handler’
+Texto para 'Fallo en la validación del captcha'	Text for ‘Failure in captcha validation’
+Campos del formulario	Form fields
+Clase CSS	CSS class
+Uso de captcha	Use of captcha
+Manejador crítico	Critical handler
+Procesar datos	Process data
+Uso de proxy	Use of proxy
+Dirección del servidor	Server address
+Servidor SMTP	SMTP server
+Modo de envío del formulario	Delivery method of the form
+No existe una preferencia para el identificador proporcionado.	No preference exists for the provided identifier
+No es posible eliminar algunas de las configuraciones seleccionadas por estar vinculadas a otros portlets.	Cannot deleted  some seleted settings. They are reserved by another portlets.
+La página configurada en la acción posterior no existe	The page configured in the subsequent action does not exist
+Resoluciones de imagenes	Images resolution
+Configuración de resoluciones de imagenes	Images resolution settings
+Portlet de búsqueda	Search portlet
+Portlet de última actualización	Last Update portlet
+Configuración del portlet de búsqueda	Search portlet settings
+Configuración de variables de contexto	Context variables settings
+Registro de usuario	User Registration
+Gestión de usuarios	User Management
+Número de columnas	Number of columns
+El atributo 'urlTitle' está vacío o es mayor de 150 caracteres	El atributo 'urlTitle' está vacío o es mayor de 150 caracteres
+La operación no se pudo completar porque la publicidad de las páginas se vería afectada.	The operation could not be completed because the advertising of the pages would be affected.
+Añadir producto	Add product
+El artículo ya existe en el sistema	El artículo ya existe en el sistema
+Sólo los tags de tipo html pueden tener dependencias	Only HTML tags can have dependencies
+Ya existe una relación entre espacio publicitario y tag con esta vigencia.	A relationship between advertising space and tag with that validity period already exists.
+Ya existe una relación entre espacio publicitario y fondo con esta vigencia.	A relationship between advertising space and background with that validity period already exists.
+No se puede añadir la imagen. Ya existe otra con ese nombre	The image cannot be added. Another with the same name already exists
+Este tag está vinculado a otros elementos. Si continúa es posible que no funcionen tales elementos.\r ¿Desea continuar?	This tag is linked to other elements. If you continue, it is possible that these elements do not work.\r Do you want to continue?
+Esta imagen está vinculada a otros elementos. Si continúa, se eliminarán tales elementos.\r ¿Desea continuar?	This image is linked to other elements. If you continue, these elements will be deleted.\r Do you want to continue?
+La configuración para este grupo no es válida	The settings for this group are not valid
+Avatar	Avatar
+Avatar por defecto	Default avatar
+Fecha de cumpleaños	Date of birth
+Lugar de trabajo	Place of work
+Campo obligatorio	Mandatory field
+Texto del botón 'Mostrar más'	Text of the ‘Show more’ button
+¿Desea borrar el elemento seleccionado?	Do you want to delete the selected element?
+Paginación incremental	Incremental pagination
+Paginación normal	Normal pagination
+Mostrar más	Show more
+Vincular/Desvincular configuración	Link/Unlink settings
+Valor por defecto	Default value
+Mostrar información sobre los vínculos a esta configuración	Display information on the links to these settings
+Información sobre los portlets vinculados	Information on linked portlets
+El portlet está vinculado a la configuración '%s'	The portlet is linked to settings ‘%s’
+Habilitar	Enable
+Nombre de pila	First name
+Pregunta confirmación	Confirmation question
+Respuesta confirmación	Confirmation response
+Baja de usuario - Configuración	User unregistration - Settings
+Títulos de los paneles emergentes	Titles of pop-up windows
+Etiqueta para el botón 'Darse de baja'	Label for the ‘Unregister’ button
+Etiqueta para el botón de confirmación 'Darse de baja'	Label for the ‘Unregister’ confirmation button
+Texto para 'Introduzca contraseña'	Text for ‘Enter password’
+Ya existe un espacio publicitario con ese nombre en el sistema	An advertising space with the same name already exists in the system
+Ya existe un espacio publicitario con esa clave primaria en el sistema	An advertising space with the same primary key already exists in the system
+El archivo no puede ser encontrado o leído	El archivo no puede ser encontrado o leído
+Absoluto	Absolute
+Relativo	Relative
+Visitas	Visits
+Avatar grande	Large avatar
+Avatar pequeño	Small avatar
+Ya existe un espacio publicitario de tipo Interstitial en el sistema	An Interstitial advertising space already exists in the system
+Texto para 'Confirme contraseña'	Text for ‘Confirm password’
+Mensaje para 'Se ha dado de baja con éxito'	Message for ‘Successfully unregistered’
+Mensaje para 'Error al darse de baja'	Message for ‘Error unregistering’
+Mensaje para 'Error en las credenciales'	Message for ‘Error in the credentials’
+Etiqueta para el botón 'Aceptar' de los paneles emergentes	Label for the ‘Accept’ button of the pop-up panels
+No existe la transformación seleccionada en el manejador 'Guardar en fichero'.	The transformation selected in the ‘Save in file’ handler does not exist.
+Heredar CSS del tema	Inherit CSS of the subject
+No existe la transformación seleccionada en el manejador 'Enviar a servidor'.	The transformation selected in the ‘Send to server’ handler does not exist.
+No existe la transformación seleccionada en el manejador 'Enviar por correo'.	There is no transformation selected in the ‘Send by e-mail’ handler.
+No existe el servidor SMTP seleccionado en el manejador 'Enviar por correo'.	The SMTP server selected in the ‘Send by e-mail’ handler does not exist.
+No existe el producto configurado en el formulario.	The product set up in the form does not exist.
+No existe el campo de datos para un campo del formulario.	The field of data does not exist for a form field.
+No se puede guardar la configuración, porque todavía no hay una publicación para este grupo	The settings cannot be saved, because there is no publication for this group yet
+Esta configuración tiene asociaciones entre campos del perfil y campos de las redes sociales.\r ¿Está seguro de que desea eliminarlas?	These settings have associations between profile fields and social network fields.\r Are you sure you want to delete them?
+No se puede cambiar el tipo de este campo porque está siendo utilizado en un formulario	The type of this field cannot be changed because it is being used in a form
+Este campo está siendo utilizado en un formulario. Si continúa se eliminará el campo del formulario.\r¿Desea continuar?	This field is being used in a form. If you continue, the field will be deleted from the form.\rDo you want to continue?
+Ya existe un rol con ese nombre para este grupo	There is already a role with that name for this group.
+Ya existe un usuario con ese email	A user with that e-mail already exists
+Ya existe un usuario con ese código de suscriptor	A user with that subscriber code already exists
+El campo nombre de usuario no puede ser vacío	The username field cannot be empty
+Tipo de producto	Product type
+Productos contratados	Contracted products
+Usuarios con rol: 	Users with role: 
+¿Seguro que desea quitarle el rol a los usuarios seleccionados?	Are you sure that want to remove the role from the selected users?
+Respuestas del formulario	Responses from the form
+Ver respuestas	View responses
+Respuestas	Responses
+Nº respuestas	No. of responses
+Nº respuestas revisadas	No. of responses reviewed
+Fecha envío	Date of delivery
+Eliminar respuesta	Delete response
+Exportar a excel	Export to Excel
+Descargar fichero adjunto	Download attached file
+Marcar como revisada	Mark as reviewed
+Desmarcar como revisada	Unmark as reviewed
+Empieza por	Starts with
+Termina por	Ends by
+Configuración de filtro	Filter settings
+Seleccionar fichero para descargar	Select file to download
+Eliminar filtro	Delete filter
+No existen ficheros adjuntos para la respuesta seleccionada	There are no attached files for the selected response
+Detalle de respuesta del formulario	Form response detail
+¿Desea eliminar las respuestas del formulario seleccionado?	Do you want to delete the responses of the selected form?
+¿Desea eliminar las respuestas de los formularios seleccionados?	Do you want to delete the responses of the selected forms?
+¿Desea eliminar la respuesta  seleccionada?	Do you want to delete the selected response?
+¿Desea eliminar las respuestas seleccionadas?	Do you want to delete the selected responses?
+Configuración del captcha	Captcha settings
+Cree una cuenta de reCAPTCHA aquí	Create a reCAPTCHA account here
+No se permite asociar campos si no existe configuración para esta red social	Associating fields is not allowed if there are no settings for this social network
+Variables de contexto	Context variables
+Añadir variable de contexto	Add context variables
+Editar variable de contexto	Edit context variable
+¿Desea eliminar la variable de contexto seleccionada?	Do you want to delete the selected context variable?
+¿Desea eliminar las variables de contexto seleccionadas?	Do you want to delete the selected context variables?
+Transformaciones	Transformations
+Archivo de transformación	Transformation file
+Añadir transformación	Add transformation
+Editar transformación	Edit transformation
+¿Desea eliminar la transformación seleccionada?	Do you want to delete the selected transformation?
+¿Desea eliminar las transformaciones seleccionadas?	Do you want to delete the selected transformations?
+Confirmar campo	Confirm field
+Envío correcto	Correct delivery
+Sus datos han sido actualizados correctamente	Your data have been updated correctly
+Algún campo es incorrecto	Some field is incorrect
+Se ha producido un error grave. Sus datos no han sido procesados	A serious error has occurred. Your data have not been processed
+Texto para boton 'Ok'	Text for ‘OK’ button
+Texto para boton 'Cancelar'	Text for ‘Cancel’ button
+Texto para 'Confirmar campo'	Text for ‘Confirm field’
+Número de elementos a mostrar en la lista	Number of elements to display in the list
+No enviar	Do not send
+Formularios	Forms
+¿Desea eliminar el formulario seleccionado?	Do you want to delete the selected form?
+¿Desea eliminar los formularios seleccionados?	Do you want to delete the selected forms?
+Añadir Formulario	Add Form
+Editar Formulario	Edit Form
+Tipo de formulario	Form type
+Tipo de navegación	Navigation type
+Por página	By page
+Por pestañas	By tabs
+Única página	Sole page
+Manejadores	Handlers
+Guardar en fichero	Save in file
+Guardar en base de datos	Save in database
+Enviar a servidor	Send to server
+Error en el envío	Error in delivery
+Éxito en el envío	Successful delivery
+Texto para 'Anterior'	Text for ‘Previous’
+Texto para 'Siguiente'	Text for ‘Next’
+El atributo 'title' está vacío o es mayor de 300 caracteres	El atributo 'title' está vacío o es mayor de 300 caracteres
+Mostrando	Showing
+Perfil de usuario - Configuración	User profile - Settings
+Mensaje a mostrar cuando el usuario no tenga acceso a la información	Message to display when the user does not have access to the information
+News Letters - Configuración	News Letters - Settings
+h:00 a	h:00 to
+hh:00 a	hh:00 to
+H:00	H:00
+HH:00	HH:00
+Literales días de la semana	Literals days of the week
+Formato hora	Time format
+Título general	General headline
+Mensaje si usuario anónimo	Message if it is an anonymous user
+Éxito en la suscripción	Success for the subscription
+Éxito en la baja de la suscripción	Success in unregistering the subscription
+Error al activar o desactivar una suscripción	Error enabling or disabling a subscription
+Formulario - Configuración	Form - Settings
+Mensaje a mostrar cuando el formulario esté restringido	Message to display when the form is restricted
+Nombre de variable duplicado para esta sección	Variable name duplicated for this section
+Eliminar las variables de contexto seleccionadas	Delete the selected context variables
+Añadir Variable de contexto	Add Context Variable
+Editar Variable de contexto	Edit Context Variable
+No hay contenido nuevo para publicar	There is no new content to publish
+Ya hay una publicación en curso	There is already a publication in progress
+Error en la publicación	Error in the publication
+Inicio de vigencia	Validity period start
+Fin de vigencia	Validity period end
+Espacio publicitario	Advertising space
+Tag	Tag
+Tag/Fondo	Tag/Background
+Dependencia	Dependency
+Fondo	Background
+Configuración por defecto	Default settings
+Clave primaria duplicada	Primary key duplicated
+La configuración y el control de la publicidad no está disponible para el grupo actualmente seleccionado	The advertising settings and control are not available for the currently selected group
+No se puede eliminar porque se está siendo usado en la publicidad de las páginas.	It cannot be eliminated because it is being used in the advertisement of the pages.
+Está intentando eliminar un tag del que dependen otros elementos. Si continúa es posible que no funcionen tales elementos. ¿Desea continuar?	You are attempting to delete a tag that other elements depend on. If you continue, it is possible that these elements do not work. Do you want to continue?
+Está intentando eliminar una imagen de la que dependen otros elementos. Si continúa, se eliminarán tales elementos. ¿Desea continuar?	You are attempting to delete an image that other elements depend on. If you continue, these elements will be deleted. Do you want to continue?
+¿Desea eliminar la imagen seleccionada?	Do you want to delete the selected image?
+¿Desea eliminar las imágenes seleccionadas?	Do you want to delete the selected images?
+Modificar imagen	Modify image
+Eliminar las imágenes seleccionadas	Delete the selected images
+Fondos	Backgrounds
+Url de destino	Destination URL
+Script	Script
+Conteo	Counting
+Modificar fondo	Modify background
+Eliminar los fondos seleccionados	Delete the selected backgrounds
+Añadir fondo	Add background
+Url destino	Destination URL
+Desplazable	Scrollable
+¿Desea eliminar el fondo seleccionado?	Do you want to delete the selected background?
+¿Desea eliminar los fondos seleccionados?	Do you want to delete the selected backgrounds?
+Sólo los tags de tipo global pueden ser referenciados	Only global tags can be referenced
+Este fondo está vinculado a un espacio publicitario	This background in linked to an advertising space
+No se puede editar más de un fondo a la vez	It is not possible to edit more than one background at the same time
+Script de conteo	Counting script
+Url externa de la imagen	External URL of the image
+Imagen de biblioteca	Library image
+Espacios publicitarios	Advertising spaces
+Añadir espacio publicitario	Add advertising space
+Eliminar los espacios publicitarios seleccionados	Delete the selected advertising spaces
+Modificar espacio publicitario	Modify advertising space
+No se puede editar más de un espacio publicitario a la vez	It is not possible to edit more than one advertising space at the same time
+¿Desea eliminar el espacio publicitario seleccionado?	Do you want to delete the selected advertising space?
+¿Desea eliminar los espacios publicitarios seleccionados?	Do you want to delete the selected advertising spaces?
+Tags	Tags
+Está intentando eliminar un tag del que dependen otros. ¿Desea continuar?	You are attempting to delete a tag that others depend on. Do you want to continue?
+Este tag está vinculado a un espacio publicitario. ¿Desea continuar?	This tag is linked to an advertising space. Do you want to continue?
+¿Desea eliminar el tag seleccionado?	Do you want to delete the selected tag?
+¿Desea eliminar los tags seleccionados?	Do you want to delete the selected tags?
+Código de script	Script code
+Añadir Tag	Add Tag
+Modificar Tag	Modify Tag
+Eliminar los tags seleccionados	Delete the selected tags
+Ya existe un tag con ese nombre en el sistema	A tag with the same name already exists in the system
+Sólo los tags de tipo dependencia pueden ser referenciados	Only dependency tags can be referenced
+Asignación por página	Assignment by page
+¿Desea eliminar la asignación seleccionada?	Do you want to delete the selected assignment?
+¿Desea eliminar las asignaciones seleccionadas?	Do you want to delete the selected assignments?
+Añadir asignación	Add assignment
+Eliminar las asignaciones seleccionadas	Delete the selected assignments
+Modificar asignación	Modify assignment
+No se puede editar más de una resolución a la vez	It is not possible to edit more than one resolution at the same time
+¿Desea eliminar la resolución seleccionada?	Do you want to delete the selected resolution?
+¿Desea eliminar las resoluciones seleccionadas?	Do you want to delete the selected resolutions?
+Añadir resolución	Add resolution
+Modificar resolución	Modify resolution
+Eliminar las resoluciones seleccionadas	Delete the selected resolutions
+Ya existe una resolución con estas dimensiones 	A resolution with these dimensions already exists 
+Contenedor HTML - Configuración	HTML Container - Settings
+Mostrar si el artículo está restringido	Display whether the article is restricted
+Mensaje de agradecimiento	Message of acknowledgment
+Mensaje para valoraciones repetidas	Message for repeated evaluations
+Mensaje para cookies desactivadas	Message for disabled cookies
+Mensaje de ayuda para 'autentificación'	Help message for ‘authentication’
+Texto de ayuda para 'autentificación'	Help text for ‘authentication’
+Mostrar imagen del avatar	Display avatar image
+El campo contraseña no puede ser vacío	The password field cannot be empty
+Debe haber al menos un administrador	There must be at least one administrator
+Apodo de usuario	User nickname
+Datos del formulario de tipo registro no validos.	Invalid information of the registration form.
+Para realizar este cambio debe borrar las etiquetas dejando una, o ninguna.	To make this change you must delete the labels, leaving one or none.
+Cambiar el tipo implica que se borraran todos los campos que están configurados para el formulario.	Changing the type means that all fields that are set up for the form will be erased.
+Sólo se permite un formulario de tipo Registro por grupo.	Only one Registration form is allowed per group.
+Ya existe un formulario con ese nombre para ese grupo.	There is already a form with that name for that group.
+Ya existe una etiqueta con ese nombre para ese formulario.	There is already a label with that name for that form.
+No hay lista de opciones para este controlador.	There is no list of options for this controller.
+El controlador no permite selección multiple.	The controller does not allow multiple selection.
+Los siguientes campos son obligatorios	The following fields are mandatory
+No pueden existir campos de tipo fichero, si el método de envío del formulario es GET.	File type fields cannot exist if the delivery method of the form is GET.
+El formulario genérico debe tener un manejador habilitado y crítico	The generic form must have an enabled and critical handler
+No se puede borrar un campo obligatorio de tipo sistema en un formulario de registro	A mandatory system field cannot be deleted in a registration form
+No se puede guardar porque se ha marcado 'uso de captcha' y no hay una configuración válida en la sección 'captcha'.	It cannot be saved because ‘captcha use’ has been marked and there are no valid setting in the ‘captcha’ section.
+No se puede añadir el campo porque ya existe este campo en el formulario de registro.	The field cannot be added because this field already exists in the registration form.
+El grupo al que pertenece el elemento publicable en el BACK no existe en el LIVE.	The group to which the publishable element belongs in the BACK does not exist in the LIVE.
+No se puede eliminar este servidor SMTP porque está siendo usado para enviar formularios	This SMTP server cannot be deleted because it is being used to send forms
+El servidor SMTP está siendo usado para enviar newsletters, ¿está seguro de que desea eliminarlo?	The SMTP server is being used to send newsletters. Are you sure you want to delete it?
+La programación no tiene servidores SMTP asignados.	The programming does not have assigned SMTP servers.
+La programación no tiene servidores SMTP activos asignados.	The programming does not have assigned active SMTP servers.
+No ha sido posible enviar la newsletter.	It was not possible to send the newsletter.
+La programación no tiene destinatarios asignados.	The programming does not have assigned recipients .
+Ya existe una newsletter con ese nombre en el sistema.	A newsletter with the same name already exists in the system.
+Ya existe una programación con ese nombre en el sistema.	A programming with the same name already exists in the system.
+Ya existen productos asignados a esa programación.	There are already products assigned to that programming.
+Ya existen servidores SMPTs asignados a esa programación.	There are already SMPT servers assigned to that programming.
+Ya existe un servidor SMPT con ese nombre.	An SMPT server with the same name already exists.
+ No existe una imagen de tipo login en el sistema	 No login image exists in the system
+ No se puede completar la operación porque el servidor SMTP está siendo usado en otras partes de la configuración del sistema	 The operation cannot be completed because the SMTP server is being used in other parts of the system settings
+Rango de fechas de vigencia inválido.	Invalid range of validity dates.
+Nombre de variable duplicado para esta sección.	Variable name duplicated for this section.
+Existen portles cuyas preferencias están vinculadas a algunas de las seleccionadas.	There are portlets whose preferences are linked to some of those selected.
+Las preferencias usadas como plantillas no pueden tener configurada la 'Sección actual'	The preferences used as templates cannot have the ‘Current Section’ set up
+Ya existe una variable del sistema con ese nombre	A system variable with that name already exists
+Se ha marcado 'uso de captcha' y no hay una configuración válida en la sección 'captcha'.	Is marked 'use of captcha' and no valid configuration in the 'captcha' section.
+Visor del estado de paywall - Configuración	Paywall status viewer - Settings
+Texto para 'conexión'	Text for ‘connection’
+Texto para 'fecha de conexión'	Text for ‘connection date’
+Texto para 'navegador de conexión'	Text for ‘connection navigator’
+Contenido del artículo no encontrado	Contenido del artículo no encontrado
+El atributo legacyUrl es mayor de 255 caracteres	El atributo legacyUrl es mayor de 255 caracteres
+Ya existe una transformación xsl con ese nombre para este grupo	Ya existe una transformación xsl con ese nombre para este grupo
+Error en la transformación xsl	Error en la transformación xsl
+Error importando el artículo	Error importando el artículo
+Error normalizando 'urlTitle'	Error normalizando 'urlTitle'
+Seleccionadas	Selected
+Fecha de creación	Creation Date
+Ruta remota	Ruta remota
+Id de la compañia remota	Id de la compañia remota
+Método de entrada/salida	Método de entrada/salida
+Sistema de archivos	Sistema de archivos
+Id del grupo global remoto	Id del grupo global remoto
+Tiempos de espera con el servidor remoto	Tiempos de espera con el servidor remoto
+Seleccione una página	Select a page
+Mensaje a mostrar si el registro ha sido correcto	Message to display if the registration was correct
+Fecha de registro	Date of registration
+Mensaje a mostrar si el usuario no ha completado el registro	Message to display if the user has not completed the registration
+Ajustar imagen	Adjust image
+Tiempo de espera de operación en segundos	Tiempo de espera de operación en segundos
+Tiempo de espera de conexión en segundos	Tiempo de espera de conexión en segundos
+Desbloquear publicación	Desbloquear publicación
+Ver detalles de la publicación	Ver detalles de la publicación
+¿Desea publicar el elemento seleccionado?	¿Desea publicar el elemento seleccionado?
+¿Desea publicar los elementos seleccionados?	¿Desea publicar los elementos seleccionados?
+Iniciar publicación global	Iniciar publicación global
+Detalles de la publicación	Detalles de la publicación
+Restablecer imagen 	Restore image 
+Mostrar contenidos si son nuevos (aplicable solo en newsletter)	Show contents if they are new (only applicable in newsletter)
+AdContainer - Configuración	AdContainer - Settings
+¿Desea eliminar el elemento de catálogo seleccionado?	¿Desea eliminar el elemento de catálogo seleccionado?
+¿Desea eliminar los elementos de catálogo seleccionados?	¿Desea eliminar los elementos de catálogo seleccionados?
+¿Seguro que desa publicar el catálogo seleccionado?	¿Seguro que desa publicar el catálogo seleccionado?
+¿Seguro que desa publicar los catálogos seleccionados?	¿Seguro que desa publicar los catálogos seleccionados?
+Guardar selección y salir	Guardar selección y salir
+Ajustar al ancho del panel	Ajustar al ancho del panel
+Encajar en el panel	Encajar en el panel
+Selector de pieza de catálogo	Selector de pieza de catálogo
+Añadir pestaña	Añadir pestaña
+Eliminar pestaña	Eliminar pestaña
+Editar pestaña	Editar pestaña
+El título es obligatorio en todas las pestañas	El título es obligatorio en todas las pestañas
+Título pestaña	Título pestaña
+Mover hacia arriba	Mover hacia arriba
+Mover hacia abajo	Mover hacia abajo
+Filtro de usuario	Filtro de usuario
+Texto del selector	Texto del selector
+Por metadatos	Por metadatos
+Posición del control de filtrado	Posición del control de filtrado
+Antes de la lista de artículos	Antes de la lista de artículos
+Después de la lista de artículos	Después de la lista de artículos
+Antes y después	Antes y después
+Fecha mínima	Fecha mínima
+Fecha máxima	Fecha máxima
+Opciones a visualizar	Opciones a visualizar
+Las seleccionadas	Las seleccionadas
+Las situadas en el último nivel de la jerarquía	Las situadas en el último nivel de la jerarquía
+Las hijas de las seleccionadas	Las hijas de las seleccionadas
+Hacia adelante	Hacia adelante
+Hacia atrás	Hacia atrás
+Mostrar contenido de relleno	Mostrar contenido de relleno
+Contenido de relleno	Contenido de relleno
+Antes de vínculos internos y externos	Antes de vínculos internos y externos
+Después de vínculos internos y externos	Después de vínculos internos y externos
+Más compartidas	Más compartidas
+Literal para 'Más compartidas'	Literal para 'Más compartidas'
+Orden indicado desde MLN	Orden indicado desde MLN
+Vínculos internos y externos	Vínculos internos y externos
+Los criterios de ordenación actuales son inválidos para esta opción.\r Si continúa se borrarán.¿Desea continuar?	Los criterios de ordenación actuales son inválidos para esta opción.\r Si continúa se borrarán.¿Desea continuar?
+Es obligatorio seleccionar al menos un criterio de ordenación	Es obligatorio seleccionar al menos un criterio de ordenación
+Elegir velocidad	Elegir velocidad
+Estilos avanzados	Estilos avanzados
+Nombres de clases CSS	Nombres de clases CSS
+Titulo del portlet personalizado	Titulo del portlet personalizado
+Titulo del portlet	Titulo del portlet
+El formato de la URL Amigable es incorrecto.	El formato de la URL Amigable es incorrecto.
+El Superusuario no existe.	El Superusuario no existe.
+Error al intentar publicar	Error al intentar publicar
+Ya existe un catálogo de tipo 'cabecera' para este grupo	Ya existe un catálogo de tipo 'cabecera' para este grupo
+Ya existe un catálogo de tipo 'menú' para este grupo	Ya existe un catálogo de tipo 'menú' para este grupo
+Todas las páginas	All pages
+Añadir imagen	Add an image
+Borrador	Borrador
+Interrumpido	Interrumpido
+Valor descriptivo	Valor descriptivo
+¿Esta seguro que desea publicar el elemento seleccionado?	¿Esta seguro que desea publicar el elemento seleccionado?
+Ya existe un catálogo de tipo 'pie de página' para este grupo	Ya existe un catálogo de tipo 'pie de página' para este grupo
+Ya existe un catálogo con este nombre para este grupo	Ya existe un catálogo con este nombre para este grupo
+No se puede eliminar porque alguna pieza de catálogo está en uso	No se puede eliminar porque alguna pieza de catálogo está en uso
+La página que se está intentando editar ya no existe en el sistema	La página que se está intentando editar ya no existe en el sistema
+Tipo de cátalogo invalido	Tipo de cátalogo invalido
+No se puede borrar una página de catálogo que existe en el LIVE	No se puede borrar una página de catálogo que existe en el LIVE
+Error al publicar el catálogo, o elemento de catálogo	Error al publicar el catálogo, o elemento de catálogo
+El archivo no se encuentra, o no se puede leer	El archivo no se encuentra, o no se puede leer
+La carpeta no se encuentra, o no se puede leer	La carpeta no se encuentra, o no se puede leer
+La consulta especificada no contiene identificadores de artículos	La consulta especificada no contiene identificadores de artículos
+No hay artículos para borrar	No hay artículos para borrar
+Consulta Sql mal formada	Consulta Sql mal formada
+Enlace relacionado inválido	Enlace relacionado inválido
+Error en el archivo .zip	Error en el archivo .zip
+Tratando de borrar el último administrador	Tratando de borrar el último administrador
+Tratando de actualizar el último administrador	Tratando de actualizar el último administrador
+Formato inválido o incorrecto de	Formato inválido o incorrecto de
+No encontrado	No encontrado
+La contraseña no tiene formato de MD5 válido: 	La contraseña no tiene formato de MD5 válido: 
+Error creando entrada en la biblioteca de documentos	Error creando entrada en la biblioteca de documentos
+Error en la lectura	Error en la lectura
+Contenido de la biblioteca no creado	Contenido de la biblioteca no creado
+Nombre no encontrado	Nombre no encontrado
+Correo electrónico no encontrado	Correo electrónico no encontrado
+Clave no encontrada	Clave no encontrada
+Campo 'nombre de usuario' repetido	Campo 'nombre de usuario' repetido
+Campo 'correo de usuario' repetido	Campo 'correo de usuario' repetido
+El artículo no está en el sistema	El artículo no está en el sistema
+El atributo 'articleid' está vacío o no existe	El atributo 'articleid' está vacío o no existe
+Multimedia	Multimedia
+Nueva carpeta	New folder
+Etiqueta para el botón Buscar	Label for the ‘Search’ button
+Id del proceso	Id del proceso
+Masiva	Masiva
+Proceso completado	Proceso completado
+Parar borrado	Parar borrado
+¿Esta seguro que desea publicar el grupo?	¿Esta seguro que desea publicar el grupo?
+Historial completo	Historial completo
+¿Esta seguro que desea publicar los elementos seleccionados?	¿Esta seguro que desea publicar los elementos seleccionados?
+¿Desea publicar todos los elementos del grupo actual?	¿Desea publicar todos los elementos del grupo actual?
+¿Esta seguro que desea parar la publicación seleccionada?	¿Esta seguro que desea parar la publicación seleccionada?
+Proceso de borrado	Proceso de borrado
+Mensaje cuando no haya resultados	Message when there are no results
+Mensaje de sugerencia para usar la búsqueda ampliada	Suggestion message to use the expanded search
+Ruta del archivo a importar	Ruta del archivo a importar
+Fuente de datos	Fuente de datos
+Iniciar importación	Iniciar importación
+Iniciar importación o borrado	Iniciar importación o borrado
+Cancelar importación o borrado en curso	Cancelar importación o borrado en curso
+Cancelar todos los borrados en curso de esta importación	Cancelar todos los borrados en curso de esta importación
+¿Desea cancelar todos los borrados en curso de esta importación?	¿Desea cancelar todos los borrados en curso de esta importación?
+Borrar artículos	Borrar artículos
+Título del artículo	Title of the article
+Restringir a sección actual	Restrict to current section
+Texto del botón 'Avanzar'	Text of the ‘Forward’ button
+Idioma y edición de etiquetas	Language and edition of labels
+Etiqueta para el botón de búsqueda ampliada	Label for the expanded search button
+Texto del botón 'Retroceder'	Text of the ‘Backward’ button
+Borrar desde un archivo	Borrar desde un archivo
+Borrar desde una carpeta	Borrar desde una carpeta
+Acción a realizar si ya existe el artículo	Acción a realizar si ya existe el artículo
+Borrarlo e importarlo	Borrarlo e importarlo
+Encuestas	Surveys
+Fecha máxima de creación y modificación	Fecha máxima de creación y modificación
+Fecha mínima de creación y modificación	Fecha mínima de creación y modificación
+No crearla	No crearla
+Restricción por intervalo de fechas	Restricción por intervalo de fechas
+Acción a realizar si no existe la sección	Acción a realizar si no existe la sección
+Crearla	Crearla
+Importarlo	Importarlo
+Fallar	Fallar
+Acción a realizar si el artículo no tiene metadatos asociados	Acción a realizar si el artículo no tiene metadatos asociados
+Acción a realizar si el artículo no tiene suscripciones	Acción a realizar si el artículo no tiene suscripciones
+Codificar las urls heredadas del sitio anterior	Codificar las urls heredadas del sitio anterior
+Borrar los artículos del lote	Borrar los artículos del lote
+Cadena incorrecta, pruebe de nuevo	Cadena incorrecta, pruebe de nuevo
+Crear	Create
+Resultados fueron encontrados	Results were found
+Elemento de catálogo	Catalog element
+Fecha de inicio de vigencia	Validity period start date
+Tipo de campo	Field Type
+Enviar	Send
+Mostrar	Display
+Formato de fecha	Date format
+Página actual	Current page
+Mostrar contenido de ejemplo si no hay resultados	Show sample content if there are no results
+Distribución	Distribution
+Categorización	Categorization
+Primer apellido	First last name
+Cantidad	Quantity
+Página de resultados	Results page
+Ruta	Path
+Relevancia	Relevance
+Resultados de búsqueda	Search results
+No disponible	Not available
+Ciudad de residencia	City of residence
+Confirme que realmente quiere publicar los servidores seleccionados	Confirm that you really want to publish the selected servers
+Ascendente	Ascending
+Descendente	Descending
+Otros datos	Other data
+Desde	From
+Última página	Last page
+Usuario:	User:
+Contraseña:	Password:
+Directorio	Folder
+Servicio	Service
+Conexiones	Connections
+Estado	Status
+Origen	Source
+días	days
+Url del perfil	Profile URL
+Web	Web
+Zona horaria	Time zone
+Intervalo	Interval
+L	Mo
+Empezar en	Start at
+M	T
+Remitente	Sender
+J	T
+V	Fr
+S	S
+D	S
+Categoría	Category
+Sin restricción	No restriction
+Campaña	Sales Campaign
+Validador de la suscripción	Subscription validator
+Total	Total
+Resultado	Result
+Horas	Hours
+Fecha de último login	Date of last login
+Servidor	Server
+Perfil de usuario	User profile
+Grupo de usuarios	User group
+Valor	Value
+Anotación	Annotation
+Sesión	Session
+Fecha inicio	Start date
+Fecha fin	End date
+¿Seguro que desea eliminar el rol seleccionado?	Are you sure that you want to delete the selected number?
+Sin límite	No limit
+Propiedad	Property
+Prioridad	Priority
+Privilegios	Permissions
+¿Seguro que desea eliminar los roles seleccionados?	Are you sure that you want to delete the selected roles?
+Revisado	Reviewed
+Básico	Basic
+mes	month
+Estilo	Style
+No se puede editar más de un producto a la vez	It is not possible to edit more than one product at the same time
+Acceso sólo a los artículos del periodo	Access only to the articles of the period
+Producto exclusivo para usuarios no registrados	Exclusive product for unregistered users
+Sólo periodo	Only period
+Activar Paywall	Enable Paywall
+Desactivar Paywall	Disable Paywall
+Hora	Time
+Resultado de la operación	Operation result
+Minuto	Minute
+Envíos	Deliveries
+¿Está seguro de que desea activar el Paywall?	Are you sure that you want to enable the Paywall?
+Segundo	Second
+Confirme que realmente desea activar el Paywall	Confirm that you really want to enable the Paywall
+¿Está seguro de que desea desactivar el Paywall?	Are you sure that you want to disable the Paywall?
+Confirme que realmente desea desactivar el Paywall	Confirm that you really want to disable the Paywall
+La operación se ha realizado con éxito	The operation has been completed successfully
+No hay servidores que actualizar	There are no servers to update
+Producto limitado por nº de conexiones	Product limited by number of connections
+No existen servidores Apache para actualizar	There are no Apache servers to update
+Catálogos	Catalogs
+Alfabético	Alphabetic
+Tipo de contenido	Content Type
+Respuesta	Response
+Confirme que realmente quiere publicar el campo seleccionado	Confirm that you really want to publish the selected field
+Activo	Enabled
+Anterior	Previous
+Periodicidad	Frequency
+Argumento no válido.	Invalid argument.
+URL base para búsquedas públicas	Base URL for public searches
+URL base para búsquedas privadas	Base URL for private searches
+No existe una preferencia el identificador proporcionado.	No preference exists for the provided identifier
+Información del error	Information on the error
+Configuración del portlet de última actualización	Settings of the last update portlet
+caracteres	characters
+Confirme que realmente quiere publicar los campos seleccionados	Confirm that you really want to publish the selected fields
+de	from
+Tipo	Type
+Información adicional	Additional information
+CC	CC
+CCO	CCO
+Ok	OK
+Publicación	Publication
+Fecha	Date
+Orden	Order
+ ¿Desea continuar?	 Do you want to continue?
+Configuración del portlet de búsquedas	Settings of the search portlet
+Configuración para la comunidad	Settings of the community
+Habilitar búsqueda difusa 	Enable fuzzy search 
+Campo	Field
+Eliminar	Delete
+Borrar	Delete
+Ordenar por	Sort by
+Ya existe un usuario con ese nombre	A user with that name already exists
+Confirme que realmente quiere publicar la transformación seleccionada	Confirm that you really want to publish the selected transformation
+Colección	Collection
+segundos	seconds
+Ya existe otro usuario con ese código de suscriptor	Another user with that subscriber code already exists
+Ya existe otro usuario con ese correo electrónico	Another user with that e-mail address already exists
+Confirmación de correo electrónico	E-mail confirmation
+Introduzca su correo electrónico	Enter your e-mail address
+He olvidado	I forgot
+Mi nombre de usuario	My username
+Mi contraseña	My password
+Restablecer credenciales	Restore credentials
+El correo indicado no corresponde con ninguno de los usuarios	The mail entered does not match any of the users
+Instrucciones para restablecer credenciales	Instructions for restoring credentials
+Se ha producido un error inesperado. Inténtelo de nuevo	An unexpected error has occurred. Try again
+Asunto del correo electrónico con las instrucciones para restablecer las credenciales	Subject of the e-mail with instructions to restore credentials
+Olvido de credenciales	Forgot credentials
+Literal para: 'Introduzca su correo electrónico'	Literal for: ‘Enter your e-mail address’
+Literal para: 'Se me ha olvidado'	Literal for: ‘I forgot’
+Literal para: 'Mi contraseña'	Literal for: ‘My password’
+Literal para: 'Mi nombre de usuario'	Literal for: ‘My username’
+Literal del botón: 'Restablecer credenciales'	Literal of the button: ‘Restore credentials’
+Mensaje para advertir que el correo electrónico no existe	Message to warn that the e-mail address does not exist
+Cabecera	Header
+Copiar	Copy
+Fecha de caducidad	Expiration date
+Retroceder	Go back
+Avanzar	Go forward
+Enviar por correo	Send by mail
+Más valoradas	More valued
+Confirme que realmente quiere publicar las transformaciones seleccionadas	Confirm that you really want to publish the selected transformations
+Resultados	Results
+Máximo a mostrar	Maximum to display
+Mensaje para indicar que se ha enviado un correo con las instrucciones para restablecer credenciales	Message to indicate that a mail has been sent with the instructions for restoring credentials
+Mensaje para cuando se produce un error inesperado en el proceso de restablecer credenciales	Message for when an unexpected error occurs in the process of restoring credentials
+Mensaje a mostrar cuando la respuesta secreta es incorrecta	Message to display when the secret response is incorrect
+Etiqueta para el botón: 'OK'	Label for the button: 'OK'
+Página de destino cuando se produce algún error en el proceso de restablecer credenciales	Destination page when an error occurs in the process of restoring credentials
+Título del panel de información	Text of the information panel
+Plantilla para el correo con las instrucciones para restablecer las credenciales	Template for the e-mail with instructions to restore credentials
+Servidor SMTP para el envío del correo con las instrucciones para restablecer credenciales	SMTP server for sending the e-mail with instructions to restore credentials
+Asunto del correo de confirmación de registro	Subject of the registration confirmation e-mail
+Plantilla para el correo de confirmación de registro	Template for the registration confirmation e-mail
+Servidor SMTP para el envío correo de confirmación de registro	SMTP server for sending the registration confirmation e-mail
+Valor mínimo	Minimum value
+Página de destino al finalizar el proceso de registro	Destination page when finishing the registration process
+Valor máximo	Maximum value
+Página de destino cuando se produce algún error en el proceso de registro	Destination page when an error occurs in the registration process
+Página de destino cuando se produce algún error en el proceso de registro de redes sociales	Destination page when an error occurs in the social network registration process
+Registro de Usuario	User Registration
+Mensaje advirtiendo que el usuario ya existe	Message alerting that the user already exists
+Mensaje advirtiendo que el código de suscriptor ya existe	Message alerting that the subscriber code already exists
+Mensaje advirtiendo que el correo electrónico ya existe	Message alerting that the e-mail address already exists
+Confirmar contraseña	Confirm password
+No ha confirmado su contraseña	Your password has not been confirmed
+Mostrar contraseña	Show password
+Ocultar contraseña	Hide password
+Confirme que realmente quiere publicar el formulario seleccionado	Confirm that you really want to publish the selected form
+Fecha de inicio	Start date
+Nuevo dossier	New dossier
+Fecha de fin	End date
+Pestañas	Tabs
+Nombre del fichero	File Name
+Correo	Mail
+Opción	Option
+Confirme que realmente quiere publicar los formularios seleccionados	Confirm that you really want to publish the selected forms
+Seleccionar	Select
+Usuarios	Users
+Administrador	Administrator
+No se puede editar más de un usuario a la vez	It is not possible to edit more than one user at the same time
+Roles del usuario: 	User roles: 
+¿Desea eliminar al usuario seleccionado?	Do you want to delete the selected user?
+Buscar	Search
+¿Seguro que desea eliminar al usuario seleccionado?	Are you sure that want to delete the selected user?
+¿Seguro que desea eliminar a los usuarios seleccionados?	Are you sure that want to delete the selected users?
+Roles de usuario	User roles
+Detalle de usuario	User detail
+Editar usuario	Edit user
+¿Seguro que desea quitarle el rol al usuario seleccionado?	Are you sure that want to remove the role from the selected user?
+¿Seguro que desea quitarle los roles al usuario seleccionado?	Are you sure that want to remove the roles from the selected user?
+Roles del usuario	User roles
+Fecha de retistro	Registration date
+Fecha de ultimo login	Date of last login
+Fecha de la última actualización	Date of the last update
+Roles	Roles
+Añadir rol	Add role
+Editar rol	Edit role
+Eliminar roles	Delete roles
+Siguiente	Next
+Avisar	Notify
+Confirme que realmente quiere publicar el servidor seleccionado	Confirm that you really want to publish the selected server
+Eliminar usuarios	Delete users
+Minimizar	Minimize
+Maximizar	Maximize
+Contador	Counter
+Valoración de contenidos	Evaluation of contents
+Permitir valoraciones anónimas	Allow anonymous evaluations
+Registro de Usuario - Configuración	User Registration - Settings
+Etiquetas para 'formulario de registro'	Labels for ‘registration form’
+Etiquetas para 'formulario de actualizar perfil'	Labels for ‘profile update form’
+Etiquetas para el panel de información	Labels for the information panel
+Configuración Formulario de Registro	Registration Form settings
+Texto para título 'formulario de registro'	Text for title ‘registration form’
+Texto para el botón 'registrarse'	Text for the ‘register’ button
+Configuración Formulario Actualizar Perfil	Update Profile Form settings
+Texto para título 'perfil de usuario'	Text for title ‘user profile’
+Texto para el botón 'actualizar perfil'	Text for the ‘update profile’ button
+Texto para 'contraseña actual'	Text for ‘current password’
+Texto para 'nueva contraseña'	Text for ‘new password’
+Texto para 'confirmar contraseña'	Text for ‘confirm password’
+Texto para 'identificador de la subscripción'	Text for ‘subscription identifier’
+Texto para 'autentificación'	Text for ‘authentification’
+Texto para tipo de dato	Text for data type
+Selección de la página	Selection of the page
+Acceso de Usuario - Configuración	User Access - Settings
+Modo de visualización para el panel de acceso	Display mode for the access panel
+Configuración Sesión	Session Settings
+Configuración Panel de Acceso	Access Panel Settings
+Texto para 'iniciar sesión'	Text to ‘start session’
+Texto a mostrar delante del 'nombre de usuario'	Text to be displayed before the ‘username’
+Texto a mostrar detrás del 'nombre de usuario'	Text to be displayed after the ‘username’
+Texto para modo demo	Text for demo mode
+Texto para 'finalizar sesión'	Text to ‘end session’
+Página para actualizar el 'perfil de usuario'	Page to update the ‘user profile’
+Texto para el título del panel de acceso	Text for the title of the access panel
+Texto para el botón de cerrar el panel	Text for the panel’s close button
+Texto para 'nombre de usuario'	Text for ‘username’
+%s%s	%s%s
+Polaco	Polish
+Texto para 'contraseña'	Text for ‘password’
+Posición	Position
+Texto para el botón 'acceder'	Text for the ‘access’ button
+Texto para 'no cerrar sesión'	Text for ‘do not close session’
+Mostrar link para registro de usuario	Display link for user registration
+Mostrar link para olvido de usuario o contraseña	Display link for forgotten user or password
+Texto para dato 'obligatorio'	Text for ‘required’ data
+Simulación de suscripciones	Simulation of subscriptions
+Activas	Enabled
+Configuración Modo Link de Visualización	Display Link Mode Settings
+Selección de pagina para actualizar Perfil	Selection of page to update Profile
+Configuración Registro de usuario	User Registration Settings
+Indique etiqueta para el link de la página de Registro	Indicate label for the link of the Registration page
+Configuración Olvido de usuario o contraseña	Forgotten user or password settings
+Indique etiqueta para el link de olvido de usuario o contraseña	Indicate label for the link of the forgotten user or password
+¿Desea seleccionar una página interna o externa?	Do you want to select an internal or external page?
+Página interna	Internal page
+Página externa	External page
+Configuración panel de información	Information Panel Settings
+Texto para título del panel de Información	Text for the title of the Information Panel
+Mensaje a mostrar si el usuario no está registrado	Message to display if the user is not registered
+Mensaje a mostrar si el usuario ya existe	Message to display if the user already exists
+Mensaje a mostrar si la subscripción ya existe	Message to display if the subscription already exists
+Mensaje a mostrar en caso de error inesperado	Message to display in the event of an unexpected error
+Mensaje para indicar que son campos obligatorios	Message to indicate that they are mandatory fields
+Mensaje si la contraseña es incorrecta	Message if the password is incorrect
+Mensaje en caso de fallo de actualización	Message in the event of an update error
+Visor de teaser - Configuración	Teaser viewer - Settings
+Mostrar artículos	Display articles
+Más configuración	More settings
+Criterio de ordenación	Sorting criterion
+Mostrar relacionados	Display related documents
+Parámetros de la petición	Request parameters
+Incluirlos	Include them
+Usarlos	Use them
+Sudoku - Configuración	Sudoku - Settings
+Geolocalización de contenidos - Configuración	Geolocalization of contents - Settings
+artículos	articles
+Forzar IP	Force IP
+CARGANDO...	LOADING…
+Inglés	English
+Francés	French
+Alemán	German
+Catalán	Catalan
+Español	Spanish
+Por defecto	Default
+La legacyUrl ya existe	La legacyUrl ya existe
+La imágen no ha podido ser encontrada en el contenido del artículo para cambiar su tamaño	La imágen no ha podido ser encontrada en el contenido del artículo para cambiar su tamaño
+Fecha vacía	Fecha vacía
+Fecha de partida inválida	Fecha de partida inválida
+El inicio de vigencia es anterior a la fecha de creación del artículo	El inicio de vigencia es anterior a la fecha de creación del artículo
+El fin de vigencia del artículo es anterior al inicio de vigencia del artículo	El fin de vigencia del artículo es anterior al inicio de vigencia del artículo
+La fecha de creación del artículo es anterior a la fecha de comienzo de la importación	La fecha de creación del artículo es anterior a la fecha de comienzo de la importación
+La fecha de modificación del artículo es anterior a la fecha de comienzo de la importación	La fecha de modificación del artículo es anterior a la fecha de comienzo de la importación
+La fecha de creación del artículo es posterior a la fecha de finalización de la importación	La fecha de creación del artículo es posterior a la fecha de finalización de la importación
+La fecha de modificación del artículo es posterior a la fecha de finalización de la importación	La fecha de modificación del artículo es posterior a la fecha de finalización de la importación
+La fecha de modificación del artículo es anterior a su fecha de creación	La fecha de modificación del artículo es anterior a su fecha de creación
+El artículo no tiene sección por defecto	El artículo no tiene sección por defecto
+Hay más de una sección por defecto	Hay más de una sección por defecto
+La calificación no existe o está vacía	La calificación no existe o está vacía
+El atributo 'url' de la página no existe o es vacío	El atributo 'url' de la página no existe o es vacío
+No hay model web, o hay más de uno con el mismo nombre	No hay model web, o hay más de uno con el mismo nombre
+La calificación no existe	La calificación no existe
+No hay ninguna página con esta URL amigable	No hay ninguna página con esta URL amigable
+Este vocabulario no existe	Este vocabulario no existe
+El artículo no tienes medatados asignados (categorías)	El artículo no tienes medatados asignados (categorías)
+Esta categoría no existe	Esta categoría no existe
+No hay una suscripción con el nombre	No hay una suscripción con el nombre
+El artículo no tiene suscripciones	El artículo no tiene suscripciones
+Artículo repetido	Artículo repetido
+El archivo ya existe	El archivo ya existe
+La págino no empieza con '/'	La págino no empieza con '/'
+Url inválida de la página	Url inválida de la página
+Error creando la página	Error creando la página
+Nombre de archivo demasiado largo	Nombre de archivo demasiado largo
+Nombre de archivo de previsualización demasiado largo	Nombre de archivo de previsualización demasiado largo
+Atributo articleid no existe, es vacío o mayor de 75 caracteres	Atributo articleid no existe, es vacío o mayor de 75 caracteres
+La sección es mayor de 255 caracteres	La sección es mayor de 255 caracteres
+Sección repetida para el mismo artículo	Sección repetida para el mismo artículo
+Suscripción repetida para el mismo artículo	Suscripción repetida para el mismo artículo
+Suscripción repetida para el mismo frileentry	Suscripción repetida para el mismo frileentry
+Colisión de importaciones. Lance la importación fallida de nuevo	Colisión de importaciones. Lance la importación fallida de nuevo
+Imagen corrupta	Imagen corrupta
+Imagen usada más de una vez en el artículo: 	Imagen usada más de una vez en el artículo: 
+Hay campos que no están en el formulario de registro	Hay campos que no están en el formulario de registro
+Campo demasiado largo: 	Campo demasiado largo: 
+Ha sido imposible conectar con los servidores Apache	Ha sido imposible conectar con los servidores Apache
+No se pudo completar la operación porque algunos de los campos del perfil de usuario no han sido todavía publicados.	No se pudo completar la operación porque algunos de los campos del perfil de usuario no han sido todavía publicados.
+Los datos del usuario tiene caracteres no válidos	Los datos del usuario tiene caracteres no válidos
+No se pudo completar la operación porque ya existe un formulario de registro.\r	No se pudo completar la operación porque ya existe un formulario de registro.\r
+No existe la página en el entorno LIVE	No existe la página en el entorno LIVE
+Recargar...	Recargar...
+Simular sección	Simular sección
+No ha guardado los cambios, antes de salir pulse el botón guardar	No ha guardado los cambios, antes de salir pulse el botón guardar
+La página inicial y la actual son distintas	La página inicial y la actual son distintas
+Cambiar sección	Cambiar sección
+Es imposible acceder al sistema porque no existen grupos	Es imposible acceder al sistema porque no existen grupos
+Imágen/Multimedia	Imágen/Multimedia
+Gestión de Live	Gestión de Live
+Servidor pasarela	Servidor pasarela
+Ruta local	Ruta local
+Servidor remoto	Servidor remoto
+Banner - Configuración	Banner - Settings
+Mostrar mensaje de publicidad	Display advertising message
+Content Map - Configuración	Content Map - Settings
+Contenido asignado	Assigned content
+Rooadmap	Roadmap
+Vocabulario	Vocabulary
+Satelite	Satellite
+Hibrid	Hybrid
+Terrain	Land
+Control del Zoom	Zoom control
+Carpeta de multimedia	Multimedia folder
+Valor del Zoom	Zoom value
+Habilitar control del zoom	Enable zoom control
+Propiedad de categoría	Excellent property
+Último envío	Last delivery
+Control del tipo de mapa	Control map type
+Asignación item-categoría	Item-category assignment
+Tipo de mapa	Map type
+Habilitar control del Tipo de Mapa	Enable control of the Map Type
+Control de Rotación	Rotation Control
+Habilitar control de rotación	Enable rotation control
+Modelo de página	Page Model
+Baner de tema	Subject banner
+Banner intersticial	Interstitial banner
+Web de usuario	User's Web
+Control de desplazamiento	Scrolling control
+Dirección de usuario	User's Address
+Importar	Import
+Habilitar control de desplazamiento	Enable scrolling control
+Teléfono de usuario	User's telephone
+Control de Escala	Scale Control
+Email de usuario	User's Email
+Habilitar control de la escala	Enable scale control
+Contacto de usuario	User's contact
+Control del mapa general	General map control
+Grupo de Feeds	Group of Feeds
+Habilitar control del mapa general	Enable general map control
+Asignación feed-grupo	Feed-group assignment
+Mostrar el mapa general abierto	Display the general map open
+Propiedades del feed	Properties of the feed
+Control de StreetView	StreetView control
+Ejemplo	Example
+Habilitar control de StreetView	Enable StreetView control
+Bottom Center	Bottom Center
+Bottom Left	Bottom Left
+Bottom Right	Bottom Right
+Left Bottom	Left Bottom
+Left Center	Left Center
+Ordenación	Sorting
+Descripción del error	Error description
+Suscripción	Subscription
+Left Top	Left Top
+Right Bottom	Right Bottom
+Right Center	Right Center
+Right Top	Right Top
+Top Center	Top Center
+Top Left	Top Left
+Top Right	Top Right
+Barra horizontal	Horizontal bar
+Menú desplegable	Drop-down menu
+Disqus - Configuración	Disqus - Settings
+Página específica	Specific page
+Cuenta Disqus	Disqus account
+Origen de los comentarios	Comments source
+URL de la página de la que mostrar los comentarios	URL of the page to display the comments
+Mostrar comentarios si el articulo está restringido	Display comments if the article is restricted
+Delicious	Delicious
+Estandar	Standard
+Botón Contador	Counter button
+Tipo de publicación	Publication type
+Caja Contador	Counter box
+Me gusta	Like
+Recomendar	Recommend
+Campo personalizado - Tabla	Customized Field - Table
+Directa	Direct
+Campo personalizado - Columna	Customized field - Column
+Oscuro	Dark
+Campo personalizado - Fila	Customized field - Row
+Pequeño	Small
+Campo personalizado - Valor	Customized field - Value
+Fecha de modificación	Modification Date
+Mediano	Medium
+Configurar	Set up
+Grande	Large
+Contenido Social - Configuración	Social Content - Settings
+Botón enviar	Send button
+Disposición Elemento	Element layout
+Texto a Mostrar	Text to Display
+Tamaño del Botón	Button Size
+Tipo de icono	Icon type
+Descarga de documentos	Document download
+Lista	List
+Nivel	Level
+Botón Grande	Large Button
+Selección de redes sociales	Selection of social networks
+Formato de hora	Time format:
+Redes sociales	Social networks
+Mostrar si el articulo está restringido	Display whether the article is restricted
+Facebook - Configuración	Facebook - Settings
+Mostrar imágenes	Show images
+Publicidad	Advertising
+Visor de servicios - Configuración	Services viewer - Settings
+Imágenes	Images
+Selección de servicios	Selection of services
+Visor de RSS - Configuración	RSS viewer - Settings
+Mostrar título	Show title
+Selección de grupos	Selection of groups
+Visor de Clasificación - Configuración	Classification viewer - Settings
+Fuente por Metadatos	Source by Metadata
+Sólo contenidos actualizados en los últimos	Only contents updated in the last
+Número de resultados a mostrar	Number of results to show
+Selección de pestañas	Selection of tabs
+Más recientes	Most recent
+Más vistas	Most viewed
+Años	Years
+Más comentadas	Most commented
+Migas de pan - Configuración	Breadcrumbs - Settings
+Incluir nombre del portal	Include name of the portal
+Caracter separador	Separator character
+Búsqueda Básica - Configuración	Basic Search - Settings
+Selección de página de resultados	Selection of results page
+Resultados de Búsqueda - Configuración	Search results - Settings
+Búsqueda avanzada - Configuración	Advanced Search - Settings
+Criterios de filtrado:	Filtering criteria:
+Selección de criterios de filtrado	Selection of filtering criteria
+Habilitar búsqueda difusa	Enable fuzzy search
+Mostrar opciones de ordenación	Display sorting options
+Metadatos excluidos:	Excluded metadata:
+Selección de metadatos excluidos	Selection of excluded metadata
+Metadatos excluidos	Excluded metadata
+Metadatos fijos	Fixed metadata
+Galerías	Galleries
+Número máximo	Maximum number
+Número de artículos	Number of articles
+Elegir	Choose
+de manera:	so that:
+top	top
+Añadir filtro	Add filter
+bottom	bottom
+Modificar filtro	Modify filter
+Paginación:	Pagination:
+Elementos por página:	Elements by page:
+Configuración de la Paginación	Settings of the Pagination
+Pendiente	Pending
+meses	months
+Actualizar	Update
+Distribución botones navegación	Distribution navigation buttons
+Posición paginador	Paginator position
+Aviso	Warning
+Selección de criterios de ordenación	Selection of sorting criteria
+Sección actual	Current section
+Seleccionar otra página	Select another page
+Elegir modelo web	Choose Web model
+Ejecutar	Execute
+Plantillas para artículos	Templates for articles
+Plantillas para encuestas	Templates for surveys
+Plantillas para galerías	Templates for galleries
+Plantillas para multimedia	Templates for multimedia
+Plantillas para artículos con contenidos restringidos	Templates for articles with restricted contents
+Plantillas para encuestas con contenidos restringidos	Templates for surveys with restricted contents
+Plantillas para galerías con contenidos restringidos	Templates for galleries with restricted contents
+Plantillas para multimedia con contenidos restringidos	Templates for multimedia with restricted contents
+Plantillas para contenidos sin restricción	Templates for contents without restriction
+Plantillas para contenidos restringidos	Templates for restricted contents
+Restringidos	Restricted
+Cerrar	Close
+Debe seleccionar una plantilla	You must select a template
+Debe configurar un número de elementos por página	You must set up a number of elements by page
+Número de resultados contenidos	Number of results contained
+Mostrar contenidos caducados	Show expired contents
+Vínculo Externo	External Link
+Vinculación externa	External link
+Vinculación interna	Internal link
+Sentido	Direction
+Característica a ordenar	Feature to sort
+Fecha - Configuración	Date - Settings
+Texto inicial	Initial text
+Texto final	End text
+dd: Día número	dd: Day number
+hh: Hora (1-12)	hh: Hour (1-12)
+Día número	Day number
+Aceptar	OK
+Día nombre	Day name
+Mes nombre	Month name
+Hora (1-12)	Hour (1-12)
+Hora (0-23)	Hour (0-23)
+AM/PM	AM/PM
+Delegación:	Branch:
+Parametros de configuración incorrectos	Incorrect settings parameters
+Ordenados según:	Sorted according to:
+Aunque estén caducados	Even if they are expired
+de alguno de estos tipos:	of any of these types:
+Producto	Product
+Selección de plantillas	Selection of templates
+Título	Headline
+Modelo de detalle:	Detail model:
+Fichero	File
+relacionados por	related by
+Refrescar	Refresh
+empezando en:	starting on:
+Visor de relacionados - Configuración	Related documents viewer - Settings
+Añadir/Restaurar configuración	Add/Restore settings
+Sección	Section
+Añadir configuración	Add settings
+Disponible	Available
+Calendario	Calendar
+Eliminar configuración	Delete settings
+Año	Year
+¿Desea eliminar la configuración seleccionada?	Do you want to delete the selected settings?
+Datos Generales	General Data
+¿Desea eliminar las configuraciones seleccionadas?	Do you want to delete the selected settings?
+Introduzca el nombre	Enter the name
+¿Desea sustituir la configuración actual por la seleccionada?	Do you want to replace the current settings for those selected?
+Ya existe una configuración llamada %s.	Settings called %s already exist.
+¿Desea sustituirla por la nueva configuración?	Do you want to replace them with the new settings?
+Visor de metadatos de artículo - Configuración	Article metadata viewer - Settings
+Visor de hot topics - Configuración	Hot topics viewer - Settings
+de las secciones:	of sections:
+Etiquetados con:	Labeled with:
+Etiquetas fijas:	Fixed labels:
+Etiquetas excluidas:	Excluded labels:
+etiquetas	labels
+de los contenidos tipo:	of the content types
+con calificación:	with qualification:
+Ordenadas por:	Sorted by:
+Descripción	Description
+Selección de las secciones	Selection of sections
+OK	OK
+Guardar	Save
+Formato	Format
+Mes	Month
+Selección de metadatos	Selection of metadata
+Selección de metadatos fijos	Selection of fixed metadata
+Visor de contenido - Configuración	Content viewer - Settings
+Visor de alertas -  Configuración	Alerts viewer - Settings
+alertas	alerts
+una cada	one every
+con velocidad de la transición	with transition speed
+milisegundos	milliseconds
+Sección a visualizar	Section to be displayed
+Configurada como origen	Set up as source
+Principal del artículo	Main of the article
+Elegir velocidad de la transición	Choose transition speed
+Muy lenta	Very slow
+Lenta	Slow
+Rápida	Fast
+Miscelánea	Miscellany
+Portugués	Portuguese
+Hasta	To
+Muy rápida	Very fast
+Entre ninguna y muy rápida	Between none and very fast
+Entre muy rápida y rápida	Between very fast and fast
+Entre rápida y media	Between fast and average
+Entre media y lenta	Between average and slow
+Entre lenta y muy lenta	Between slow and very slow
+Valores comprendidos entre 0 y 99	Values included between 0 and 99
+Selección de la velocidad de transición	Selection of the transition speed
+Texto de prueba	Test text
+Artículos	Articles
+Actual	Current
+Fecha de fin de vigencia	End date of validity period
+Publicaciones	Publications
+Apellidos	Lastname
+Página	Page
+Páginas	Pages
+Lugar	Place
+Sexo	Gender
+Nombre	Name
+Ancho	Width
+Estructura	Signature sequence
+Para	To
+Comienzo	Start
+Incremento	Increment
+Añadir	Add
+Cancelar	Cancel
+Procesando	Processing
+Editar producto	Edit product
+Tipo de importación	Import type:
+Imagen Actualizada	Imagen Actualizada
+¿Desea eliminar el servidor seleccionado?	Do you want to delete the server selected?
+Añadir Categoría	Add Category
+Eliminar producto	Delete product
+Parcial	Partial
+Cuadro	Box
+¿Desea eliminar los servidores seleccionados?	Do you want to delete the servers selected?
+¿Desea eliminar los usuarios seleccionados?	Do you want to delete the users selected?
+Suscripciones	Subscriptions
+Comentarios	Comments
+Cargar para colocar	Load to place
+Texto	Text
+Vistas	Views
+Imagen	Image
+Tipos de contenido	Content types
+Descargando	Downloading
+Alto	Height
+Carpeta	Folder
+Por fecha	By date
+Meses	Months
+Fijo	Fixed
+Seleccionados	Selected
+Habilitado	Enabled
+Iniciar sesión	Start session
+Enviar formulario	Send form
+Texto para 'IP de conexión'	Text for ‘connection IP’
+Refrescar página del formulario	Refresh form page
+Texto para 'producto del usuario'	Text for ‘user product’
+Cerrar página del formulario	Close form page
+Mensaje para usuario no autenticado	Message to unauthenticated user
+Redirigir según parámetro de la URL	Redirect according to parameter of the URL
+Texto para 'título del artículo'	Text for ‘title of the article’
+Tamaño	Size
+Redirigir a página interna	Redirect to internal page
+Texto para 'fecha de expiración'	Text for ‘expiration date’
+Redirigir a página externa	Redirect to external page
+ Número de días	 Number of days
+Redirigir a la página original	Redirect to original page
+ Modo de visualización	 Display mode
+Nombre HTML	HTML name
+User agent	User agent
+Texto anterior	Previous text
+Ip	IP
+Texto posterior	Next text
+Fecha de expiración	Expiration date
+Texto anterior al campo	Text prior to the field
+Producto limitado por nº de días	Product limited by number of days
+Texto posterior al campo	Text after to the field
+Producto limitado por nº de artículos	Product limited by number of articles
+No se puede editar más de un formulario a la vez	It is not possible to edit more than one form at the same time
+Visor del localizador por etiquetas - Configuración	Viewer of the locator by labels - Settings
+Texto para 'Enviar'	Text to ‘Send’
+Título del control	Control headline
+Número máximo de etiquetas a sugerir	Maximum number of labels to suggest
+Restringir a	Restrict to
+Sugerir sólo etiquetas del último nivel de las jerarquías	Suggest only labels of the last level of the hierarchy
+Usuario o contraseña incorrectos	Incorrect user or password
+Configuración	Settings
+Metadatos	Metadata
+Situación botón 'Enviar'	Status button ‘Send’
+Mostrar sugerencias	Show suggestions
+Método HTTP	HTTP Method
+Después de teclear	After typing
+Texto para 'Limpiar'	Text to ‘Clean’
+Al dejar de teclear	When you stop typing
+Restringido	Restricted
+ms	ms
+Añadir Campo del formulario	Add field Field
+El número debe estar comprendido entre 1 y 100	The number must be between 1 and 100
+Editar Campo del formulario	Edit form Field
+Debe ser como mínimo 2	It must be at least 2
+No se puede editar más de un campo del formulario a la vez	It is not possible to edit more than one form field at the same time
+Debe ser como mínimo 100	It must be at least 100
+Validador	Validator
+Listado de catálogos	List of catalogs
+Control de entrada	Input control
+Añadir catálogo	Add catalog
+dd: Día	dd: Day
+Eliminar catálogo	Delete catalog
+Configuración del calendario	Calendar settings
+Editar catálogo	Edit catalog
+Configuración de la fecha	Settings for the date
+Añadir página	Add page
+Configuración de la hora	Time settings
+Eliminar página	Delete page
+píxeles	pixels
+Configuración del Rango Numérico	Numeric Range settings
+Editar página	Edit page
+Configuración de la expresión regular	Regular expression settings
+Maquetar página	Lay out page
+Seleccionar elemento de catálogo	Select catalog element
+Cuerpo	Size
+Configuración del Tamaño	Settings for the Size
+Listado de elementos de catálogo	List of catalog elements
+Editor	Editor
+Configurar opciones	Set up options
+Listado de páginas	List of pages
+Configurar opciones por defecto	Set up default options
+¿Desea eliminar el catálogo seleccionado?	Do you want to delete the selected catalog?
+Cadena de Texto	Text String
+¿Desea eliminar los catálogos seleccionados?	Do you want to delete the selected catalogs?
+Booleano	Boolean
+Literal para 'Más recientes'	Literal for ‘Most recent’
+Grupos	Groups
+Número Entero	Integer
+Literal para 'Más vistas'	Literal for ‘Most viewed’
+General	General
+Número Decimal	Decimal Number
+Literal para 'Más valoradas'	Literal for ‘Highest rated’
+Oculto	Hidden
+Literal para 'Más comentadas'	Literal for ‘Most commented’
+Operación	Operation
+Campo de texto	Text field
+Habilitar búsqueda ampliada	Enable expanded search
+Errores	Errors
+Lista Desplegable	Drop-down List
+¿Desea vincular el portlet a la configuración '%s'?	Do you want to link the portlet to the settings ‘%s’?
+Selector de Fichero	File Selector
+¿Desea desvincular el portlet de la configuración '%s'?	Do you want to unlink the portlet from the settings ‘%s’?
+Expresión regular	Regular expression
+Esta importación ya ha finalizado	This import has finished
+Permitir múltiple selección	Allow multiple selection
+Ya existe un producto con ese nombre para este grupo	There is already a product with that name for this group.
+Configuración del vínculo	Link settings
+No se puede guardar la configuración porque las claves privada y pública están vacías. Las claves privada y pública son necesarias porque se ha habilitado la capacidad de 'Conectar con'	The settings cannot be saved because the private and public keys are empty. The private and public keys are needed because the ability to ‘Connect to’ has been enabled
+Dirección de la página destino	Address of the destination page
+Suscripción asociada	Associated subscription
+Nº máximo de conexiones por día	Maximum number of connections per day
+Obsequio para usuarios no registrados	Gift for unregistered users
+Relacionados	Related
+Idioma	Language
+Pantalla completa	Full screen
+Donde se abrirá el vínculo	Where the link will open
+En la ventana actual	In the current window
+El control de entrada elegido no permite tener varios valores por defecto. 	The chosen input control does not allow having several default values. 
+Todas	All
+ Debe dejar sólo uno para poder guardar los cambios	 You must leave only one in order to be able to save the changes
+Configuración para guardar en fichero	Settings to save in file
+Configuración para guardar en servidor externo	Settings to save in external server
+Configuración para enviar por correo electrónico	Settings to send by e-mail
+Enviar en	Send in
+Como fichero adjunto	As an attached file
+Elegir plantilla	Select template
+En el cuerpo del mensaje	In the body of the message
+URL del servidor	Server URL
+Adjunto al mensaje	Attached to the message
+Navegación	Navigation
+¿Desea eliminar el campo seleccionado?	Do you want to delete the selected field?
+Modelo por defecto	Default Model
+¿Desea eliminar los campos seleccionados?	Do you want to delete the selected fields?
+Cambiar el tipo implica que se borraran todos los campos que están configurados para el formulario ¿Desea continuar?	Changing the type means that all fields that are set up for the form will be erased. Do you want to continue?
+Añadir etiqueta	Add label
+Modificar etiqueta	Modify label
+No se puede editar más de una etiqueta a la vez	It is not possible to edit more than one label at the same time
+Plantilla	Template
+Sin filtro	Without filter
+Limitado por fecha de caducidad	Limited by expiration date
+Limitado por cantidad de artículos en un periodo	Limited by quantity of articles in a period
+Limitado por número de días en un periodo	Limited by number of days in a period
+Conexiones por día	Connections per day
+Obsequio	Gift
+artículo	article
+¿Desea eliminar el producto seleccionado?	Do you want to delete the selected product?
+¿Desea eliminar los productos seleccionados?	Do you want to delete the selected products?
+Configurar mensajes	Set up messages
+Texto para 'superado máximo número de conexiones'	Text for ‘exceeded maximum number of connections’
+Superado máximo número de conexiones	Exceeded maximum number of connections
+Texto para 'superado máximo número de días'	Text for ‘exceeded maximum number of days’
+Superado máximo número de días	Exceeded maximum number of days
+Texto para 'superado máximo número de artículos'	Text for ‘exceeded maximum number of articles’
+Superado máximo número de artículos	Exceeded maximum number of articles
+Texto para 'paywall desactivado temporalmente por mantenimiento'	Text for ‘paywall temporarily disabled for maintenance’
+Paywall desactivado temporalmente por mantenimiento	Paywall temporarily disabled for maintenance
+Resultado de la importación	Import result
+Éxito	Success
+Importaciones	Imports
+Ver en modo lista	View in list mode
+Ver en modo mosaico	View in tile mode
+Catálogo	Catalog
+Nombre de la etiqueta	Label name
+Tamaño máximo(KB)	Maximum size (KB)
+Tamaño mínimo(KB)	Minimum size (KB)
+Longitud mínima	Minimum length
+Longitud máxima	Maximum length
+Número mínimo de opciones	Minimum number of options
+Número máximo de opciones	Maximum number of options
+Número mínimo de digitos	Minimum number of digits
+Número máximo de digitos	Maximum number of digits
+Número máximo de decimales	Maximum number of decimals
+Carácter separador de millares	Thousands separator character
+Carácter separador decimal	Decimal separator character
+Actuales	Current
+Ordenar Alfabeticamente de forma ascendente o descendente	Sort Alphabetically ascending or descending
+No se puede añadir una opción con nombre duplicado	An option with a duplicated name cannot be added
+Nombre de archivo	File name
+Total correctos	Total correct
+Total con error	Total with error
+Ver detalles de la importación	View details of the import
+Detalles de la importación	Details of the import
+¿Desea eliminar la importación seleccionada?	Do you want to delete the selected import?
+¿Desea eliminar las importaciones seleccionadas?	Do you want to delete the selected imports?
+¿Desea eliminar el detalle de importación seleccionado?	Do you want to delete the details of the selected import?
+¿Desea eliminar los detalles de importación seleccionados?	Do you want to delete the details of the selected import?
+El filtro que se va a aplicar es lento, ¿Desea continuar?	The filter that will applied is slow. Do you want to continue?
+¿Seguro que desea aplicar este filtro?	Are you sure you want to apply this filter?
+Lanzar importación	Launch import
+Cancelar importación en curso	Cancel import in progress
+Ruta de archivo a importar	Path of file to import
+Ruta de carpeta a importar	Path of folder to import
+Ruta de copia de seguridad	Path of security copy
+Seleccione la fuente de datos	Select the data source
+No se puede seleccionar el control de entrada elegido, porque este campo necesita confirmación	The chosen input control cannot be selected, because this field requires confirmation
+Gestión de Usuarios	User Management
+Perfil de Usuario	User Profile
+Eliminar campos	Delete fields
+Link	Link
+Editar campo	Edit field
+Ya existe un campo con ese nombre en el sistema	A field with the same name already exists in the system
+Recolectar estadísticas periódicamente	Collect statistics periodically
+Nombre aplicación	Application name
+Habilitar 'conectar con'	Enable ‘connect to’
+Asociar campos	Associate fields
+Asociar campos de facebook	Associate Facebook fields
+Asociar campos de twitter	Associate Twitter fields
+Asociar campos de google plus	Associate Google Plus fields
+Asociar campos de disqus	Associate Disqus fields
+Campo formulario	Form field
+Rango	Range
+Todos	All
+Días	Days
+Calificación	Qualification
+Campo perfil social	Social profile field
+Importar desde un archivo	Import from a file
+Añadir programación de newsletter	Add newsletter programming
+Importar desde una carpeta	Import from a folder
+Editar programación de newsletter	Edit newsletter programming
+Claves cifradas en MD5	Keys encrypted in MD5
+Método de entrega	Delivery method
+Borrar usuarios coincidentes	Delete matching users
+Máximo número de destinatarios	Maximum number of recipients
+¿Desea cancelar importación seleccionada en curso?	Do you want to cancel the selected import in progress?
+Servidor de afinidad	Affinity server
+¿Desea cancelar las importaciones seleccionadas en curso?	Do you want to cancel the selected imports in progress?
+Programada	Programmed
+Resoluciones de imágenes	Image Resolutions
+Restaurar	Restore
+¿Desea eliminar la programación seleccionada?	Do you want to delete the selected programming?
+Configuración de resoluciones de imágenes	Image resolutions settings
+¿Desea eliminar las programaciones seleccionadas?	Do you want to delete the selected programmings?
+Historial de accesos	History of accesses
+Subsección1	Subsection1
+Enlace del contador de comentarios	Link of the comments counter
+Subsección2	Subsection2
+Cero comentarios	Zero comments
+Segunda Sección	Second Section
+Un comentario	One comment
+Primera Sección	First Section
+Múltiples comentarios	Multiple comments
+Tercera Sección	Third Section
+comentario	comment
+Servidores SMTP	SMTP servers
+comentarios	comments
+Añadir servidor SMTP	Add SMTP server
+Mensaje que se muestra cuando el articulo no esté publicado	Message to be displayed when the article is not published
+Editar servidor SMTP	Edit SMTP server
+No se puede editar más de un servidor a la vez	It is not possible to edit more than one server at the same time
+Añadir newsletter	Add newsletter
+Editar newsletter	Edit newsletter
+Programaciones de	Programming of
+¿Desea eliminar el newsletter seleccionado?	Do you want to delete the selected newsletter?
+¿Desea eliminar los newsletters seleccionados?	Do you want to delete the selected newsletters?
+No se puede editar más de un newsletter a la vez	It is not possible to edit more than one newsletter at the same time
+No se puede configurar más de un newsletter a la vez	It is not possible to set up more than one newsletter at the same time
+Configuración de Comentarios	Comments settings
+Utilizar Disqus como gestor de comentarios	Use Disqus as comments manager
+Autentificación SSO	SSO authentication
+Hay datos que no se han guardado. ¿Desea guardar los datos antes de salir?	There are data that have not been saved. Do you want to save the data before exiting?
+Configuración con datos no válidos.Si continúa se perderán los cambios. ¿Desea continuar?	Settings with invalid data. If you continue, the changes will be lost. Do you want to continue?
+Abrir vista de detalle	Open detail view
+Requiere protocolo TLS	Requires TLS protocol
+Requiere usuario y contraseña	Requires user and password
+Arriba	Top
+Abajo	Bottom
+Medio	Medium
+Número de artículos encontrados: 	Número de artículos encontrados: 
+¿Quiere continuar con la operación de borrado?	¿Quiere continuar con la operación de borrado?
+Si continua, el proceso continuará activo en el servidor pero no podrá ser cancelado.	Si continua, el proceso continuará activo en el servidor pero no podrá ser cancelado.
+ ¿Desea continuar? 	 Do you want to continue? 
+¿Desea borrar los artículos del lote seleccionado?	¿Desea borrar los artículos del lote seleccionado?
+¿Desea borrar los artículos de los lotes seleccionados?	¿Desea borrar los artículos de los lotes seleccionados?
+¿Desea borrar el artículo seleccionado?	¿Desea borrar el artículo seleccionado?
+¿Desea borrar los artículos seleccionados?	¿Desea borrar los artículos seleccionados?
+¿Seguro que desea borrarlo?	¿Seguro que desea borrarlo?
+¿Seguro que desea borrarlos?	¿Seguro que desea borrarlos?
+Para comenzar a borrar los artículos introduzca: 	Para comenzar a borrar los artículos introduzca: 
+Consulta para borrar artículos	Consulta para borrar artículos
+Introduzca la consulta sql	Introduzca la consulta sql
+La ruta de lectura y la de copia de seguridad no pueden ser iguales	La ruta de lectura y la de copia de seguridad no pueden ser iguales
+Eliminar las entradas seleccionadas del historial	Eliminar las entradas seleccionadas del historial
+Borrar los artículos seleccionados	Borrar los artículos seleccionados
+Tipo de operación	Operation Type
+Borrar los usuarios seleccionados	Borrar los usuarios seleccionados
+Error de formato en una fecha	Error de formato en una fecha
+Falta un campo obligatorio	Falta un campo obligatorio
+Error en consulta a la base de datos	Error en consulta a la base de datos
+Se ha intentado importar un artículo que ya estaba en el sistema	Se ha intentado importar un artículo que ya estaba en el sistema
+Se ha intentado importar un usuario que ya estaba en el sistema	Se ha intentado importar un usuario que ya estaba en el sistema
+Xml o campo en formato incorrecto	Xml o campo en formato incorrecto
+Error con un archivo/Binario. No se pudo encontrar o falló su lectura	Error con un archivo/Binario. No se pudo encontrar o falló su lectura
+El artículo que se intentaba borrar no existe en el sistema	El artículo que se intentaba borrar no existe en el sistema
+El usuario que se intentaba borrar no existe en el sistema	El usuario que se intentaba borrar no existe en el sistema
+Fechas fuera del intervalo permitido	Fechas fuera del intervalo permitido
+El proceso se ha realizado correctamente, pero puede requerir supervisión	El proceso se ha realizado correctamente, pero puede requerir supervisión
+El artículo ha sido borrado a petición del usuario desde la Administración	El artículo ha sido borrado a petición del usuario desde la Administración
+El usuario ha sido borrado a petición del usuario desde la Administración	El usuario ha sido borrado a petición del usuario desde la Administración
+Administración del servidor	Administración del servidor
+Eliminar el contenido cacheado por esta MV.	Eliminar el contenido cacheado por esta MV.
+Eliminar el contenido cacheado en el cluster. 	Eliminar el contenido cacheado en el cluster. 
+Eliminar la caché de la base de datos 	Eliminar la caché de la base de datos 
+Regenerar todos los índices de la búsqueda. 	Regenerar todos los índices de la búsqueda. 
+Nivel de trazas	Nivel de trazas
+Editar Categoría	Editar Categoría
+Solo se puede editar una Categoría a la vez.	Solo se puede editar una Categoría a la vez.
+Control de metadatos	Control de metadatos
+Configuración de los metadatos	Configuración de los metadatos
+Campo de título	Campo de título
+Campo de descripción	Campo de descripción
+Sin restricción de caracteres	Sin restricción de caracteres
+Campo de imagen	Campo de imagen
+Campo de hueco	Campo de hueco
+Configuración del servidor virtual	Configuración del servidor virtual
+Robots TXT	Robots TXT
+Servidor virtual público	Servidor virtual público
+Url amigable	Url amigable
+Configuración del superusuario	Configuración del superusuario
+Superusuario	Superusuario
+Cambiar de superusuario	Cambiar de superusuario
+Buscar superusuario	Buscar superusuario
+No se permite añadir un archivo de transformación vacío	No se permite añadir un archivo de transformación vacío
+Única página con campos agrupados	Única página con campos agrupados
+Ninguno	None
+Grupo	Group
+Posterior a	Later than
+Anterior a	Prior to
+Subscripciones	Subscriptions
+Tipo de Identificación	Identification type
+Por Url	By URL
+Por Identificador del artículo	By Article Identifier
+Clave privada	Private key
+Ancho de la ventana(píxeles)	Width of the window (pixels)
+Alto de la ventana(píxeles)	Height of the window (pixels)
+Vínculo	Link
+URL del inicio de sesión	URL of the session start
+URL del fin de sesión	URL of the session end
+Campaña de página	Page campaign
+Más Comentados	Most Commented
+Número máximo de artículos	Maximum number of articles
+Una hora	One hour
+Por secciones	View by Sections
+Seis horas	Six hours
+Interstitial	Interstitial
+Doce horas	Twelve hours
+Un día	One day
+Posición en la sección web	Position on the web section
+Tres días	Three days
+Siete días	Seven days
+Banner de página	Page banner
+Treinta días	Thirty days
+Media	Medium
+Noventa días	Ninety days
+Editar campos	Edit fields
+Biblioteca	Library
+Programar	Schedule
+Editable	Editable
+Necesita confirmación	Needs confirmation
+Campo repetible	Repeatable field
+Expresión	Expression
+¿Desea duplicar el campo seleccionado?	Do you want to duplicate the selected field?
+Número máximo de caracteres	Maximum number of characters
+Modo de visualización	Display mode
+Mensaje	Message
+Editar	Edit
+Clave pública	Public key
+Vertical	Vertical
+Horizontal	Horizontal
+Portlets anidados - Configuración	Portlets anidados - Configuración
+Plantilla de página	Plantilla de página
+Plantillas de página	Plantillas de página
+Más opciones de búsqueda	Más opciones de búsqueda
+Ampliar búsqueda	Ampliar búsqueda
+Resultados encontrados	Resultados encontrados
+Resultados por facetas - Configuración	Resultados por facetas - Configuración
+Los hijos de los seleccionados	Los hijos de los seleccionados
+Texto de cabecera	Texto de cabecera
+Secciones excluidas	Secciones excluidas
+Metadatos excluidas	Metadatos excluidas
+Numero mínimo de artículos	Numero mínimo de artículos
+Postfijo	Postfijo
+Mostrar si vacío	Mostrar si vacío
+Segmentación jerarquica automática	Segmentación jerarquica automática
+No se puede editar más de una fecha a la vez	No se puede editar más de una fecha a la vez
+Ya existe una fecha con esas características	Ya existe una fecha con esas características
+Idioma y Formato de fecha	Idioma y Formato de fecha
+Añadir fecha	Añadir fecha
+Editar fecha	Editar fecha
+Daily topics - Configuración	Daily topics - Configuración
+Menú - Configuración	Menú - Configuración
+Número máximo de niveles visibles	Número máximo de niveles visibles
+Mostrar el desplegable	Mostrar el desplegable
+Despliegue dinámico	Despliegue dinámico
+Sección de partida	Sección de partida
+Acordeón	Acordeón
+Acordeón con pestañas	Acordeón con pestañas
+Mostrar sólo los hijos	Mostrar sólo los hijos
+Catálogos -  Configuración	Catálogos -  Configuración
+Añadir colección	Añadir colección
+Eliminar colección	Eliminar colección
+Editar colección	Editar colección
+Pie de página	Pie de página
+Añadir elemento de catalogo	Añadir elemento de catalogo
+Eliminar elemento de catalogo	Eliminar elemento de catalogo
+Editar elemento de catalogo	Editar elemento de catalogo
+Maquetar elemento de catalogo	Maquetar elemento de catalogo
+Pieza de catálogo	Pieza de catálogo
+Listado de piezas de catálogo	Listado de piezas de catálogo
+¿Desea eliminar la colección seleccionada?	¿Desea eliminar la colección seleccionada?
+¿Desea eliminar las colecciones seleccionadas?	¿Desea eliminar las colecciones seleccionadas?
+HTML	HTML/XML
+Ninguna	None
+Secciones:	Sections:
+Ya existe un espacio publicitario de tipo Fondo en el sistema	A Background advertising space already exists in the system

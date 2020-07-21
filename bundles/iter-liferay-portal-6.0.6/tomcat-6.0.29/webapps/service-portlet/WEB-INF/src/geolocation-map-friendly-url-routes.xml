@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.0.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_0_0.dtd">
+
+<routes>
+	<route>
+		<pattern>/{content-id}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-date">0</implicit-parameter>
+		<implicit-parameter name="content-tags">0</implicit-parameter>
+		<implicit-parameter name="content-section">0</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/meta/{content-tags}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-id">0</implicit-parameter>
+		<implicit-parameter name="content-section">-1</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+		<overridden-parameter name="content-date">0</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/date/{content-date}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-id">0</implicit-parameter>
+		<implicit-parameter name="content-section">-1</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+		<overridden-parameter name="content-tags">0</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/pay/{content-tags}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-id">0</implicit-parameter>
+		<implicit-parameter name="content-section">-1</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+		<overridden-parameter name="content-date">0</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/{content-id}/{content-tags}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-section">0</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/{content-id}/{content-section}/{content-tags}</pattern>
+		<ignored-parameter name="instanceId" />
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+	</route>
+	<route>
+		<pattern>/date/{content-date}/meta/{content-tags}</pattern>
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-section">-1</implicit-parameter>
+		<overridden-parameter name="instanceId">news</overridden-parameter>
+		<overridden-parameter name="content-id">0</overridden-parameter>
+	</route>
+</routes>

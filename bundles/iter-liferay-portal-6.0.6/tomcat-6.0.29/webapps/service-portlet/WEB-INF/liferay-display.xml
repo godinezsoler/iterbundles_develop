@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+
+<display>
+	<!--category name="category.6iterservice"-->
+	<category name="category.1iternews">
+		<portlet id="service-viewer-portlet"></portlet>
+		<portlet id="facebookportlet"></portlet>
+		<portlet id="content-map-portlet"></portlet>
+	</category>
+	<!--category name="category.8itersocial"-->
+	<!--category name="category.9itergeo"-->
+	<category name="category.hidden">
+		<portlet id="service-portlet"></portlet>
+	</category>
+</display>

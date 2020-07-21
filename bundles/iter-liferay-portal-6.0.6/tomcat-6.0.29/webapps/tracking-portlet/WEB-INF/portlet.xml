@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet>
+		<portlet-name>ranking-viewer-portlet</portlet-name>
+		<display-name>Ranking Viewer</display-name>
+		<portlet-class>com.protecmedia.iter.tracking.portlet.RankingViewerPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/ranking-viewer/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Ranking Viewer</title>
+			<short-title>Ranking Viewer</short-title>
+			<keywords>Ranking Viewer</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+		<supported-public-render-parameter>content-date</supported-public-render-parameter>
+		<supported-public-render-parameter>content-tags</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>content-tools-portlet</portlet-name>
+		<display-name>Content Tools</display-name>
+		<portlet-class>com.protecmedia.iter.tracking.portlet.ContentToolsPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/content-tools-portlet/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>sendMail-jsp</name>
+			<value>/html/content-tools-portlet/formulario-mail.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Content Tools</title>
+			<short-title>Content Tools</short-title>
+			<keywords>Content Tools</keywords>
+		</portlet-info>
+		<portlet-preferences>
+			<preference>
+				<name>hideConfigurationButton</name>
+				<value>true</value>
+			</preference>
+		</portlet-preferences>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+		<supported-public-render-parameter>content-date</supported-public-render-parameter>
+		<supported-public-render-parameter>content-tags</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>content-social-portlet</portlet-name>
+		<display-name>Content Social</display-name>
+		<portlet-class>com.protecmedia.iter.tracking.portlet.ContentToolsPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/content-social-portlet/call-social-networks.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Content Social</title>
+			<short-title>Content Social</short-title>
+			<keywords>Content Social</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+		<supported-public-render-parameter>content-date</supported-public-render-parameter>
+		<supported-public-render-parameter>content-tags</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>content-ratings-portlet</portlet-name>
+		<display-name>Content Ratings</display-name>
+		<portlet-class>com.protecmedia.iter.tracking.portlet.ContentToolsPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/content-ratings-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Content Ratings</title>
+			<short-title>Content Ratings</short-title>
+			<keywords>Content Ratings</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+		<supported-public-render-parameter>content-date</supported-public-render-parameter>
+		<supported-public-render-parameter>content-tags</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>tracking-portlet</portlet-name>
+		<display-name>Tracking</display-name>
+		<portlet-class>com.protecmedia.iter.tracking.portlet.TrackingPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/tracking-portlet/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-tracking-jsp</name>
+			<value>/html/tracking-portlet/edit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Tracking</title>
+			<short-title>Tracking</short-title>
+			<keywords>Tracking</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>user-feedback-portlet</portlet-name>
+		<display-name>User Feedback</display-name>
+		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/user-feedback-portlet/UserFeedbackView.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>User Feedback</title>
+			<short-title>User Feedback</short-title>
+			<keywords>User Feedback</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+		<supported-public-render-parameter>content-date</supported-public-render-parameter>
+		<supported-public-render-parameter>content-tags</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<public-render-parameter>
+		<identifier>content-id</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-id</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-date</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-date</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-tags</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-tags</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-section</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-section</qname>
+	</public-render-parameter>
+</portlet-app>

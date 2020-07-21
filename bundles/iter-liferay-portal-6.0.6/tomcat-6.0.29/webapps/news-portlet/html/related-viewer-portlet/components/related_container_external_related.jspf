@@ -1,0 +1,24 @@
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<%
+	String urlRelated 	   = articleData.getLink();
+	String title 		   = articleData.getTitle();
+	String elementClass    = articleData.getLinkclass();
+	String elementRel      = Validator.isNotNull(articleData.getLinkRel()) ? String.format("rel=\"%s\"", articleData.getLinkRel()) : StringPool.BLANK;
+	String linkType  	   = IterKeys.EXTERNAL_LINK_TYPE_CLASS;
+	String elemTagName 	   = HtmlOptimizer.isEnabled() ? "article" : "li";
+	
+%> 
+	<<%=elemTagName%> class="element <%=currentCssClass%> <%=linkType%> <%=elementClass%>">
+		<span class='teaserItemPosition <%=HtmlUtil.getRemovableClass()%>'><%=currentIndex%></span>
+		<div class="icon <%=elementClass%>"></div>
+		<div class="related-item-wrapper">
+			<a <%=elementRel%> href="<%= urlRelated %>" target="_blank"><%= title %></a>
+		</div>
+	</<%=elemTagName%>>
+<%						 
+	currentIndex++;
+									
+%>

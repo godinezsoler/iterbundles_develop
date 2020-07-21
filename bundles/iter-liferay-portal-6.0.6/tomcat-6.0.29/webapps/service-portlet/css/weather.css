@@ -1,0 +1,565 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.weather-portlet .aui-field {
+ 
+ margin-top:10px !important;
+ margin-left:10px !important;
+ margin-bottom:10px !important;
+ 
+ }
+
+.weather-portlet	.temp-warm {
+		color: #DD6E0B;
+	}
+.weather-portlet	.temp-cold {
+		color:	#3EA6D2;
+	}
+
+/* ------------------------ */
+/* ------ MINI VIEW  ------ */
+/* ------------------------ */
+.weather-portlet	.weather-mini, .weather-portlet	.weather-mini-long {
+		padding:			0px;
+		margin:				0px;
+		height:				40px;	
+		line-height:		normal;
+		text-decoration:	none;
+	}
+
+
+.weather-portlet .weather-mini-list {
+	background: url("../img/weatherPortlet/markerbox-bkgr.gif") repeat 0 0 transparent;
+	
+	}
+	
+.weather-portlet .weather-mini-city {
+
+	padding:			0px;
+	margin:				0px;
+	height:				40px;	
+	line-height:		normal;
+	text-decoration:	none;
+	}
+	
+
+	/* ------ MINI VIEW NORMAL ------ */
+	/* ------------------------------ */
+.weather-portlet	.weather-mini-temp, .weather-portlet	.weather-mini-temp-current,		.weather-portlet .weather-mini-image,
+.weather-portlet	.weather-mini-left,	.weather-portlet	.weather-mini-right {
+			padding:		0px;
+			margin:			0px;
+			float:			left;
+			vertical-align: middle;
+			text-align:		center;
+		}
+.weather-portlet	.weather-mini-city {
+			padding:	0px;
+			margin:		0px;
+			font-size:	16px;
+			color:		#000;
+			height:		28px;
+			margin-top: 12px;
+		}
+.weather-portlet	.weather-mini-temp-current {
+			font-weight:	700;
+			text-align:		center;
+		}
+.weather-portlet	.weather-mini-image {
+			width:		40px;
+			height:		40px;
+		}
+	
+	
+	
+	/* ------ MINI VIEW LONG ------ */
+	/* ---------------------------- */
+.weather-portlet	.weather-mini-long-left, .weather-portlet	.weather-mini-long-right,
+.weather-portlet	.weather-mini-long-middle,  .weather-portlet	.weather-mini-long-temp,
+.weather-portlet	.weather-mini-long-temptoday {
+			padding:		0px;
+			margin:			0px;
+			font-size:		14px;
+			float:			left;
+		}
+.weather-portlet	.weather-mini-long-left {
+			width:		8px;
+			height:		40px;
+			background: transparent url(../img/weatherPortlet/weather-mini-left4.gif) repeat-x 0px 0px;
+		}
+.weather-portlet	.weather-mini-long-right {
+			width:		8px;
+			height:		40px;
+			background: transparent url(../img/weatherPortlet/weather-mini-right4.gif) repeat-x 0px 0px;
+		}
+.weather-portlet	.weather-mini-long-middle {
+			background: transparent url(../img/weatherPortlet/weather-mini-middle4.gif) repeat-x 0px 0px;
+		}
+.weather-portlet	.weather-mini-long-temp {
+			height:			27px;
+			margin-top:		13px;
+			margin-left:	2px;
+		}
+.weather-portlet	.weather-mini-long-temp b {
+			color:			#999;
+		}
+.weather-portlet	.weather-mini-long-temptoday {
+			font-weight:	700;
+			font-size:		18px;
+			height:			28px;
+			margin-top:		10px;
+			margin-left:	2px;
+			margin-right:	2px;
+		}
+.weather-portlet	.weather-mini-long-side {
+			height: 		40px;
+		}
+	
+
+/* -------------------------- */
+/* ------ NORMAL VIEW  ------ */
+/* -------------------------- */
+#weather-portlet-cont {
+		border: 1px solid #CCC;
+		padding: 4px;
+	}
+#weather-today {
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 8px;
+	}
+	
+#weather-future {
+		padding: 8px 0px 0px 10px;
+	}
+	
+.weather-portlet	.weather-section {
+		font-family: "verdana", "arial", "helvetica", "geneva", sans-serif;
+		font-style: normal;
+		font-variant: normal;
+		color: #666666;
+	}
+.weather-portlet	.weather-link {
+		text-decoration: none;
+	}
+	
+.weather-portlet	.weather-today-left {
+		vertical-align:	top;
+		display:		inline-table;
+		width:			54%;
+	}
+.weather-portlet	.weather-today-right {
+		text-align:		center;
+		vertical-align:	top;
+		display:		inline-table;
+		width:			40%;
+	}
+.weather-portlet	.weather-today-city {
+		color: #444;
+		font-size: 22px;
+		line-height: normal;
+		text-decoration: none;
+		font-weight: 700;
+		border-bottom:	1px solid #ccc;
+	}
+.weather-portlet	.weather-today-day {
+		font-size: 14px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+.weather-portlet	.weather-today-line, .weather-portlet	.weather-today-condition,
+.weather-portlet	.weather-today-humidity, .weather-portlet	.weather-today-wind {
+		padding-left: 8px;
+	}
+.weather-portlet	.weather-today-temp {
+		font-size: 16px;
+		padding: 5px 0px 5px 0px;
+	}
+
+.weather-portlet	.weather-forecast-four {
+		width: 23%;
+		text-align: center;
+		display: inline-table;
+	}
+.weather-portlet	.weather-forecast-three {
+		width: 32%;
+		text-align: center;
+		display: inline-table;
+	}
+.weather-portlet	.weather-forecast-two {
+		width: 44%;
+		text-align: center;
+		display: inline-table;
+	}
+.weather-portlet	.weather-forecast {
+		width: 50px;
+		display: inline-table;
+	}
+.weather-portlet	.weather-forecast-temp {
+		width: 63px;
+	}
+
+.weather-portlet	.weather-clear {
+		clear: both;
+	}
+
+
+/* -------------------------- */
+/* --------- IMAGES --------- */
+/* -------------------------- */
+.weather-portlet	.weather-mini-image {
+		height: 40px;
+		width:	44px;
+		background: transparent url(../img/weatherPortlet/Protec-Weather-Icons-256-notrans.gif) no-repeat 0px 0px;
+	}
+.weather-portlet	.weather-image {
+		height: 40px;
+		width:	44px;
+		background: transparent url(../img/weatherPortlet/Protec-Weather-Icons-256-notrans-nobar.gif) no-repeat 0px 0px;
+	}
+	#weather-chancerain		{background-position:    0px   0px; margin-left: 8px;}
+	#weather-chancesnow		{background-position:  -44px   0px; margin-left: 8px;}
+	#weather-chancestorm	{background-position:  -88px   0px; margin-left: 8px;}
+	#weather-chancetstorm	{background-position: -132px   0px; margin-left: 8px;}
+	#weather-cloudy			{background-position: -176px   0px; margin-left: 8px;}
+
+	#weather-fog			{background-position:    0px -40px; margin-left: 8px;}
+	#weather-haze			{background-position:  -44px -40px; margin-left: 8px;}
+	#weather-mist			{background-position:  -88px -40px; margin-left: 8px;}
+	#weather-mostly_cloudy	{background-position: -132px -40px; margin-left: 8px;}
+	#weather-mostly_sunny	{background-position: -176px -40px; margin-left: 8px;}
+
+	#weather-partly_cloudy	{background-position:    0px -80px; margin-left: 8px;}
+	#weather-rain			{background-position:  -44px -80px; margin-left: 8px;}
+	#weather-sleet			{background-position:  -88px -80px; margin-left: 8px;}
+	#weather-snow			{background-position: -132px -80px; margin-left: 8px;}
+	#weather-storm			{background-position: -176px -80px; margin-left: 8px;}
+
+	#weather-sunny			{background-position:   0px -120px; margin-left: 8px;}
+	#weather-thunderstorm	{background-position: -44px -120px; margin-left: 8px;}
+	
+	
+.weather-portlet	.weather-big-image {
+		height: 68px;
+		width:	68px;
+		margin-left: auto ;
+  		margin-right: auto ;
+		background: transparent url(../img/weatherPortlet/Protec-Weather-Icons_w68px.gif) no-repeat 0px 0px;
+	}
+	#weather-big-chancerain		{background-position:    0px   0px;}
+	#weather-big-chancesnow		{background-position:  -68px   0px;}
+	#weather-big-chancestorm	{background-position: -136px   0px;}
+	#weather-big-chancetstorm	{background-position: -204px   0px;}
+	#weather-big-cloudy			{background-position: -272px   0px;}
+ 
+	#weather-big-fog			{background-position:    0px -68px;}
+	#weather-big-haze			{background-position:  -68px -68px;}
+	#weather-big-mist			{background-position: -136px -68px;}
+	#weather-big-mostly_cloudy	{background-position: -204px -68px;}
+	#weather-big-mostly_sunny	{background-position: -272px -68px;}
+
+	#weather-big-partly_cloudy	{background-position:    0px -136px;}
+	#weather-big-rain			{background-position:  -68px -136px;}
+	#weather-big-sleet			{background-position: -136px -136px;}
+	#weather-big-snow			{background-position: -204px -136px;}
+	#weather-big-storm			{background-position: -272px -136px;}
+
+	#weather-big-sunny			{background-position:    0px -204px;}
+	#weather-big-thunderstorm	{background-position:  -68px -204px;}
+	
+
+
+
+
+/* -------------------------- */
+/* ------- WEATHERBOX ------- */
+/* -------------------------- */
+
+.weather-small {
+		height:				40px;
+	
+	}    
+ 
+.weather-text-cityname{
+	display:		inline;
+	font-weight:	bold;
+	}
+	
+.weather-portlet   .weather-mini, .weather-portlet .weather-mini-long {
+        padding:            0px;
+        margin:             0px;
+        height:             40px;   
+        line-height:        normal;
+        text-decoration:    none;
+    }
+.weather-portlet    .weatherbox, .weather-portlet .weatherbox-city, .weather-portlet .weatherbox-middle {
+        font-size:      7px;
+        line-height:    7px;
+        height:         7px;
+    }
+    
+.weather-portlet    .weatherbox-middle-details{
+    	display: none;
+    }
+.weather-portlet    .weatherbox-middle-details:hover{
+    	display: block;
+    }
+    
+.weather-portlet    .weatherbox-forecast {
+        float:          left;
+        display:        inline;
+        padding:        0px;
+        margin:         0px;
+        font-size:      7px;
+        margin:     0px 2px 0px 0px;
+    }
+.weather-portlet	.weatherbox-left, .weather-portlet	.weatherbox-right, .weather-portlet		.weatherbox-middle, 
+.weather-portlet	.weatherbox-middle-info {
+        height:         42px;
+        padding:        0px;
+        margin:         0px;
+        float:          left;
+        
+    }
+.weather-portlet    .weatherbox-middle {
+        padding:    1px 2px 0px 2px;
+        height:     42px;
+        cursor: 		pointer;
+        
+    }    
+.weather-portlet    .weatherbox-middle-info {
+    	padding:    1px 2px 0px 2px;
+        height:     41px;
+    }
+    
+.weather-portlet    .weatherbox-left {
+        background: transparent url(../img/weatherPortlet/markerbox-left.gif) no-repeat 0px 0px;
+        width: 6px;
+    }
+.weather-portlet   .weatherbox-right {
+        background: transparent url(../img/weatherPortlet/markerbox-right.gif) no-repeat 0px 0px;
+        width: 6px;
+    }
+.weather-portlet    .weatherbox-middle {
+        background: transparent url(../img/weatherPortlet/markerbox-bkgr.gif) repeat-x 0px 0px;
+    }
+.weather-portlet    .weatherbox-middle-info {
+        background: transparent url(../img/weatherPortlet/markerbox-bkgr.gif) repeat-x 0px 0px;
+    }
+.weather-portlet    .weatherbox-temp-current, .weather-portlet		.weatherbox-city {
+       font-size:   14px;
+       line-height: 14px;
+       height:      14px;
+       font-weight: 700;
+       margin-top: -2px;
+    }
+.weather-portlet    .weatherbox-temp-current {
+        margin-top: 1px;
+    }
+.weather-portlet    .weatherbox-temptype, .weather-portlet		.weatherbox-temp {
+       display:     inline;
+       float:       none;
+       font-size:   9px;
+       line-height: 9px;
+       height:      9px;
+    }
+.weather-portlet     .weatherbox {
+        background-color: none;
+        float: left;
+        font-family:    "verdana", "arial", "helvetica", "geneva", sans-serif;
+        width: 280px;
+    }    
+     
+
+
+.weather-portlet    .weather-box-image {
+        height: 40px;
+        width:  44px;
+        float: left;
+        margin-left: auto ;
+        margin-right: auto ;
+        background: transparent url(../img/weatherPortlet/Protec-Weather-Icons-2.jpg) no-repeat 0px 0px;
+    }
+    #weather-box-chancerain {background-position:   0px   0px;}
+    #weather-box-chancesnow {background-position: -44px   0px;}
+    #weather-box-chancestorm    {background-position: -88px   0px;}
+    #weather-box-chancetstorm   {background-position:-132px   0px;}
+    #weather-box-cloudy     {background-position:-176px   0px;}
+
+    #weather-box-fog            {background-position:   0px -40px;}
+    #weather-box-haze           {background-position: -44px -40px;}
+    #weather-box-mist           {background-position: -88px -40px;}
+    #weather-box-mostlycloudy   {background-position:-132px -40px;}
+    #weather-box-mostlysunny    {background-position:-176px -40px;}
+
+    #weather-box-partlycloudy   {background-position:   0px -80px;}
+    #weather-box-rain           {background-position: -44px -80px;}
+    #weather-box-sleet          {background-position: -88px -80px;}
+    #weather-box-snow           {background-position:-132px -80px;}
+    #weather-box-storm          {background-position:-176px -80px;}
+
+    #weather-box-sunny          {background-position:   0px -120px;}
+    #weather-box-thunderstorm   {background-position: -44px -120px;}
+
+
+
+
+
+/**********************
+****Vista de lista*****
+***********************/
+
+
+	
+	   
+.weather-portlet    .weatherbox-temptype-small, .weather-portlet	.weatherbox-temp-small {
+       display:     inline;
+       float:       none;
+       font-size:   13px;
+       line-height: 17px;
+       height:      9px;
+    }
+    
+.weather-portlet	.temp-cold-small {
+		color:	#3EA6D2;
+	}
+	    
+.weather-portlet    .weatherbox-forecast-small {
+        float:          left;
+        display:        inline;
+        padding:        0px;
+        margin:         0px;
+        font-size:      7px;
+        margin-left:    10px;
+        width: 			30%;
+    }
+    
+.weather-portlet .weatherbox-city-small, .weather-portlet .weatherbox-middle-small {
+       font-size:   14px;
+       line-height: 14px;
+       height:      14px;
+       margin-top:  1px;
+       text-align: center;
+       
+    }
+
+.weather-portlet .weatherbox-city-small{
+		font-weight: 700;
+	}
+	
+	
+.weatherbox-temp-warm-forecast{
+	min-width: 200px;
+    position: relative;
+    width: 33%
+	}
+	
+.weather-portlet	.weather-link-small {
+		text-decoration: none;
+	}
+	
+.weather-portlet .weather-mini-city-small {
+
+	padding:			0px;
+	margin:				0px;
+	font-size:			16px;
+	color:				#000;
+	height:				28px;
+	margin-top: 		1px;	
+	margin-left: 		5px;	
+	line-height:		normal;
+	text-decoration:	none;
+	
+	}
+
+.weather-portlet    .weatherbox-temp-current-small {
+        margin-top: 1px;
+        display: inline;
+	    position: absolute;
+	    width: 60px;
+	    margin-left: 22px;
+	    right: -10px;
+    }
+    
+.weather-portlet	.temp-warm-small {
+		color: #DD6E0B;
+	}    
+    
+.weather-portlet	.weatherbox-left-small, .weather-portlet	
+.weatherbox-right-small, .weather-portlet	.weatherbox-middle-small{
+        height:         32px;
+        padding:        0px;
+        margin:         0px;
+        float:          left;
+        
+    }
+.weather-portlet    .weatherbox-middle-small {
+        padding:    1px 6px 0px 6px;
+        height:     32px;
+        cursor: 		pointer;
+        
+    }    
+        
+.weather-portlet    .weatherbox-left-small {
+        background: transparent url(../img/weatherPortlet/markerbox-left-small.gif) no-repeat 0px 0px;
+        width: 5px;
+    }
+.weather-portlet   .weatherbox-right-small {
+        background: transparent url(../img/weatherPortlet/markerbox-right-small.gif) no-repeat 0px 0px;
+        width: 5px;
+    }
+.weather-portlet    .weatherbox-middle-small {
+        background: transparent url(../img/weatherPortlet/markerbox-bkgr-small.gif) repeat-x 0px 0px;
+    }
+ 
+
+.weather-portlet    .weather-box-mini-image {
+        height: 27px;
+        width:  30px;
+        float: left;
+        margin-left: auto ;
+        margin-right: auto ;
+        background: transparent url(../img/weatherPortlet/Protec-Weather-Icons-2-small.jpg) no-repeat 0px 0px;
+    }
+    
+    #weather-box-mini-chancerain {background-position:   	0px   0px;}
+    #weather-box-mini-chancesnow {background-position: 		-30px   0px;}
+    #weather-box-mini-chancestorm    {background-position: 	-60px   0px;}
+    #weather-box-mini-chancetstorm   {background-position:	-90px   0px;}
+    #weather-box-mini-cloudy     {background-position:		-120px   0px;}
+
+    #weather-box-mini-fog            {background-position:  0px -28px;}
+    #weather-box-mini-haze           {background-position: 	-30px -28px;}
+    #weather-box-mini-mist           {background-position: 	-60px -28px;}
+    #weather-box-mini-mostlycloudy   {background-position:	-90px -28px;}
+    #weather-box-mini-mostlysunny    {background-position:	-120px -28px;}
+
+    #weather-box-mini-partlycloudy   {background-position:  0px -56px;}
+    #weather-box-mini-rain           {background-position: 	-30px -56px;}
+    #weather-box-mini-sleet          {background-position: 	-60px -56px;}
+    #weather-box-mini-snow           {background-position:	-90px -56px;}
+    #weather-box-mini-storm          {background-position:	-120px -56px;}
+
+    #weather-box-mini-sunny          {background-position:  0px -81px;}
+    #weather-box-mini-thunderstorm   {background-position: 	-30px -81px;}
+    
+/* --------------------------- */
+
+
+
+
+
+
+
+	/* ---------------
+		DEBUG COLORS
+	   ---------------
+	.weather-mini, .weather-mini-long {
+		background-color: olive	;
+	}
+	.weather-mini-long-side {
+		background-color: red;
+	}
+	.weather-mini-long-middle {
+		background-color: navy;
+	}
+	 */

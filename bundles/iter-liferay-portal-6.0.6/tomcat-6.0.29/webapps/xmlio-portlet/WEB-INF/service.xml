@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.protecmedia.iter.xmlio">
+	<author></author>
+	<namespace>Xmlio</namespace>
+	<!-- Channel -->
+	<entity name="Channel" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="groupId" type="long"></column>
+		<!-- Other columns -->
+		<column name="name" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="type" type="String"></column>
+		<column name="mode" type="String"></column>
+		<column name="filePath" type="String"></column>
+		<column name="xslPath" type="String"></column>
+		<column name="ftpServer" type="String"></column>
+		<column name="ftpUser" type="String"></column>
+		<column name="ftpPassword" type="String"></column>
+		<column name="status" type="boolean"></column>
+		<column name="program" type="boolean"></column>
+		<column name="programHour" type="int"></column>
+		<column name="programMin" type="int"></column>
+		<column name="rangeType" type="String"></column>
+		<column name="rangeTimeAll" type="boolean"></column>
+		<column name="rangeTimeValue" type="int"></column>
+		<column name="rangeTimeUnit" type="String"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+	</entity>
+	<!-- Channel Control -->
+	<entity name="ChannelControl" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="groupId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<!-- Other columns -->
+		<column name="type" type="String"></column>
+		<column name="operation" type="String"></column>
+		<column name="status" type="String"></column>
+		<column name="startDate" type="Date"></column>
+		<column name="endDate" type="Date"></column>
+		<column name="operations" type="long"></column>
+		<column name="errors" type="long"></column>
+		<column name="fileSize" type="long"></column>
+		<column name="errorLog" type="String"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="Type" return-type="Collection">
+			<finder-column name="type"></finder-column>
+		</finder>
+		<finder name="TypeOperation" return-type="Collection">
+			<finder-column name="type"></finder-column>
+			<finder-column name="operation"></finder-column>
+		</finder>
+		<finder name="TypeOperationStatus" return-type="Collection">
+			<finder-column name="type"></finder-column>
+			<finder-column name="operation"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+	</entity>
+	<!-- Channel Control Log-->
+	<entity name="ChannelControlLog" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="channelControlId" type="long"></column>
+		<column name="groupId" type="long"></column>
+		<!-- Other columns -->
+		<column name="globalId" type="String"></column>
+		<column name="operation" type="String"></column>
+		<column name="classNameValue" type="String"></column>
+		<column name="errorLog" type="String"></column>
+		<finder name="channelControlId" return-type="Collection">
+			<finder-column name="channelControlId"></finder-column>
+		</finder>
+	</entity>
+	<!-- Live -->
+	<entity name="Live" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="groupId" type="long"></column>
+		<column name="classNameValue" type="String"></column>
+		<column name="globalId" type="String"></column>
+		<column name="localId" type="String"></column>
+		<!-- Other columns -->
+		<column name="operation" type="String"></column>
+		<column name="status" type="String"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="performDate" type="Date"></column>
+		<column name="errorLog" type="String"></column>
+		<column name="existInLive" type="String"></column>
+		<finder name="groupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="classNameValue" return-type="Collection">
+			<finder-column name="classNameValue"></finder-column>
+		</finder>
+		<finder name="localIdGroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="localId"></finder-column>
+		</finder>
+		<finder name="globalIdClassNameValue" return-type="Collection">
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="globalId"></finder-column>
+		</finder>
+		<finder name="localIdGroupIdStatus" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="localId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="classNameValueGlobalId" return-type="Live">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="globalId"></finder-column>
+		</finder>
+		<finder name="classNameValueLocalId" return-type="Live">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="localId"></finder-column>
+		</finder>
+		<finder name="classNameValueGroupIdStatus" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="classNameValueGroupIdOperation" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="operation"></finder-column>
+		</finder>
+		<finder name="classNameValueOperationStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="operation"></finder-column>
+		</finder>
+		<finder name="modifiedDate" return-type="Collection">
+			<finder-column name="modifiedDate"></finder-column>
+		</finder>
+		<finder name="classNameValueGroupIdOperationModifiedDate" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameValue"></finder-column>
+			<finder-column name="operation"></finder-column>
+			<finder-column name="modifiedDate" comparator="&lt;"></finder-column>
+		</finder>
+		<finder name="groupIdStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+	</entity>
+	<!-- Live Pool -->
+	<entity name="LivePool" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="livePoolId" type="long"></column>
+		<column name="liveParentId" type="long"></column>
+		<column name="liveChildId" type="long"></column>
+		<!-- Other columns -->
+		<column name="processId" type="String"></column>
+		<finder name="livePool" return-type="Collection">
+			<finder-column name="livePoolId"></finder-column>
+		</finder>
+		<finder name="liveParent" return-type="Collection">
+			<finder-column name="liveParentId"></finder-column>
+		</finder>
+		<finder name="liveChild" return-type="Collection">
+			<finder-column name="liveChildId"></finder-column>
+		</finder>
+		<finder name="process" return-type="Collection">
+			<finder-column name="processId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="ProcessIsNot">
+			<finder-column name="processId" comparator="!="></finder-column>
+		</finder>
+		<finder return-type="Collection" name="PoolidProcessIsNot">
+			<finder-column name="livePoolId"></finder-column>
+			<finder-column name="processId" comparator="!="></finder-column>
+		</finder>
+		<finder name="livePoolParent" return-type="Collection">
+			<finder-column name="livePoolId"></finder-column>
+			<finder-column name="liveParentId"></finder-column>
+		</finder>
+		<finder name="livePoolEntry" return-type="LivePool" unique="true">
+			<finder-column name="livePoolId"></finder-column>
+			<finder-column name="liveParentId"></finder-column>
+			<finder-column name="liveChildId"></finder-column>
+		</finder>
+	</entity>
+	<!-- Live Configuration -->
+	<entity name="LiveConfiguration" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long"></column>
+		<!-- Other columns -->
+		<column name="remoteIterServer" type="String"></column>
+		<column name="gatewayHost" type="String"></column>
+		<column name="localPath" type="String"></column>
+		<column name="outputMethod" type="String"></column>
+		<column name="ftpPath" type="String"></column>
+		<column name="ftpUser" type="String"></column>
+		<column name="ftpPassword" type="String"></column>
+		<column name="remotePath" type="String"></column>
+		<column name="destinationType" type="String"></column>
+		<column name="remoteChannelId" type="long"></column>
+		<column name="remoteUserId" type="long"></column>
+		<column name="remoteUserName" type="String"></column>
+		<column name="remoteUserPassword" type="String"></column>
+		<column name="remoteGlobalGroupId" type="long"></column>
+		<column name="remoteCompanyId" type="long"></column>
+		<column name="archive" type="boolean"></column>
+		<column name="connectionTimeOut" type="long"></column>
+		<column name="operationTimeOut" type="long"></column>
+		<finder return-type="LiveConfiguration" name="CompanyId" unique="true">
+			<finder-column name="companyId"></finder-column>
+		</finder>
+	</entity>
+	<!-- Live Control -->
+	<entity name="LiveControl" local-service="true" remote-service="true" cache-enabled="true" persistence-class="com.protecmedia.iter.xmlio.service.persistence.LiveControlPersistenceChildImpl">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="groupId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<!-- Other columns -->
+		<column name="processId" type="String"></column>
+		<column name="subprocessId" type="String"></column>
+		<column name="type" type="String"></column>
+		<column name="status" type="String"></column>
+		<column name="fileSize" type="long"></column>
+		<column name="operations" type="long"></column>
+		<column name="errors" type="long"></column>
+		<column name="startDate" type="Date"></column>
+		<column name="endDate" type="Date"></column>
+		<column name="errorLog" type="String"></column>
+		<finder return-type="LiveControl" name="ProcessId">
+			<finder-column name="processId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="Status">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="EndDateIsNot">
+			<finder-column name="endDate" comparator="!="></finder-column>
+		</finder>
+		<finder return-type="Collection" name="StatusIsNot">
+			<finder-column name="status" comparator="!="></finder-column>
+		</finder>
+		<finder return-type="Collection" name="EndDate">
+			<finder-column name="endDate"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="TypeStatus">
+			<finder-column name="type"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupTypeStatus">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="type"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="GroupIdStatus">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+	</entity>
+	<entity name="ContextVarsPublish" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterPortletInstance" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="JournalArticleImport" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="ImportMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="DaylyTopicsPublication" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="CatalogPublication" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="CategoriesPropertiesPublication" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="WebsiteIO" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterAdminIO" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="DataProblemsDiagnostic" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="CommunityPublisher" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<exceptions>
+		<exception>DuplicateLive</exception>
+		<exception>PoolInProcess</exception>
+	</exceptions>
+</service-builder>

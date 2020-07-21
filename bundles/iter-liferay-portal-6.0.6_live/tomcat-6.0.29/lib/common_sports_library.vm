@@ -1,0 +1,318 @@
+#macro (MatchFull)
+
+	#if($EquipoLocal && $EquipoLocal.data != "" && $EquipoVisitante && $EquipoVisitante.data !="")
+		
+
+
+
+        #if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+           #if($viewMode.indexOf("detalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_destacado","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_destacado","detalle_directo"))
+           #end
+        #end
+
+		#if(!($ResultadoLocal))
+			#set($ResLocal = "-")
+			#set($ResVisitante = "-")
+		#else
+			#set($Integer = 0)
+    		#if (($Integer.parseInt($ResultadoLocal.data) > 99 ) || ($Integer.parseInt($ResultadoVisitante.data) > 99 ))
+    			#set($classNumbers = "bigNumber") 
+    		#else
+    			#set($classNumbers = "smallNumber")
+    		#end
+			
+			#set($ResLocal = $ResultadoLocal.data)
+			#set($ResVisitante = $ResultadoVisitante.data )
+			
+		#end
+		
+        
+		<div class="md-match md match-full">
+			<div class="bd">
+				<div class="wrp-match">
+					<div class="match-hd cf">
+						#if($Jornada && $Jornada.data != "")
+							<span class="match-kicker fl">$Jornada.data</span>
+						#end
+					</div><!-- .match-hd -->
+					<div class="match-bd cf">
+						<span class="score-shadow"></span>
+						<p class="local-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoLocal.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoLocal.data</a></span>
+							<span class="team-score $classNumbers">$ResLocal</span>
+						</p><!-- .local-team -->
+						<p class="visitor-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoVisitante.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoVisitante.data</a></span>
+							<span class="team-score $classNumbers">$ResVisitante</span>
+						</p><!-- .visitor-team -->
+					</div><!-- .match-bd -->
+					<div class="match-ft cf">
+						#if(($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")||($FechaPartido.data && $FechaPartido.data !=""))
+							<div class="wrp-match-info tx-ct">
+								#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+									<span class="match-info"><em class="live"><a href="$viewMode">EN DIRECTO</a></em></span>
+								#elseif($FechaPartido.data && $FechaPartido.data !="")
+									<span class="match-info"><em><a href="$viewMode">$FechaPartido.data</a></em></span>
+								#end
+							</div>
+						#end
+						#if($Arbitro && $Arbitro.data != "")
+							<span class="match-referee fl"><em>Árbitro:</em> $Arbitro.data</span>
+						#end
+						
+						#if($Estadio && $Estadio.data != "")
+							<span class="match-stadium fr"><em>$Estadio.data</em> </span>
+						#end
+					</div><!-- .match-ft -->
+				</div><!-- .wrp-match -->
+			</div><!-- .bd -->
+		</div>
+	#end
+#end
+
+
+#macro (MatchMid)
+
+	#if($EquipoLocal && $EquipoLocal.data != "" && $EquipoVisitante && $EquipoVisitante.data !="")
+		#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+           #if($viewMode.indexOf("detalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_destacado","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_destacado","detalle_directo"))
+           #end
+        #end
+		
+		
+	
+		#if(!($ResultadoLocal))
+			#set($ResLocal = "-")
+			#set($ResVisitante = "-")
+		#else
+			#set($Integer = 0)
+    		#if (($Integer.parseInt($ResultadoLocal.data) > 99 ) || ($Integer.parseInt($ResultadoVisitante.data) > 99 ))
+    			#set($classNumbers = "bigNumber") 
+    		#else
+    			#set($classNumbers = "smallNumber")
+    		#end
+			
+			#set($ResLocal = $ResultadoLocal.data)
+			#set($ResVisitante = $ResultadoVisitante.data )
+			
+		#end
+		
+		<div class="md-match md match-mid">
+			<div class="bd">
+				<div class="wrp-match">
+					<div class="match-hd cf">
+						#if($Jornada && $Jornada.data != "")
+							<span class="match-kicker fl">$Jornada.data</span>
+						#end
+					</div><!-- .match-hd -->
+					<div class="match-bd cf">
+						<span class="score-shadow"></span>
+						<p class="local-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoLocal.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoLocal.data</a></span>
+							<span class="team-score $classNumbers">$ResLocal</span>
+						</p><!-- .local-team -->
+						<p class="visitor-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoVisitante.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoVisitante.data</a></span>
+							<span class="team-score $classNumbers">$ResVisitante</span>
+						</p><!-- .visitor-team -->
+					</div><!-- .match-bd -->
+					<div class="match-ft cf">
+						#if(($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")||($FechaPartido.data && $FechaPartido.data !=""))
+							<div class="wrp-match-info tx-ct">
+								#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+									<span class="match-info"><em class="live"><a href="$viewMode">EN DIRECTO</a></em></span>
+								#elseif($FechaPartido.data && $FechaPartido.data !="")
+									<span class="match-info"><em><a href="$viewMode">$FechaPartido.data</a></em></span>
+								#end
+							</div>
+						#end
+						#if($Arbitro && $Arbitro.data != "")
+							<span class="match-referee fl"><em>Árbitro:</em> $Arbitro.data</span>
+						#end
+						
+						#if($Estadio && $Estadio.data != "")
+							<span class="match-stadium fr"><em>$Estadio.data</em></span>
+						#end
+					</div><!-- .match-ft -->
+				</div><!-- .wrp-match -->
+			</div><!-- .bd -->
+		</div>
+	#end
+
+#end
+
+
+#macro (MatchSmall)
+
+	#if($EquipoLocal && $EquipoLocal.data != "" && $EquipoVisitante && $EquipoVisitante.data !="")
+		 #if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+           #if($viewMode.indexOf("detalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_destacado","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_destacado","detalle_directo"))
+           #end
+        #end
+		
+		#if(!($ResultadoLocal))
+			#set($ResLocal = "-")
+			#set($ResVisitante = "-")
+		#else
+			#set($Integer = 0)
+    		#if (($Integer.parseInt($ResultadoLocal.data) > 99 ) || ($Integer.parseInt($ResultadoVisitante.data) > 99 ))
+    			#set($classNumbers = "bigNumber") 
+    		#else
+    			#set($classNumbers = "smallNumber")
+    		#end
+			
+			#set($ResLocal = $ResultadoLocal.data)
+			#set($ResVisitante = $ResultadoVisitante.data )
+			
+		#end
+		
+		
+		<div class="md-match md match-rcol">
+			<div class="bd">
+				<div class="wrp-match">
+					<div class="match-hd cf">
+						#if($Jornada && $Jornada.data != "")
+							<span class="match-kicker fl">$Jornada.data</span>
+						#end
+						#if(($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")||($FechaPartido.data && $FechaPartido.data !=""))
+							<div class="wrp-match-info fr">
+								#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+									<span class="match-info"><em class="live"><a href="$viewMode">EN DIRECTO</a></em></span>
+								#elseif($FechaPartido.data && $FechaPartido.data !="")
+									<span class="match-info"><em><a href="$viewMode">$FechaPartido.data</a></em></span>
+								#end
+							</div>
+						#end
+					</div><!-- .match-hd -->
+					<div class="match-bd cf">
+						<span class="score-shadow"></span>
+						<p class="local-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoLocal.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoLocal.data</a></span>
+							<span class="team-score $classNumbers">$ResLocal</span>
+						</p><!-- .local-team -->
+						<p class="visitor-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoVisitante.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoVisitante.data</a></span>
+							<span class="team-score $classNumbers">$ResVisitante</span>
+						</p><!-- .visitor-team -->
+					</div><!-- .match-bd -->
+					<div class="match-ft cf">
+						#if($Arbitro && $Arbitro.data != "")
+							<span class="match-referee fl"><em>Árbitro:</em> $Arbitro.data</span>
+						#end
+						
+						#if($Estadio && $Estadio.data != "")
+						<span class="match-stadium fr"><em>$Estadio.data</em></span>
+						#end
+					</div><!-- .match-ft -->
+				</div><!-- .wrp-match -->
+			</div><!-- .bd -->
+		</div>
+	#end
+#end
+
+
+#macro (MatchesRcol)
+	
+	#if($EquipoLocal && $EquipoLocal.data != "" && $EquipoVisitante && $EquipoVisitante.data !="")
+		#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+           #if($viewMode.indexOf("detalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("detalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("detalle_destacado","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_normal") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_normal","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_lateral") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_lateral","detalle_directo"))
+           #elseif($viewMode.indexOf("scdetalle_destacado") >= 0)
+        		#set($viewMode = $viewMode.replace("scdetalle_destacado","detalle_directo"))
+           #end
+        #end
+		
+		#if(!($ResultadoLocal))
+			#set($ResLocal = "-")
+			#set($ResVisitante = "-")
+		#else
+			#set($Integer = 0)
+    		#if (($Integer.parseInt($ResultadoLocal.data) > 99 ) || ($Integer.parseInt($ResultadoVisitante.data) > 99 ))
+    			#set($classNumbers = "bigNumber") 
+    		#else
+    			#set($classNumbers = "smallNumber")
+    		#end
+			
+			#set($ResLocal = $ResultadoLocal.data)
+			#set($ResVisitante = $ResultadoVisitante.data )
+			
+		#end
+		
+        <div class="md-match md matches-rcol">
+        	<div class="bd">
+        		<div class="wrp-match">
+        			<div class="match-hd cf">
+    					#if($Jornada && $Jornada.data != "")
+    						<span class="match-kicker fl">$Jornada.data</span>
+    					#end
+        				#if($Vinculominutoaminuto && $Vinculominutoaminuto.data !="")
+									<span class="match-info"><em class="live"><a href="$viewMode">EN DIRECTO</a></em></span>
+						#elseif($FechaPartido.data && $FechaPartido.data !="")
+							<span class="match-info"><em><a href="$viewMode">$FechaPartido.data</a></em></span>
+						#end
+        			</div><!-- .match-hd -->
+        			<div class="match-bd cf">
+        				<p class="local-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoLocal.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoLocal.data</a></span>
+							<span class="team-score $classNumbers">$ResLocal</span>
+						</p><!-- .local-team -->
+						<p class="visitor-team team-item fl">
+							<span class="team-badge"><img alt="" src="$EscudoVisitante.Low.data" class="mg"></span>
+							<span class="team-name"><a href="$viewMode">$EquipoVisitante.data</a></span>
+							<span class="team-score $classNumbers">$ResVisitante</span>
+						</p><!-- .visitor-team -->
+        			</div><!-- .match-bd -->
+        		</div><!-- .wrp-match -->
+        		
+        	</div><!-- .bd -->
+        </div>
+	#end
+#end

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_WebsiteIOService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="abortExport" qname="operNS:abortExport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="computeXPortDependencies" qname="operNS:computeXPortDependencies" returnQName="computeXPortDependenciesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="objectsSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="exportObjects" qname="operNS:exportObjects" returnQName="exportObjectsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="objectsSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importObject" qname="operNS:importObject" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="className" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importPostProcessInfo" qname="operNS:importPostProcessInfo" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="relationships" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importPreProcessInfo" qname="operNS:importPreProcessInfo" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="mlnstationInfo" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="resetImport" qname="operNS:resetImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="mlnstationInfo" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="abortExport computeXPortDependencies exportObjects importObject importPostProcessInfo importPreProcessInfo resetImport" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.WebsiteIOServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="WebsiteIOServiceSoap" />
+		<parameter name="wsdlServiceElement" value="WebsiteIOServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_WebsiteIOService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

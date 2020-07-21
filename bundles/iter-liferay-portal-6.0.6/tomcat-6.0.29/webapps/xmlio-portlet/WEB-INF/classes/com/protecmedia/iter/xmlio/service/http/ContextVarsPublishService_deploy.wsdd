@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_ContextVarsPublishService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.xmlio.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importContents" qname="operNS:importContents" returnQName="importContentsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publishCtxVarsToLive" qname="operNS:publishCtxVarsToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="ctxVarIds" type="tns:ArrayOf_xsd_string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publishToLive" qname="operNS:publishToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importContents publishCtxVarsToLive publishToLive" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ContextVarsPublishServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.xmlio.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ContextVarsPublishServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ContextVarsPublishServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ContextVarsPublishService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

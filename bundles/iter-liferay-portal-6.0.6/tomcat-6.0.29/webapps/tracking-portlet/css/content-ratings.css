@@ -1,0 +1,41 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+
+.star-rating-wrap{
+    font-family:Arial, sans-serif;
+}
+.star-rating-wrap p span{
+    font-weight:bold;
+}
+.star-rating-wrap a{
+    text-decoration:none;
+}
+.star-rating{
+    margin-right: 10px;
+    float:left;
+}
+.star-score{
+	font-size:12px;
+    font-weight:bold;
+	float:left;
+	margin-top:2px;
+	color:#999;
+}
+
+.star-rating span{
+    display:block;
+    border:none;
+    margin:none;
+    padding:none;
+    width:15px;
+    height:15px;
+    cursor:pointer;
+    float:left;
+}
+.star-grey{
+    background-image:url("../img/star-grey.jpg");
+}
+.star-red{
+    background-image:url("../img/star-red.jpg");
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_DataProblemsDiagnosticService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="captureData" qname="operNS:captureData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="onlyLogs" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="cleanData" qname="operNS:cleanData" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="createZipLiveData" qname="operNS:createZipLiveData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="namesPkgImportation" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="nameImpFiles" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="getLastDownloadError" qname="operNS:getLastDownloadError" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getStateCaptureProcess" qname="operNS:getStateCaptureProcess" returnQName="getStateCaptureProcessReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="startCaptureData" qname="operNS:startCaptureData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="onlyLogs" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catFileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="stopProcess" qname="operNS:stopProcess" soapAction=""> </operation>
+		<parameter name="allowedMethods" value="captureData cleanData createZipLiveData getLastDownloadError getStateCaptureProcess startCaptureData stopProcess" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.DataProblemsDiagnosticServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="DataProblemsDiagnosticServiceSoap" />
+		<parameter name="wsdlServiceElement" value="DataProblemsDiagnosticServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_DataProblemsDiagnosticService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

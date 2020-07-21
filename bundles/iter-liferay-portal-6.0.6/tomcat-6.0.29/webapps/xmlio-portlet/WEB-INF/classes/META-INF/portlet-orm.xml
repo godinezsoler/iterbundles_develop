@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.ChannelModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="mode" />
+			<basic name="filePath" />
+			<basic name="xslPath" />
+			<basic name="ftpServer" />
+			<basic name="ftpUser" />
+			<basic name="ftpPassword" />
+			<basic name="status" />
+			<basic name="program" />
+			<basic name="programHour" />
+			<basic name="programMin" />
+			<basic name="rangeType" />
+			<basic name="rangeTimeAll" />
+			<basic name="rangeTimeValue" />
+			<basic name="rangeTimeUnit" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.ChannelControlModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="userId" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="operation" />
+			<basic name="status" />
+			<basic name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="operations" />
+			<basic name="errors" />
+			<basic name="fileSize" />
+			<basic name="errorLog" />
+			<transient name="primaryKey" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.ChannelControlLogModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="channelControlId" />
+			<basic name="groupId" />
+			<basic name="globalId" />
+			<basic name="operation" />
+			<basic name="classNameValue" />
+			<basic name="errorLog" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.LiveModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="classNameValue" />
+			<basic name="globalId" />
+			<basic name="localId" />
+			<basic name="operation" />
+			<basic name="status" />
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="performDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="errorLog" />
+			<basic name="existInLive" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.LivePoolModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="livePoolId" />
+			<basic name="liveParentId" />
+			<basic name="liveChildId" />
+			<basic name="processId" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.LiveConfigurationModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="companyId" />
+			<basic name="remoteIterServer" />
+			<basic name="gatewayHost" />
+			<basic name="localPath" />
+			<basic name="outputMethod" />
+			<basic name="ftpPath" />
+			<basic name="ftpUser" />
+			<basic name="ftpPassword" />
+			<basic name="remotePath" />
+			<basic name="destinationType" />
+			<basic name="remoteChannelId" />
+			<basic name="remoteUserId" />
+			<basic name="remoteUserName" />
+			<basic name="remoteUserPassword" />
+			<basic name="remoteGlobalGroupId" />
+			<basic name="remoteCompanyId" />
+			<basic name="archive" />
+			<basic name="connectionTimeOut" />
+			<basic name="operationTimeOut" />
+			<transient name="primaryKey" />
+			<transient name="remoteUserUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.xmlio.model.impl.LiveControlModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="userId" />
+			<basic name="processId" />
+			<basic name="subprocessId" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="status" />
+			<basic name="fileSize" />
+			<basic name="operations" />
+			<basic name="errors" />
+			<basic name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="errorLog" />
+			<transient name="primaryKey" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.ChannelImpl" name="Channel">
+		<table name="Xmlio_Channel" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.ChannelControlImpl" name="ChannelControl">
+		<table name="Xmlio_ChannelControl" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.ChannelControlLogImpl" name="ChannelControlLog">
+		<table name="Xmlio_ChannelControlLog" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.LiveImpl" name="Live">
+		<table name="Xmlio_Live" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.LivePoolImpl" name="LivePool">
+		<table name="Xmlio_LivePool" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.LiveConfigurationImpl" name="LiveConfiguration">
+		<table name="Xmlio_LiveConfiguration" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.xmlio.model.impl.LiveControlImpl" name="LiveControl">
+		<table name="Xmlio_LiveControl" />
+		<attributes />
+	</entity>
+</entity-mappings>

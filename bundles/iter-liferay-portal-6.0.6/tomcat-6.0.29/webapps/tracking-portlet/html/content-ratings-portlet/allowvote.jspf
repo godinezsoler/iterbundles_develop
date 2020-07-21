@@ -1,0 +1,24 @@
+<%	
+//se puede valorar si: se permiten valoraciones anónimas o se está presentado
+if (allowAnonymousVote) 
+{
+%>
+	<%@ include file="scripts_full.jsp"%>
+<%	
+}
+else
+{
+	 if(PortalLocalServiceUtil.getIterProductList(request) != null)
+	 { 
+%>
+    	<%@ include file="scripts_full.jsp"%>      
+<%
+	 }
+	 else
+	 {
+%>
+       <%@ include file="scripts_restricted.jsp"%>      
+<% 
+	 }
+}
+%>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<itwresponse version="1.0">
+    <field name="code">
+        <string>OK</string>
+    </field>
+    <field name="output">
+        <string>mgodinez@protecmedia.com</string>
+    </field>
+</itwresponse>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_ProductService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addPaywallProduct" qname="operNS:addPaywallProduct" returnQName="addPaywallProductReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addProduct" qname="operNS:addProduct" returnQName="addProductReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="asignArticle" qname="operNS:asignArticle" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deletePaywallProduct" qname="operNS:deletePaywallProduct" returnQName="deletePaywallProductReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="deleteProduct" qname="operNS:deleteProduct" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="exportData" qname="operNS:exportData" returnQName="exportDataReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="params" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPaywallMode" qname="operNS:getPaywallMode" returnQName="getPaywallModeReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPaywallProductsType1AccessByUser" qname="operNS:getPaywallProductsType1AccessByUser" returnQName="getPaywallProductsType1AccessByUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="quantity" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPaywallProductsType2AccessByUser" qname="operNS:getPaywallProductsType2AccessByUser" returnQName="getPaywallProductsType2AccessByUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="quantity" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPaywallProducts" qname="operNS:getPaywallProducts" returnQName="getPaywallProductsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPaywallStatusMsgs" qname="operNS:getPaywallStatusMsgs" returnQName="getPaywallStatusMsgsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSelectedProducts" qname="operNS:getSelectedProducts" returnQName="getSelectedProductsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="productsXML" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSessionsByUser" qname="operNS:getSessionsByUser" returnQName="getSessionsByUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="quantity" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="initPaywallDeleteSessionsTask" qname="operNS:initPaywallDeleteSessionsTask" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setPaywallStatusMsgs" qname="operNS:setPaywallStatusMsgs" returnQName="setPaywallStatusMsgsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="setProductsOfFileEntry" qname="operNS:setProductsOfFileEntry" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="setProductsOfJournalArticle" qname="operNS:setProductsOfJournalArticle" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updatePaywallProduct" qname="operNS:updatePaywallProduct" returnQName="updatePaywallProductReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updatePaywall" qname="operNS:updatePaywall" returnQName="updatePaywallReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="activate" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="updateProduct" qname="operNS:updateProduct" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="updateProductsOfFileEntry" qname="operNS:updateProductsOfFileEntry" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="updateProductsOfJournalArticle" qname="operNS:updateProductsOfJournalArticle" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addPaywallProduct addProduct asignArticle deletePaywallProduct deleteProduct exportData getPaywallMode getPaywallProducts getPaywallProductsType1AccessByUser getPaywallProductsType2AccessByUser getPaywallStatusMsgs getSelectedProducts getSessionsByUser importData initPaywallDeleteSessionsTask setPaywallStatusMsgs setProductsOfFileEntry setProductsOfJournalArticle updatePaywall updatePaywallProduct updateProduct updateProductsOfFileEntry updateProductsOfJournalArticle" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.ProductServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ProductServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ProductServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_ProductService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

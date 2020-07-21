@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.protecmedia.iter.user.model.Login" />
+	<import class="com.protecmedia.iter.user.model.IterPortletInstance" />
+	<import class="com.protecmedia.iter.user.model.UserProfile" />
+	<import class="com.protecmedia.iter.user.model.SocialMgr" />
+	<import class="com.protecmedia.iter.user.model.HandlerFormMgr" />
+	<import class="com.protecmedia.iter.user.model.CaptchaForm" />
+	<import class="com.protecmedia.iter.user.model.FormReceivedToCsv" />
+	<import class="com.protecmedia.iter.user.model.RoleMgr" />
+	<import class="com.protecmedia.iter.user.model.FileFormReceivedMgr" />
+	<import class="com.protecmedia.iter.user.model.IterUserMng" />
+	<import class="com.protecmedia.iter.user.model.IterUser" />
+	<import class="com.protecmedia.iter.user.model.IterRegister" />
+	<import class="com.protecmedia.iter.user.model.UserOperations" />
+	<import class="com.protecmedia.iter.user.model.FormReceivedMgr" />
+</hibernate-mapping>

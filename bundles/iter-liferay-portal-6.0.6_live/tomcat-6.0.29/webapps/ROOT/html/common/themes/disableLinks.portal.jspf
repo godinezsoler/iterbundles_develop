@@ -1,0 +1,22 @@
+<%@page import="com.liferay.portal.kernel.util.CookieUtil"%>
+
+<% 
+if (CookieUtil.getSection2Simulate(request, 0) > 0)
+{
+%>
+	<script>
+	jQryIter.registerOnLoadFunction
+	(
+		function()
+		{
+			jQuery("a").each(	function()
+								{
+				                	jQuery(this).attr("href","#");
+								}
+							)
+		}
+	);
+	</script>
+<% 
+}
+%>

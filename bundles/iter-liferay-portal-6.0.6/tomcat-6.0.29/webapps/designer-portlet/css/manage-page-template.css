@@ -1,0 +1,149 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+/* Back End */
+
+.manage-page-template .fm-edit-page-template .aui-field {
+	display:block;
+	margin-bottom:20px;
+}
+
+.manage-page-template .fm-edit-page-template .aui-field label {
+	margin-bottom:10px;
+}
+
+.manage-page-template .fm-edit-page-template .aui-field input[type="text"], 
+.manage-page-template .fm-edit-page-template .aui-field textarea {
+	width: 90%; 
+}
+
+.manage-page-template .displaying-page-template-id-holder .displaying-page-template-id {
+	color:#4DCF0C;
+}
+
+.manage-page-template .displaying-parent-id-holder .displaying-parent-id {
+	color:#4DCF0C;
+}
+
+.manage-page-template .theme-screenshot,
+.manage-page-template .theme-thumbnail {
+	width:180px;
+}
+
+.manage-page-template label {
+	font-weight: bold;
+}
+
+.manage-page-template .page-template-info .aui-fieldset {
+	margin-bottom:10px;
+}
+
+.manage-page-template .page-template-info .aui-fieldset h2 {
+	font-weight:normal;
+	margin-bottom:5px;
+}
+
+.manage-page-template .page-template-info .aui-fieldset h2 span {
+	font-weight:bold;
+}
+
+.manage-page-template .page-template-info .aui-fieldset img {
+	border: 1px solid #CCCCCC;
+	margin-left: 20px;
+}
+
+.manage-page-template .page-template-info .aui-fieldset h3 {
+	margin:0 0 5px;
+	font-weight:normal;
+}
+
+.manage-page-template .page-template-info .aui-fieldset h3 span {
+	font-weight:bold;
+}
+
+.manage-page-template .page-template-info .aui-fieldset ul {
+	list-style:none outside none;
+	margin:0 0 15px;
+}
+
+.manage-page-template .page-template-info ul {
+	list-style:none outside none;
+	margin:0;
+}
+
+.manage-page-template .page-template-info .aui-fieldset ul li {
+	background-color:#EEEEEE;
+	font-weight:bold;	
+	border: 2px solid #ccc;
+	margin: 4px;
+	padding: 5px 5px 5px 20px;
+	list-style: none;		
+}
+
+.manage-page-template .page-template-info .aui-fieldset ul li.odd {
+	background-color:#CCCCCC;	
+}
+
+/* Tree */
+
+.manage-page-template .lfr-tree-controls div, .lfr-tree-controls a {
+	float:left;
+}
+
+.manage-page-template .lfr-tree-controls-item {
+	padding:0 0 6px 6px;
+}
+
+.manage-page-template .lfr-tree-controls-expand  {
+	background-image:url("/html/themes/control_panel/images/trees/expand_all.png");
+}
+
+.manage-page-template .lfr-tree-controls-collapse  {
+	background-image:url("/html/themes/control_panel/images/trees/collapse_all.png");
+}
+
+.manage-page-template .lfr-tree-controls-label  {
+	line-height:17px;
+	padding:0 2px;
+	text-decoration:none;
+}
+
+.manage-page-template .aui-tree-label {
+	text-decoration: none;
+	color: #336699
+}
+
+.manage-page-template .aui-tree-label a {
+	text-decoration: none;
+	color: #336699;
+}
+
+.manage-page-template .aui-tree-label a:hover,
+.manage-page-template .lfr-tree-controls-label:hover {
+	text-decoration: underline;
+	color: #0066CC;
+}
+
+.manage-page-template .node-selected .aui-tree-data-content {
+	background:none repeat scroll 0 0 #EEEEEE;
+}
+
+.manage-page-template .aui-tree-node-selected .aui-tree-label {
+	background: none;
+}
+
+.manage-page-template .lfr-root-node div .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/root.png");
+}
+
+.manage-page-template .lfr-root-node ul .aui-tree-expanded .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page_copy.png");
+}
+
+.manage-page-template .lfr-root-node ul .aui-tree-collapsed .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");
+}
+
+.manage-page-template .lfr-root-node ul .aui-tree-node-leaf .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");	
+}

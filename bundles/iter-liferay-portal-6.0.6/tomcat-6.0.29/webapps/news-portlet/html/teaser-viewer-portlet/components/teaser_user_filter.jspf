@@ -1,0 +1,49 @@
+<%@page import="com.liferay.portal.util.PortalUtil"%>
+<%@page import="com.liferay.portal.kernel.util.request.PublicIterParams"%>
+<%@page import="com.liferay.portlet.TeaserUtil"%>
+
+<%
+
+
+if( usrFilterBy.equalsIgnoreCase(IterKeys.DATE) )
+{
+	//variable con fecha formateada que será utilizada por 'datepicker'
+	String dateformat= "";
+	dateformat = FormatDateUtil.formatDateFlexToJQuery( usrFilterDateFotmat );
+	
+	
+%>
+<div class="itr-chosen-date-wrapper">
+    <!-- Label configurable desde la configuración del filtro ANTES -->
+    	<span class="itr-chosen-date-label itr-chosen-date-label-pre"></span> 
+    <!-- Input donde se pondrá la imagen de background que al hacer click muestre el datePicker y la fecha seleccionada -->
+       <input id="<portlet:namespace/>itrchosen-dp-reg" class="itr-chosen-date-datepicker itr-chosen-date-datepicker-regular itrchosen-dp-reg"  
+       			data-teaser="<%= teaserData %>" data-responsenamespace="<%= responseNamespace %>" data-portletnamespace='<portlet:namespace/>' 
+       			data-dateformat="<%= dateformat %>" data-filterby="<%= usrFilterBy %>" data-filterdatelanguage="<%=usrFilterDateLanguage%>"
+       			data-filterrangetype ="<%=usrFilterRangeType%>" data-filterbackward ="<%=usrFilterBackward%>" data-filtermindate ="<%=usrFilterMinDate%>"
+       			data-class-itrchosen-dp-alt="<portlet:namespace/>itrchosen-dp-alt"/> 
+       <input class="itr-chosen-date-datepicker itr-chosen-date-datepicker-alternate <portlet:namespace/>itrchosen-dp-alt" 
+       			disabled="disabled" value="<%=userFilterText%>"></input>
+    <!-- Label configurable desde la configuración del filtro DESPUES -->
+   	 <span class="itr-chosen-date-label itr-chosen-date-label-post"></span>
+</div>
+
+<%
+}
+else
+{
+%>
+	<div class="itr-chosen-wrapper">
+		<div id="<portlet:namespace/>" data-rel="<portlet:namespace/>itrchosen" class="chosen-container chosen-container-single" style="width:100%">
+			<a class="chosen-single">
+			<span><%= userFilterText %></span>
+			<div><b></b></div>
+			</a>
+		</div>
+		<select id="<portlet:namespace/>itrchosen-select" data-placeholder="<%= userFilterText %>" style="display:none" 
+						data-rel="<portlet:namespace/>itrchosen" data-url="<%= filterData %>" data-teaser="<%= teaserData %>" 
+						data-responsenamespace="<%= responseNamespace %>"></select>
+	</div>
+<%
+}
+%>

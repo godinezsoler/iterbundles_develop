@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.0.0//EN" "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_0_0.dtd">
+
+<routes>
+	<route>
+		<pattern>/{keywords}/{fuzzy}/{fuzzyOption}/{startDate}/{endDate}/{order}/{checkArticle}/{checkPoll}/{filterquery:[^/\\]+}/{wildcard}/meta/{categoryIds}/{layoutsPlid}/{delta}/{cur}</pattern>
+		<ignored-parameter name="andOperator" />
+		<ignored-parameter name="instanceId" />
+		<implicit-parameter name="content-section">-1</implicit-parameter>
+		<overridden-parameter name="instanceId">search</overridden-parameter>
+	</route>
+</routes>

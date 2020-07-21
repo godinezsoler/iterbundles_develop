@@ -1,0 +1,268 @@
+<%@page import="com.liferay.portal.util.PropsValues"%>
+<%@page import="com.liferay.portal.util.WebKeys"%>
+<%@page import="com.liferay.portal.kernel.util.IterGlobal"%>
+<%@page import="com.liferay.portal.model.LayoutTypePortlet"%>
+<%@page import="com.liferay.portal.kernel.util.HttpUtil"%>
+<%@page import="com.liferay.portal.kernel.util.Http"%>
+<%@page import="java.net.URL"%>
+<%@page import="com.liferay.portal.kernel.util.LocaleUtil"%>
+<%@page import="com.liferay.portal.service.LayoutLocalServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="com.liferay.portal.kernel.util.CookieUtil"%>
+<%@page import="com.liferay.portal.kernel.util.CatalogUtil"%>
+<%@page import="com.liferay.portal.model.Layout"%>
+<%@page import="com.liferay.portal.kernel.util.request.IterRequest"%>
+<%@page import="com.liferay.portal.theme.ThemeDisplay"%>
+<%
+Layout docklayout = themeDisplay.getLayout();
+
+Boolean isCatalog = false;
+String catalogtype = CatalogUtil.getCatalogType(docklayout.getPlid());
+isCatalog = catalogtype != null ?  true : false;
+
+//Si es un cat�logo se podr�a estar simulando un PLID. La aplicaci�n Angular trabaja cn UUID
+String simulatedSectionUUID	= "";
+String simulatedSectionName	= "";
+String simulatedPlid = CookieUtil.get(request, WebKeys.COOKIE_ITR_CURRENT_SECTION_PLID);
+if (Validator.isNotNull(simulatedPlid))
+{
+	Layout simulatedLayout 	= LayoutLocalServiceUtil.getLayout(Long.parseLong(simulatedPlid));
+	simulatedSectionUUID 	= simulatedLayout.getUuid();
+	simulatedSectionName 	= simulatedLayout.getName(LocaleUtil.getDefault());
+}
+
+String urlControlPanel 	= themeDisplay.getURLControlPanel();
+String urlSignOut 		= themeDisplay.getURLSignOut();
+String isControlPanel 	= String.valueOf(docklayout.getGroup().isControlPanel());
+
+
+//se obtiene el layout template
+String layoutTemplateId = ((LayoutTypePortlet)docklayout.getLayoutType()).getLayoutTemplateId();
+
+URL urlHost 			= new URL(themeDisplay.getURLPortal());
+boolean secure 			= request.isSecure();
+
+// Comprueba el header X-Forwarded-Proto
+String protocolFromHeader = request.getHeader("X-Forwarded-Proto");
+// Ser� seguro si se indica https en el header. Si no, se usar� el valor del request.
+secure = secure || Http.HTTPS.equalsIgnoreCase(protocolFromHeader);
+
+String urlPortal = new URL(HttpUtil.getProtocol(secure), urlHost.getHost(), urlHost.getPort(), urlHost.getFile()).toString();
+
+StringBuilder sbParams = new StringBuilder();
+sbParams.append("&urlControlPanel=")		.append(urlControlPanel);
+sbParams.append("&urlSignOut=")				.append(urlSignOut);
+sbParams.append("&isControlPanel=")			.append(isControlPanel);
+sbParams.append("&isCatalog=")				.append(isCatalog.toString());
+sbParams.append("&urlPortal=")				.append(urlPortal);
+sbParams.append("&scopeGroupId=")			.append(themeDisplay.getScopeGroupId());
+sbParams.append("&layoutTemplateId=")		.append(layoutTemplateId);
+sbParams.append("&plid=")					.append(docklayout.getPlid());
+sbParams.append("&simulatedSectionUUID=")	.append(simulatedSectionUUID);
+sbParams.append("&simulatedSectionName=")	.append(simulatedSectionName);
+
+String flashvars = sbParams.toString();
+String url = Validator.isNotNull(PropsValues.ITER_NGPORLET_DEVELOP_URL) ? PropsValues.ITER_NGPORLET_DEVELOP_URL : String.format("/ngportlets/index.html?v=%s", IterGlobal.getIterWebCmsVersion());	
+
+// http://jira.protecmedia.com:8080/browse/ITER-1281?focusedCommentId=56525&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-56525
+// Se especifican inline y con !important los estilos de los ngPortlets para que NO puedan ser sobreescritos por personalizaciones del cliente
+// Se le aplican a:
+// - DIV que contiene al iframe: ngPortlets_iframe_container
+//	 El alto no puede ser important porque de lo contrario no se podr�a sobreescribir, y el DIV se contrae y expande cada vez que se muestra una configuraci�n y se cierra
+//   Funciona en Chrome pero en IE no.
+// - iframe: #ngPortlets_iframe_container iframe
+// - body
+%>
+<!-- ngPortlets -->
+<!-- CSS -->
+<!-- La barra de angular ocupa 36px, se le dejan dos más al body para dejar más -->	
+<style>
+  .aui-widget.aui-component.aui-panel {
+      top:36px;
+  }
+  .minimizedFrame {
+	   height: 36px !important;
+  }
+  .maximizedFrame {
+	   height: 100% !important;
+  }
+  
+</style>
+<!-- Finaliza CSS -->
+
+<!-- JS -->
+<script >
+var ngPortletsData = {
+  iframeUrl: '<%=url%>',
+	moduleName: 'ngPortlets',
+	iframeContainerId: '#ngPortlets_iframe_container',
+//  iframeWin: document.querySelectorAll("#ngPortlets_iframe_container > iframe:first-child")[0].contentWindow,
+	iframeMinimized: 'minimizedFrame',
+	iframeMaximized: 'maximizedFrame',
+	iframeFullHeight: '100%',
+	navbarHeight: '36px',
+  dockbarInitParams: '<%=flashvars%>',
+  addWindowOpen: null,
+  htmlFunctionsNames: {
+    showApplicationsDialog: 'showApplicationsDialog'
+  },
+	eventSource: null, 
+	eventOrigin: null, 
+	// ComunicaciÃÂ³n hacia Angular (ngPortlets)
+	callNgPortlets: function(ngRoute, data, allowFullScreen){
+		if (typeof data === 'undefined'){ data = ''; }
+		if (typeof allowFullScreen === 'undefined'){ allowFullScreen = true; }
+		this.allowFullSizeToNgPortlets(allowFullScreen);
+		console.log('Data a ser enviada desde HTML a ngPortlets: ');
+		console.log(data);
+		var dataToSend = this.getDataToSendToNgPortlets(ngRoute, data);
+	
+		this.eventSource.postMessage(JSON.stringify(dataToSend), this.eventOrigin); 
+	},
+	// ComunicaciÃÂ³n desde Angular (ngPortlets)
+	addEventListener: function(){
+		if (window.addEventListener) {
+			window.addEventListener("message", this.receiveNgPortletsMessage, false);
+		}
+		else {
+			console.log('Este navegador no permite la comunicaciÃÂ³n desde/hacia iframes');
+		}
+	},
+	receiveNgPortletsMessage: function(event){
+		console.log('El HTML ha recibido un mensaje proveniente del siguiente origen: ' + event.origin);
+		var data = {};
+		try {
+			data = JSON.parse(event.data);
+			if (data.module !== ngPortletsData.moduleName) {
+				console.error('El mensaje recibido no proviene de la aplicaciÃÂ³n Angular (ngPortlets)');
+			}else {
+				if (data.action === '') {
+					console.log("Se asigna valor a eventSource y eventOrigin"); 
+					ngPortletsData.eventSource = event.source; 
+        	ngPortletsData.eventOrigin = event.origin; 
+					console.log("Como data.action viene vacÃÂ­o, se asume que ngPortlets estÃÂ¡ informando que ya se encuentra disponible. Se envÃÂ­a mensaje de inicializaciÃÂ³n");
+					ngPortletsData.callNgPortlets('', ngPortletsData.dockbarInitParams, false);
+				}else {
+					if (typeof window[data.action] === "function") {
+						console.log("Scope: window");
+						if (ngPortletsData.shouldFunctionBeExecuted(data.action)) {
+							console.log('Se ejecuta la funciÃÂ³n "'+data.action+'"');
+							console.log('Con los siguientes parÃÂ¡metros:');
+							console.log(data.data);
+							ngPortletsData.executeFunctionByName(data.action, window, data.data);
+							ngPortletsData.postExecutionTreatment(data.action);
+						}else {
+							console.log("La funciÃÂ³n ("+data.action+") no debe ser ejecutada");
+						}
+					}else {
+						if (typeof ngPortletsData[data.action] === "function") {
+							console.log("Scope: ngPortletsData");
+							console.log('Se ejecuta la funciÃÂ³n "'+data.action+'"');
+							console.log('Con los siguientes parÃÂ¡metros:');
+							console.log(data.data);
+							ngPortletsData.executeFunctionByName(data.action, ngPortletsData, data.data);
+						}else {
+							console.error('La funciÃÂ³n "'+data.action+'" no estÃÂ¡ definida');
+						}
+					}
+				}
+			}
+		} catch (e) {
+			console.error('Por el siguiente error, no se pudo procesar el mensaje recibido: '+e.message);
+		}
+	},
+	shouldFunctionBeExecuted: function(functionName){
+		toReturn = true;
+		switch (functionName) {
+			case ngPortletsData.htmlFunctionsNames.showApplicationsDialog:
+				if (ngPortletsData.addWindowOpen === true) {
+					toReturn = false;
+				}
+			break;
+		}
+		return toReturn;
+	},
+	executeFunctionByName: function(functionName, context, args){
+		var args = Array.prototype.slice.call(arguments, 2);
+		var namespaces = functionName.split(".");
+		var func = namespaces.pop();
+		for (var i = 0; i < namespaces.length; i++) {
+			context = context[namespaces[i]];
+		}
+		//console.log(args);
+		args = args[0];
+		return context[func].apply(context, args);
+	},
+	postExecutionTreatment: function(functionName){
+		switch (functionName) {
+			case ngPortletsData.htmlFunctionsNames.showApplicationsDialog:
+				if (ngPortletsData.addWindowOpen === null) {
+					ngPortletsData.bindToAddCloseButton();
+				}
+				ngPortletsData.addWindowOpen = true;
+			break;
+		}
+	},
+	// RedimensiÃÂ³n del iframe
+	allowFullSizeToNgPortlets: function(allow){
+		var height = allow ? this.iframeFullHeight : this.navbarHeight;
+	  	jQryIter(this.iframeContainerId).css('height', height);
+
+		if (allow) {
+			jQryIter(this.iframeContainerId).removeClass(this.iframeMinimized);
+			jQryIter(this.iframeContainerId).addClass(	 this.iframeMaximized);
+		}
+		else {
+			jQryIter(this.iframeContainerId).removeClass(this.iframeMaximized);
+			jQryIter(this.iframeContainerId).addClass(	 this.iframeMinimized);
+		}
+	},
+	// Al hacer clic en "Salir" (cerrar sesiÃÂ³n / logout)
+	ngPortletsLogout: function(logoutUrl){
+		window.location.replace(logoutUrl);
+	},
+	// Recargar pÃÂ¡gina
+	ngPortletsReloadPage: function(){
+		location.reload();
+	},
+	
+	// Carga una cookie con el PLID de la sección que se quiere simular
+	ngSimulateSection: function(plid){
+		jQryIter.cookie("ITR_CURRENT_SECTION_PLID",plid.toString(),{domain: jQryIter.getDomain()});
+		location.reload();
+	},
+	
+	bindToAddCloseButton: function(){
+    jQryIter(document).on("click", "#closethick", function(){
+			ngPortletsData.addWindowOpen = false;
+		});
+	},
+	/*
+	 * 0 - Add event listener
+	 * 1 - Mostrar controles de ediciÃÂ³n
+	 * 2 - Asignar src al iframe
+	 * 3 - Establecer comunicaciÃÂ³n inicial con Angular (ngPortlets)
+	 */
+	initNgPortlets: function(){
+		//var self = this;
+		this.addEventListener();
+		showControls(true);
+    jQryIter(this.iframeContainerId+' iframe').attr('src', this.iframeUrl);
+
+	},
+	// FunciÃÂ³n que retorna los datos a ser enviados a Angular (ngPortlets)
+	getDataToSendToNgPortlets: function(action, data){
+		var toReturn = {
+			module: this.moduleName,
+			action: action,
+			data: data
+		};
+		return toReturn;
+	}
+};
+jQryIter(function(){
+	ngPortletsData.initNgPortlets();
+});
+</script >
+<!-- Finaliza JS -->
+<!-- Finaliza ngPortlets -->

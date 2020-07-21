@@ -1,0 +1,200 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.alert {
+	background-color: #FFFFFF;
+}
+
+.alert .titulo {
+	background:url("../images/the-star/bg_alertas.png") no-repeat scroll right bottom transparent;
+	clear:left;
+	color:#FFFFFF;
+	float:left;
+	font:bolder 11px/17px Arial,Helvetica,sans-serif;
+	height:auto;
+	margin:0 5px 0 0;
+	padding:4px 35px 4px 25px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+.alert .texto {
+	color:#333333 !important;
+	text-decoration:none;
+	background:none repeat scroll 0 0 transparent;
+	border:0 none;
+	margin:0;
+	outline:0 none;
+	padding:0;
+	vertical-align:top;
+	font-family:Georgia,Times,Serif;
+	font-size:12px;
+	font-weight:normal;
+	line-height:16px;
+	padding-top:5px;
+}
+
+.alert-config .aui-column-content {
+	padding: 0 5px 0 0;
+}
+
+.alert-config .aui-field-label {
+    margin-bottom: 5px;
+}
+
+.alert-config .title input[type="text"] {
+	width: 90%;
+}
+
+.alert-config .input-number input[type="text"] {
+	text-align: right;
+    width: 30px;
+}
+
+.alert-config .aui-column-content {
+	padding: 0 5px 0 0;
+}
+
+.alert-config label {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.alert-config .aui-panel-bd {
+    padding: 10px;
+}
+
+.alert-config .templates-thumbnail {
+    display: inline-table;
+    margin: 10px;
+    width: 120px;
+}
+
+.alert-config .aui-field-choice .aui-field-element.aui-field-label-right {
+	float: left;
+	width: 20px;
+}
+
+.alert-config .aui-field-choice .aui-field-label {
+	float: left;
+	width: 100px;
+}
+
+
+/*----------*/
+
+.alert-viewer-config-templates .previewImagesOn {
+	display: block;	
+}
+
+.alert-viewer-config-templates .previewImagesOff {
+	display: none;
+}
+
+.alert-viewer-config-templates .template-thumbnail-on {
+	border: 2px solid white;
+	width: 150px;
+	min-height: 185px;
+	float: left;
+}
+
+.alert-viewer-config-templates .template-thumbnail-off {
+	border: 2px solid white;
+	width: 150px;
+	min-height: 55px;
+	float: left;
+}
+
+.alert-viewer-config-templates .check-show-hide-images {
+	
+	margin-top:30px !important;
+	margin-left:10px !important;
+	margin-bottom:30px !important;
+	
+}
+
+
+.alert-viewer-config-templates .templates-thumbnail .selected-box {
+	border: 2px solid white;
+	width: 130px;
+	min-height: 55px;
+}
+
+.alert-viewer-config-templates .aui-fieldset {
+	margin: 10px !important;
+}  
+
+.alert-viewer-config-templates .selected-template .aui-fieldset-content {
+	padding: 10px;
+}
+
+.alert-viewer-config-templates .aui-field-choice .aui-field-label {
+	/*
+	float: left;
+	width: 100px;
+	*/
+	display: inline;
+}
+
+.alert-viewer-config-templates .templates-thumbnail img {
+	width: 110px;
+	
+}
+
+.alert-viewer-config-templates .templates-thumbnail {
+	float: left;
+}
+
+.alert-viewer-config-templates .filter-fieldset {
+	margin-bottom: 15px !important;
+	margin-top: 15px !important;
+	margin-right: 15px !important;
+	margin-left: 5px;
+}
+
+.alert-viewer-config-templates .separator {
+	border-top: 1px dotted #BFBFBF !important;
+	margin: 0 10px;
+}
+
+.alert-viewer-config-templates .taglib-search-iterator-page-iterator-bottom {
+	margin: 10px;
+}
+
+/*Carrusel*/
+
+#carrusel {
+	width:auto;
+	height:auto;
+	margin:0 auto;
+}
+
+#paneles {
+	overflow:hidden;
+	/* fix ie overflow issue */
+	position:relative;
+	width:250px;
+	height:250px;	
+}
+
+/* eliminar estilos de lista, width: ancho del elemento x total de elementos */
+#paneles ul {	
+	left:0;
+	top:0;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+/* ancho del elemento; en este caso es un gif de 250x250px */
+#paneles li {
+	width:auto;
+	height:auto;
+	float:left;
+}
+
+.oculto{
+	display: none;
+	}
+
+.clear {clear:both}

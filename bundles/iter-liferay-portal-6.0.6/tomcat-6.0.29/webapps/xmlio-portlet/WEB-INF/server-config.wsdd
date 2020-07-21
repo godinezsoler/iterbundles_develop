@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_Xmlio_CatalogPublicationService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.CatalogPublicationServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CatalogPublicationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CatalogPublicationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_CatalogPublicationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_CategoriesPropertiesPublicationService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importContents" qname="operNS:importContents" returnQName="importContentsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="exportxml" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importContents" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.CategoriesPropertiesPublicationServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CategoriesPropertiesPublicationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CategoriesPropertiesPublicationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_CategoriesPropertiesPublicationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_ChannelControlLogService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ChannelControlLogServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ChannelControlLogServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ChannelControlLogServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ChannelControlLogService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_ChannelControlService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ChannelControlServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ChannelControlServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ChannelControlServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ChannelControlService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_ChannelService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importDefaultSectionProperties" qname="operNS:importDefaultSectionProperties" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importJournalTemplatesToLive" qname="operNS:importJournalTemplatesToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importLayoutTemplatesToLive" qname="operNS:importLayoutTemplatesToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importToLive" qname="operNS:importToLive" returnQName="importToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importWebThemesToLive" qname="operNS:importWebThemesToLive" returnQName="importWebThemesToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="refreshCache" qname="operNS:refreshCache" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="cacheRefresh" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importDefaultSectionProperties importJournalTemplatesToLive importLayoutTemplatesToLive importToLive importWebThemesToLive refreshCache" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ChannelServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ChannelServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ChannelServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ChannelService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_CommunityPublisherService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cancelSchedulePublication" qname="operNS:cancelSchedulePublication" returnQName="cancelSchedulePublicationReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="schedulesToCancel" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="checkProcessStatus" qname="operNS:checkProcessStatus" returnQName="checkProcessStatusReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="schedulesToCancel" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSchedulePublicationDetail" qname="operNS:getSchedulePublicationDetail" returnQName="getSchedulePublicationDetailReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="publicationId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSchedulePublications" qname="operNS:getSchedulePublications" returnQName="getSchedulePublicationsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="filtersDefinition" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sortDefinition" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="beginRegister" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="maxRegisters" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="cancelSchedulePublication checkProcessStatus getSchedulePublicationDetail getSchedulePublications" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.CommunityPublisherServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CommunityPublisherServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CommunityPublisherServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_CommunityPublisherService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_ContextVarsPublishService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.xmlio.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importContents" qname="operNS:importContents" returnQName="importContentsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publishCtxVarsToLive" qname="operNS:publishCtxVarsToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="ctxVarIds" type="tns:ArrayOf_xsd_string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publishToLive" qname="operNS:publishToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importContents publishCtxVarsToLive publishToLive" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ContextVarsPublishServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.xmlio.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ContextVarsPublishServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ContextVarsPublishServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ContextVarsPublishService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_DataProblemsDiagnosticService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="captureData" qname="operNS:captureData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="onlyLogs" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="cleanData" qname="operNS:cleanData" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="createZipLiveData" qname="operNS:createZipLiveData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="namesPkgImportation" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="nameImpFiles" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="getLastDownloadError" qname="operNS:getLastDownloadError" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getStateCaptureProcess" qname="operNS:getStateCaptureProcess" returnQName="getStateCaptureProcessReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="startCaptureData" qname="operNS:startCaptureData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="onlyLogs" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catFileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="stopProcess" qname="operNS:stopProcess" soapAction=""> </operation>
+		<parameter name="allowedMethods" value="captureData cleanData createZipLiveData getLastDownloadError getStateCaptureProcess startCaptureData stopProcess" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.DataProblemsDiagnosticServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="DataProblemsDiagnosticServiceSoap" />
+		<parameter name="wsdlServiceElement" value="DataProblemsDiagnosticServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_DataProblemsDiagnosticService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_DaylyTopicsPublicationService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.xmlio.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publishInLive" qname="operNS:publishInLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="daylyTopicsToBePublished" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="daylyTopicsIdsToBeRemoved" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="publish" qname="operNS:publish" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="section" type="tns:ArrayOf_xsd_anyType"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="dataToJson" type="tns:ArrayOf_xsd_anyType"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="publish publishInLive" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.DaylyTopicsPublicationServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.xmlio.iter.protecmedia.com,http://xml.apache.org/xml-soap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="DaylyTopicsPublicationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="DaylyTopicsPublicationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_DaylyTopicsPublicationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_ImportMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteArticlesFromBatchsList" qname="operNS:deleteArticlesFromBatchsList" returnQName="deleteArticlesFromBatchsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlBatchsIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteArticlesFromDetailsList" qname="operNS:deleteArticlesFromDetailsList" returnQName="deleteArticlesFromDetailsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlArticlesIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteImportDetails" qname="operNS:deleteImportDetails" returnQName="deleteImportDetailsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importType" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlWithIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteImports" qname="operNS:deleteImports" returnQName="deleteImportsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importType" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlWithIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getArticlesImportsList" qname="operNS:getArticlesImportsList" returnQName="getArticlesImportsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDeletedPercentage" qname="operNS:getDeletedPercentage" returnQName="getDeletedPercentageReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDetailsArticlesImportsList" qname="operNS:getDetailsArticlesImportsList" returnQName="getDetailsArticlesImportsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDetailsUsersImportsList" qname="operNS:getDetailsUsersImportsList" returnQName="getDetailsUsersImportsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getImportsList" qname="operNS:getImportsList" returnQName="getImportsListReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importArticles" qname="operNS:importArticles" returnQName="importArticlesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="path" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pathIsFile" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="backupPath" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="deleteArticles" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="ifArticleExists" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="ifLayoutNotExists" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startDate" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="finishDate" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="ifNoCategory" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="ifNoSuscription" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="legacyIsEncoded" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importUsers" qname="operNS:importUsers" returnQName="importUsersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="path" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pathIsFile" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="backupPath" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="passwordInMD5" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="deleteUsers" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="selectToDeleteArticles" qname="operNS:selectToDeleteArticles" returnQName="selectToDeleteArticlesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sql" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="delete" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="stopArticleImport" qname="operNS:stopArticleImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="stopUserImport" qname="operNS:stopUserImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="host" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteArticlesFromBatchsList deleteArticlesFromDetailsList deleteImportDetails deleteImports getArticlesImportsList getDeletedPercentage getDetailsArticlesImportsList getDetailsUsersImportsList getImportsList importArticles importUsers selectToDeleteArticles stopArticleImport stopUserImport" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.ImportMgrServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ImportMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ImportMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_ImportMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_IterAdminIOService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="abortImport" qname="operNS:abortImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="finishExport" qname="operNS:finishExport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="finishImport" qname="operNS:finishImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="getLastExportError" qname="operNS:getLastExportError" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteID" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importObjects" qname="operNS:importObjects" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="updtIfExist" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="unsetOngoingImportSubprocess" qname="operNS:unsetOngoingImportSubprocess" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="abortImport finishExport finishImport getLastExportError importObjects unsetOngoingImportSubprocess" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.IterAdminIOServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterAdminIOServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterAdminIOServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_IterAdminIOService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_JournalArticleImportService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="deleteArticle" qname="operNS:deleteArticle" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="totailImportReport" type="tns:anyType"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="article" type="tns:anyType"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="deleteArticle" qname="operNS:deleteArticle" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="deleteFiles" type="tns:boolean"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteArticle" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.JournalArticleImportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="JournalArticleImportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="JournalArticleImportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_JournalArticleImportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_LiveConfigurationService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getArchiveByCompanyId" qname="operNS:getArchiveByCompanyId" returnQName="getArchiveByCompanyIdReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLiveConfiguration" qname="operNS:getLiveConfiguration" returnQName="getLiveConfigurationReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getRemoteSystemInfo" qname="operNS:getRemoteSystemInfo" returnQName="getRemoteSystemInfoReturn" returnType="rtns:string" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="setArchiveByCompanyId" qname="operNS:setArchiveByCompanyId" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="value" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setLiveConfiguration" qname="operNS:setLiveConfiguration" returnQName="setLiveConfigurationReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getArchiveByCompanyId getLiveConfiguration getRemoteSystemInfo setArchiveByCompanyId setLiveConfiguration" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.LiveConfigurationServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="LiveConfigurationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="LiveConfigurationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_LiveConfigurationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_LiveControlService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllRecordsFlex" qname="operNS:getAllRecordsFlex" returnQName="getAllRecordsFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="interruptPublication" qname="operNS:interruptPublication" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="unlockLiveControl" qname="operNS:unlockLiveControl" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getAllRecordsFlex interruptPublication unlockLiveControl" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.LiveControlServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="LiveControlServiceSoap" />
+		<parameter name="wsdlServiceElement" value="LiveControlServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_LiveControlService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_LivePoolService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.LivePoolServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="LivePoolServiceSoap" />
+		<parameter name="wsdlServiceElement" value="LivePoolServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_LivePoolService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_LiveService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.xmlio.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="changeLiveStatus" qname="operNS:changeLiveStatus" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="classNameValue" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="localId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="status" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getKeyFieldsFlex" qname="operNS:getKeyFieldsFlex" returnQName="getKeyFieldsFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalGroupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="publicationIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="urn:http.service.xmlio.iter.protecmedia.com" xmlns:tns2="http://www.w3.org/2001/XMLSchema" name="getLiveItemIdsFromLocalIds" qname="operNS:getLiveItemIdsFromLocalIds" returnQName="getLiveItemIdsFromLocalIdsReturn" returnType="rtns:ArrayOf_xsd_string" returnItemType="tns2:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="localIds" type="tns:ArrayOf_xsd_string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="className" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPublicationDetailsFlex" qname="operNS:getPublicationDetailsFlex" returnQName="getPublicationDetailsFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalGroupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="liveId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPublicationListFlex" qname="operNS:getPublicationListFlex" returnQName="getPublicationListFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="globalGroupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="idGlobalToIdLocal" qname="operNS:idGlobalToIdLocal" returnQName="idGlobalToIdLocalReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlGlobalId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="localBackToLocalLive" qname="operNS:localBackToLocalLive" returnQName="localBackToLocalLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlLocalBackId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="populateLive" qname="operNS:populateLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishCatalogsIter" qname="operNS:publishCatalogsIter" returnQName="publishCatalogsIterReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishContentToLive" qname="operNS:publishContentToLive" returnQName="publishContentToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="contentIds" type="tns:ArrayOf_xsd_string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishGroupToLive" qname="operNS:publishGroupToLive" returnQName="publishGroupToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishLayoutToLive" qname="operNS:publishLayoutToLive" returnQName="publishLayoutToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+			<parameter xmlns:tns="urn:http.service.xmlio.iter.protecmedia.com" qname="layoutIds" type="tns:ArrayOf_xsd_string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishToLiveMassiveFlex" qname="operNS:publishToLiveMassiveFlex" returnQName="publishToLiveMassiveFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishToLiveSelectiveFlex" qname="operNS:publishToLiveSelectiveFlex" returnQName="publishToLiveSelectiveFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="publishToLive" qname="operNS:publishToLive" returnQName="publishToLiveReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="changeLiveStatus getKeyFieldsFlex getLiveItemIdsFromLocalIds getPublicationDetailsFlex getPublicationListFlex idGlobalToIdLocal localBackToLocalLive populateLive publishCatalogsIter publishContentToLive publishGroupToLive publishLayoutToLive publishToLive publishToLiveMassiveFlex publishToLiveSelectiveFlex" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.LiveServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.xmlio.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="LiveServiceSoap" />
+		<parameter name="wsdlServiceElement" value="LiveServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_LiveService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+	<service name="Plugin_Xmlio_WebsiteIOService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="abortExport" qname="operNS:abortExport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="computeXPortDependencies" qname="operNS:computeXPortDependencies" returnQName="computeXPortDependenciesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="objectsSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="exportObjects" qname="operNS:exportObjects" returnQName="exportObjectsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="objectsSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importObject" qname="operNS:importObject" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="className" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importPostProcessInfo" qname="operNS:importPostProcessInfo" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="relationships" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="importPreProcessInfo" qname="operNS:importPreProcessInfo" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="mlnstationInfo" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="content" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="resetImport" qname="operNS:resetImport" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="siteid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="mlnstationInfo" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="abortExport computeXPortDependencies exportObjects importObject importPostProcessInfo importPreProcessInfo resetImport" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.WebsiteIOServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="WebsiteIOServiceSoap" />
+		<parameter name="wsdlServiceElement" value="WebsiteIOServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_WebsiteIOService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

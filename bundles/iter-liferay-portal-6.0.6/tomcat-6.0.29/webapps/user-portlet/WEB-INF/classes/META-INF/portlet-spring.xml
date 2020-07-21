@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.user.service.LoginLocalService" class="com.protecmedia.iter.user.service.impl.LoginLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.LoginLocalServiceUtil" class="com.protecmedia.iter.user.service.LoginLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.LoginLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.LoginService" class="com.protecmedia.iter.user.service.impl.LoginServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.LoginServiceUtil" class="com.protecmedia.iter.user.service.LoginServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.LoginService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.user.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.user.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterPortletInstanceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.UserProfileLocalService" class="com.protecmedia.iter.user.service.impl.UserProfileLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.UserProfileLocalServiceUtil" class="com.protecmedia.iter.user.service.UserProfileLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.UserProfileLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.UserProfileService" class="com.protecmedia.iter.user.service.impl.UserProfileServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.UserProfileServiceUtil" class="com.protecmedia.iter.user.service.UserProfileServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.UserProfileService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.SocialMgrLocalService" class="com.protecmedia.iter.user.service.impl.SocialMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.SocialMgrLocalServiceUtil" class="com.protecmedia.iter.user.service.SocialMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.SocialMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.SocialMgrService" class="com.protecmedia.iter.user.service.impl.SocialMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.SocialMgrServiceUtil" class="com.protecmedia.iter.user.service.SocialMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.SocialMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.HandlerFormMgrLocalService" class="com.protecmedia.iter.user.service.impl.HandlerFormMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.HandlerFormMgrLocalServiceUtil" class="com.protecmedia.iter.user.service.HandlerFormMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.HandlerFormMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.HandlerFormMgrService" class="com.protecmedia.iter.user.service.impl.HandlerFormMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.HandlerFormMgrServiceUtil" class="com.protecmedia.iter.user.service.HandlerFormMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.HandlerFormMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.CaptchaFormLocalService" class="com.protecmedia.iter.user.service.impl.CaptchaFormLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.CaptchaFormLocalServiceUtil" class="com.protecmedia.iter.user.service.CaptchaFormLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.CaptchaFormLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.CaptchaFormService" class="com.protecmedia.iter.user.service.impl.CaptchaFormServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.CaptchaFormServiceUtil" class="com.protecmedia.iter.user.service.CaptchaFormServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.CaptchaFormService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FormReceivedToCsvLocalService" class="com.protecmedia.iter.user.service.impl.FormReceivedToCsvLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FormReceivedToCsvLocalServiceUtil" class="com.protecmedia.iter.user.service.FormReceivedToCsvLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FormReceivedToCsvLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FormReceivedToCsvService" class="com.protecmedia.iter.user.service.impl.FormReceivedToCsvServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FormReceivedToCsvServiceUtil" class="com.protecmedia.iter.user.service.FormReceivedToCsvServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FormReceivedToCsvService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.RoleMgrLocalService" class="com.protecmedia.iter.user.service.impl.RoleMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.RoleMgrLocalServiceUtil" class="com.protecmedia.iter.user.service.RoleMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.RoleMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.RoleMgrService" class="com.protecmedia.iter.user.service.impl.RoleMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.RoleMgrServiceUtil" class="com.protecmedia.iter.user.service.RoleMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.RoleMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FileFormReceivedMgrLocalService" class="com.protecmedia.iter.user.service.impl.FileFormReceivedMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FileFormReceivedMgrLocalServiceUtil" class="com.protecmedia.iter.user.service.FileFormReceivedMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FileFormReceivedMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FileFormReceivedMgrService" class="com.protecmedia.iter.user.service.impl.FileFormReceivedMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FileFormReceivedMgrServiceUtil" class="com.protecmedia.iter.user.service.FileFormReceivedMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FileFormReceivedMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterUserMngLocalService" class="com.protecmedia.iter.user.service.impl.IterUserMngLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterUserMngLocalServiceUtil" class="com.protecmedia.iter.user.service.IterUserMngLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterUserMngLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterUserMngService" class="com.protecmedia.iter.user.service.impl.IterUserMngServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterUserMngServiceUtil" class="com.protecmedia.iter.user.service.IterUserMngServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterUserMngService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterUserLocalService" class="com.protecmedia.iter.user.service.impl.IterUserLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterUserLocalServiceUtil" class="com.protecmedia.iter.user.service.IterUserLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterUserLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterRegisterLocalService" class="com.protecmedia.iter.user.service.impl.IterRegisterLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterRegisterLocalServiceUtil" class="com.protecmedia.iter.user.service.IterRegisterLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterRegisterLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.IterRegisterService" class="com.protecmedia.iter.user.service.impl.IterRegisterServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.IterRegisterServiceUtil" class="com.protecmedia.iter.user.service.IterRegisterServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.IterRegisterService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.UserOperationsLocalService" class="com.protecmedia.iter.user.service.impl.UserOperationsLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.UserOperationsLocalServiceUtil" class="com.protecmedia.iter.user.service.UserOperationsLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.UserOperationsLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.UserOperationsService" class="com.protecmedia.iter.user.service.impl.UserOperationsServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.UserOperationsServiceUtil" class="com.protecmedia.iter.user.service.UserOperationsServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.UserOperationsService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FormReceivedMgrLocalService" class="com.protecmedia.iter.user.service.impl.FormReceivedMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FormReceivedMgrLocalServiceUtil" class="com.protecmedia.iter.user.service.FormReceivedMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FormReceivedMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.user.service.FormReceivedMgrService" class="com.protecmedia.iter.user.service.impl.FormReceivedMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.user.service.FormReceivedMgrServiceUtil" class="com.protecmedia.iter.user.service.FormReceivedMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.user.service.FormReceivedMgrService" />
+	</bean>
+</beans>

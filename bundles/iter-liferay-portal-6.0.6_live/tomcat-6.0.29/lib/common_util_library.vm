@@ -1,0 +1,1697 @@
+
+##Macro de velocity recortarTexto##
+	##Descripcion: Esta macro se utiliza para recortar textos
+	##ParÃ¯Â¿Â½metro 1: vTextos -> objectArray que contiene todos los bloques de texto (Variable $Text de Standard Article).
+	##ParÃ¯Â¿Â½metro 2: $iNumCaracteres -> entero que indica cuÃ¯Â¿Â½ntos carÃ¯Â¿Â½cteres tendrÃ¯Â¿Â½ el texto (Se recorta por la palabra mÃ¯Â¿Â½s cercana)
+	##ParÃ¯Â¿Â½metro 3: sResultado -> string en el que se guarda una cadena que contiene el texto separado por pÃ¯Â¿Â½rrafos "<p> </p>" .
+		
+	#macro (recortarTexto $vTextos $iNumCaracteres $sResultado)
+					
+			#foreach ($elem in $vTextos)
+                            
+                #if ($iNumCaracteres > 0)
+                    #set ($elem = $elem.replaceAll("&amp;","&"))
+                    #set ($elem = $elem.replace("<p>",""))
+                    #set ($elem = $elem.replaceAll("<.*?>",""))
+                    
+                    
+                    
+                    #if ($elem.length() < $iNumCaracteres)
+                        #set ($sResultado = $sResultado + "<p>" + $elem)
+                        #set ($iNumCaracteres = $iNumCaracteres - $elem.length())
+                    #else
+                        
+                    
+                        #set($index = $elem.indexOf(" ", $iNumCaracteres))
+                        
+                        #if($index == -1)
+                            #set ($sResultado =  "<p>" + $elem )
+                        #else
+                            #set ($sResultado = $sResultado  + "<p>" + $elem.substring(0, $elem.indexOf(" ", $iNumCaracteres)))                                     
+                        #end
+                        #set ($iNumCaracteres = 0)
+                    
+                    #end
+                #end
+            #end
+            $!sResultado...		
+		
+	#end
+
+
+##Macro de velocity recuperarParrafosTexto##
+	##Descripcion: Esta macro se utiliza para recuperar todos los pÃ¯Â¿Â½rrafos de texto de una estructura standard article.
+	##ParÃ¯Â¿Â½metro 1: vTextos -> objectArray que contiene todos los bloques de texto (Variable $Text de Standard Article).
+	##ParÃ¯Â¿Â½metro 2: bConcatCapitular -> booleano que indica si las capitulares se deben aÃ¯Â¿Â½adir al pÃ¯Â¿Â½rrafo o no.
+	##ParÃ¯Â¿Â½metro 3: bLadillos -> booleano que indica si se deben recuperar los ladillos. 
+	##ParÃ¯Â¿Â½metro 4: vResultado -> objectArray  en el que se guardan todos los pÃ¯Â¿Â½rrafos (incluyendo los ladillos).
+	
+	
+	
+	#macro (recuperarParrafosTexto $vTextos $bConcatCapitular $bLadillos $vResultado)
+	
+	
+				#set ($vResultado = [])   
+			    #set ($parrafoTemp="")
+				#set($index = 1)
+				#set($capitularCount = 0)
+                        
+                                
+				#if ($bConcatCapitular == true)						
+				
+					#set ($ladillos = $Paragraph_Title.getSiblings())
+					
+					#foreach($Texto in $vTextos.getSiblings())
+					  
+						#set($Capitular = false)
+						
+						#set($arraTemp = $Texto.data.split("</p>"))
+						#foreach($parrafo in $arraTemp)
+							#set($parrafo = $parrafo.replaceAll("&amp;","&"))
+							#set($parrafo = $parrafo.replace("<p>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*p.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*p\s*.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*span.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*span\s*.*?>",""))
+							
+							
+							#if(($velocityCount == 1) && ($index ==1))
+								#set ($parrafoTemp = $parrafo.trim())
+								##set ($parrafoTemp = $parrafoTemp.replace("<p>",""))
+								#if ($parrafoTemp.length()>1)
+									#set ($parrafoTemp = "")
+									
+									#set($temp = $vResultado.add($parrafo))	
+								 #elseif($parrafoTemp.length() == 1)
+									#set($Capitular = true)	
+									#set($capitularCount = $capitularCount + 1)								
+								#end
+									 
+								
+								
+							#elseif(($velocityCount == 1) && ($index == 2))
+								
+								#set($parrafoMix = "$parrafoTemp$parrafo")
+								
+								#set($temp = $vResultado.add($parrafoMix))
+							
+							#else
+								#if($parrafo != "")						
+									#set($temp = $vResultado.add($parrafo))
+								#end
+							#end
+							
+						#end
+						
+						#set($indexLadillo = $velocityCount - 1 - $capitularCount )
+						
+						
+						#if($Capitular == false)
+						
+							#if($bLadillos == true)
+								#if($ladillos)
+    								#if( $velocityCount - $capitularCount  <= $ladillos.size() )
+    								    
+    									#if ($ladillos.get($indexLadillo).data!="")
+    										#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+    										#set($temp = $vResultado.add($ladillo))
+    									#end
+									#end
+								#end
+							#end
+						#end
+						
+						
+						
+						#set ($index = $index +1)
+						
+					#end
+				
+				#else
+				
+					
+					#set($indexLadillo = 0)
+					#foreach($Texto in $vTextos.getSiblings())
+						
+						#set ($ladillos = $Paragraph_Title.getSiblings())
+						#set($arraTemp = $Texto.data.split("</p>"))
+						
+						
+						#foreach($parrafo in $arraTemp)
+							
+							#set($parrafo = $parrafo.replaceAll("&amp;","&"))
+							#set($parrafo = $parrafo.replace("<p>",""))
+							
+                            
+							#if($parrafo != "")	
+								#set($temp = $vResultado.add($parrafo))
+							#end	
+		
+						#end
+						
+						#if($bLadillos == true)
+							
+							#if($ladillos.size() > $indexLadillo)
+								#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+								#set($temp = $vResultado.add($ladillo))
+								#set($indexLadillo = $indexLadillo + 1)
+							#end
+						#end
+						
+						
+					#end
+				
+				#end
+
+	#end
+	
+#macro (recuperarParrafosTexto2 $vTextos $bConcatCapitular $bLadillos $vResultado)
+	
+	
+				#set ($vResultado = [])   
+			    #set ($parrafoTemp="")
+				#set($index = 1)
+				#set($capitularCount = 0)
+                        
+                                
+				#if ($bConcatCapitular == true)						
+				
+					#set ($ladillos = $Paragraph_Title.getSiblings())
+					
+					#foreach($Texto in $vTextos.getSiblings())
+					  
+						#set($Capitular = false)
+						
+						#set($arraTemp = $Texto.data.split("</p>"))
+						#foreach($parrafo in $arraTemp)
+							#set($parrafo = $parrafo.replaceAll("&amp;","&"))
+							#set($parrafo = $parrafo.replace("<p>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*p.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*p\s*.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*span.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*span\s*.*?>",""))
+							
+							
+							#if(($velocityCount == 1) && ($index ==1))
+								#set ($parrafoTemp = $parrafo.trim())
+								##set ($parrafoTemp = $parrafoTemp.replace("<p>",""))
+								#if ($parrafoTemp.length()>1)
+									#set ($parrafoTemp = "")
+									
+									#set($temp = $vResultado.add($parrafo))	
+								 #elseif($parrafoTemp.length() == 1)
+									#set($Capitular = true)	
+									#set($capitularCount = $capitularCount + 1)								
+								#end
+									 
+								
+								
+							#elseif(($velocityCount == 1) && ($index == 2))
+								
+								#set($parrafoMix = "$parrafoTemp$parrafo")
+								
+								#set($temp = $vResultado.add($parrafoMix))
+							
+							#else
+								#if($parrafo != "")						
+									#set($temp = $vResultado.add($parrafo))
+								#end
+							#end
+							
+						#end
+						
+						#set($indexLadillo = $velocityCount - 1 - $capitularCount )
+						
+						
+						#if($Capitular == false)
+						
+							#if($bLadillos == true)
+								#if($ladillos)
+    								#if( $velocityCount - $capitularCount  <= $ladillos.size() )
+    								    
+    									#if ($ladillos.get($indexLadillo).data!="")
+    										#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+    										#set($temp = $vResultado.add($ladillo))
+    									#end
+									#end
+								#end
+							#end
+						#end
+						
+						
+						
+						#set ($index = $index +1)
+						
+					#end
+				
+				#else
+				
+					
+					#set($indexLadillo = 0)
+					#foreach($Texto in $vTextos.getSiblings())
+						
+						#set ($ladillos = $Paragraph_Title.getSiblings())
+						#set($arraTemp = $Texto.data.split("</p>"))
+						
+						
+						#foreach($parrafo in $arraTemp)
+							
+							#set($parrafo = $parrafo.replaceAll("&amp;","&"))
+							#set($parrafo = $parrafo.replace("<p>",""))
+							
+                            
+							#if($parrafo != "")	
+								#set($temp = $vResultado.add($parrafo))
+							#end	
+		
+						#end
+						
+						#if($bLadillos == true)
+							
+							#if($ladillos.size() > $indexLadillo)
+								#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+								#set($temp = $vResultado.add($ladillo))
+								#set($indexLadillo = $indexLadillo + 1)
+							#end
+						#end
+						
+						
+					#end
+				
+				#end
+
+	#end
+	
+##Macro de velocity pintarNumComments##
+	##Descripcion: Esta macro se utiliza mostrar el nÃ¯Â¿Â½mero de comentarios
+	
+	
+	#macro(pintarNumComments )
+			#set ($myservice = $serviceLocator.findService("news-portlet", "com.protecmedia.iter.news.service.CommentsLocalService"))
+			#set($numComments = $myservice.countByGorupArticleIdComments($getterUtil.getLong($groupId), $reserved-article-id.data, true))		
+			#if($numComments != 0)
+				<div class="botonesIconos"> 
+					<a href="$viewMode#comentarios">
+						<div class="comentariosIcono"> 
+							<p><span class="ncomentarios">$numComments</span> #language("comments")</p> 
+						</div> 
+					</a> 
+				</div>
+			
+			#end
+	#end
+
+##Macro de velocity recuperarFechaMod
+		##Descripcion: Esta macro se utiliza para recuperar la fecha de modificaciÃ¯Â¿Â½n con el tipo date
+		##ParÃ¯Â¿Â½metro 1: $dResultado -> Date que contiene la fecha de modificaciÃ¯Â¿Â½n 
+		##Comment -> La fecha deberÃ¯Â¿Â½ ser formateada despuÃ¯Â¿Â½s con la directiva $dateTool.format
+		
+		
+    #macro(recuperarFechaMod $dResultado)
+        #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+        #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+        #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('EEE, dd MMM yyyy HH:mm:ss Z'))
+        #set ($dResultado = $indexFormat.parse($reserved-article-modified-date.getData()))
+	#end
+
+##Macro de velocity recuperarFechaCre
+		##Descripcion: Esta macro se utiliza para recuperar la fecha de modificaciÃ¯Â¿Â½n con el tipo date
+		##ParÃ¯Â¿Â½metro 1: $dResultado -> Date que contiene la fecha de modificaciÃ¯Â¿Â½n 
+		##Comment -> La fecha deberÃ¯Â¿Â½ ser formateada despuÃ¯Â¿Â½s con la directiva $dateTool.format
+	
+	#macro(recuperarFechaCre $dResultado)
+        #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+        #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+        #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('EEE, dd MMM yyyy HH:mm:ss Z'))
+        #set ($dResultado = $indexFormat.parse($reserved-article-create-date.getData()))
+	#end
+
+##Macro de velocity recuperarFechaCreArt
+		##Descripcion: Esta macro se utiliza para recuperar la fecha de creaciÃƒÂ³n con el tipo date
+		##ParÃ¯Â¿Â½metro 1: $dResultado -> Date que contiene la fecha de creaciÃƒÂ³n 
+		##Comment -> La fecha deberÃƒÂ­a ser formateada despuÃƒÂ©s con la directiva $dateTool.format
+		##$mascara -> Tipo de mÃƒÂ¡cara que se aplicarÃƒÂ¡ para pintar la fecha
+		##Variables posibles en $tipoFecha:
+		##$reserved-article-display-date.data
+		##$reserved-article-modified-date.data
+		##$reserved-article-create-date.data
+		
+	#macro(recuperarFechaArticulo $mascara $tipoFecha)
+        $dateTool.format($mascara, $dateTool.toDate("EEE, dd MMM yyyy hh:mm:ss Z", $tipoFecha), $locale)
+	#end
+	
+##Macro de velocity recuperarFechaDisp
+		##Descripcion: Esta macro se utiliza para recuperar la fecha de modificaciÃ¯Â¿Â½n con el tipo date
+		##ParÃ¯Â¿Â½metro 1: $dResultado -> Date que contiene la fecha de modificaciÃ¯Â¿Â½n 
+		##Comment -> La fecha deberÃ¯Â¿Â½ ser formateada despuÃ¯Â¿Â½s con la directiva $dateTool.format
+		
+	#macro(recuperarFechaDisp $dResultado)
+        #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+        #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+        #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('EEE, dd MMM yyyy HH:mm:ss Z'))
+        #set ($dResultado = $indexFormat.parse($reserved-article-display-date.data))
+      
+	#end
+	
+	
+##Macro de velocity eliminarHTML
+		##Descripcion: Esta macro se usa para eliminar todas las etiquetas html de un texto.
+		##ParÃ¯Â¿Â½metro 1: $sResultado -> String que va a contener el resultado sin html
+		
+		
+	#macro(eliminarHTML $sResultado)
+		#set ($sResultado = $sResultado.replaceAll("&amp;","&"))
+		#set ($sResultado = $sResultado.replaceAll("<.*?>",""))
+		
+ 	#end
+	
+
+	
+##Macro de velocity categoriasArticulo
+	##Descripcion: Esta macro se utiliza para recuperar un listado de categorÃ¯Â¿Â½as asociadas a un artÃ¯Â¿Â½culo.
+	##ParÃ¯Â¿Â½metro 1: $vResultado -> Array que contiene los nombres de las categorÃ¯Â¿Â½as de un artÃ¯Â¿Â½culo. 
+	##ParÃ¯Â¿Â½metro 2: $groupId -> Id del grupo del artÃ¯Â¿Â½culo (@group_id@).
+	#macro(categoriasArticulo $vResultado $groupId)
+		#set ($assetService = $serviceLocator.findService("com.liferay.portlet.asset.service.AssetCategoryLocalService"))
+        #set ($journalService =  $serviceLocator.findService("com.liferay.portlet.journal.service.JournalArticleLocalService")) 
+        #set ($articuloObject = $journalService.getArticle($groupId, $reserved-article-id.data))
+        #set ($resourcePk = $articuloObject.resourcePrimKey)
+        #set ($categorias = $assetService.getCategories("com.liferay.portlet.journal.model.JournalArticle",$resourcePk))
+        
+        #foreach($cat in $categorias)
+			#set($temp = $vResultado.add($cat.name))
+        #end
+
+	#end
+
+##Macro de velocity checkCategoria
+	##Descripcion: Esta macro comprueba si un artÃ¯Â¿Â½culo tiene asignada una determinada categorÃ¯Â¿Â½a;
+	##Si el artÃ¯Â¿Â½culo pertenece a una categorÃ¯Â¿Â½a devolvera un string con el contenido true, en caso contrario el valor sera false
+	##ParÃ¯Â¿Â½metro 1: $sCatToCheck -> CategorÃ¯Â¿Â½a que se va a buscar.
+	##ParÃ¯Â¿Â½metro 2: $sResultado -> String que contiene el resultado de la comprobaciÃ¯Â¿Â½n.
+	##ParÃ¯Â¿Â½metro 3: $groupId -> Id del grupo del artÃ¯Â¿Â½culo (@group_id@).
+	#macro (checkCategoria $sCatToCheck $sResultado $groupId)
+		
+		#set ($assetService = $serviceLocator.findService("com.liferay.portlet.asset.service.AssetCategoryLocalService"))
+        #set ($journalService =  $serviceLocator.findService("com.liferay.portlet.journal.service.JournalArticleLocalService")) 
+        #set ($articuloObject = $journalService.getArticle($groupId, $reserved-article-id.data))
+        #set ($resourcePk = $articuloObject.resourcePrimKey)
+        #set ($categorias = $assetService.getCategories("com.liferay.portlet.journal.model.JournalArticle",$resourcePk))
+        #set ($sResultado = "false")
+		
+        #foreach($cat in $categorias)
+			#if($sCatToCheck ==  $cat.name)
+				#set($sResultado = "true")
+			#end
+        #end
+
+	#end
+
+##Macro de velocity checkListCategorias
+	##Descripcion: Esta macro comprueba si un artÃ¯Â¿Â½culo tiene asignada una o varias categorÃ¯Â¿Â½as;
+	##ParÃ¯Â¿Â½metro 1: vListCatToCheck -> Lista de categorÃ¯Â¿Â½as en las que se va a buscar.
+	##ParÃ¯Â¿Â½metro 2: $bChekAll -> Si llega true a la variable se comprobarÃ¯Â¿Â½ que el artÃ¯Â¿Â½culo contiene TODAS las categorÃ¯Â¿Â½as
+	##Si llega false con que exista una de las categorÃ¯Â¿Â½as de la lista se devolverÃ¯Â¿Â½ true.
+	##ParÃ¯Â¿Â½metro 3: $sResultado -> String que contiene el resultado de la comprobaciÃ¯Â¿Â½n.	
+	##ParÃ¯Â¿Â½metro 4: $groupId -> Id del grupo del artÃ¯Â¿Â½culo (@group_id@).
+	#macro (checkListCategorias $vListCatToCheck $bChekAll $sResultado $groupId)
+		#set ($assetService = $serviceLocator.findService("com.liferay.portlet.asset.service.AssetCategoryLocalService"))
+        #set ($journalService =  $serviceLocator.findService("com.liferay.portlet.journal.service.JournalArticleLocalService")) 
+        #set ($articuloObject = $journalService.getArticle($groupId, $reserved-article-id.data))
+        #set ($resourcePk = $articuloObject.resourcePrimKey)
+        #set ($categorias = $assetService.getCategories("com.liferay.portlet.journal.model.JournalArticle",$resourcePk))
+        #set ($sResultado = "false")
+		
+		#set ($contCat = 0)
+		#set ($contCatOk = 0)
+		#set ($sResultadoTemp = "false")
+		
+		#if($bChekAll)
+			#foreach($catToCheck in $vListCatToCheck)
+				#foreach($cat in $categorias)
+					#if($catToCheck ==  $cat.name)
+						#set($sResultadoTemp = "true")
+					#end
+				#end
+    			
+				#if ($sResultadoTemp == "true")
+					#set ($contCatOk = $contCatOk + 1)
+    			#end
+				
+				#set ($contCat = $contCat + 1)
+				#set ($sResultadoTemp = "false")
+			#end
+			
+			#if($contCat == $contCatOk)
+				#set($sResultado = "true")
+			#end
+		
+		#else
+			#foreach($cat in $categorias)
+				#foreach($catToCheck in $vListCatToCheck)
+					#if($catToCheck ==  $cat.name)
+						#set($sResultado = "true")
+					#end
+				#end
+			#end
+		#end
+
+	#end
+	
+##Macro de velocity getVideo.
+	##DescripciÃ¯Â¿Â½n: Esta macro devuelve el html correspondiente al  vÃ¯Â¿Â½deo de un artÃ¯Â¿Â½culo..
+	##ParÃ¯Â¿Â½metro 1: heightVideo -> Altura que va a tener el html del video o el objeto flash.
+	##ParÃ¯Â¿Â½metro 2: widthVideo -> Ancho que va a tener el html del video o el objeto flash.
+	##ParÃ¯Â¿Â½metro 3: urlSwfFolder -> Objeto flash reproductor
+	##ParÃ¯Â¿Â½metro 5: flashvars -> ParÃ¯Â¿Â½metros de configuraciÃ¯Â¿Â½n del objeto flash, si no se le pasa nada se tomarÃ¯Â¿Â½unos por defectos para flowplayer.
+	##ParÃ¯Â¿Â½metro 6: indexVideo -> ÃƒÂ�ndice del video que se recuperarÃƒÂ¡.
+	#macro (getVideo $heightVideo $widthVideo $urlSwfFolder $flashvars $indexVideo )
+		
+		##set($heightVideo = "200px")
+		##set($widthVideo = "200px")
+		##set($urlSwfFolder = "/themename-theme/swf/")
+			
+		
+		#set($urlSwfObject =  $urlSwfFolder + "flowplayer-3.2.15.swf")
+		#set($urlSwfControls = $urlSwfFolder + "flowplayer.controls-3.2.14.swf")
+		
+		
+		
+        #set ($newHeight= $heightVideo.replaceAll("px",""))
+        #set( $intHeight = 0)
+        #set( $intHeight = $intHeight.parseInt($newHeight))
+
+		
+		#set ($newWidth= $widthVideo.replaceAll("px",""))
+        #set( $intWidth = 0)
+        #set( $intWidth = $intWidth.parseInt($newWidth))
+		
+			
+		#if($intWidth >= 350)
+			#set($controls = "")
+		#end
+		
+		#if(($intWidth >= 200) && ($intWidth < 350))
+			#set($controls = ",'plugins':{ 'controls':{'url': '$urlSwfControls','all': false,'play': true,'scrubber': true, 'mute':true, 'fullscreen': true}}")
+		#end
+		
+		#if(($intWidth < 200) && ($intWidth >= 100))
+			#set($controls = ",'plugins':{ 'controls':{'url': '$urlSwfControls','all': false,'play': true,'fullscreen': true,'mute':true}}")
+		#end
+		
+		#if($intWidth < 100)
+			#set($controls = ",'plugins':{ 'controls':null}")
+		#end
+		
+
+		
+		#set($listaVideo = [])
+           
+        #foreach($multi in  $Multimedia.getSiblings())
+        	#set($temp = $listaVideo.add($multi))	
+        #end
+        
+        #set ($alto = $heightVideo)
+        #set ($ancho = $widthVideo)
+		                   
+        #set($defaultImg = $urlDefaultImage)
+           	
+        #if ($listaVideo.size() > 0)	
+        		        				
+   		
+    		#if($flashvars=="")
+				
+				
+				#if($listaVideo.get($indexVideo).Preview.data && $listaVideo.get($indexVideo).Preview.data !="")
+					#set($imagenPoster = $listaVideo.get($indexVideo).Preview.data)
+					#set($flashvars = "config={'playlist':['${imagenPoster}',{'url':'http://@portal_url@$listaVideo.get($indexVideo).Document.data','autoPlay':false, 'scaling':'fit'}],'canvas':{'backgroundColor':'#000000', 'backgroundGradient': 'none'},'play':{'label': 'Reproducir', 'replayLabel': 'Volver a ver'}$!controls}")
+				#else
+					#set($flashvars = "config={'playlist':[{'url':'http://@portal_url@$listaVideo.get($indexVideo).Document.data','autoPlay':false, 'scaling':'fit', 'autoBuffering': true}],'canvas':{'backgroundColor':'#000000', 'backgroundGradient': 'none'},'play':{'label': 'Reproducir', 'replayLabel': 'Volver a ver'}$!controls}")
+				#end
+					
+			#end
+			
+			
+
+           
+			
+			
+            #if($listaVideo.get($indexVideo).Extension.data == "wmv")
+				
+				<div class="windowsmediavideo" style="display:none; cursor:pointer;" onclick="playWmvLightBox(this, $newHeight , $newWidth, 'http://@portal_url@$listaVideo.get($indexVideo).Document.data');" >
+					<div class="imagePoster" style="position:relative;">
+							
+						##<img class="poster" width="$newWidth" height="$newHeight" src="http://@portal_url@$listaVideo.get($indexVideo).Preview.data">
+						<a href="http://@portal_url@$listaVideo.get($indexVideo).Preview.data"  width="$newWidth"  height="$newHeight" style="display:none"></a>
+						
+						<div class="playIconWmv" style="height: $alto; position: absolute;  top: 0; width: $ancho;">
+							
+						</div>
+								
+					</div>
+					
+					
+					
+				</div>
+                
+				
+			#else
+				<div class="iosVideo" width="$ancho" height="$alto"  controls="" tabindex="0" poster="$imagenPoster" style="height:$alto; width:$ancho; background-color:#000000; display:none;" >
+					<div type="video/mp4" src="http://@portal_url@$listaVideo.get($indexVideo).Document.data"></div>
+				</div>
+
+				
+				<object class="flashPlayerVideo" id="flowplayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="$ancho" height="$alto" style="height:$alto; width:$ancho; display:none;"  >
+        		            <param name="bgcolor" value="#000000" /> 
+        					<param name="movie" value="$urlSwfObject" /> 
+							<param name="wmode" value="opaque">
+        					<param name="flashvars" value="$flashvars" />
+							<param name="allowfullscreen" value="true" />
+        					
+        
+        					<embed width="$ancho" height="$alto" bgcolor="#000000" 
+        					       flashvars="$flashvars"
+        						   src="$urlSwfObject"
+								   wmode="opaque"
+								   allowfullscreen="true"
+        					       type="application/x-shockwave-flash">
+        					
+        		</object>
+				
+			#end
+			
+        	
+    				
+    	#else
+    		#if($Image.High.data && $Image.High.data != "")
+    			<img src="$!Image.High.data" alt=""/ style="max-width:$widthVideo;"/>
+			#end
+			
+			
+    	#end
+		
+	#end
+	
+
+##Macro de velocity getVideoExtend.
+##DescripciÃ¯Â¿Â½n: Esta macro devuelve el html correspondiente al  vÃ¯Â¿Â½deo de un artÃ¯Â¿Â½culo..
+##ParÃ¯Â¿Â½metro 1: heightVideo -> Altura que va a tener el html del video o el objeto flash.
+##ParÃ¯Â¿Â½metro 2: widthVideo -> Ancho que va a tener el html del video o el objeto flash.
+##ParÃ¯Â¿Â½metro 3: urlSwfFolder -> Objeto flash reproductor
+##ParÃ¯Â¿Â½metro 5: flashvars -> ParÃ¯Â¿Â½metros de configuraciÃ¯Â¿Â½n del objeto flash, si no se le pasa nada se tomarÃ¯Â¿Â½unos por defectos para flowplayer.
+##ParÃ¯Â¿Â½metro 6: indexVideo -> Ã¯Â¿Â½ndice del video que se recuperarÃ¯Â¿Â½.
+##ParÃ¯Â¿Â½metro 7: variableMultimedia -> variable que representa al objeto multimedia.
+#macro (getVideoExtend $heightVideo $widthVideo $urlSwfFolder $flashvars $indexVideo $variableMultimedia)
+	
+	##set($heightVideo = "200px")
+	##set($widthVideo = "200px")
+	##set($urlSwfFolder = "/themename-theme/swf/")
+		
+	
+	#set($urlSwfObject =  $urlSwfFolder + "flowplayer-3.2.4.swf")
+	#set($urlSwfControls = $urlSwfFolder + "flowplayer.controls-3.2.2.swf")
+	
+	
+	
+    #set ($newHeight= $heightVideo.replaceAll("px",""))
+    #set( $intHeight = 0)
+    #set( $intHeight = $intHeight.parseInt($newHeight))
+
+	
+	#set ($newWidth= $widthVideo.replaceAll("px",""))
+    #set( $intWidth = 0)
+    #set( $intWidth = $intWidth.parseInt($newWidth))
+	
+		
+	#if($intWidth >= 350)
+		#set($controls = "")
+	#end
+	
+	#if(($intWidth >= 200) && ($intWidth < 350))
+		#set($controls = ",'plugins':{ 'controls':{'url': '$urlSwfControls','all': false,'play': true,'scrubber': true, 'mute':true, 'fullscreen': true}}")
+	#end
+	
+	#if(($intWidth < 200) && ($intWidth >= 100))
+		#set($controls = ",'plugins':{ 'controls':{'url': '$urlSwfControls','all': false,'play': true,'fullscreen': true,'mute':true}}")
+	#end
+	
+	#if($intWidth < 100)
+		#set($controls = ",'plugins':{ 'controls':null}")
+	#end
+	
+
+	
+	#set($listaVideo = [])
+       
+    #foreach($multi in  $variableMultimedia.getSiblings())
+    	#set($temp = $listaVideo.add($multi))	
+    #end
+    
+    #set ($alto = $heightVideo)
+    #set ($ancho = $widthVideo)
+	                   
+    #set($defaultImg = $urlDefaultImage)
+       	
+    #if ($listaVideo.size() > 0)	
+    		        				
+	
+		#if($flashvars=="")
+			
+			
+			#if($listaVideo.get($indexVideo).Preview.data && $listaVideo.get($indexVideo).Preview.data !="")
+				#set($imagenPoster = $listaVideo.get($indexVideo).Preview.data)
+				#set($flashvars = "config={'playlist':['${imagenPoster}',{'url':'http://@portal_url@$listaVideo.get($indexVideo).Document.data','autoPlay':false, 'scaling':'fit'}],'canvas':{'backgroundColor':'#000000', 'backgroundGradient': 'none'}$!controls}")
+			#else
+				#set($flashvars = "config={'playlist':[{'url':'http://@portal_url@$listaVideo.get($indexVideo).Document.data','autoPlay':false, 'scaling':'fit', 'autoBuffering': true}],'canvas':{'backgroundColor':'#000000', 'backgroundGradient': 'none'}$!controls}")
+			#end
+				
+		#end
+		
+		
+		<video class="iosVideo" width="$ancho" height="$alto"  controls="" tabindex="0" poster="$imagenPoster" style="height:$alto; width:$ancho; background-color:#000000; display:none;" >
+			<source type="video/mp4" src="http://@portal_url@$listaVideo.get($indexVideo).Document.data"></source>
+   		</video>
+ 
+             							
+        	<object class="flashPlayerVideo" id="flowplayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="$ancho" height="$alto" style="height:$alto; width:$ancho; display:none;"  >
+    		            <param name="bgcolor" value="#000000" /> 
+    					<param name="movie" value="$urlSwfObject" /> 
+						<param name="wmode" value="opaque">
+    					<param name="flashvars" value="$flashvars" />
+						<param name="allowfullscreen" value="true" />
+    					
+    
+    					<embed width="$ancho" height="$alto" bgcolor="#000000" 
+    					       flashvars="$flashvars"
+    						   src="$urlSwfObject"
+							   wmode="opaque"
+							   allowfullscreen="true"
+    					       type="application/x-shockwave-flash">
+    					
+    	</object>
+				
+	#else
+		#if($Image.High.data && $Image.High.data != "")
+			<img src="$!Image.High.data" alt=""/ style="max-width:$widthVideo;">
+		#end
+		
+		
+	#end
+	
+#end
+	
+	
+##Macro de velocity getVideoYoutube.
+	##DescripciÃ¯Â¿Â½n: Esta macro devuelve el html correspondiente al  vÃ¯Â¿Â½deo de un artÃ¯Â¿Â½culo que estÃ¯Â¿Â½ alojado en youtuve.
+	##ParÃ¯Â¿Â½metro 1: heightVideo -> Altura que va a tener el html del video o el objeto flash.
+	##ParÃ¯Â¿Â½metro 2: widthVideo -> Ancho que va a tener el html del video o el objeto flash.
+	##ParÃ¯Â¿Â½metro 3: indexVideo -> Ã¯Â¿Â½ndice del video que se recuperarÃ¯Â¿Â½.
+	#macro (getVideoYoutube $heightVideo $widthVideo $indexVideo)
+		
+		#set($listaVideo = [])
+            
+        #foreach($multi in  $Youtube.getSiblings())
+        	#set($temp = $listaVideo.add($multi))	
+        #end
+		
+		<iframe class="youtube-player"  style="width:${widthVideo}; height:${heightVideo}" src="http://www.youtube.com/embed/${listaVideo.get($indexVideo).data}?wmode=opaque">
+			
+		</iframe>
+
+	#end
+	
+
+##Macro de velocity getFechaFormato.
+	##DescripciÃ¯Â¿Â½n: Esta macro pinta la hora si la noticia es de hoy sino pinta la fecha
+	##ParÃ¯Â¿Â½metro 1: fecha -> Fecha-Hora de la noticia.
+	
+	#macro (getFechaFormato $fecha)
+		#set($hoy = $dateTool.getDate())
+		#set($dia_a = $dateTool.getDay($hoy))
+		#set($mes_a = $dateTool.getMonth($hoy) + 1)
+		#set($dia_n = $dateTool.getDay($fecha))
+		#set($mes_n = $dateTool.getMonth($fecha) + 1)
+
+		#if(($dia_a != $dia_n) || ($mes_a != $mes_n))
+  			$dateTool.format("dd/MM/yyyy",$fecha)
+		#else
+  			$dateTool.format("HH:mm",$fecha)
+		#end
+	#end	
+
+##Macro que compara m�ltiples tipos de contenidos en un orden dado y devuelve una cadena con el valor del contenido
+#macro (getContentTypeByPriority $arraElements)#*
+	*##set($result = "")#*
+	*##foreach ($el in $arraElements)#*
+		*##if($el && $el.data != "" && $result == "")#*
+			*##set($result = $el.data)#*
+			*##break#*
+		*##end#*
+	*##end#*
+    *#$result#*
+*##end
+
+
+
+	
+##MACROS PARA EL COLOMBIANO
+
+##Macro que recupera el t�tulo para los TEASERS del colombiano
+#macro (getTeaserTitleColombiano)#*
+   *##set($arraTeaserTitle = [$Titulo_infografia,$TeaserHeadline,$Titulo_Web,$Headline])#*
+   *##getContentTypeByPriority($arraTeaserTitle)#*
+*##end
+
+
+##Macro que recupera el t�tulo para los FULL CONTENT INFOGRAFIA del colombiano
+#macro (getFullContentTitleInfografiaColombiano)#*
+   *##set($arraTeaserTitle = [$Titulo_infografia,$Titulo_Web,$Headline])#*
+   *##getContentTypeByPriority($arraTeaserTitle)#*
+*##end
+
+##Macro que recupera el t�tulo para los FULL CONTENT GENERALdel colombiano
+#macro (getFullContentTitleGeneralColombiano)#*
+   *##set($arraTeaserTitle = [$Titulo_Web,$Headline])#*
+   *##getContentTypeByPriority($arraTeaserTitle)#*
+*##end
+
+
+##Macro que recupera el texto para los TEASER del colombiano
+#macro (getTeaserTextColombiano $maximumSize)#*
+	*##if($TeaserText.data && $TeaserText.data != "")#*
+		*##set($stringResultado = $TeaserText.data)#*
+		*#$stringResultado#*
+	*##elseif($Texto_Web && $Texto_Web.data !="")#*
+		*##set ($arraText = [])#*
+		*##recuperarParrafosTexto($Texto_Web true true $arraText)#*
+		*##set ($textoRecortado ="")#*                         			   
+		*##recortarTexto($arraText $maximumSize $textoRecortado)#*
+	*##elseif($Text.data && $Text.data !="")#*
+		*##set ($arraText = [])#* 
+		*##recuperarParrafosTexto($Text true true $arraText)#*
+ 		*##set ($textoRecortado ="")#*                         			   
+		*##recortarTexto($arraText $maximumSize $textoRecortado)#*
+	*##end#*
+*##end
+
+
+##Macro que recupera el texto para los FULL CONTENT del colombiano
+#macro (getFullContentTextColombiano)#*
+	*##if($Texto_Web && $Texto_Web.data != "")#*
+		*##set($orderHashMapElements = {1:{"text":$Texto_Web}, 2:{"entretitulo":$Entretitulo}, 3:{"multimediaVimeoApoyo":$Multimedia_Vimeo_Apoyo }, 4:{"multimediaYoutubeApoyo":$Multimedia_Youtube_Apoyo}, 5:{"multimediaApoyo": $Multimedia_Apoyo},6:{"multimediaBrightCoveApoyo": $Multimedia_Brightcove_Apoyo},6:{"htmlApoyo": $HTML_Apoyo}})#*		
+	*##else#*
+		*##set($orderHashMapElements = {1:{"text":$Text}, 2:{"entretitulo":$Entretitulo}, 3:{"multimediaVimeoApoyo":$Multimedia_Vimeo_Apoyo }, 4:{"multimediaYoutubeApoyo":$Multimedia_Youtube_Apoyo}, 5:{"multimediaApoyo": $Multimedia_Apoyo},6:{"multimediaBrightCoveApoyo": $Multimedia_Brightcove_Apoyo},6:{"htmlApoyo": $HTML_Apoyo}})#*
+	*##end#*
+	*##printDetalleFullText($orderHashMapElements)#*
+*##end
+
+
+
+#macro (disqusNumComments)
+	#set($ac-url = $articleContext.selectNodes('articlectx/url'))
+	#set($xml-url = $ac-url.get(0).text)
+	#set($arraUrl = $xml-url.split("/"))
+	#set($posToDelete = $arraUrl.size() - 1)
+	
+	#set($disqusNumComment = "")
+	#foreach($elUrl in $arraUrl)
+		#set($elUrl = $elUrl.trim())
+		#if($velocityCount == 1)
+			#set($disqusNumComment = $disqusNumComment + $elUrl)
+		#elseif($velocityCount == $posToDelete)
+			
+		#else
+			#set($disqusNumComment = $disqusNumComment + "/" + $elUrl)
+		#end
+		
+		
+	#end
+	#set($disqusNumComment = $disqusNumComment.trim())
+	#set($disqusNumComment = $disqusNumComment + "#disqus_thread")
+	
+	<a href="$disqusNumComment"></a>
+#end
+
+
+#macro (colombianoMultimediaFancybox)
+	
+	<script>
+		var fancyContent${reserved-article-id.data}${aleatorio} = "";
+		var fancyFunction${reserved-article-id.data}${aleatorio} = function(){};
+		
+		#if($Multimedia_Vimeo && $Multimedia_Vimeo.data !="")
+			fancyContent${reserved-article-id.data}${aleatorio}='<iframe class="vimeo-player" src="//player.vimeo.com/video/$Multimedia_Vimeo.data" width="790" height="440" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+		
+		#elseif($Multimedia_Youtube && $Multimedia_Youtube.data !="")
+			fancyContent${reserved-article-id.data}${aleatorio}='<iframe class="youtube-player" type="text/html" width="790" height="440" src="http://www.youtube.com/embed/${Multimedia_Youtube.data}?wmode=opaque" frameborder="0"></iframe>';
+			
+		#elseif($Multimedia_Brightcove && $Multimedia_Brightcove.data !="")
+	
+			fancyContent${reserved-article-id.data}${aleatorio} +='<object id="myExperience${Multimedia_Brightcove.data}" class="BrightcoveExperience" style="display:block;width:580px;height:370px;">';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="bgcolor" value="#FFFFFF" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="width" value="790" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="wmode" value="opaque" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="height" value="440" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="playerID" value="3033416247001" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="playerKey" value="AQ~~,AAABMdBKz4k~,kXKBkGGWjAWW-gq6A40USK1F9Zdb0knN" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="isVid" value="true" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="isUI" value="true" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="dynamicStreaming" value="true" />'
+			fancyContent${reserved-article-id.data}${aleatorio} +='	<param name="@videoPlayer" value="$Multimedia_Brightcove.data" />';
+			fancyContent${reserved-article-id.data}${aleatorio} +='</object>';
+			
+			fancyFunction${reserved-article-id.data}${aleatorio} =  function(){brightcove.createExperiences()};
+		#elseif($Multimedia && $Multimedia.data !="")
+		
+			fancyContent${reserved-article-id.data}${aleatorio} +='<div id="playerDetalle${reserved-article-id.data}${aleatorio}" class="normal_multimedia" style="display:block;width:580px;height:370px;"></div>';
+			
+			fancyFunction${reserved-article-id.data}${aleatorio} = function(){
+				jwplayer('playerDetalle${reserved-article-id.data}${aleatorio}').setup({
+					playlist:[
+						{
+							image: '$Multimedia.Preview.data',
+							file: '$Multimedia.Document.data'
+						}
+					],
+					primary: 'flash',
+					width: 790,
+					height: 440,
+					fallback: 'false',
+					displaytitle: false,
+					html5player: '/elcolombiano-theme/js/jwplayer.html5.js',
+					flashplayer: '/elcolombiano-theme/swf/jwplayer.flash.swf'
+				}); 	
+			};
+			
+		#elseif($Image.normal && $Image.normal.data !="")
+			fancyContent${reserved-article-id.data}${aleatorio} +='<img style="width:790px;height:auto;display: block;" src="$Image.normal.data">';
+		#end
+	
+			
+		jQuery(document).ready(function(){
+				$('#${reserved-article-id.data}${aleatorio} .colombianoFancy').fancybox({
+				fitToView : true,
+				width   : '790',
+				height    : '440',
+				autoSize  : false,
+				openEffect  : 'fade',
+				closeEffect : 'fade',
+				content : fancyContent${reserved-article-id.data}${aleatorio},
+				afterShow: fancyFunction${reserved-article-id.data}${aleatorio},
+				type: 'html'
+				
+			});
+		})
+	</script>		
+
+#end
+
+
+#macro (colombianoImageFancybox $contentType $encuadre $index)
+	##set($contentType = "Infografico")
+	##set($encuadre = "Popup_Caricatura")
+	##set($index = "0")
+	
+	#if ($articleToolbox.getNumImageTags($contentType,"true") > 0)
+		<div class="hidden-html">
+			<div id="fancyImage${reserved-article-id.data}${aleatorio}">
+				$!articleToolbox.getImageTag($contentType,$index,$encuadre,"","","")
+			</div>
+		</div>
+	#end
+	
+	<script>
+		var fancyContent${reserved-article-id.data}${aleatorio} = jQuery("#fancyImage${reserved-article-id.data}${aleatorio}");
+		var fancyFunction${reserved-article-id.data}${aleatorio} = function(){};
+	
+		jQuery("#${reserved-article-id.data}${aleatorio} .caricatura").click(function(){
+			jQuery.fancybox({
+				fitToView : true,
+				autoSize  : true,
+				openEffect  : 'fade',
+				closeEffect : 'fade',
+				content : fancyContent${reserved-article-id.data}${aleatorio},
+				afterShow: fancyFunction${reserved-article-id.data}${aleatorio},
+				type: 'html',
+				title: '$!Headline.data'
+				
+			});
+		});
+	</script>	
+
+#end
+
+#macro (recortarTextoFZ $vTextos $iNumCaracteres $sResultado)
+					
+		#foreach ($elem in $vTextos)
+							
+					#if ($iNumCaracteres > 0)
+						#set ($elem = $elem.replaceAll("&amp;","&"))
+						#set ($elem = $elem.replace("<p>",""))
+						#set ($elem = $elem.replaceAll("<.*?>",""))
+						
+						
+						
+						#if ($elem.length() < $iNumCaracteres)
+							#set ($sResultado = $sResultado + "<p>" + $elem)
+							#set ($iNumCaracteres = $iNumCaracteres - $elem.length())
+						#else
+							
+						
+							#set($index = $elem.indexOf(" ", $iNumCaracteres))
+							
+							#if($index == -1)
+								#set ($sResultado =  "<p>" + $elem )
+							#else
+								#set ($sResultado = $sResultado  + "<p>" + $elem.substring(0, $elem.indexOf(" ", $iNumCaracteres)))										
+							#end
+							#set ($iNumCaracteres = 0)
+						
+						#end
+					#end
+		#end
+		$!sResultado
+		... <span class="urlFull"> <a href="#printAcUrl()"> weiter </a> </span>
+			#if ($Image && $Image.getSiblings() && $Image.getSiblings().size() > 1)
+				<span class='iconPhoto'></span>
+			#end
+			#if ($Multimedia && $Multimedia.getSiblings() && $Multimedia.getSiblings().size() >= 1)
+				<span class='iconVideo'></span>
+			#end
+		</p>
+	
+#end
+
+##Macro que pinta todos los microformatos de tipo 1
+#macro (microformatosTipo1)
+
+	##Macro Micro formato PARA_SABER_MAS
+	#if(($PARA_SABER_MAS_Ante_Micro && $PARA_SABER_MAS_Ante_Micro.data != "") && ($PARA_SABER_MAS_Tit_Micro && $PARA_SABER_MAS_Tit_Micro.data !="") && ($PARA_SABER_MAS_Tx_Micro && $PARA_SABER_MAS_Tx_Micro.data !=""))	
+		#foreach($PARA_SABER_MAS_Ant_Mic in $PARA_SABER_MAS_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($PARA_SABER_MAS_Tit_Micro.getSiblings().size() >= $velocityCount && $PARA_SABER_MAS_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($PARA_SABER_MAS_Tit_Micro.getSiblings().get($indexActual) && $PARA_SABER_MAS_Tit_Micro.getSiblings().get($indexActual).data != "")&&($PARA_SABER_MAS_Tx_Micro.getSiblings().get($indexActual) && $PARA_SABER_MAS_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+						
+							<h3>$PARA_SABER_MAS_Ant_Mic.data 
+								<span class="description-contexto">$PARA_SABER_MAS_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_parasabermas mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$PARA_SABER_MAS_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+						
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato ANTECEDENTES
+	#if(($ANTECEDENTES_Ante_Micro && $ANTECEDENTES_Ante_Micro.data != "") && ($ANTECEDENTES_Tit_Micro && $ANTECEDENTES_Tit_Micro.data !="") && ($ANTECEDENTES_Tx_Micro && $ANTECEDENTES_Tx_Micro.data !=""))	
+		#foreach($ANTECEDENTES_Ant_Mic in $ANTECEDENTES_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($ANTECEDENTES_Tit_Micro.getSiblings().size() >= $velocityCount && $ANTECEDENTES_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($ANTECEDENTES_Tit_Micro.getSiblings().get($indexActual) && $ANTECEDENTES_Tit_Micro.getSiblings().get($indexActual).data != "")&&($ANTECEDENTES_Tx_Micro.getSiblings().get($indexActual) && $ANTECEDENTES_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$ANTECEDENTES_Ant_Mic.data 
+								<span class="description-contexto">$ANTECEDENTES_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_antecedentes mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$ANTECEDENTES_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+	##Macro Micro formato SINTESIS
+	#if(($SINTESIS_Ante_Micro && $SINTESIS_Ante_Micro.data != "") && ($SINTESIS_Tit_Micro && $SINTESIS_Tit_Micro.data !="") && ($SINTESIS_Tx_Micro && $SINTESIS_Tx_Micro.data !=""))	
+		#foreach($SINTESIS_Ant_Mic in $SINTESIS_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($SINTESIS_Tit_Micro.getSiblings().size() >= $velocityCount && $SINTESIS_Tx_Micro.getSiblings().size() >= $velocityCount)
+					#if(($SINTESIS_Tit_Micro.getSiblings().get($indexActual) && $SINTESIS_Tit_Micro.getSiblings().get($indexActual).data != "")&&($SINTESIS_Tx_Micro.getSiblings().get($indexActual) && $SINTESIS_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$SINTESIS_Ant_Mic.data 
+								<span class="description-contexto">$SINTESIS_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_sintesis mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$SINTESIS_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato QUIEN_GANA
+	#if(($QUIEN_GANA_Ante_Micro && $QUIEN_GANA_Ante_Micro.data != "") && ($QUIEN_GANA_Tit_Micro && $QUIEN_GANA_Tit_Micro.data !="") && ($QUIEN_GANA_Tx_Micro && $QUIEN_GANA_Tx_Micro.data !=""))	
+		#foreach($QUIEN_GANA_Ant_Mic in $QUIEN_GANA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($QUIEN_GANA_Tit_Micro.getSiblings().size() >= $velocityCount && $QUIEN_GANA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($QUIEN_GANA_Tit_Micro.getSiblings().get($indexActual) && $QUIEN_GANA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($QUIEN_GANA_Tx_Micro.getSiblings().get($indexActual) && $QUIEN_GANA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$QUIEN_GANA_Ant_Mic.data 
+								<span class="description-contexto">$QUIEN_GANA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_quiengana mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$QUIEN_GANA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato COMO_FUNCIONA
+	#if(($COMO_FUNCIONA_Ante_Micro && $COMO_FUNCIONA_Ante_Micro.data != "") && ($COMO_FUNCIONA_Tit_Micro && $COMO_FUNCIONA_Tit_Micro.data !="") && ($COMO_FUNCIONA_Tx_Micro && $COMO_FUNCIONA_Tx_Micro.data !=""))	
+		#foreach($COMO_FUNCIONA_Ant_Mic in $COMO_FUNCIONA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($COMO_FUNCIONA_Tit_Micro.getSiblings().size() >= $velocityCount && $COMO_FUNCIONA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($COMO_FUNCIONA_Tit_Micro.getSiblings().get($indexActual) && $COMO_FUNCIONA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($COMO_FUNCIONA_Tx_Micro.getSiblings().get($indexActual) && $COMO_FUNCIONA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$COMO_FUNCIONA_Ant_Mic.data 
+								<span class="description-contexto">$COMO_FUNCIONA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_comofunciona mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$COMO_FUNCIONA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato QUE_SIGUE
+	#if(($QUE_SIGUE_Ante_Micro && $QUE_SIGUE_Ante_Micro.data != "") && ($QUE_SIGUE_Tit_Micro && $QUE_SIGUE_Tit_Micro.data !="") && ($QUE_SIGUE_Tx_Micro && $QUE_SIGUE_Tx_Micro.data !=""))	
+		#foreach($QUE_SIGUE_Ant_Mic in $QUE_SIGUE_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($QUE_SIGUE_Tit_Micro.getSiblings().size() >= $velocityCount && $QUE_SIGUE_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($QUE_SIGUE_Tit_Micro.getSiblings().get($indexActual) && $QUE_SIGUE_Tit_Micro.getSiblings().get($indexActual).data != "")&&($QUE_SIGUE_Tx_Micro.getSiblings().get($indexActual) && $QUE_SIGUE_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$QUE_SIGUE_Ant_Mic.data 
+								<span class="description-contexto">$QUE_SIGUE_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_quesigue mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$QUE_SIGUE_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+	##Macro Micro formato ANECDOTA
+	#if(($ANECDOTA_Ante_Micro && $ANECDOTA_Ante_Micro.data != "") && ($ANECDOTA_Tit_Micro && $ANECDOTA_Tit_Micro.data !="") && ($ANECDOTA_Tx_Micro && $ANECDOTA_Tx_Micro.data !=""))	
+		#foreach($ANECDOTA_Ant_Mic in $ANECDOTA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($ANECDOTA_Tit_Micro.getSiblings().size() >= $velocityCount && $ANECDOTA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($ANECDOTA_Tit_Micro.getSiblings().get($indexActual) && $ANECDOTA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($ANECDOTA_Tx_Micro.getSiblings().get($indexActual) && $ANECDOTA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$ANECDOTA_Ant_Mic.data 
+								<span class="description-contexto">$ANECDOTA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_anecdota mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$ANECDOTA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+				
+	##Macro Micro formato POLEMICA
+	#if(($POLEMICA_Ante_Micro && $POLEMICA_Ante_Micro.data != "") && ($POLEMICA_Tit_Micro && $POLEMICA_Tit_Micro.data !="") && ($POLEMICA_Tx_Micro && $POLEMICA_Tx_Micro.data !=""))	
+		#foreach($POLEMICA_Ant_Mic in $POLEMICA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($POLEMICA_Tit_Micro.getSiblings().size() >= $velocityCount && $POLEMICA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($POLEMICA_Tit_Micro.getSiblings().get($indexActual) && $POLEMICA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($POLEMICA_Tx_Micro.getSiblings().get($indexActual) && $POLEMICA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$POLEMICA_Ant_Mic.data 
+								<span class="description-contexto">$POLEMICA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_polemica mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$POLEMICA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato PROBLEMA
+	#if(($PROBLEMA_Ante_Micro && $PROBLEMA_Ante_Micro.data != "") && ($PROBLEMA_Tit_Micro && $PROBLEMA_Tit_Micro.data !="") && ($PROBLEMA_Tx_Micro && $PROBLEMA_Tx_Micro.data !=""))	
+		#foreach($PROBLEMA_Ant_Mic in $PROBLEMA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($PROBLEMA_Tit_Micro.getSiblings().size() >= $velocityCount && $PROBLEMA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($PROBLEMA_Tit_Micro.getSiblings().get($indexActual) && $PROBLEMA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($PROBLEMA_Tx_Micro.getSiblings().get($indexActual) && $PROBLEMA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$PROBLEMA_Ant_Mic.data 
+								<span class="description-contexto">$PROBLEMA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_elproblema mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$PROBLEMA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+				
+	
+	##Macro Micro formato FAVOR
+	#if(($FAVOR_Ante_Micro && $FAVOR_Ante_Micro.data != "") && ($FAVOR_Tit_Micro && $FAVOR_Tit_Micro.data !="") && ($FAVOR_Tx_Micro && $FAVOR_Tx_Micro.data !=""))	
+		#foreach($FAVOR_Ant_Mic in $FAVOR_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($FAVOR_Tit_Micro.getSiblings().size() >= $velocityCount && $FAVOR_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($FAVOR_Tit_Micro.getSiblings().get($indexActual) && $FAVOR_Tit_Micro.getSiblings().get($indexActual).data != "")&&($FAVOR_Tx_Micro.getSiblings().get($indexActual) && $FAVOR_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$FAVOR_Ant_Mic.data 
+								<span class="description-contexto">$FAVOR_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_afavor mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$FAVOR_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato QUIEN_PIERDE
+	#if(($QUIEN_PIERDE_Ante_Micro && $QUIEN_PIERDE_Ante_Micro.data != "") && ($QUIEN_PIERDE_Tit_Micro && $QUIEN_PIERDE_Tit_Micro.data !="") && ($QUIEN_PIERDE_Tx_Micro && $QUIEN_PIERDE_Tx_Micro.data !=""))	
+		#foreach($QUIEN_PIERDE_Ant_Mic in $QUIEN_PIERDE_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($QUIEN_PIERDE_Tit_Micro.getSiblings().size() >= $velocityCount && $QUIEN_PIERDE_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($QUIEN_PIERDE_Tit_Micro.getSiblings().get($indexActual) && $QUIEN_PIERDE_Tit_Micro.getSiblings().get($indexActual).data != "")&&($QUIEN_PIERDE_Tx_Micro.getSiblings().get($indexActual) && $QUIEN_PIERDE_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$QUIEN_PIERDE_Ant_Mic.data 
+								<span class="description-contexto">$QUIEN_PIERDE_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_quienpierde mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$QUIEN_PIERDE_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+	##Macro Micro formato ORIGEN
+	#if(($ORIGEN_Ante_Micro && $ORIGEN_Ante_Micro.data != "") && ($ORIGEN_Tit_Micro && $ORIGEN_Tit_Micro.data !="") && ($ORIGEN_Tx_Micro && $ORIGEN_Tx_Micro.data !=""))	
+		#foreach($ORIGEN_Ant_Mic in $ORIGEN_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($ORIGEN_Tit_Micro.getSiblings().size() >= $velocityCount && $ORIGEN_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($ORIGEN_Tit_Micro.getSiblings().get($indexActual) && $ORIGEN_Tit_Micro.getSiblings().get($indexActual).data != "")&&($ORIGEN_Tx_Micro.getSiblings().get($indexActual) && $ORIGEN_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$ORIGEN_Ant_Mic.data 
+								<span class="description-contexto">$ORIGEN_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_origen mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$ORIGEN_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato SOLUCION
+	#if(($SOLUCION_Ante_Micro && $SOLUCION_Ante_Micro.data != "") && ($SOLUCION_Tit_Micro && $SOLUCION_Tit_Micro.data !="") && ($SOLUCION_Tx_Micro && $SOLUCION_Tx_Micro.data !=""))	
+		#foreach($SOLUCION_Ant_Mic in $SOLUCION_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($SOLUCION_Tit_Micro.getSiblings().size() >= $velocityCount && $SOLUCION_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($SOLUCION_Tit_Micro.getSiblings().get($indexActual) && $SOLUCION_Tit_Micro.getSiblings().get($indexActual).data != "")&&($SOLUCION_Tx_Micro.getSiblings().get($indexActual) && $SOLUCION_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$SOLUCION_Ant_Mic.data 
+								<span class="description-contexto">$SOLUCION_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_lasolucion mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$SOLUCION_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato ESCENA
+	#if(($ESCENA_Ante_Micro && $ESCENA_Ante_Micro.data != "") && ($ESCENA_Tit_Micro && $ESCENA_Tit_Micro.data !="") && ($ESCENA_Tx_Micro && $ESCENA_Tx_Micro.data !=""))	
+		#foreach($ESCENA_Ant_Mic in $ESCENA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+
+				#if($ESCENA_Tit_Micro.getSiblings().size() >= $velocityCount && $ESCENA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($ESCENA_Tit_Micro.getSiblings().get($indexActual) && $ESCENA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($ESCENA_Tx_Micro.getSiblings().get($indexActual) && $ESCENA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$ESCENA_Ant_Mic.data 
+								<span class="description-contexto">$ESCENA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_escena mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$ESCENA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato PARENTESIS
+	#if(($PARENTESIS_Ante_Micro && $PARENTESIS_Ante_Micro.data != "") && ($PARENTESIS_Tit_Micro && $PARENTESIS_Tit_Micro.data !="") && ($PARENTESIS_Tx_Micro && $PARENTESIS_Tx_Micro.data !=""))	
+		#foreach($PARENTESIS_Ant_Mic in $PARENTESIS_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($PARENTESIS_Tit_Micro.getSiblings().size() >= $velocityCount && $PARENTESIS_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($PARENTESIS_Tit_Micro.getSiblings().get($indexActual) && $PARENTESIS_Tit_Micro.getSiblings().get($indexActual).data != "")&&($PARENTESIS_Tx_Micro.getSiblings().get($indexActual) && $PARENTESIS_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$PARENTESIS_Ant_Mic.data 
+								<span class="description-contexto">$PARENTESIS_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_parentesis mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$PARENTESIS_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato NO_LE_PERDONAN
+	#if(($NO_LE_PERDONAN_Ante_Micro && $NO_LE_PERDONAN_Ante_Micro.data != "") && ($NO_LE_PERDONAN_Tit_Micro && $NO_LE_PERDONAN_Tit_Micro.data !="") && ($NO_LE_PERDONAN_Tx_Micro && $NO_LE_PERDONAN_Tx_Micro.data !=""))	
+		#foreach($NO_LE_PERDONAN_Ant_Mic in $NO_LE_PERDONAN_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($NO_LE_PERDONAN_Tit_Micro.getSiblings().size() >= $velocityCount && $NO_LE_PERDONAN_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($NO_LE_PERDONAN_Tit_Micro.getSiblings().get($indexActual) && $NO_LE_PERDONAN_Tit_Micro.getSiblings().get($indexActual).data != "")&&($NO_LE_PERDONAN_Tx_Micro.getSiblings().get($indexActual) && $NO_LE_PERDONAN_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$NO_LE_PERDONAN_Ant_Mic.data 
+								<span class="description-contexto">$NO_LE_PERDONAN_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_noleperdonan mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$NO_LE_PERDONAN_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+	##Macro Micro formato DICEN_DE
+	#if(($DICEN_DE_Ante_Micro && $DICEN_DE_Ante_Micro.data != "") && ($DICEN_DE_Tit_Micro && $DICEN_DE_Tit_Micro.data !="") && ($DICEN_DE_Tx_Micro && $DICEN_DE_Tx_Micro.data !=""))	
+		#foreach($DICEN_DE_Ant_Mic in $DICEN_DE_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($DICEN_DE_Tit_Micro.getSiblings().size() >= $velocityCount && $DICEN_DE_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($DICEN_DE_Tit_Micro.getSiblings().get($indexActual) && $DICEN_DE_Tit_Micro.getSiblings().get($indexActual).data != "")&&($DICEN_DE_Tx_Micro.getSiblings().get($indexActual) && $DICEN_DE_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$DICEN_DE_Ant_Mic.data 
+								<span class="description-contexto">$DICEN_DE_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_dicende mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$DICEN_DE_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato EN_CONTRA
+	#if(($EN_CONTRA_Ante_Micro && $EN_CONTRA_Ante_Micro.data != "") && ($EN_CONTRA_Tit_Micro && $EN_CONTRA_Tit_Micro.data !="") && ($EN_CONTRA_Tx_Micro && $EN_CONTRA_Tx_Micro.data !=""))	
+		#foreach($EN_CONTRA_Ant_Mic in $EN_CONTRA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($EN_CONTRA_Tit_Micro.getSiblings().size() >= $velocityCount && $EN_CONTRA_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($EN_CONTRA_Tit_Micro.getSiblings().get($indexActual) && $EN_CONTRA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($EN_CONTRA_Tx_Micro.getSiblings().get($indexActual) && $EN_CONTRA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$EN_CONTRA_Ant_Mic.data 
+								<span class="description-contexto">$EN_CONTRA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_encontra mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$EN_CONTRA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato SENTIDOS
+	#if(($SENTIDOS_Ante_Micro && $SENTIDOS_Ante_Micro.data != "") && ($SENTIDOS_Tit_Micro && $SENTIDOS_Tit_Micro.data !="") && ($SENTIDOS_Tx_Micro && $SENTIDOS_Tx_Micro.data !=""))	
+		#foreach($SENTIDOS_Ant_Mic in $SENTIDOS_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($SENTIDOS_Tit_Micro.getSiblings().size() >= $velocityCount && $SENTIDOS_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($SENTIDOS_Tit_Micro.getSiblings().get($indexActual) && $SENTIDOS_Tit_Micro.getSiblings().get($indexActual).data != "")&&($SENTIDOS_Tx_Micro.getSiblings().get($indexActual) && $SENTIDOS_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$SENTIDOS_Ant_Mic.data 
+								<span class="description-contexto">$SENTIDOS_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_sentidos mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$SENTIDOS_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+			
+	##Macro Micro formato MI_PERCEPCION
+	#if(($MI_PERCEPCION_Ante_Micro && $MI_PERCEPCION_Ante_Micro.data != "") && ($MI_PERCEPCION_Tit_Micro && $MI_PERCEPCION_Tit_Micro.data !="") && ($MI_PERCEPCION_Tx_Micro && $MI_PERCEPCION_Tx_Micro.data !=""))	
+		#foreach($MI_PERCEPCION_Ant_Mic in $MI_PERCEPCION_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($MI_PERCEPCION_Tit_Micro.getSiblings().size() >= $velocityCount && $MI_PERCEPCION_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($MI_PERCEPCION_Tit_Micro.getSiblings().get($indexActual) && $MI_PERCEPCION_Tit_Micro.getSiblings().get($indexActual).data != "")&&($MI_PERCEPCION_Tx_Micro.getSiblings().get($indexActual) && $MI_PERCEPCION_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$MI_PERCEPCION_Ant_Mic.data 
+								<span class="description-contexto">$MI_PERCEPCION_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_mipercepcion mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$MI_PERCEPCION_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato EL_PROCESO
+	#if(($EL_PROCESO_Ante_Micro && $EL_PROCESO_Ante_Micro.data != "") && ($EL_PROCESO_Tit_Micro && $EL_PROCESO_Tit_Micro.data !="") && ($EL_PROCESO_Tx_Micro && $EL_PROCESO_Tx_Micro.data !=""))	
+		#foreach($EL_PROCESO_Ant_Mic in $EL_PROCESO_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($EL_PROCESO_Tit_Micro.getSiblings().size() >= $velocityCount && $EL_PROCESO_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($EL_PROCESO_Tit_Micro.getSiblings().get($indexActual) && $EL_PROCESO_Tit_Micro.getSiblings().get($indexActual).data != "")&&($EL_PROCESO_Tx_Micro.getSiblings().get($indexActual) && $EL_PROCESO_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$EL_PROCESO_Ant_Mic.data 
+								<span class="description-contexto">$EL_PROCESO_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_elproceso mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$EL_PROCESO_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato LA_PRUEBA
+	#if(($LA_PRUEBA_Ante_Micro && $LA_PRUEBA_Ante_Micro.data != "") && ($LA_PRUEBA_Tit_Micro && $LA_PRUEBA_Tit_Micro.data !="") && ($LA_PRUEBA_Tx_Micro && $LA_PRUEBA_Tx_Micro.data !=""))	
+		#foreach($LA_PRUEBA_Ant_Mic in $LA_PRUEBA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($LA_PRUEBA_Tit_Micro.getSiblings().size() >= $velocityCount && $LA_PRUEBA_Tx_Micro.getSiblings().size() >= $velocityCount)	
+					#if(($LA_PRUEBA_Tit_Micro.getSiblings().get($indexActual) && $LA_PRUEBA_Tit_Micro.getSiblings().get($indexActual).data != "")&&($LA_PRUEBA_Tx_Micro.getSiblings().get($indexActual) && $LA_PRUEBA_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$LA_PRUEBA_Ant_Mic.data 
+								<span class="description-contexto">$LA_PRUEBA_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_laprueba mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$LA_PRUEBA_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato EL_DIALOGO
+	#if(($EL_DIALOGO_Ante_Micro && $EL_DIALOGO_Ante_Micro.data != "") && ($EL_DIALOGO_Tit_Micro && $EL_DIALOGO_Tit_Micro.data !="") && ($EL_DIALOGO_Tx_Micro && $EL_DIALOGO_Tx_Micro.data !=""))	
+		#foreach($EL_DIALOGO_Ant_Mic in $EL_DIALOGO_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($EL_DIALOGO_Tit_Micro.getSiblings().size() >= $velocityCount && $EL_DIALOGO_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($EL_DIALOGO_Tit_Micro.getSiblings().get($indexActual) && $EL_DIALOGO_Tit_Micro.getSiblings().get($indexActual).data != "")&&($EL_DIALOGO_Tx_Micro.getSiblings().get($indexActual) && $EL_DIALOGO_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$EL_DIALOGO_Ant_Mic.data 
+								<span class="description-contexto">$EL_DIALOGO_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_eldialogo mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$EL_DIALOGO_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	
+	##Macro Micro formato EL_ESPACIO
+	#if(($EL_ESPACIO_Ante_Micro && $EL_ESPACIO_Ante_Micro.data != "") && ($EL_ESPACIO_Tit_Micro && $EL_ESPACIO_Tit_Micro.data !="") && ($EL_ESPACIO_Tx_Micro && $EL_ESPACIO_Tx_Micro.data !=""))	
+		#foreach($EL_ESPACIO_Ant_Mic in $EL_ESPACIO_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($EL_ESPACIO_Tit_Micro.getSiblings().size() >= $velocityCount && $EL_ESPACIO_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($EL_ESPACIO_Tit_Micro.getSiblings().get($indexActual) && $EL_ESPACIO_Tit_Micro.getSiblings().get($indexActual).data != "")&&($EL_ESPACIO_Tx_Micro.getSiblings().get($indexActual) && $EL_ESPACIO_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$EL_ESPACIO_Ant_Mic.data 
+								<span class="description-contexto">$EL_ESPACIO_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_elespacio mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$EL_ESPACIO_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+	##Macro Micro formato REDES SOCIALES
+	#if(($REDES_SOCIALES_Ante_Micro && $REDES_SOCIALES_Ante_Micro.data != "") && ($REDES_SOCIALES_Tit_Micro && $REDES_SOCIALES_Tit_Micro.data !="") && ($REDES_SOCIALES_Tx_Micro && $REDES_SOCIALES_Tx_Micro.data !=""))	
+		#foreach($REDES_SOCIALES_Ant_Mic in $REDES_SOCIALES_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+				#if($REDES_SOCIALES_Tit_Micro.getSiblings().size() >= $velocityCount && $REDES_SOCIALES_Tx_Micro.getSiblings().size() >= $velocityCount)		
+					#if(($REDES_SOCIALES_Tit_Micro.getSiblings().get($indexActual) && $REDES_SOCIALES_Tit_Micro.getSiblings().get($indexActual).data != "")&&($REDES_SOCIALES_Tx_Micro.getSiblings().get($indexActual) && $REDES_SOCIALES_Tx_Micro.getSiblings().get($indexActual).data != "")) 
+
+							<h3>$REDES_SOCIALES_Ant_Mic.data 
+								<span class="description-contexto">$REDES_SOCIALES_Tit_Micro.getSiblings().get($indexActual).data</span>
+								<div class="mic_redessociales mic_icono"> </div>
+							</h3>
+							<div class="content-contexto-noticia">
+								<p>$REDES_SOCIALES_Tx_Micro.getSiblings().get($indexActual).data</p>
+							</div>
+
+					#end
+				#end
+		#end
+	#end
+	
+#end
+
+##Macro que pinta todos los microformatos de tipo 2
+#macro (microformatosTipo2)
+	##Macro Micro formato PROTAGONISTA
+	#if($PROTAGONISTA_Ante_Micro && $PROTAGONISTA_Ante_Micro.data != "")
+		#foreach($el in $PROTAGONISTA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if(($el.PROTAGONISTA_Tit_Micro && $el.PROTAGONISTA_Tit_Micro.data != "")&& 
+				($el.PROTAGONISTA_Tx_Micro && $el.PROTAGONISTA_Tx_Micro.data != "") &&
+				($el.PROTAGONISTA_Credito_Micro && $el.PROTAGONISTA_Credito_Micro.data != "") &&
+				($el.PROTAGONISTA_Credito_Micro_Cargo && $el.PROTAGONISTA_Credito_Micro_Cargo.data != ""))
+					<h3>$el.data 
+						<span class="description-contexto">$el.PROTAGONISTA_Tit_Micro.getSiblings().get($indexActual).data</span>
+						<div class="mic_protagonista mic_icono"> </div>
+					</h3>
+					
+					<div class="content-contexto-noticia">
+						#foreach($subEl in $el.PROTAGONISTA_Credito_Micro.getSiblings())
+							#set ($indexActualInterno = $velocityCount - 1)
+							#if(($el.PROTAGONISTA_Credito_Micro_Cargo.size() >= $velocityCount ) &&
+								($el.PROTAGONISTA_Tx_Micro.size() >= $velocityCount ))
+								<div class="microformato-bloque">
+									<div class="microformato-bloque-contenido1">$el.PROTAGONISTA_Credito_Micro.getSiblings().get($indexActualInterno).data</div>
+									<div class="microformato-bloque-contenido2">$el.PROTAGONISTA_Credito_Micro_Cargo.getSiblings().get($indexActualInterno).data</div>
+									<div class="microformato-bloque-texto">$el.PROTAGONISTA_Tx_Micro.getSiblings().get($indexActualInterno).data</div>
+								</div>
+								#if($el.PROTAGONISTA_Credito_Micro.getSiblings().size() != $velocityCount)
+									<div class="linea"></div>
+								#end
+							#end
+						#end
+						
+					</div>
+			#end
+		#end
+	#end 
+	
+	##Macro Micro formato OPINION
+	#if($OPINION_Ante_Micro && $OPINION_Ante_Micro.data != "")
+		#foreach($el in $OPINION_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if(($el.OPINION_Tit_Micro && $el.OPINION_Tit_Micro.data != "")&& 
+				($el.OPINION_Tx_Micro && $el.OPINION_Tx_Micro.data != "") &&
+				($el.OPINION_Credito_Micro && $el.OPINION_Credito_Micro.data != "") &&
+				($el.OPINION_Credito_Micro_Cargo && $el.OPINION_Credito_Micro_Cargo.data != ""))
+					<h3>$el.data 
+						<span class="description-contexto">$el.OPINION_Tit_Micro.getSiblings().get($indexActual).data</span>
+						<div class="mic_opinion mic_icono"> </div>
+					</h3>
+					
+					<div class="content-contexto-noticia">
+						#foreach($subEl in $el.OPINION_Credito_Micro.getSiblings())
+							#set ($indexActualInterno = $velocityCount - 1)
+							#if(($el.OPINION_Credito_Micro_Cargo.size() >= $velocityCount ) &&
+								($el.OPINION_Tx_Micro.size() >= $velocityCount ))
+								<div class="microformato-bloque">
+									<div class="microformato-bloque-contenido1">$el.OPINION_Credito_Micro.getSiblings().get($indexActualInterno).data</div>
+									<div class="microformato-bloque-contenido2">$el.OPINION_Credito_Micro_Cargo.getSiblings().get($indexActualInterno).data</div>
+									<div class="microformato-bloque-texto">$el.OPINION_Tx_Micro.getSiblings().get($indexActualInterno).data</div>
+								</div>
+								#if($el.OPINION_Credito_Micro.getSiblings().size() != $velocityCount)
+									<div class="linea"></div>
+								#end
+							#end
+						#end
+						
+					</div>
+			#end
+		#end
+	#end 
+	
+
+#end
+
+
+
+
+##Macro que pinta todos los microformatos de tipo 3
+#macro (microformatosTipo3)
+	##Macro Micro formato RECLAMOS
+	#if($RECLAMOS_Ante_Micro && $RECLAMOS_Ante_Micro.data != "")
+		#foreach($el in $RECLAMOS_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if($el.RECLAMOS_Tit_Micro && $el.RECLAMOS_Tit_Micro.data != "")
+			<h3>$el.data 
+				<span class="description-contexto">$el.RECLAMOS_Tit_Micro.data</span>
+				<div class="mic_reclamos mic_icono"> </div>
+			</h3>
+			#end
+			<div class="content-contexto-noticia">
+				<div class="microformato-bloque">
+					#if($el.RECLAMOS_Credito_Micro && $el.RECLAMOS_Credito_Micro.data != "")
+						<div class="microformato-bloque-contenido1">$el.RECLAMOS_Credito_Micro.data</div>
+					#end
+					#if($el.RECLAMOS_Credito_Micro_Cargo && $el.RECLAMOS_Credito_Micro_Cargo.data != "")
+						<div class="microformato-bloque-contenido2">$el.RECLAMOS_Credito_Micro_Cargo.data</div>
+					#end
+					#if($el.RECLAMOS_Tx_Micro && $el.RECLAMOS_Tx_Micro.data != "")
+						<div class="microformato-bloque-texto">$el.RECLAMOS_Tx_Micro.data</div>
+					#end
+					<div class="linea"></div>
+					#if($el.RECLAMOS_Tx_Micro_Apoyo && $el.RECLAMOS_Tx_Micro_Apoyo.data != "")
+						<div class="microformato-bloque-apoyo">$el.RECLAMOS_Tx_Micro_Apoyo.data</div>
+					#end
+				</div>
+			</div>
+		#end
+	#end
+	
+	##Macro Micro formato ZONA C
+	#if($ZONA_C_Ante_Micro && $ZONA_C_Ante_Micro.data != "")
+		#foreach($el in $ZONA_C_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if($el.ZONA_C_Tit_Micro && $el.ZONA_C_Tit_Micro.data != "")
+			<h3>$el.data 
+				<span class="description-contexto">$el.ZONA_C_Tit_Micro.data</span>
+				<div class="mic_zonac mic_icono"> </div>
+			</h3>
+			#end
+			<div class="content-contexto-noticia">
+				<div class="microformato-bloque">
+					#if($el.ZONA_C_Credito_Micro && $el.ZONA_C_Credito_Micro.data != "")
+						<div class="microformato-bloque-contenido1">$el.ZONA_C_Credito_Micro.data</div>
+					#end
+					#if($el.ZONA_C_Credito_Micro_Cargo && $el.ZONA_C_Credito_Micro_Cargo.data != "")
+						<div class="microformato-bloque-contenido2">$el.ZONA_C_Credito_Micro_Cargo.data</div>
+					#end
+					#if($el.ZONA_C_Tx_Micro && $el.ZONA_C_Tx_Micro.data != "")
+						<div class="microformato-bloque-texto">$el.ZONA_C_Tx_Micro.data</div>
+					#end
+					<div class="linea"></div>
+					#if($el.ZONA_C_Tx_Micro_Apoyo && $el.ZONA_C_Tx_Micro_Apoyo.data != "")
+						<div class="microformato-bloque-apoyo">$el.ZONA_C_Tx_Micro_Apoyo.data</div>
+					#end
+				</div>
+			</div>
+		#end
+	#end
+	
+	##Macro Micro formato SI YO FUERA
+	#if($SI_YO_FUERA_Ante_Micro && $SI_YO_FUERA_Ante_Micro.data != "")
+		#foreach($el in $SI_YO_FUERA_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if($el.SI_YO_FUERA_Tit_Micro && $el.SI_YO_FUERA_Tit_Micro.data != "")
+			<h3>$el.data 
+				<span class="description-contexto">$el.SI_YO_FUERA_Tit_Micro.data</span>
+				<div class="mic_siyofuera mic_icono"> </div>
+			</h3>
+			#end
+			<div class="content-contexto-noticia">
+				<div class="microformato-bloque">
+					#if($el.SI_YO_FUERA_Credito_Micro && $el.SI_YO_FUERA_Credito_Micro.data != "")
+						<div class="microformato-bloque-contenido1">$el.SI_YO_FUERA_Credito_Micro.data</div>
+					#end
+					#if($el.SI_YO_FUERA_Credito_Micro_Cargo && $el.SI_YO_FUERA_Credito_Micro_Cargo.data != "")
+						<div class="microformato-bloque-contenido2">$el.SI_YO_FUERA_Credito_Micro_Cargo.data</div>
+					#end
+					#if($el.SI_YO_FUERA_Tx_Micro && $el.SI_YO_FUERA_Tx_Micro.data != "")
+						<div class="microformato-bloque-texto">$el.SI_YO_FUERA_Tx_Micro.data</div>
+					#end
+					<div class="linea"></div>
+					#if($el.SI_YO_FUERA_Tx_Micro_Apoyo && $el.SI_YO_FUERA_Tx_Micro_Apoyo.data != "")
+						<div class="microformato-bloque-apoyo">$el.SI_YO_FUERA_Tx_Micro_Apoyo.data</div>
+					#end
+				</div>
+			</div>
+		#end
+	#end
+	
+	##Macro Micro formato EN FACEBOOK
+	#if($EN_FACEBOOK_Ante_Micro && $EN_FACEBOOK_Ante_Micro.data != "")
+		#foreach($el in $EN_FACEBOOK_Ante_Micro.getSiblings())
+			#set ($indexActual = $velocityCount - 1)
+			#if($el.EN_FACEBOOK_Tit_Micro && $el.EN_FACEBOOK_Tit_Micro.data != "")
+			<h3>$el.data 
+				<span class="description-contexto">$el.EN_FACEBOOK_Tit_Micro.data</span>
+				<div class="mic_enfacebook mic_icono"> </div>
+			</h3>
+			#end
+			<div class="content-contexto-noticia">
+				<div class="microformato-bloque">
+					#if($el.EN_FACEBOOK_Credito_Micro && $el.EN_FACEBOOK_Credito_Micro.data != "")
+						<div class="microformato-bloque-contenido1">$el.EN_FACEBOOK_Credito_Micro.data</div>
+					#end
+					#if($el.EN_FACEBOOK_Credito_Micro_Cargo && $el.EN_FACEBOOK_Credito_Micro_Cargo.data != "")
+						<div class="microformato-bloque-contenido2">$el.EN_FACEBOOK_Credito_Micro_Cargo.data</div>
+					#end
+					#if($el.EN_FACEBOOK_Tx_Micro && $el.EN_FACEBOOK_Tx_Micro.data != "")
+						<div class="microformato-bloque-texto">$el.EN_FACEBOOK_Tx_Micro.data</div>
+					#end
+					<div class="linea"></div>
+					#if($el.EN_FACEBOOK_Tx_Micro_Apoyo && $el.EN_FACEBOOK_Tx_Micro_Apoyo.data != "")
+						<div class="microformato-bloque-apoyo">$el.EN_FACEBOOK_Tx_Micro_Apoyo.data</div>
+					#end
+				</div>
+			</div>
+		#end
+	#end
+
+#end

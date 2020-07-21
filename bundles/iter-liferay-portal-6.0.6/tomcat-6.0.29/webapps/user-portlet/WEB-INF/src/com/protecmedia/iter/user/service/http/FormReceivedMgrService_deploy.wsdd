@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_User_FormReceivedMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteFormsReceivedFromForm" qname="operNS:deleteFormsReceivedFromForm" returnQName="deleteFormsReceivedFromFormReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteFormsReceived" qname="operNS:deleteFormsReceived" returnQName="deleteFormsReceivedReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getFilesFromFormReceived" qname="operNS:getFilesFromFormReceived" returnQName="getFilesFromFormReceivedReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="formReceivedId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getForms" qname="operNS:getForms" returnQName="getFormsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGenericReceivedDataForm" qname="operNS:getGenericReceivedDataForm" returnQName="getGenericReceivedDataFormReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlOrderFilterForm" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGridValues" qname="operNS:getGridValues" returnQName="getGridValuesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getInputCtrl" qname="operNS:getInputCtrl" returnQName="getInputCtrlReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="formfieldid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getReceivedDataForm" qname="operNS:getReceivedDataForm" returnQName="getReceivedDataFormReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="formid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="putCheck" qname="operNS:putCheck" returnQName="putCheckReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="putListCheck" qname="operNS:putListCheck" returnQName="putListCheckReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteFormsReceived deleteFormsReceivedFromForm getFilesFromFormReceived getForms getGenericReceivedDataForm getGridValues getInputCtrl getReceivedDataForm putCheck putListCheck" />
+		<parameter name="className" value="com.protecmedia.iter.user.service.http.FormReceivedMgrServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="FormReceivedMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="FormReceivedMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_User_FormReceivedMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.user.iter.protecmedia.com" />
+	</service>
+</deployment>

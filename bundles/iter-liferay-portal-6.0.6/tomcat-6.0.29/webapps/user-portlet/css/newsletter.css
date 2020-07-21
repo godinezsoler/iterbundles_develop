@@ -1,0 +1,129 @@
+
+.nwslttr-doc {
+	width:100%;
+	
+	}
+
+.nwslttr-form {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	display:table;
+	
+	}
+
+.nwslttr-doc  .aui-panel-content	{
+	margin-bottom:10px !important;
+	
+	}
+
+.nwslttr-doc .aui-field-content {
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+	
+	}
+		
+.nwslttr-allrow .aui-field-content {
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+	
+	}
+	
+.nwslttr-header {
+	display:block;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:100%;
+	
+	}
+	
+.nwslttr-list-name {
+	font-weight: bold;
+	display: table-cell;
+	width:33%;  
+	margin-left : 5px;
+	
+	}
+	
+.nwslttr-list-grpID {
+	font-weight: bold;
+	display: table-cell;
+	width:33%;
+	margin-left : 105px;
+
+	}
+	
+.nwslttr-list-lvlAccssID {
+	font-weight: bold;
+	display: table-cell;
+	width:33%;
+	margin-left : 160px;
+	
+	}
+
+.nwslttr-allrow {
+	width:100%;
+	display:table;
+	
+	}
+	
+.nwslttr-allrow-view {
+	width:100%;
+	display:table;
+	margin-bottom: 10px;
+	
+	}
+	
+.nwslttr-label {
+	display:inline;
+	width:33%;
+	margin-left : 5px;
+	
+	}
+	
+.nwslttr-checked-config {
+	display:inline;
+	width:100%;
+	margin-left:10px;
+	margin-bottom:10px;
+
+	}
+	
+.nwslttrs-redirect{
+	display:inline;
+	width:100%;
+	margin-left:10px;
+	
+}
+
+
+.nwslttr-checked-view {
+	display:table-cell;
+	width:80%;
+	
+	}
+	
+.nwslttrs-groupId {
+	display: table-cell;
+	width:33%;
+	margin-left : 100px;
+	
+	}
+	
+.nwslttrs-access {
+	display: table-cell;
+	width:33%;
+	margin-left : 100px;
+	
+	}
+
+.nwslttr-text-info {
+	font-weight: bold;
+	padding-bottom : 15px;
+	
+	}
+	
+.nwslttr-checked-view  .aui-field-choice {
+	margin-left : 50px;
+	
+	}

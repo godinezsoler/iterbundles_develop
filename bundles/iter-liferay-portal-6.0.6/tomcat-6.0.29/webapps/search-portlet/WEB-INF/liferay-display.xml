@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+
+<display>
+	<!--category name="category.2itersearch"-->
+	<category name="category.1iternews">
+		<portlet id="advanced-search-portlet"></portlet>
+		<portlet id="search-filters-portlet"></portlet>
+		<portlet id="search-results-portlet"></portlet>
+		<portlet id="faceted-results-portlet"></portlet>
+	</category>
+	<category name="category.2ziterarchive">
+		<portlet id="calendar-portlet"></portlet>
+	</category>
+</display>

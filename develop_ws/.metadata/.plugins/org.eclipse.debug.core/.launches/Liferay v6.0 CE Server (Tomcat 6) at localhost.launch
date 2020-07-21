@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.liferay.ide.eclipse.server.tomcat.60.launchConfigurationType">
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry containerPath=&quot;org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Liferay v6.0 CE (Tomcat 6) JRE&quot; path=&quot;2&quot; type=&quot;4&quot;/&gt;&#13;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/Desarrollos/IterWebCMS/develop/bundles/iter-liferay-portal-6.0.6/tomcat-6.0.29/bin/bootstrap.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Liferay v6.0 CE (Tomcat 6) JRE"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Duser.timezone=GMT -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.security.auth.login.config=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29/conf/jaas.config&quot; -Djava.util.logging.config.file=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29/conf/logging.properties&quot; -Djava.io.tmpdir=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29/temp&quot; -Dexternal-properties=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\portal-ide.properties&quot; -Dcatalina.base=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29&quot; -Dcatalina.home=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29&quot; -Dwtp.deploy=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29\webapps&quot; -Djava.endorsed.dirs=&quot;C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29\endorsed&quot; -Xmx1024m -XX:MaxPermSize=256m"/>
+<stringAttribute key="server-id" value="Liferay v6.0 CE Server (Tomcat 6) at localhost"/>
+</launchConfiguration>

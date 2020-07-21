@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_IterFieldService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addField" qname="operNS:addField" returnQName="addFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="checkRegisterForm" qname="operNS:checkRegisterForm" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="formId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteFields" qname="operNS:deleteFields" returnQName="deleteFieldsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getField" qname="operNS:getField" returnQName="getFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fieldId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getProfileFields" qname="operNS:getProfileFields" returnQName="getProfileFieldsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateFieldOrder" qname="operNS:updateFieldOrder" returnQName="updateFieldOrderReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateField" qname="operNS:updateField" returnQName="updateFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addField checkRegisterForm deleteFields getField getProfileFields updateField updateFieldOrder" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.IterFieldServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterFieldServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterFieldServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_IterFieldService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_User_UserProfileService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addField" qname="operNS:addField" returnQName="addFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlfield" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteFields" qname="operNS:deleteFields" returnQName="deleteFieldsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlfields" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUserProfile" qname="operNS:getUserProfile" returnQName="getUserProfileReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="importFields" qname="operNS:importFields" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fields" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="publishToLive" qname="operNS:publishToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="prfIds" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateField" qname="operNS:updateField" returnQName="updateFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlfield" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="updateProfileFieldsIds" qname="operNS:updateProfileFieldsIds" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fields" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addField deleteFields getUserProfile importFields publishToLive updateField updateProfileFieldsIds" />
+		<parameter name="className" value="com.protecmedia.iter.user.service.http.UserProfileServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="UserProfileServiceSoap" />
+		<parameter name="wsdlServiceElement" value="UserProfileServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_User_UserProfileService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.user.iter.protecmedia.com" />
+	</service>
+</deployment>

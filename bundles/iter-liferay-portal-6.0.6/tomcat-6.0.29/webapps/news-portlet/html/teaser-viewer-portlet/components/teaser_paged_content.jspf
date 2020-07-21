@@ -1,0 +1,377 @@
+<%@page import="com.liferay.portal.kernel.util.GetterUtil"%>
+<%@page import="com.liferay.portal.util.PortalUtil"%>
+<%@page import="com.liferay.portal.util.PortletKeys"%>
+<%@page import="com.liferay.portal.kernel.util.Digester"%>
+<%@page import="com.liferay.portal.kernel.util.Base64"%>
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+<%@page import="com.liferay.portal.kernel.util.UnrepeatableArticlesMgr"%>
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%@page import="com.liferay.portlet.journal.util.JournalArticleTools"%>
+<%@page import="com.liferay.portal.kernel.util.request.IterRequest"%>
+<%@page import="com.liferay.portal.kernel.util.request.PublicIterParams"%>
+<%
+String classCarruselCss = "";
+String classCarruselListCss = "";
+if (teasertotalcount>0) 
+{
+	classCarruselCss = "carrusel ";
+	classCarruselListCss = "carrusel-list";
+} 
+else
+{
+	classCarruselCss = "carrusel-empty";
+	classCarruselListCss = "carrusel-empty-list";
+}
+
+//cálculo de si hay bastantes artículos para mostrar el control del paginador
+boolean showPaginator = teasertotalcount > teaserPerPage;
+
+// Es importante intentar obtener el ID primero del PortalUtil, pues es el ID del portlet. refPreferenceId como su nombre indica es el 
+// utilizado como referencia cuando se guardó la configuración. En este caso sirve porque solo se quiere determinar el tipo de portlet
+String teaserId = GetterUtil.getString2(PortalUtil.getPortletId(request), GetterUtil.getString2(refPreferenceId, portletId));
+boolean active_Unrepeatable = teaserId.startsWith(PortletKeys.PORTLET_TEASERVIEWERNR);
+String unrepeatableArticles = "";
+if (active_Unrepeatable)
+{
+	UnrepeatableArticlesMgr.active(teaserId);
+	unrepeatableArticles = Base64.encode( UnrepeatableArticlesMgr.get().toString().getBytes(Digester.ENCODING) );
+}
+
+
+%>
+
+<c:if
+	test='<%= !titleContents.equals("") && listResult != null && teasertotalcount > 0  %>'>
+	<div class="teaser-viewer-title">
+		<span><%= titleContents %></span>
+	</div>
+</c:if>
+
+<c:if
+	test='<%= (showPaginator && (paginationButtonsPosition.equalsIgnoreCase("top") 
+						|| paginationButtonsPosition.equalsIgnoreCase("both")) ) %>'>
+	<%
+					String totalArticle = Integer.toString(teasertotalcount);
+					String fewPerPage = Integer.toString(teaserPerPage);
+					
+					request.setAttribute("paginationhtmlposition", paginationHtmlPosition);			
+					request.setAttribute("fewperpage", fewPerPage);
+					request.setAttribute("totalarticle", totalArticle);
+					request.setAttribute("buttonprev", buttonPrev);			
+					request.setAttribute("buttonnext", buttonNext);
+					request.setAttribute("buttonshowmore", buttonShowMore);
+					request.setAttribute("showmore", showMore);
+					request.setAttribute("cur", 1);
+					request.setAttribute("responseNamespace", responseNamespace);
+					
+					ServletContext baseContext = getServletContext().getContext("/base-portlet");
+					baseContext.getRequestDispatcher("/html/components/pagination.jsp").include(request, response);
+				
+				%>
+</c:if>
+
+<div id="<%= responseNamespace %>loadingDiv"></div>
+
+<%
+					//cálculo de lista de resultados visibles en página actual( acotando listResult entre 'firstItem' a 'lastItem-firstItem'  )
+					int firstItem = 0;
+					int lastItem = teaserPerPage;
+					int globalFirstItem = resultStart;
+				    int globalLastItem = resultEnd;
+				    int globalLastIndex = teasertotalcount;
+				    
+					List<String[]> listResultPage	= null;	
+					if( teasertotalcount > 0 )
+					{
+						int limit = Math.min( teasertotalcount, lastItem-firstItem );
+						listResultPage = listResult.subList( firstItem, limit  );
+					}
+						
+				%>
+
+<div class="paged <%=mainCssClass%>" id="<%= responseNamespace %>myCarrusel"
+	style="display: none;">
+
+	<%@ include file="../teaser_page_details.jsp"%>
+</div>
+
+<c:if
+	test='<%= (showPaginator && (paginationButtonsPosition.equalsIgnoreCase("bottom") || 
+						paginationButtonsPosition.equalsIgnoreCase("both")) )%>'>
+	<%
+					String totalArticle = Integer.toString(teasertotalcount);
+					String fewPerPage = Integer.toString(teaserPerPage);
+					
+					request.setAttribute("paginationhtmlposition", paginationHtmlPosition);			
+					request.setAttribute("fewperpage", fewPerPage);
+					request.setAttribute("totalarticle", totalArticle);
+					request.setAttribute("buttonprev", buttonPrev);			
+					request.setAttribute("buttonnext", buttonNext);
+					request.setAttribute("buttonshowmore", buttonShowMore);
+					request.setAttribute("showmore", showMore);
+					request.setAttribute("cur", 1);
+					request.setAttribute("responseNamespace", responseNamespace);
+		
+					ServletContext baseContext = getServletContext().getContext("/base-portlet");
+					baseContext.getRequestDispatcher("/html/components/pagination.jsp").include(request, response);
+					%>
+</c:if>
+
+<script>
+	jQryIter('#<%= responseNamespace %>mylistCarrousel').addClass( '<%=classCarruselCss%>' + ' ' + '<%=distribution%>');
+	jQryIter('#<%= responseNamespace %>myCarrusel').addClass( '<%=classCarruselListCss%>');
+</script>
+
+<script>
+		jQryIter('#<%= responseNamespace %>mylistCarrousel').on("custom", function(event, myselpag) 
+		{
+			jQryIter("#<%= responseNamespace %>loadingDiv").addClass("loading-animation");
+			var myfirst;
+			var mylast;
+			var totalArticle = <%=teasertotalcount%>;
+			var teaserPerPage = <%=teaserPerPage%>;
+			var showMore = <%=showMore%>;
+			countPagination = Math.ceil(totalArticle / teaserPerPage);
+		
+			if(myselpag<=1)
+			{
+				myfirst = 1;
+				mylast=teaserPerPage+1;
+			}
+			else
+			{
+				if (((myselpag-1) * teaserPerPage)<totalArticle)
+					myfirst = (myselpag-1) * teaserPerPage + 1;
+				else
+				{
+					myfirst = totalArticle - teaserPerPage + 1;
+					myselpag = countPagination + 1;
+				}
+					
+				if ((myfirst + teaserPerPage)<=totalArticle)
+					mylast = myfirst + teaserPerPage;
+				else
+					mylast = (totalArticle+1);
+			}
+
+			var dataAjax;
+			if( '<%=filterBy%>' == "" )
+			{
+				dataAjax ={
+						 portletItem: 					'<%=portletItem%>',
+					   	 refPreferenceId: 				'<%=refPreferenceId%>',
+					   	 portletId: 					'<%=portletId%>',
+					   	 contentId: 					'<%=contentId%>', 
+					   	 categoryIds: 					'<%=TeaserContentUtil.getURLParamFromCategories(categoryIds)%>',
+					   	 date: 							'<%=dateAjax%>',
+					   	 teasertotalcount:				'<%=teasertotalcount%>',
+					     firstItem: 					myfirst,
+					     lastItem: 						mylast,
+					     globalFirstItem: 				'<%=resultStart%>',
+					     globalLastItem: 				'<%=resultEnd%>',
+					     globalLastIndex: 				myselpag,
+					     scopeGroupId: 					'<%=themeDisplay.getScopeGroupId()%>',
+					     companyId: 					'<%=themeDisplay.getCompanyId()%>',
+					     languageId: 					'<%=themeDisplay.getLanguageId()%>',
+					     plid: 							'<%=plidValue%>',
+					     sectionPlid:					'<%=sectionPlid%>',	
+					     secure: 						'<%=themeDisplay.isSecure()%>',
+					     userId: 						'<%=themeDisplay.getPermissionChecker().getUserId()%>',
+					     lifecycleRender: 				'<%=themeDisplay.isLifecycleRender()%>',
+					     pathFriendlyURLPublic: 		'<%=themeDisplay.getPathFriendlyURLPublic()%>',
+					     pathFriendlyURLPrivateUser:	'<%=themeDisplay.getPathFriendlyURLPrivateUser()%>',
+					     pathFriendlyURLPrivateGroup: 	'<%=themeDisplay.getPathFriendlyURLPrivateGroup()%>',
+					     serverName: 					'<%=themeDisplay.getServerName()%>',
+					     cdnHost: 						'<%=themeDisplay.getCDNHost()%>',
+					     pathImage: 					'<%=themeDisplay.getPathImage()%>',
+					     pathMain: 						'<%=themeDisplay.getPathMain()%>',
+					     pathContext: 					'<%=themeDisplay.getPathContext()%>',
+					     urlPortal: 					'<%=themeDisplay.getURLPortal()%>',
+					     pathThemeImages: 				'<%=themeDisplay.getPathThemeImages()%>',
+					     serverPort: 					'<%=themeDisplay.getServerPort()%>',
+					     scheme: 						'<%=scheme%>',
+						 isMobileRequest: 				'<%=IterRequest.isMobileRequest()%>',
+					     includeCurrentContent: 	    '<%=includeCurrentContent%>',
+					     activeUnrepeatable:			'<%=active_Unrepeatable%>',
+					     unrepeatableArticles:			'<%=unrepeatableArticles%>'
+				  		};
+			}
+			else
+			{
+				dataAjax ={
+						 portletItem: 					'<%=portletItem%>',
+					   	 refPreferenceId: 				'<%=refPreferenceId%>',
+					   	 portletId: 					'<%=portletId%>',
+					   	 contentId: 					'<%=contentId%>', 
+					   	 categoryIds: 					'<%=TeaserContentUtil.getURLParamFromCategories(categoryIds)%>',
+					   	 date: 							'<%=dateAjax%>',
+					   	 teasertotalcount:				'<%=teasertotalcount%>',
+					     firstItem: 					myfirst,
+					     lastItem: 						mylast,
+					     globalFirstItem: 				'<%=resultStart%>',
+					     globalLastItem: 				'<%=resultEnd%>',
+					     globalLastIndex: 				myselpag,
+					     scopeGroupId: 					'<%=themeDisplay.getScopeGroupId()%>',
+					     companyId: 					'<%=themeDisplay.getCompanyId()%>',
+					     languageId: 					'<%=themeDisplay.getLanguageId()%>',
+					     plid: 							'<%=plidValue%>',
+					     sectionPlid:					'<%=sectionPlid%>',	
+					     secure: 						'<%=themeDisplay.isSecure()%>',
+					     userId: 						'<%=themeDisplay.getPermissionChecker().getUserId()%>',
+					     lifecycleRender: 				'<%=themeDisplay.isLifecycleRender()%>',
+					     pathFriendlyURLPublic: 		'<%=themeDisplay.getPathFriendlyURLPublic()%>',
+					     pathFriendlyURLPrivateUser:	'<%=themeDisplay.getPathFriendlyURLPrivateUser()%>',
+					     pathFriendlyURLPrivateGroup: 	'<%=themeDisplay.getPathFriendlyURLPrivateGroup()%>',
+					     serverName: 					'<%=themeDisplay.getServerName()%>',
+					     cdnHost: 						'<%=themeDisplay.getCDNHost()%>',
+					     pathImage: 					'<%=themeDisplay.getPathImage()%>',
+					     pathMain: 						'<%=themeDisplay.getPathMain()%>',
+					     pathContext: 					'<%=themeDisplay.getPathContext()%>',
+					     urlPortal: 					'<%=themeDisplay.getURLPortal()%>',
+					     pathThemeImages: 				'<%=themeDisplay.getPathThemeImages()%>',
+					     serverPort: 					'<%=themeDisplay.getServerPort()%>',
+					     scheme: 						'<%=scheme%>',
+						 isMobileRequest: 				'<%=IterRequest.isMobileRequest()%>',
+					     includeCurrentContent: 	    '<%=includeCurrentContent%>',
+					     filterBy: 	   	 				'<%=filterBy%>',
+					     filterOpt: 	   				'<%=filterOpt%>',
+					     activeUnrepeatable:			'<%=active_Unrepeatable%>',
+					     unrepeatableArticles:			'<%=unrepeatableArticles%>'
+				   		};
+			}
+				
+			jQryIter.ajax({
+					  	  url: '/news-portlet/html/teaser-viewer-portlet/teaser_page.jsp',
+					  	  data: dataAjax,
+					  	}).success(function(data) {
+					  		if (showMore)
+					  			jQryIter('#<%= responseNamespace %>myCarrusel').append(data);
+					  		else
+						  		jQryIter('#<%= responseNamespace %>myCarrusel').html(data);	
+					  		
+					  		// Si el teaser está marcado como itr-sendspageview, no está marcado como itr-reloadonpager
+					  		// y la página solicitada es distinta a la actual (no es una carga al inicio)
+					  		var <%= responseNamespace %>PageKey = jQryIter('div[id$="_teaser_paged"]').length > 1 ? "<%=responseNamespace%>p" : "p";
+					  		
+					  		if (jQryIter('#<%=responseNamespace%>mylistCarrousel').closest(".itr-sendspageview").length > 0
+							 && jQryIter('#<%=responseNamespace%>mylistCarrousel').closest(".itr-reloadonpager").length == 0
+							 && jQryIter.getFragmentIdentifier(<%= responseNamespace %>PageKey) != myselpag)
+							{
+						  		// Si está habilitada la integración con MAS, se envía un pageview
+						  		if (typeof MASStatsMgr != 'undefined')
+						  		{
+						  			MASStatsMgr.sendVisitHit();
+						  		}
+						  		
+						  		// Si está habilitada la integración con GA, se envía un hit
+						  		if (typeof ga !== 'undefined')
+						  		{
+						  			ga('send', 'pageview', document.location.href);
+						  		}
+							}
+
+					  		//función a la que se llamará para que se carguen las imágenes configuradas con 'lazyload'
+					  		jQryIter.lazyLoadSetup();
+					  		
+					  		jQryIter("#<%= responseNamespace %>loadingDiv").removeClass("loading-animation");
+					  		
+					  		var el = jQuery("#"+getTeaserId('<%=responseNamespace%>'));
+					  		if (el.hasClass("_tc"))
+						  		jQuery(document).trigger("teaserCompleteLoad", el.attr("id"));
+					  		
+					  		<%= responseNamespace %>loadedsuccess(myfirst, mylast, myselpag);
+
+					  		if(!showMore)
+					  		{
+					  			jQryIter.setFragmentIdentifier(<%= responseNamespace %>PageKey, myselpag);
+					  		}
+					  		
+					  		goVisible('<%= responseNamespace %>myCarrusel');
+					  		
+							<%		
+							Object showDisqusCountAttr = PublicIterParams.get(TeaserUtil.REQUEST_ATTRIBUTE_SHOW_DISQUS_COUNT);
+							if( showDisqusCountAttr != null && GetterUtil.getBoolean(showDisqusCountAttr.toString()) )
+							{
+								out.print("if (typeof ITRDISQUSWIDGETS != 'undefined') {ITRDISQUSWIDGETS.req(" + scopeGroupId + ");}");
+							}
+							
+							out.print(JournalArticleTools.getJavascriptArticleVisitsCode(scopeGroupId, false));
+							%>
+							
+					  	}); 
+				});
+		
+				var <%= responseNamespace %>goToNavPage = function ()
+				{
+					var <%= responseNamespace %>PageKey = jQryIter('div[id$="_teaser_paged"]').length > 1 ? "<%=responseNamespace%>p" : "p";
+					
+					if(document.location.hash.indexOf("." + <%= responseNamespace %>PageKey + ":") < 0)
+					{
+						goVisible('<%= responseNamespace %>myCarrusel');
+					}
+					else
+					{
+						var position = parseInt(jQryIter.getFragmentIdentifier(<%= responseNamespace %>PageKey));
+
+						var totalArticle = <%=teasertotalcount%>;
+						var teaserPerPage = <%=teaserPerPage%>;
+						var endpagination = Math.ceil(totalArticle / teaserPerPage);
+						var button = 1;
+						
+						if(endpagination <= 10)
+						{	
+							if(endpagination >= position)
+								button = position;
+							else
+								button = endpagination;
+							
+							jQryIter("#<%= responseNamespace %>myNavButtons li").eq(button-1).click();
+						}
+						else
+						{
+							if(position <= 6)
+							{
+								jQryIter("#<%= responseNamespace %>myNavButtons li").eq(position - 1).click();
+							}
+							else
+							{
+								var button = 1;
+								var myini = 1;
+								if(position>6)
+								{
+									if(endpagination > position+4)
+									{
+										myini = position - 5;
+										button = 6;
+									}
+									else
+									{
+										myini = endpagination - 9;
+										if(position > endpagination)
+										{
+											button = 10;
+										}
+										else
+										{
+											button = endpagination - position;
+											button = 10 - button;
+										}
+									}
+								}
+									
+								jQryIter('#<%= responseNamespace %>myNavButtons li').each(function(){
+									jQryIter(this).attr("data-page", myini);
+									jQryIter(this).text(myini);
+									myini++;
+								});
+								
+								jQryIter("#<%= responseNamespace %>myNavButtons li").eq(button-1).click();
+							}
+						}	
+					}
+				}
+				
+		
+				//se lanza cuando se carga un teaser pag. el manejador ejecuta goToNavPage()
+				<%= responseNamespace %>goToNavPage();
+</script>

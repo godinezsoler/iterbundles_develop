@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.protecmedia.iter.base.model.impl.IterModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="name" />
+			<basic name="version" />
+			<basic name="publicKey" />
+			<basic name="cookieKey" />
+			<basic name="environment" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.base.model.impl.CommunitiesModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="privateSearchUrl" />
+			<basic name="publicSearchUrl" />
+			<basic name="fuzzySearch" />
+			<basic name="primarySectionBots" />
+			<basic name="secondarySectionBots" />
+			<basic name="noSectionBots" />
+			<basic name="lastUpdated" />
+			<basic name="loginconf" />
+			<basic name="registerconf" />
+			<basic name="facebookLanguage" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.protecmedia.iter.base.model.impl.IterImpl" name="Iter">
+		<table name="Base_Iter" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.base.model.impl.CommunitiesImpl" name="Communities">
+		<table name="Base_Communities" />
+		<attributes />
+	</entity>
+</entity-mappings>

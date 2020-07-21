@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet>
+		<portlet-name>banner-portlet</portlet-name>
+		<display-name>Banner</display-name>
+		<portlet-class>com.protecmedia.iter.advertisement.portlet.BannerPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/banner-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Banner</title>
+			<short-title>Banner</short-title>
+			<keywords>Banner</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>adcontainer-portlet</portlet-name>
+		<display-name>AdContainer</display-name>
+		<portlet-class>com.protecmedia.iter.advertisement.portlet.AdContainerPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/adcontainer-portlet/adcontainer.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>AdContainer</title>
+			<short-title>AdContainer</short-title>
+			<keywords>AdContainer,Portlet</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+		<supported-public-render-parameter>content-id</supported-public-render-parameter>
+	</portlet>
+	<public-render-parameter>
+		<identifier>content-id</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-id</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-date</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-date</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-tags</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-tags</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-section</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-section</qname>
+	</public-render-parameter>
+</portlet-app>

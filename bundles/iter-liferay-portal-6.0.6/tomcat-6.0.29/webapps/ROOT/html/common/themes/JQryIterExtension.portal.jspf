@@ -1,0 +1,18 @@
+<%@page import="com.protecmedia.iter.base.service.util.JQryIterExtensionTools"%>
+<%@page import="com.liferay.portal.kernel.util.request.IterRequest"%>
+
+<script type="text/javascript">
+     (function($)
+     {
+         $.contextSections = function ()
+         {
+            return <%= JQryIterExtensionTools.getContextSections() %>;
+         };
+
+         $.contextIsArticlePage = function ()
+         {
+            return <%= IterRequest.isDetailRequest() %>;
+         };
+
+     })( jQryIter );
+ </script>

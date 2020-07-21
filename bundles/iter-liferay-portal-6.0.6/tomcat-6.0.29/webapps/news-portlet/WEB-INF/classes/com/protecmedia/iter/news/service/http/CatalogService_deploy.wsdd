@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_CatalogService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addCatalogElements" qname="operNS:addCatalogElements" returnQName="addCatalogElementsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addCatalogPageAndElements" qname="operNS:addCatalogPageAndElements" returnQName="addCatalogPageAndElementsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addCatalogPage" qname="operNS:addCatalogPage" returnQName="addCatalogPageReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catalogId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addCatalog" qname="operNS:addCatalog" returnQName="addCatalogReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteCatalogPages" qname="operNS:deleteCatalogPages" returnQName="deleteCatalogPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catalogPageIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteCatalogs" qname="operNS:deleteCatalogs" returnQName="deleteCatalogsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catalogids" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getBodyPages" qname="operNS:getBodyPages" returnQName="getBodyPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCatalogPageURL" qname="operNS:getCatalogPageURL" returnQName="getCatalogPageURLReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCatalogPage" qname="operNS:getCatalogPage" returnQName="getCatalogPageReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catalogpageid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="includeElements" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCatalogPages" qname="operNS:getCatalogPages" returnQName="getCatalogPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="catalogid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="includeElements" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCatalogs" qname="operNS:getCatalogs" returnQName="getCatalogsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDataCatalogElement" qname="operNS:getDataCatalogElement" returnQName="getDataCatalogElementReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="elementIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getFooterPages" qname="operNS:getFooterPages" returnQName="getFooterPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getHeaderPages" qname="operNS:getHeaderPages" returnQName="getHeaderPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMenuPages" qname="operNS:getMenuPages" returnQName="getMenuPagesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateCatalogPage" qname="operNS:updateCatalogPage" returnQName="updateCatalogPageReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateCatalog" qname="operNS:updateCatalog" returnQName="updateCatalogReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addCatalog addCatalogElements addCatalogPage addCatalogPageAndElements deleteCatalogPages deleteCatalogs getBodyPages getCatalogPage getCatalogPageURL getCatalogPages getCatalogs getDataCatalogElement getFooterPages getHeaderPages getMenuPages updateCatalog updateCatalogPage" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.CatalogServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CatalogServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CatalogServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_CatalogService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

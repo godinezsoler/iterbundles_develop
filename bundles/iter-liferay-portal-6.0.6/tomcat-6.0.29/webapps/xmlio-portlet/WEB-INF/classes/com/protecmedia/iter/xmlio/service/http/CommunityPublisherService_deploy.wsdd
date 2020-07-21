@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_CommunityPublisherService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cancelSchedulePublication" qname="operNS:cancelSchedulePublication" returnQName="cancelSchedulePublicationReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="schedulesToCancel" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="checkProcessStatus" qname="operNS:checkProcessStatus" returnQName="checkProcessStatusReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="schedulesToCancel" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSchedulePublicationDetail" qname="operNS:getSchedulePublicationDetail" returnQName="getSchedulePublicationDetailReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="publicationId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="articleId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSchedulePublications" qname="operNS:getSchedulePublications" returnQName="getSchedulePublicationsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="filtersDefinition" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sortDefinition" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="beginRegister" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="maxRegisters" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="cancelSchedulePublication checkProcessStatus getSchedulePublicationDetail getSchedulePublications" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.CommunityPublisherServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CommunityPublisherServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CommunityPublisherServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_CommunityPublisherService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+
+<display>
+	<category name="category.hidden">
+		<portlet id="xmlio-portlet"></portlet>
+		<portlet id="publish-to-live-portlet"></portlet>
+		<portlet id="xmlio-cronjob-portlet"></portlet>
+	</category>
+</display>

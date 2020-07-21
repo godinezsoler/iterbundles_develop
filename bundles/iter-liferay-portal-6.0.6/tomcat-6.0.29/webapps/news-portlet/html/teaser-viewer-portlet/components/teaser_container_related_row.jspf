@@ -1,0 +1,30 @@
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<%
+	String elemTagName = HtmlOptimizer.isEnabled() ? "article" : "li";
+	if(!isNewsletterPage)
+	{
+		String iteridartattr = "";
+		if( !signedRelatedArticleId.equals("") )
+			iteridartattr= "iteridart=".concat( signedRelatedArticleId );
+%>
+		<<%=elemTagName%> class="element <%=currentCssClass%> <%=linkType%> <%=elementClass%>" <%=iteridartattr%> >
+			<span class='teaserItemPosition <%=HtmlUtil.getRemovableClass()%>'><%=pageIdx%></span>
+			<div class="icon <%=elementClass%>"></div>
+			<div class="related-item-wrapper">
+<%
+	}
+%>
+
+	<%=html%>
+	
+<%
+	if(!isNewsletterPage)
+	{
+%>	
+
+		   </div>
+	   </<%=elemTagName%>>
+<%
+	}
+%>

@@ -1,0 +1,1137 @@
+## Conocimientos útiles para usar estas macros
+## Instanciar un hashmap vacio -> #set ($map = {})
+## Obtener el valor de una propiedad de un hashmap -> $map.nombrepropiedad
+
+
+##Macro para recuperar el tema de un vocabulario específico
+##Parámetro 1: listaResultado -> ArrayList que contendrá todas las categorías del vocabulario pasado como parámetro asignadas al artículo. 
+##Parámetro 2: vocabulario -> String con el vocabulario del que se extraerán las categorías.
+
+#macro (getCategory $listaResultado $vocabulario)
+        #set($ac-vocabulario = $articleContext.selectNodes("articlectx/metadata//key[@name='$vocabulario']//key"))
+	#foreach($tempVoca in $ac-vocabulario)
+        
+		#foreach ($atrib in $tempVoca.attributes())
+                        
+			#if($atrib.name == "name")
+               #set($temp = $listaResultado.add($atrib.data))
+			#end
+		#end
+	#end
+#end
+
+##Macro para recuperar los ids de las categorias de un vocabulario específico
+##Parámetro 1: listaResultado -> ArrayList que contendrá todos los ids de las categorías del vocabulario pasado como parámetro asignadas al artículo. 
+##Parámetro 2: vocabulario -> String con el vocabulario del que se extraerán las categorías.
+#macro (getCategoryId $listaResultado $vocabulario)
+        #set($ac-vocabulario = $articleContext.selectNodes("articlectx/metadata//key[@name='$vocabulario']//key"))
+	#foreach($tempVoca in $ac-vocabulario)
+        
+		#foreach ($atrib in $tempVoca.attributes())
+                        
+			#if($atrib.name == "id")
+               #set($temp = $listaResultado.add($atrib.data))
+			#end
+		#end
+	#end
+#end
+
+##Macro para recuperar los friendlynames de las categorias de un vocabulario específico
+##Parámetro 1: listaResultado -> ArrayList que contendrá todos los ids de las categorías del vocabulario pasado como parámetro asignadas al artículo. 
+##Parámetro 2: vocabulario -> String con el vocabulario del que se extraerán las categorías.
+#macro (getCategoryFriendlyName $listaResultado $vocabulario)
+        #set($ac-vocabulario = $articleContext.selectNodes("articlectx/metadata//key[@name='$vocabulario']//key"))
+	#foreach($tempVoca in $ac-vocabulario)
+        
+		#foreach ($atrib in $tempVoca.attributes())
+                        
+			#if($atrib.name == "friendlyname")
+               #set($temp = $listaResultado.add($atrib.data))
+			#end
+		#end
+	#end
+#end
+
+##Macro para recuperar el nombre de la sección asignada al teaserViewer
+#macro (printAssignedSection)#*
+	*##set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))#*
+	*##if($ac-sectionDateFrom.size() > 0)#*
+    	*##foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )#*         
+    		*##if($atrib.name == "name")#*
+    			*#$!atrib.data#*			  
+    		*##end#*
+		*##end#*
+	*##end#*
+*##end
+
+##Macro para recuperar el id de la sección asignada al teaserViewer
+#macro (printAssignedSectionID)#*
+	*##set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))#*
+	*##if($ac-sectionDateFrom.size() > 0)#*
+    	*##foreach ($atrib in $ac-sectionDateFrom.get(0).attributes())#*    
+    		*##if($atrib.name == "id")#*
+    			*#$!atrib.data#*			  
+    		*##end#*
+		*##end#*
+	*##end#*
+*##end
+
+
+##Macro para recuperar el nombre de la sección asignada al teaserViewer
+#macro (printLinkAssignedSection)
+    #set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+	#if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "name")
+    			#set ($secName= $!atrib.data)			  
+    		#end
+                
+            #if($atrib.name == "url")
+    			#set ($secUrl= $!atrib.data)			  
+    		#end
+               
+             
+		#end
+	#end
+	 <a href="$secUrl"> $secName </a> 
+#end
+
+##Macro para recuperar el la url de la seccion a la que est� asignado el art�culo
+#macro (printURLAssignedSection)#*
+    *##set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))#*
+	*##if($ac-sectionDateFrom.size() > 0)#*
+    	*##foreach ($atrib in $ac-sectionDateFrom.get(0).attributes())#*         
+    		*##if($atrib.name == "name")#*
+    			*##set ($secName= $!atrib.data)#*			  
+    		*##end#*
+            *##if($atrib.name == "url")#*
+    			*##set ($secUrl= $!atrib.data)#*			  
+    		*##end#*
+		*##end#*
+	*##end#*
+	*#$!secUrl#* 
+*##end
+
+##Macro para recuperar el nombre de la sección padre de la sección asignada al teaserViewer
+#macro (printLinkParentAssignedSection)
+	#set($ac-sectionParentDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]/parent::section'))
+	#if($ac-sectionParentDateFrom.size() > 0)
+		#foreach ($atrib in $ac-sectionParentDateFrom.get(0).attributes()  )         
+			#if($atrib.name == "name")
+				#set ($secName= $!atrib.data)			  
+			#end
+		 
+		#end
+		<span> $secName </span> 
+	#end
+#end
+
+
+
+
+##Macro para recuperar la fecha de inicio de vigencia de la sección asignada al teaserViewer
+##Parámetro 1: dateFormat -> Cadena que contiene el formato de salida de la fecha.
+##Parámetro 2: checkToday -> Booleano que indica si se debe sustituir la fecha por la hora si es el día de hoy.
+##Parámetro 3: hourFormat -> Cadena con el formato de salida de la hora si checktody es true y es el día de hoy.
+#macro (printDateFrom $dateFormat $checkToday $hourFormat)
+	#set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+	#if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "from")
+    			  #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+    			  #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+    			  #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('yyyy/MM/dd HH:mm:ss'))
+    			  #set ($dResultado = $indexFormat.parse("$atrib.data"))
+    			  #if($checkToday == true)
+    				#set($hoy = $dateTool.getDate())
+            		#set($dia_a = $dateTool.getDay($hoy))
+            		#set($mes_a = $dateTool.getMonth($hoy) + 1)
+    				#set($anio_a = $dateTool.getYear($hoy))
+    				
+            		#set($dia_n = $dateTool.getDay($dResultado))
+            		#set($mes_n = $dateTool.getMonth($dResultado) + 1)
+    				#set($anio_n = $dateTool.getYear($dResultado))
+            
+            		#if( ($dia_a == $dia_n) && ($mes_a == $mes_n) && ($anio_a == $anio_n) )
+              			$dateTool.format($hourFormat,$dResultado)
+            		#else
+              			$dateTool.format($dateFormat,$dResultado)
+            		#end
+    			  #else
+    				$dateTool.format($dateFormat,$dResultado)
+    			  #end
+    			  
+    		#end
+		#end
+	#end
+#end
+
+
+##Macro para recuperar los minutos o las horas de la fecha de inicio de vigencia de la sección asignada al teaserViewer tomando como referencia el tiempo transcurido desde el inicio de vigencia hasta la fecha/hora actual
+##Parámetro 1: dateFormat -> Cadena que contiene el formato de salida de la fecha.
+#macro (printDateFromExtend $dateFormat)
+	#set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+	#if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "from")
+                #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+                #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+                #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('yyyy/MM/dd HH:mm:ss'))
+                #set ($dResultado = $indexFormat.parse("$atrib.data"))
+    			  
+                #set($hoy = $dateTool.getDate())
+                #set($dia_a = $dateTool.getDay($hoy))
+                #set($mes_a = $dateTool.getMonth($hoy) + 1)
+                #set($anio_a = $dateTool.getYear($hoy))
+                
+                #set($dia_n = $dateTool.getDay($dResultado))
+                #set($mes_n = $dateTool.getMonth($dResultado) + 1)
+                #set($anio_n = $dateTool.getYear($dResultado))
+                
+                #if( ($dia_a == $dia_n) && ($mes_a == $mes_n) && ($anio_a == $anio_n) )
+                	#set($Integer = 0)
+                	#set($hora_articulo = $Integer.parseInt($dateTool.format("H",$dResultado)) )  
+                	#set($minutos_articulo = $Integer.parseInt($dateTool.format("m",$dResultado)) )
+                	#set($hora_actual = $Integer.parseInt($dateTool.format("H",$hoy)) )
+                	#set($minutos_actual = $Integer.parseInt($dateTool.format("m",$hoy)) )
+                	
+                	#set($hora_de_diferencia_sin_minutos_extra = $hora_actual - $hora_articulo)
+                	
+                	#set($minutos_hora_articulo = $hora_articulo * 60)
+                	#set($minutos_hora_actual = $hora_actual * 60)
+                	
+                	#set($minutos_hora_articulo = $minutos_hora_articulo + $minutos_articulo)
+                	#set($minutos_hora_actual = $minutos_hora_actual + $minutos_actual)
+                	
+                	#set($minutos_de_diferencia = $minutos_hora_actual - $minutos_hora_articulo)
+                	
+                	#if($minutos_de_diferencia <= 60)
+                		#if($minutos_de_diferencia == 1)
+                			hace $minutos_de_diferencia minuto  
+                		#else
+                			hace $minutos_de_diferencia minutos 
+                		#end
+                	#else
+                		#if($hora_de_diferencia_sin_minutos_extra == 1)
+                			hace $hora_de_diferencia_sin_minutos_extra hora
+                		#else
+                			hace $hora_de_diferencia_sin_minutos_extra horas
+                		#end
+                	#end
+                #else
+					el $dateTool.format($dateFormat,$dResultado)
+				#end
+    		#end
+		#end
+	#end
+#end
+
+##Macro para obtener la fecha a pintar en el articulo (Entre fecha de inicio de vigencia o fecha de modificaci�n)
+##Par�metro 1: Formato de la fecha, en caso de ser anterior al d�a actual
+##Par�metro 2: Formatode la hora en caso de ser el dia actual
+#macro (printDateTeaserEc $dateFormat $hourFormat)	
+    ##Recuperacion de la fecha de modificaci�n
+    #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+    #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+    #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('EEE, dd MMM yyyy HH:mm:ss'))
+    #set ($idResultadoMod = $indexFormat.parse($reserved-article-modified-date.getData()))
+    
+    ##Recuperacion de la fechade inicio de vigencia
+    #set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+    
+    #set ($idResultado = $idResultadoMod)
+    #if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "from")
+    			#set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+    			#set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+    			#set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('yyyy/MM/dd HH:mm:ss'))
+    			#set ($idResultadoFrom = $indexFormat.parse("$atrib.data"))
+				#if($idResultadoFrom.compareTo($idResultadoMod) > 0)
+            		#set($idResultado = $idResultadoFrom)
+            	#end
+    		#end
+    	#end
+    #end
+    
+	#set($hoy = $dateTool.getDate())
+    #set($dia_a = $dateTool.getDay($hoy))
+    #set($mes_a = $dateTool.getMonth($hoy) + 1)
+    #set($anio_a = $dateTool.getYear($hoy))   
+    
+    #set($dia_p = $dateTool.getDay($idResultado))
+    #set($mes_p = $dateTool.getMonth($idResultado) + 1)
+    #set($anio_p = $dateTool.getYear($idResultado))
+    
+	#set($mask = $dateFormat)
+
+	#if ($anio_p == $anio_a && $mes_p == $mes_a && $dia_p == $dia_a)
+		#set($mask = $hourFormat)
+	#end
+
+    $dateTool.format($mask, $idResultado)
+ 
+    
+#end
+
+
+##Macro para recuperar la fecha de inicio de vigencia de la sección asignada al teaserViewer
+##Parámetro 1: dateFormat -> Cadena que contiene el formato de salida de la fecha.
+##Parámetro 2: checkToday -> Booleano que indica si se debe sustituir la fecha por la hora si es el día de hoy.
+##Parámetro 3: hourFormat -> Cadena con el formato de salida de la hora si checktody es true y es el día de hoy.
+#macro (printDateTo $dateFormat $checkToday $hourFormat)
+	#set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+	#if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "to")
+    			  #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+    			  #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+    			  #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('yyyy/MM/dd HH:mm:ss'))
+    			  #set ($dResultado = $indexFormat.parse("$atrib.data"))
+    			  #if($checkToday == true)
+    				#set($hoy = $dateTool.getDate())
+            		#set($dia_a = $dateTool.getDay($hoy))
+            		#set($mes_a = $dateTool.getMonth($hoy) + 1)
+    				#set($anio_a = $dateTool.getYear($hoy))
+    				
+            		#set($dia_n = $dateTool.getDay($dResultado))
+            		#set($mes_n = $dateTool.getMonth($dResultado) + 1)
+    				#set($anio_n = $dateTool.getYear($dResultado))
+            
+            		#if( ($dia_a == $dia_n) && ($mes_a == $mes_n) && ($anio_a == $anio_n) )
+              			$dateTool.format($hourFormat,$dResultado)
+            		#else
+              			$dateTool.format($dateFormat,$dResultado)
+            		#end
+    			  #else
+    				$dateTool.format($dateFormat,$dResultado)
+    			  #end
+    			  
+    		#end
+		#end
+	#end
+#end
+
+
+##Macro para recuperar los minutos o las horas de la fecha de inicio de vigencia de la sección asignada al teaserViewer tomando como referencia el tiempo transcurido desde el inicio de vigencia hasta la fecha/hora actual
+##Parámetro 1: dateFormat -> Cadena que contiene el formato de salida de la fecha.
+#macro (printDateToExtend $dateFormat)
+	##Recuperacion de la fecha de modificaci�n
+    #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+    #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+    #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('EEE, dd MMM yyyy HH:mm:ss'))
+    #set ($idResultadoMod = $indexFormat.parse($reserved-article-modified-date.getData()))
+	
+	#set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+	#set($dResultado = $idResultadoMod)
+	#if($ac-sectionDateFrom.size() > 0)
+    	#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+    		#if($atrib.name == "to")
+                #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+                #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+                #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('yyyy/MM/dd HH:mm:ss'))
+                #set ($dResultadoFrom = $indexFormat.parse("$atrib.data"))
+    			
+				#if($idResultadoFrom.compareTo($idResultadoMod) > 0)
+                	#set($dResultado = $idResultadoFrom)
+                #end
+            				
+                #set($hoy = $dateTool.getDate())
+                #set($dia_a = $dateTool.getDay($hoy))
+                #set($mes_a = $dateTool.getMonth($hoy) + 1)
+                #set($anio_a = $dateTool.getYear($hoy))
+                
+                #set($dia_n = $dateTool.getDay($dResultado))
+                #set($mes_n = $dateTool.getMonth($dResultado) + 1)
+                #set($anio_n = $dateTool.getYear($dResultado))
+                
+                #if( ($dia_a == $dia_n) && ($mes_a == $mes_n) && ($anio_a == $anio_n) )
+                	#set($Integer = 0)
+                	#set($hora_articulo = $Integer.parseInt($dateTool.format("H",$dResultado)) )  
+                	#set($minutos_articulo = $Integer.parseInt($dateTool.format("m",$dResultado)) )
+                	#set($hora_actual = $Integer.parseInt($dateTool.format("H",$hoy)) )
+                	#set($minutos_actual = $Integer.parseInt($dateTool.format("m",$hoy)) )
+                	
+                	#set($hora_de_diferencia_sin_minutos_extra = $hora_actual - $hora_articulo)
+                	
+                	#set($minutos_hora_articulo = $hora_articulo * 60)
+                	#set($minutos_hora_actual = $hora_actual * 60)
+                	
+                	#set($minutos_hora_articulo = $minutos_hora_articulo + $minutos_articulo)
+                	#set($minutos_hora_actual = $minutos_hora_actual + $minutos_actual)
+                	
+                	#set($minutos_de_diferencia = $minutos_hora_actual - $minutos_hora_articulo)
+                	
+                	#if($minutos_de_diferencia <= 60)
+                		#if($minutos_de_diferencia == 1)
+                			Publicado hace $minutos_de_diferencia minutos
+                		#else
+                			Publicado hace $minutos_de_diferencia minutos
+                		#end
+                	#else
+                		#if($hora_de_diferencia_sin_minutos_extra == 1)
+                			Publicado hace $hora_de_diferencia_sin_minutos_extra horas
+                		#else
+                			Publicado hace $hora_de_diferencia_sin_minutos_extra horas
+                		#end
+                	#end
+                #else
+					$dateTool.format($dateFormat,$dResultado)
+				#end
+    		#end
+		#end
+	#end
+#end
+
+
+##Macro para recuperar la sección asiganada dentro del vocabulario TEMAS
+##Parámetro 1: vResultTheme -> ArrayList que contendrá todas las categorías del vocabulario TEMAS asignadas al artículo. 
+#macro (getAssignedTheme $vResultTheme)
+	#set($ac-temaAsignado = $articleContext.selectNodes('articlectx/metadata//key[@name="TEMAS"]//key[@set="1"]'))
+	#foreach ($key in $ac-temaAsignado)
+		#set($temp = $vResultTheme.add($key.attribute('name').getValue()))
+	#end
+#end
+
+
+##Macro para imprimir la url del detalle
+#macro (printAcUrl)
+	#set($ac-url = $articleContext.selectNodes('articlectx/url'))
+	#set($xml-url = $ac-url.get(0).text)					
+	#set($xml-url-trimmed = $!xml-url.trim())#*		
+	*#$!xml-url-trimmed##												
+#end
+
+
+##Macro para imprimir la página de referencia
+#macro (printAcRefPageUrl)
+	#set($ac-ref-page-url = $articleContext.selectNodes('articlectx/ref-page-url'))
+	#set($xml-ref-page-url = $ac-ref-page-url.get(0).text)
+	$!xml-ref-page-url
+#end
+
+
+##Macro para imprimir la sección del artículo
+#macro (printAcSectionName)
+	#set($ac-section-name = $articleContext.selectNodes('articlectx/section-name'))
+	#set($xml-section-name = $ac-section-name.get(0).text)
+	$!xml-section-name
+#end
+
+##Macro para imprimir la sección por defecto (seleccionada en milenium) del artículo
+#macro (printAcDefaultSection)
+	#set($ac-seccionAsignada = $articleContext.selectNodes('articlectx/sections//section[@default="1"]'))
+	#if($ac-seccionAsignada.size() > 0)
+		#set($xml-default-section = $ac-seccionAsignada.get(0).text)
+		$!xml-default-section
+	#end
+#end
+
+
+
+##Macro para imprimir el número de visitas del artículo
+#macro (printAcNvisits)
+	#set($ac-nvisits = $articleContext.selectNodes('articlectx/nvisits'))
+	#set($xml-nvisits = $ac-nvisits.get(0).text)
+	$!xml-nvisits
+#end
+
+
+##Macro para recuperar el número de comentarios del artículo
+#macro (printAcNcomments)
+	#set($ac-ncomments = $articleContext.selectNodes('articlectx/ncomments'))
+	#set($xml-ncomments = $ac-ncomments.get(0).text)
+	$!xml-ncomments
+#end
+
+##Macro para recuperar el número de comentarios del artículo
+#macro (returnValueNcomments $numResult)
+	#set($ac-ncomments = $articleContext.selectNodes('articlectx/ncomments'))
+	#set($xml-ncomments = $ac-ncomments.get(0).text)
+	#set($numResult= $!xml-ncomments)
+#end
+
+##Macro que devuelve un array con las secciones desde la d epor defecto del art�ciulo.
+#macro (getBreadCrumArray $arraySectionName)
+	#set($querySection = "articlectx/sections//section[@from]")
+	#set($ac-sectionDateFrom =  $articleContext.selectNodes($querySection))	
+	#set($arraySectionName = [])
+
+	#foreach($i in [0..10])
+	   #if($ac-sectionDateFrom.get(0).name == "section")
+			#if($ac-sectionDateFrom.size() > 0)
+				#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )         
+					#if($atrib.name == "name")
+						#set($temp = $arraySectionName.add($!atrib.data))
+					#end
+				#end
+			#end
+			#set($querySection = $querySection + "/..")
+			#set($ac-sectionDateFrom =  $articleContext.selectNodes($querySection))
+	   #else
+	   		#break
+	   #end
+	#end
+	
+	
+#end
+
+##Macro qué devuelve una lista de categorías asignadas
+##Parámetro 1: hmResult -> HashMap que contendrá la lista de categorías asignadas. 
+#macro(getAcAssignedCat $hmResult)
+	#set($ac-key = $articleContext.selectNodes('//key'))
+	#set($hmResult = {})
+	#set($index = 0)
+	#foreach ($key in $ac-key)
+		#set ($map-attribute = {})
+		
+		#foreach($attrib in $key.attributes())
+			#set($temp = $map-attribute.put($attrib.name,$attrib.data))
+		#end
+		
+		#if($key.attribute('set').getValue()== "1")
+			#set($temp = $hmResult.put($index,$map-attribute))
+			#set($index = $index + 1)
+		#end
+	#end
+#end
+
+
+##Macro qué devuelve una lista de categorías asignadas
+##Parámetro 1: hmResult -> HashMap que contendrá la lista de categorías asignadas.
+#macro(getAcAssignedCatExtendedGlobal $hmResult $vocabulario)
+	#set($ac-key = $articleContext.selectNodes('//key'))
+	#set($hmResult = {})
+	#set($hmtemp1 = {})
+	#set($hmtemp2 = {})
+	#set($index1 = 0)
+	#set($index2 = 0)
+	#set($hasMain = 0)
+	#set($hasSet = 0)
+	
+	
+	#foreach ($key in $ac-key)
+		#set ($map-attribute = {})
+		
+		#foreach($attrib in $key.attributes())
+			#set($temp = $map-attribute.put($attrib.name,$attrib.data))
+		#end
+		
+		#if($key.attribute('set').getValue()== "1")
+			#set($temp = $hmtemp1.put($index1,$map-attribute))
+			#set($index1 = $index1 + 1)
+			#set($hasSet = 1)
+		#end
+		
+		#if($key.attribute('main').getValue()== "1")
+			#set($temp = $hmtemp2.put($index2,$map-attribute))
+			#set($index2 = $index2 + 1)
+			#set($hasMain = 1)
+		#end
+	#end
+	
+	#if ($hasMain == 0)
+		#if($hasSet == 1)
+			#set($hmResult = $hmtemp1)
+		#end
+	#else
+		#set($hmResult = $hmtemp2)
+	#end
+#end
+
+
+##Macro qué devuelve una lista de categorías asignadas
+##Parámetro 1: hmResult -> HashMap que contendrá la lista de categorías asignadas.
+##Parámetro 2: vocabulario -> String con el vocabulario del que se extraerán las categorías.
+#macro(getAcAssignedCatExtended $hmResult $vocabulario)
+	#set($ac-key = $articleContext.selectNodes("articlectx/metadata//key[@name='$vocabulario']//key"))
+	#set($hmResult = {})
+	#set($hmtemp1 = {})
+	#set($hmtemp2 = {})
+	#set($index1 = 0)
+	#set($index2 = 0)
+	#set($hasMain = 0)
+	#set($hasSet = 0)
+	
+	
+	#foreach ($key in $ac-key)
+		#set ($map-attribute = {})
+		
+		#foreach($attrib in $key.attributes())
+			#set($temp = $map-attribute.put($attrib.name,$attrib.data))
+		#end
+		
+		#if($key.attribute('set').getValue()== "1")
+			#set($temp = $hmtemp1.put($index1,$map-attribute))
+			#set($index1 = $index1 + 1)
+			#set($hasSet = 1)
+		#end
+		
+		#if($key.attribute('main').getValue()== "1")
+			#set($temp = $hmtemp2.put($index2,$map-attribute))
+			#set($index2 = $index2 + 1)
+			#set($hasMain = 1)
+		#end
+	#end
+	
+	#if ($hasMain == 0)
+		#if($hasSet == 1)
+			#set($hmResult = $hmtemp1)
+		#end
+	#else
+		#set($hmResult = $hmtemp2)
+	#end
+#end
+
+##Macro qué devuelve y crea un link hacia la primera categoria asignada del articulo pasando como parametro el catalogo
+##Si llega el campo $seccion_migracion entonces se pinta dicho campo, de lo contrario se pinta la seccion por defecto junto con un enlace hacia la primera categoria si las hay.
+##Parámetro 1: urlToSection -> String que contendrá la ubicación hacia donde debe apuntar el enlace.
+##Parámetro 2: vocabulary -> String con el vocabulario del que se extraerán las categorías.
+#macro(printAcAssignedCat $urlToSection $vocabulary)
+	
+	#if($Seccion_Migracion && $Seccion_Migracion.data != "")
+		$Seccion_Migracion.data
+	#else
+		#set($auxCatalagoSecciones = {})
+    	#getAcAssignedCatExtended($auxCatalagoSecciones $vocabulary)
+		
+		#printAcSectionName() #if($auxCatalagoSecciones.size() > 0) / <a class="lnk" href="/etiquetas/noticias/meta/$auxCatalagoSecciones.get(0).friendlyname"> #if($auxCatalagoSecciones) $auxCatalagoSecciones.get(0).name #end </a> #end
+		
+	#end
+#end
+
+##Macro que imprime el texto completo de los detalles
+##Parámetro 1: orderHashMapElements -> HashMap a pasar con la lista de los contenidos a recuperar, si no se le pasa se establece uno por defecto.
+	
+	## Ejemplo de parámetro a pasar:
+	## Descripción de los datos a pasar { 1 * : {"text" ** : $Text *** } }
+	## * (Integer) Valor que corresponde al orden en el que se van a pintar los contenidos (esto solo se aplica cuando los contenidos no vienen de milenium por ejemplo los contenidos migrados diractamente a Iter)
+	## ** (String) Key que va a ser usada para crear y recuperar los contenidos del Array de resultado
+	## *** (Velocity Component) Variable velocity que contiene un elemento del contenido web 
+	
+	##    #set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto} })
+	
+	## Ejemplo para pasar imagenes como parametro para mostrarlas en orden en el detalle:
+	## Se debe crear un hashNombreContenido (ejemplo hashImage) para incluir las imagenes, en el hash debes indicar los campos que quieres recuperar de la imagen
+	## 
+	##	  #set($hashImage = {})
+    ##    #set($hashImage.contenidoComplejo = $Image) ##Es obligatorio el string contenidoComplejo para la key que va a identificar al campo complejo a recuperar (ejemplo, $Image, $Multimedia)
+    ##    #set($hashImage.data0 = "High") ##Los posibles valores son: High, Medium, Low
+    ##    #set($hashImage.data1 = "Cutline")
+    ##    #set($hashImage.data2 = "Byline")
+	
+	## Nota: si se han añadido campos personalizados a la estructura de Image en Milenium, estos campos deben ser añadidos en el hash si se desean recuperar 
+	## y se debe modificar el codigo de la macro printHTMLContentDetalle respectivamente para integrar el nuevo campo.
+	
+	## * El string complejo es obligatorio para definir la key del hash de contenido complejo por ejemplo: "complejo":$hashMultimedia, "complejo":$hashImage
+	##
+	##    #set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto}, 5:{"complejo" * :$hashImage} })
+	
+#macro(printDetalleFullText $orderHashMapElements)
+	
+	#set($resultArrayOfContents = {})
+	
+	##Si no se le ha pasado hashMap se establece uno por defecto
+	#if(!$orderHashMapElements)
+		#set($orderHashMapElements = {1:{"text":$Text}, 2:{"appui_titre":$Appui_Titre}, 3:{"appui_texte":$Appui_Texte}})
+	#end
+	
+	#getArrayOfFullContentElements($orderHashMapElements $resultArrayOfContents)
+		
+	#printHTMLContentDetalle($orderHashMapElements $resultArrayOfContents)
+	
+#end
+
+##Macro Generica qué devuelve un array con los contenidos de un articulo
+##Parámetro 1: orderHashMapElements -> HashMap a pasar con la lista de los contenidos a recuperar.
+	
+	## Ejemplo de parámetro a pasar:
+	## Descripción de los datos a pasar { 1 * : {"text" ** : $Text *** }, 2:{"ladillo":$Titulillo} }
+	## * (Integer) Valor que corresponde al orden en el que se van a pintar los contenidos (esto solo se aplica cuando los contenidos no vienen de milenium por ejemplo los contenidos migrados diractamente a Iter)
+	## ** (String) Key que va a ser usada para crear y recuperar los contenidos del Array de resultado
+	## *** (Velocity Component) Variable velocity que contiene un elemento del contenido web 
+	
+	##set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto} })
+	
+	## Ejemplo para pasar imagenes como parametro para mostrarlas en orden en el detalle:
+	## Se debe crear un hashNombreContenido (ejemplo hashImage) para incluir las imagenes, en el hash debes indicar los campos que quieres recuperar de la imagen
+	## 
+	##	  #set($hashImage = {})
+    ##    #set($hashImage.contenidoComplejo = $Image) ##Es obligatorio el string contenidoComplejo para la key que va a identificar al campo complejo a recuperar (ejemplo, $Image, $Multimedia)
+    ##    #set($hashImage.data0 = "High") ##Los posibles valores son: High, Medium, Low
+    ##    #set($hashImage.data1 = "Cutline")
+    ##    #set($hashImage.data2 = "Byline")
+	
+	## Nota: si se han añadido campos personalizados a la estructura de Image en Milenium, estos campos deben ser añadidos en el hash si se desean recuperar 
+	## y se debe modificar el codigo de la macro printHTMLContentDetalle respectivamente para integrar el nuevo campo.
+	
+	## * El string complejo es obligatorio para definir la key del hash de contenido complejo por ejemplo: "complejo":$hashMultimedia, "complejo":$hashImage
+	##
+	##    #set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto}, 5:{"complejo" * :$hashImage} })
+	
+##Parámetro 2: resultArrayOfContents -> Array de resultado que contendrá los contenidos recuperados.
+#macro(getArrayOfFullContentElements $orderHashMapElements $resultArrayOfContents)
+	#set($Integer = 0)
+	#set($indiceMayor = 0)
+	#set($indiceSinMilenium = 0)
+	#set($matrisIndiceMayor = 0)
+	
+	#if($orderHashMapElements && $orderHashMapElements.size())
+	
+		#if($orderHashMapElements.size() > 0)
+		
+    		#foreach($hashMapKeys in $orderHashMapElements)
+    			
+    			#set($currentIndex = $velocityCount)
+    			
+    			#foreach($hashKey in $orderHashMapElements.get($currentIndex).keySet())
+    			
+    					#set($key = $hashKey)
+    					
+    					#if($key == "complejo")
+    						#set($contentElement = $orderHashMapElements.get($currentIndex).get($hashKey).get("contenidoComplejo"))
+    					#else
+    						#set($contentElement = $orderHashMapElements.get($currentIndex).get($hashKey))
+    					#end
+    					
+						#if($contentElement && $contentElement.size())
+							
+							#if($contentElement.size() > 0)
+        						#foreach($element in $contentElement.getSiblings())
+        							##if($key != "complejo" && $element.data && $element.data.trim() != "")
+        								#if($element.Milenium && $element.Milenium.data && $element.Milenium.data != "")
+        									#set($mileniumData = $element.Milenium.data)
+        									#set($orderElement = $mileniumData.split(";").get(1).split("=").get(1))
+        									
+        									#if($orderElement && $orderElement.split("\.") && $orderElement.split("\.").size() > 1)
+        										#set($index = $Integer.parseInt($orderElement.split("\.").get(1)) + 1)
+        										#set($matrisIndex = $Integer.parseInt($orderElement.split("\.").get(0)))
+        									#else 
+												#set($index = 1)
+        										#set($matrisIndex = $Integer.parseInt($orderElement.split("\.").get(0)))
+											#end
+        									
+        									##Buscando el mayor de los indices
+        									#if($index > $indiceMayor)
+        										#set($indiceMayor = $index)
+        									#end
+        									
+        									##Buscando el mayor de los indices de matris
+        									#if($matrisIndex > $matrisIndiceMayor)
+        										#set($matrisIndiceMayor = $matrisIndex)
+        									#end
+        									
+        									#set($temp = $resultArrayOfContents.put("${key}-${matrisIndex}-${index}", $element))
+        								#else
+        									#set($indiceSinMilenium = $indiceSinMilenium + 1)
+        									#set($temp = $resultArrayOfContents.put("${key}-$indiceSinMilenium", $element.data))			
+        								#end
+        								
+					
+        						#end
+        					#end
+						#end
+						
+    					
+    					
+    					#set($key = "")
+    					#set($contentElement = "")
+    				
+    			#end
+    			
+    		#end
+    		
+    		#set($temp = $resultArrayOfContents.put("indiceMayor", $indiceMayor))
+    		#set($temp = $resultArrayOfContents.put("matrisIndiceMayor", $matrisIndiceMayor))
+    		#set($temp = $resultArrayOfContents.put("indiceSinMilenium", $indiceSinMilenium))
+    		
+    	#end
+	#end
+	
+	
+
+#end
+
+##-------------------------------------------------
+## Macro que pinta la imagen de una seccion si esta aplicado a esa seccion, si es m lo pinta centrado
+## si es galeria lo pinta abajo a la izquierda
+## Parametro 1: Cadena de texto que indica el tamano de la imagen que se quiere pintar (grande o pequena)
+
+#macro (pintaImgDeSeccionAuto $tamano)#*
+
+	*##if($articleToolbox.getArticleViewer("/multimedia/videos"))#*	
+		*#<span class="ImgVideos $!{tamano} center"></span>#*
+	*##elseif($articleToolbox.getArticleViewer("/multimedia/imagenes"))#*
+		*#<span class="ImgGaleria $!{tamano} bottomLeft"></span>#*			
+	*##end#*
+
+*##end
+##--------------------------------------------------
+
+##-------------------------------------------------
+## Macro que pinta la imagen de una seccion si esta aplicado a esa seccion
+## Parametro 1: Cadena de texto que indica el tamano de la imagen que se quiere pintar (grande o pequena)
+## Parametro 2: Cadena de texto que indica la posicion de la imagen, (topLeft,topRight,bottomLeft,bottomRight,center) 
+## Parametro 3: Boolean para indicar si pone enlace a la imagen (False si no tiene valor, True si tiene cualquier valor)
+
+#macro (pintaImgDeSeccion $tamano $posicion $enlace)#*
+
+	*##set($video = $articleToolbox.getArticleViewer("/multimedia/videos"))#*
+	*##set($galeria = $articleToolbox.getArticleViewer("/multimedia/imagenes"))#*
+
+	*##if($video)#*	
+		*##if($enlace)#*
+			*#<a href="$video">#*
+		*##end#*
+		*#<span class="ImgVideos $!{tamano} $!{posicion}"></span>#*
+		*##if($enlace)#*
+			*#</a>#*
+		*##end#*		
+	*##elseif($galeria)#*
+		*##if($enlace)#*
+			*#<a href="$galeria">#*
+		*##end#*	
+		*#<span class="ImgGaleria $!{tamano} $!{posicion}"></span>#*	
+		*##if($enlace)#*
+			*#</a>#*
+		*##end#*
+	*##end#*
+
+*##end
+##--------------------------------------------------
+
+##Macro qué pinta los contenidos del articulo para los detalles de Fulda
+##Parámetro 1: orderHashMapElements -> HashMap a pasar con la lista de los contenidos a recuperar.
+	
+	## Ejemplo de parámetro a pasar:
+	## Descripción de los datos a pasar { 1 * : {"text" ** : $Text *** }, 2:{"ladillo":$Titulillo} }
+	## * (Integer) Valor que corresponde al orden en el que se van a pintar los contenidos (esto solo se aplica cuando los contenidos no vienen de milenium por ejemplo los contenidos migrados diractamente a Iter)
+	## ** (String) Key que va a ser usada para crear y recuperar los contenidos del Array de resultado
+	## *** (Velocity Component) Variable velocity que contiene un elemento del contenido web 
+	
+	##set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto} })
+	
+	## Ejemplo para pasar imagenes como parametro para mostrarlas en orden en el detalle:
+	## Se debe crear un hashNombreContenido (ejemplo hashImage) para incluir las imagenes, en el hash debes indicar los campos que quieres recuperar de la imagen
+	## 
+	##	  #set($hashImage = {})
+    ##    #set($hashImage.contenidoComplejo = $Image) ##Es obligatorio el string contenidoComplejo para la key que va a identificar al campo complejo a recuperar (ejemplo, $Image, $Multimedia)
+    ##    #set($hashImage.data0 = "High") ##Los posibles valores son: High, Medium, Low
+    ##    #set($hashImage.data1 = "Cutline")
+    ##    #set($hashImage.data2 = "Byline")
+	
+	## Nota: si se han añadido campos personalizados a la estructura de Image en Milenium, estos campos deben ser añadidos en el hash si se desean recuperar 
+	## y se debe modificar el codigo de la macro printHTMLContentDetalle respectivamente para integrar el nuevo campo.
+	
+	## * El string complejo es obligatorio para definir la key del hash de contenido complejo al momento de agregarlo a la variable $orderHashMapElements
+	##
+	##    #set($orderHashMapElements = { 1:{"text":$Text}, 2:{"ladillo":$Titulillo}, 3:{"citaAutor":$Cita_Autor}, 4:{"citaTexto":$Cita_Texto}, 5:{"complejo" * :$hashImage} })
+	
+##Parámetro 2: resultArrayOfContents -> Array de resultado que contiene los contenidos recuperados por la macro #getArrayOfFullContentElements.
+#macro(printHTMLContentDetalle $orderHashMapElements $resultArrayOfContents)
+ 
+
+	#set($indiceMayor = $resultArrayOfContents.get("indiceMayor"))
+	#set($indiceSinMilenium = $resultArrayOfContents.get("indiceSinMilenium"))
+	#set($matrisIndiceMayor = $resultArrayOfContents.get("matrisIndiceMayor"))
+	#set($contadorParrafos = 0)
+	#set($posicionScriptTagText = 3)
+	
+	#if($indiceSinMilenium > 0)
+		#set($contenidosFueraDeMilenium = true)
+		#set($arr = [0..$indiceSinMilenium])
+	#else
+		#set($contenidosFueraDeMilenium = false)
+		#set($arr = [0..$indiceMayor])
+		#set($arrMatris = [0..$matrisIndiceMayor])
+	#end
+	
+	#if($contenidosFueraDeMilenium == false)
+		#if($indiceMayor > 0)
+	
+			#foreach($matrisPos in $arrMatris)
+				#foreach($pos in $arr)
+					#set($nextMatrisPos = $matrisPos + 1)
+					#set($findComponent = false)
+					
+					#foreach($hashKey in $orderHashMapElements.keySet())
+						
+						#set($currentHashKey = $velocityCount)
+						
+						#if($findComponent == false)
+						
+    						#foreach($componentKey in $orderHashMapElements.get($currentHashKey).keySet())
+    							
+    							##Pinto los componentes de acuerdo a su tipo
+    							
+    							#if($componentKey == "diassemanaNum")
+									#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}") && $resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").trim() != "")    							
+	    								$!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&").replaceAll("-","</p><span class='icon-separador'></span><p>").toLowerCase()
+	    							#end		
+    							#end
+    							
+    							
+    							#if($componentKey == "tipovehiculo")
+									#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}") && $resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").trim() != "")    							
+	    								<span class='tipovehiculo $!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&").toLowerCase()'></span>
+	    							#end		
+    							#end
+    							
+    							#if($componentKey == "subheadline")
+									#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}") && $resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").trim() != "")    							
+	    								<h2 class='subheadline'>$!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&").toLowerCase()</h2>
+	    							#end		
+    							#end
+    							
+    							
+    							#if($componentKey == "headline")
+    								#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}")} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data} != "")
+    									<h2 class='titulo'>
+											$!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&")
+										</h2>
+									#end
+    							#end
+    							
+    							#if($componentKey == "text")
+									
+    								#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}") && $resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").trim() != "")
+										
+										<div class='${componentKey}'>
+    										#set($tempArrayText = $resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&").split("</p>"))
+    										#foreach($parrafo in $tempArrayText)
+    											#set($parrafo = $parrafo.replaceAll("<p>", "").replaceAll("</p>", "").trim()) 
+    											#if($parrafo != "")
+    												##set($contadorParrafos = $contadorParrafos + 1)
+    												<p>$parrafo</p>
+													#*
+        												#if ($contadorParrafos == $posicionScriptTagText)
+        													<div class="scriptTag">
+    															<!--/* OpenX JavaScript tag */-->
+    
+                                                                <!-- /*
+                                                                * The tag in this template has been generated for use on a
+                                                                * non-SSL page. If this tag is to be placed on an SSL page, change the
+                                                                * 'http://ox-d.obcc-services.net/...'
+                                                                * to
+                                                                * 'https://ox-d.obcc-services.net/...'
+                                                                */ -->
+    
+        														<script type="text/javascript">
+                                                                    if (!window.OX_ads) { OX_ads = []; }
+                                                                    OX_ads.push({ "auid" : "446866" });
+                                                                </script>
+                                                                <script type="text/javascript">
+                                                                    document.write('<scr'+'ipt src="http://ox-d.obcc-services.net/w/1.0/jstag"><\/scr'+'ipt>');
+                                                                    var randomInt = Math.floor(Math.random() * (9999999 - 1 + 1)) + 1;
+                                                                    document.write('<noscr'+'ipt><iframe id="51d2a9f27c91c" name="51d2a9f27c91c" src="http://ox-d.obcc-services.net/w/1.0/afr?auid=446866&cb='+randomInt+'" frameborder="0" scrolling="no" width="468" height="60"><a href="http://ox-d.obcc-services.net/w/1.0/rc?cs=51d2a9f27c91c&cb='+randomInt+'" ><img src="http://ox-d.obcc-services.net/w/1.0/ai?auid=446866&cs=51d2a9f27c91c&cb='+randomInt+'" border="0" alt=""></a></iframe></noscr'+'ipt>');
+                                                                </script>
+    														</div>
+        													##Incremento en 3 parrafos la posición para el proximo script tag
+        													#set($posicionScriptTagText = $posicionScriptTagText + 3)
+    													#end
+													*#
+    											#end
+    										#end
+										</div>
+                                        
+    									##<div class='${componentKey}'>$!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").trim().replaceAll("&amp;","&")</div>
+    								#end
+								#end
+								
+								#if($componentKey == "entretitulo")
+    									#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}")} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data} != "")
+	    									<h5 class='entretitulo'>
+												$!resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data.trim().replaceAll("&amp;","&")
+											</h5>
+										#end
+    							#end
+	
+    						
+								
+								
+    							#if($componentKey == "multimediaVimeoApoyo")
+    								#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}"))
+   										
+    										<div class="video-relacionado">
+						                        <div class="left-video">
+						                            <iframe class='vimeo-player' src='//player.vimeo.com/video/${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data}' width='275' height='210' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						                        </div>
+										
+											#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data} != "")
+												<div class="right-text-descripcion">
+						                            <div class="descripcion-video">
+						                            
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                                <p>${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data}</p>
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                            </div>
+						                        </div>
+						                        <div class="clear"></div>
+											#end
+											
+											</div>
+    								#end
+    							#end
+    							
+    							
+    							#if($componentKey == "multimediaYoutubeApoyo")
+    								#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}"))
+   										
+    										<div class="video-relacionado">
+						                        <div class="left-video">
+						                        	<iframe class='youtube-player' type='text/html' width='275' height='210' src='http://www.youtube.com/embed/${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data}?wmode=opaque' frameborder='0'></iframe>
+						                        </div>
+										
+											#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data} != "")
+												<div class="right-text-descripcion">
+						                            <div class="descripcion-video">
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                                <p>${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data}</p>
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                            </div>
+						                        </div>
+						                        <div class="clear"></div>
+											#end
+											
+											</div>
+    								#end
+    							#end
+    							
+    							
+    							#if($componentKey == "multimediaApoyo")
+    								#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}"))
+   										
+    										<div class="video-relacionado">
+						                        <div class="left-video">
+						                        	<div id="playerDetalle${componentKey}-${matrisPos}-${pos}" class="apoyo_multimedia" style="display:block;width:275px;height:210px;"></div>
+						                        </div>
+						                        
+						                        <script>
+													jQuery(document).ready(function(){
+														jwplayer('playerDetalle${componentKey}-${matrisPos}-${pos}').setup({
+															playlist:[
+																{
+																	image: '$resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Preview.data',
+																	file:  '$resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Document.data'
+																}
+																	  
+															],
+															primary: 'flash',
+															width: 275,
+															height: 210,
+															fallback: 'false',
+															displaytitle: false,
+															html5player: '/elcolombiano-theme/js/jwplayer.html5.js',
+															flashplayer: '/elcolombiano-theme/swf/jwplayer.flash.swf'
+														}); 	
+													});
+													
+												</script>
+										
+											#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data} != "")
+												<div class="right-text-descripcion">
+						                            <div class="descripcion-video">
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                                <p>${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data}</p>						                                
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                            </div>
+						                        </div>
+						                        <div class="clear"></div>
+											#end
+											
+											</div>
+    								#end
+    							#end
+    							
+    							
+    							#if($componentKey == "multimediaBrightCoveApoyo")
+    								#if($resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}"))
+   										
+    										<div class="video-relacionado">
+						                        <div class="left-video">
+													<object id='myExperience${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data}' class='BrightcoveExperience' style='display:block;width:580px;height:370px;'>
+														<param name='bgcolor' value='#FFFFFF' />
+														<param name='width' value='275' />
+														<param name='height' value='210' />
+														<param name='playerID' value='3033416247001' />
+														<param name='playerKey' value='AQ~~,AAABMdBKz4k~,kXKBkGGWjAWW-gq6A40USK1F9Zdb0knN' />
+														<param name='isVid' value='true' />
+														<param name='isUI' value='true' />
+														<param name='dynamicStreaming' value='true' />
+																						  
+														<param name='@videoPlayer' value='${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").data}' />
+													</object>
+						                        	
+						                        </div>
+										
+											#if(${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline} && ${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data} != "")
+												<div class="right-text-descripcion">
+						                            <div class="descripcion-video">						                                
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                                <p>${resultArrayOfContents.get("${componentKey}-${matrisPos}-${pos}").Cutline.data}</p>						                                
+						                                <span class="linea-contraposicion-ed-historico"></span>
+						                            </div>
+						                        </div>
+						                        <div class="clear"></div>
+											#end
+											
+											</div>
+    								#end
+    							#end
+    							
+    							
+    							
+							#end
+
+						#end
+					#end
+					
+				#end
+			#end
+			
+		#end
+	#else
+		#if($indiceSinMilenium > 0)
+			
+			#foreach($pos in $arr)
+				#if($resultArrayOfContents.get("text-$pos"))
+					<div class='text'>
+						$resultArrayOfContents.get("text-$pos").trim().replaceAll("&amp;","&")
+					</div>
+				#elseif($resultArrayOfContents.get("complejo-$pos"))
+					#set($componentName = $resultArrayOfContents.get("complejo-$pos").get("componentName"))
+									
+##					#if($componentName == "Image")
+##
+##						<p class="txtimagen">
+##							<img src='$resultArrayOfContents.get("complejo-${pos}").get("High").trim().replaceAll("&amp;","&")'/>
+##						</p>
+##						##Ejemplo de pintado de cutline y byline de la imagen
+##						#if($resultArrayOfContents.get("complejo-$pos").get("Cutline") && $resultArrayOfContents.get("complejo-$pos").get("Cutline") != "")
+##							<div class="cutline">$!resultArrayOfContents.get("complejo-$pos").get("Cutline")</div>
+##						#end
+##						#if($resultArrayOfContents.get("complejo-$pos").get("Byline") && $resultArrayOfContents.get("complejo-$pos").get("Byline") != "")
+##							<div class="byline">$!resultArrayOfContents.get("complejo-$pos").get("Byline")</div>
+##						#end
+##					#end
+					
+##					#if($componentName == "Multimedia")
+##						<div class="multimedia_document">$!resultArrayOfContents.get("complejo-$pos").get("Document")</div>
+##						<div class="multimedia_preview">$!resultArrayOfContents.get("complejo-$pos").get("Preview")</div>
+##						<div class="multimedia_extension">$!resultArrayOfContents.get("complejo-$pos").get("Extension")</div>
+##						<div class="multimedia_cutline">$!resultArrayOfContents.get("complejo-$pos").get("Cutline")</div>
+##						<div class="multimedia_byline">$!resultArrayOfContents.get("complejo-$pos").get("Byline")</div>
+##					#end
+##					
+##					#if($componentName == "TeaserImage")
+##						<img src='$resultArrayOfContents.get("complejo-${pos}").get("Low").trim().replaceAll("&amp;","&")'/>
+##						<div class="teaserimage_cutline">$!resultArrayOfContents.get("complejo-$pos").get("Cutline")</div>
+##						<div class="teaserimage_byline">$!resultArrayOfContents.get("complejo-$pos").get("Byline")</div>
+##					#end
+					
+				#end
+			#end		
+			
+		#end
+	#end
+#end

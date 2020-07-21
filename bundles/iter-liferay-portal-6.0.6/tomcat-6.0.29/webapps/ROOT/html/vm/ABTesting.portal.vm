@@ -1,0 +1,57 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
+
+#set ($numVariants = $articleToolbox.getNumVariants())
+
+#if( $numVariants > 0 )
+	<div style="display: flex; flex-wrap: wrap; color: #5A5A5A;font-family: 'Orienta', sans-serif; padding: 5px;">
+		
+		#foreach($unused in [1..$numVariants])
+			#set ($variant = $velocityCount + 64)
+			#set ($variant = $stringUtil.asciiToChar($variant))
+
+			#if ( $velocityCount > 1)
+				#set ($variantImage = "TeaserImage_$variant")
+				#set ($variantHeadline = "TeaserHeadline_${variant}")
+				#set ($variantText = "TeaserText_${variant}")
+			#else
+				#set ($variantImage = "TeaserImage")
+				#set ($variantHeadline = "TeaserHeadline")
+				#set ($variantText = "TeaserText")
+			#end
+			
+			<div style="background-color: #3e5561;color: #fafafa;text-align: center;flex: 1 1 100%;font-size: 20px;font-weight: bold;">$variant</div>
+			<div style="flex: 1 1 10%; margin: 5px;">
+				<img width="100%" height="auto" src='$articleToolbox.getImageURL("$variantImage", "0", "ExperimentArticleImage")' alt="Experiment image">
+			</div>
+			<div style="flex: 1 1 50%; margin: 5px; position: relative; overflow: hidden;">
+				<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+					<div style="font-size: 18px;">
+						$articleToolbox.getTag(null, "$variantHeadline").data
+					</div>
+					<div style="font-size: 14px;">
+						$articleToolbox.getTag(null, "$variantText").data
+					</div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">CTR</div>
+				<div class="experiment-variant-metric-body">
+					<div class="ctr experiment-variant-metric-value"></div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">Impressions</div>
+				<div class="experiment-variant-metric-body">
+					<div class="prints experiment-variant-metric-value"></div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">Views</div>
+				<div class="experiment-variant-metric-body">
+					<div class="views experiment-variant-metric-value"></div>
+				</div>
+			</div>
+		#end
+
+	</div>
+#end

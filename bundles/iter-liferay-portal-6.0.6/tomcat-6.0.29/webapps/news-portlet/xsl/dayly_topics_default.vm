@@ -1,0 +1,70 @@
+## Plantilla para dayly topics
+
+<div class="temas-dia">
+
+	#if( $beforeText != "" )
+		<div class="info-tema-anterior">
+			<div class="icono-tema-dia-anterior"></div> 
+			<div class="titulo-tema-dia">$beforeText</div> 
+			<div class="icono-tema-dia-posterior"></div> 
+		</div>
+		
+		#if ( $HtmlOptimizer_isEnabled )
+			<div class="separador-tema"></div>
+		#else	
+			<div class="separador-tema first"></div>
+		#end	
+	#end
+
+	## Recorremos los dayly topics
+	#set($i = 1)
+	#foreach ($daylyTopic in $daylyTopics)	
+		
+		#set($target = "")
+		#if($daylyTopic.isTargetBlank())
+			#set($target = "target='_blank'")
+		#end		
+		
+		#set($first = "")
+		#if($i == 1)
+			#set($first = "first")		
+		#end
+		
+		
+		#if ( $HtmlOptimizer_isEnabled )
+			<div class="tema$i" data-categoryid="$daylyTopic.getCategoryId()">
+		#else
+			#if($i % 2 == 0)
+			<div class="tema$i n$i even $first" data-categoryid="$daylyTopic.getCategoryId()">
+			#else
+			<div class="tema$i n$i odd  $first" data-categoryid="$daylyTopic.getCategoryId()">
+			#end		
+		#end	
+				<div class="icono-tema-anterior"></div>
+				<div class="texto-tema"><a href="$daylyTopic.getHyperlink($themeDisplay)" $target  $daylyTopic.getRelAttribute()>$daylyTopic.getDisplayName()</a></div>
+				<div class="icono-tema-posterior"></div>
+			</div>
+		
+		#if($i != $daylyTopics.size())
+			<div class="separador-tema"></div>
+		#end		
+		
+		#set($i = $i + 1)
+	#end	
+
+	#if( $afterText != "" )
+		#if ( $HtmlOptimizer_isEnabled )
+			<div class="separador-tema "></div>
+		#else
+			<div class="separador-tema last "></div>
+		#end	
+	
+		<div class="info-tema-posterior">
+			<div class="icono-tema-dia-anterior"></div> 
+			<div class="titulo-tema-dia">$afterText</div> 
+			<div class="icono-tema-dia-posterior"></div> 
+		</div>
+	#end	
+	
+	<div class="clear"></div> 
+</div>

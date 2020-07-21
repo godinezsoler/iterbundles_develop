@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Advertisement_AdvertisementMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<typeMapping xmlns:ns="http://gson.google.com" qname="ns:JsonArray" type="java:com.google.gson.JsonArray" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://gson.google.com" qname="ns:JsonNull" type="java:com.google.gson.JsonNull" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://gson.google.com" qname="ns:JsonObject" type="java:com.google.gson.JsonObject" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://gson.google.com" qname="ns:JsonElement" type="java:com.google.gson.JsonElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addAdvertisementVocabulary" qname="operNS:addAdvertisementVocabulary" returnQName="addAdvertisementVocabularyReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addSkin" qname="operNS:addSkin" returnQName="addSkinReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addSlotTagCategory" qname="operNS:addSlotTagCategory" returnQName="addSlotTagCategoryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addSlotTagLayout" qname="operNS:addSlotTagLayout" returnQName="addSlotTagLayoutReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addSlot" qname="operNS:addSlot" returnQName="addSlotReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addTag" qname="operNS:addTag" returnQName="addTagReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createDefaultSkinConfig" qname="operNS:createDefaultSkinConfig" returnQName="createDefaultSkinConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createDefaultTagConfig" qname="operNS:createDefaultTagConfig" returnQName="createDefaultTagConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteAdvertisementVocabulary" qname="operNS:deleteAdvertisementVocabulary" returnQName="deleteAdvertisementVocabularyReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSkins" qname="operNS:deleteSkins" returnQName="deleteSkinsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSlotTagCategory" qname="operNS:deleteSlotTagCategory" returnQName="deleteSlotTagCategoryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSlotTagLayout" qname="operNS:deleteSlotTagLayout" returnQName="deleteSlotTagLayoutReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteSlots" qname="operNS:deleteSlots" returnQName="deleteSlotsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteTags" qname="operNS:deleteTags" returnQName="deleteTagsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAdVocBranches" qname="operNS:getAdVocBranches" returnQName="getAdVocBranchesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSkins" qname="operNS:getSkins" returnQName="getSkinsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSlotTagCategory" qname="operNS:getSlotTagCategory" returnQName="getSlotTagCategoryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="categoryid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSlotTagLayout" qname="operNS:getSlotTagLayout" returnQName="getSlotTagLayoutReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSlots" qname="operNS:getSlots" returnQName="getSlotsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getTags" qname="operNS:getTags" returnQName="getTagsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getVocabularies" qname="operNS:getVocabularies" returnQName="getVocabulariesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importContents" qname="operNS:importContents" returnQName="importContentsReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importFileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" name="publishToLive" qname="operNS:publishToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scopeGroupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://gson.google.com" name="publish" qname="operNS:publish" returnQName="publishReturn" returnType="rtns:JsonObject" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updatePrioritySlotTagCategory" qname="operNS:updatePrioritySlotTagCategory" returnQName="updatePrioritySlotTagCategoryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updatePrioritySlotTagLayout" qname="operNS:updatePrioritySlotTagLayout" returnQName="updatePrioritySlotTagLayoutReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateSkin" qname="operNS:updateSkin" returnQName="updateSkinReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateSlotTagCategory" qname="operNS:updateSlotTagCategory" returnQName="updateSlotTagCategoryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateSlotTagLayout" qname="operNS:updateSlotTagLayout" returnQName="updateSlotTagLayoutReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateSlot" qname="operNS:updateSlot" returnQName="updateSlotReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.advertisement.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateTag" qname="operNS:updateTag" returnQName="updateTagReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addAdvertisementVocabulary addSkin addSlot addSlotTagCategory addSlotTagLayout addTag createDefaultSkinConfig createDefaultTagConfig deleteAdvertisementVocabulary deleteSkins deleteSlotTagCategory deleteSlotTagLayout deleteSlots deleteTags getAdVocBranches getSkins getSlotTagCategory getSlotTagLayout getSlots getTags getVocabularies importContents publish publishToLive updatePrioritySlotTagCategory updatePrioritySlotTagLayout updateSkin updateSlot updateSlotTagCategory updateSlotTagLayout updateTag" />
+		<parameter name="className" value="com.protecmedia.iter.advertisement.service.http.AdvertisementMgrServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://gson.google.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="AdvertisementMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="AdvertisementMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Advertisement_AdvertisementMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.advertisement.iter.protecmedia.com" />
+	</service>
+</deployment>

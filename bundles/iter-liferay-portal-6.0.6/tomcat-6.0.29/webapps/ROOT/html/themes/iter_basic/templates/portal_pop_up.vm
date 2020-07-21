@@ -1,0 +1,31 @@
+#parse ($init)
+
+#if(!$themeDisplay.isWidget() && !$themeDisplay.isWidgetFragment())
+
+<!DOCTYPE html>
+
+<html dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title</title>
+
+	$theme.include($top_head_include)
+
+##css ($css_main_file)
+##js  ($js_main_file)
+</head>
+
+<body class="portal-popup $css_class">
+#elseif ($themeDisplay.isWidgetFragment())
+	$!iterVelocityTools.getRFVCode()
+	#checkAccess()
+#end
+	
+	$theme.include($content_include)
+	
+#if(!$themeDisplay.isWidget() && !$themeDisplay.isWidgetFragment())
+	
+	</body>
+</html>
+
+#end

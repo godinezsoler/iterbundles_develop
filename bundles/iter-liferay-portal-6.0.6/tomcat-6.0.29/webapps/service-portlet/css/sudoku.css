@@ -1,0 +1,162 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.sudoku-portlet .sdk .aui-field-content {
+ 
+ margin-top:10px !important;
+ margin-left:10px !important;
+ margin-bottom:10px !important;
+ 
+ }
+
+
+.sudoku-portlet a {
+	font-family: Arial;
+	font-size:1.3em;
+	color:#0000ff;
+}
+.sudoku-portlet a:hover {
+	font-family: Arial;
+	font-size:1.3em;
+	color:#ff0000;
+}
+
+.sudoku-portlet .portletsudoku {
+	width:100%;
+	height:auto;
+	}
+	
+.sudoku-portlet .sudoku-portlet body {
+	margin: 0%;
+	font-family: Arial;
+	font-size:1.3em;
+}
+
+.sudoku-portlet .formsudoku {
+	display: inline;
+	
+	}
+.sudoku-portlet .bodytable{
+	width:100%;
+	}
+	
+.sudoku-portlet .tablesudoku {
+	width:100%;
+	align: left;
+	bgcolor: #ffffff;
+	border: 0%;
+	cellpadding: 0%; 
+	cellspacing: 0%;
+	border: #888888 solid 3px;
+	}
+
+.sudoku-portlet .tablepause {
+	width:100%;
+	align: center;
+	display:none;;
+	}
+
+.sudoku-portlet .borderbottom1 {
+	border-bottom: #888888 solid 1px;
+	}
+.sudoku-portlet .borderbottom3 {
+	border-bottom: #888888 solid 3px;
+	}
+.sudoku-portlet .borderright1 {
+	border-right: #888888 solid 1px;
+	}
+.sudoku-portlet .borderright3 {
+	border-right: #888888 solid 3px;
+	}
+		
+.sudoku-portlet .texttablepause {
+	align:left;
+	}
+	
+.sudoku-portlet .white {
+	font-family: Arial;
+	font-size:1em;
+	color:#ffffff;
+	text-decoration:none;
+}
+
+
+.sudoku-portlet table, div {
+	font-family: Arial; 
+	font-size: 1em; 
+	cursor: default; 
+	color: #000000;
+	}
+	
+.sudoku-portlet .cDiv {
+	 padding: 0%;
+	 border-left: white solid 2px;
+	 border-right:white solid 2px;
+	 border-bottom:white solid 7px;
+	 border-top:white solid 7px;
+	 margin: 0%;
+	 }
+	 
+.sudoku-portlet .hDiv {
+	width: 11%;
+	height: 3%;
+	display: block;
+	font-size: 1.3em;
+	padding: 0%;
+	border: #ffffff solid 1px;
+	margin-botton: 0%;
+	margin-left:50%;
+	margin-right:42%;
+	margin-top:0%;
+	}
+	
+.sudoku-portlet .hDig {
+	display: inline;
+	font-size: 1.3em;
+	padding: 0%;
+	border: 0%;
+	margin: 0%;
+	}
+	
+.sudoku-portlet .pDiv {
+	width: 93%;
+	height: 100%;
+	display: block;
+	text-align:center;
+	vertical-align:middle;
+	font-size: 1.3em;
+	font-weight: bold;
+	padding :0%;
+	border: white solid 1px;
+	margin: 0%;
+	}
+	
+.sudoku-portlet .clock {
+	display: inline;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 1em;
+	padding: 5px;
+	background: #444444;
+	border: #ffffff inset 2px;
+	
+	}
+	
+.sudoku-portlet .counterBox {
+	border: white solid 1px; 
+	display : inline;
+	width: 100%;
+	height: 100%;
+	text-align:center;
+	font-weight: bold;
+	}
+
+.sudoku-portlet .title{
+	width:100%;
+	font-size:1.1em;
+	font-weight: bold;
+	}
+
+.sudoku-portlet .button {
+	text-align:left;
+	}

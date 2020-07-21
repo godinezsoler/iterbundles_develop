@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_ApacheMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="stopApacheQueueOperations" qname="operNS:stopApacheQueueOperations" soapAction=""> </operation>
+		<parameter name="allowedMethods" value="stopApacheQueueOperations" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.ApacheMgrServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ApacheMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ApacheMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_ApacheMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

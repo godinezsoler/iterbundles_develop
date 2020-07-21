@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_ExternalServicesService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="contentRequest" qname="operNS:contentRequest" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="serviceid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="environment" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteExternalService" qname="operNS:deleteExternalService" returnQName="deleteExternalServiceReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="disableExternalService" qname="operNS:disableExternalService" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getExternalServices" qname="operNS:getExternalServices" returnQName="getExternalServicesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getExternalServices" qname="operNS:getExternalServices" returnQName="getExternalServicesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="publishToLive" qname="operNS:publishToLive" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="serviceids" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="searchDependencies" qname="operNS:searchDependencies" returnQName="searchDependenciesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="serviceid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setExternalServices" qname="operNS:setExternalServices" returnQName="setExternalServicesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="contentRequest deleteExternalService disableExternalService getExternalServices importData publishToLive searchDependencies setExternalServices" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.ExternalServicesServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ExternalServicesServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ExternalServicesServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_ExternalServicesService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

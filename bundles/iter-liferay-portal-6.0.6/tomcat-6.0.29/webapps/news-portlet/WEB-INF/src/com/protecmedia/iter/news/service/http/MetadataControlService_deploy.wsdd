@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_MetadataControlService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getConfig" qname="operNS:getConfig" returnQName="getConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="importPublishedData" qname="operNS:importPublishedData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="fileName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="publish" qname="operNS:publish" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="setConfig" qname="operNS:setConfig" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFlex" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getConfig importData importPublishedData publish setConfig" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.MetadataControlServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="MetadataControlServiceSoap" />
+		<parameter name="wsdlServiceElement" value="MetadataControlServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_MetadataControlService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

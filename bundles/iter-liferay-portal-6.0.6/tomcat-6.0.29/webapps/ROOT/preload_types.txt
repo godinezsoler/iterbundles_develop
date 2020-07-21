@@ -1,0 +1,17 @@
+application/x-font-type1 font
+application/x-font-bdf font
+application/vnd.ms-fontobject font
+application/x-font-ghostscript font
+application/x-font-otf font
+application/x-font-pcf font
+application/x-font-type1 font
+application/x-font-type1 font
+application/x-font-type1 font
+application/font-tdpfr font
+application/x-font-linux-psf font
+application/x-font-snf font
+application/x-font-ttf font
+application/x-font-ttf font
+application/font-woff font
+application/font-woff2 font
+text/javascript script

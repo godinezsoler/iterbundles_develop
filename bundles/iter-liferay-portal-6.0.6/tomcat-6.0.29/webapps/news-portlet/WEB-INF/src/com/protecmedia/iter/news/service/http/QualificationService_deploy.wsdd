@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_QualificationService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.news.iter.protecmedia.com" xmlns:cmp-ns="http://model.news.iter.protecmedia.com" qname="ns:ArrayOf_tns2_QualificationSoap" type="java:com.protecmedia.iter.news.model.QualificationSoap[]" innerType="cmp-ns:QualificationSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.news.iter.protecmedia.com" qname="ns:QualificationSoap" type="java:com.protecmedia.iter.news.model.QualificationSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="addQualification" qname="operNS:addQualification" returnQName="addQualificationReturn" returnType="rtns:QualificationSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="getQualification" qname="operNS:getQualification" returnQName="getQualificationReturn" returnType="rtns:QualificationSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="getQualification" qname="operNS:getQualification" returnQName="getQualificationReturn" returnType="rtns:QualificationSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="urn:http.service.news.iter.protecmedia.com" xmlns:tns2="http://model.news.iter.protecmedia.com" name="getQualifications" qname="operNS:getQualifications" returnQName="getQualificationsReturn" returnType="rtns:ArrayOf_tns2_QualificationSoap" returnItemType="tns2:QualificationSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="removeQualification" qname="operNS:removeQualification" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" name="removeQualification" qname="operNS:removeQualification" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationName" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="updateQualification" qname="operNS:updateQualification" returnQName="updateQualificationReturn" returnType="rtns:QualificationSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="qualificationName" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addQualification getQualification getQualifications removeQualification updateQualification" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.QualificationServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.news.iter.protecmedia.com,urn:http.service.news.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="QualificationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="QualificationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_QualificationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

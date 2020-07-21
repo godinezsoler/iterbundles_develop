@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.protecmedia.iter.designer.model.PageTemplate">
+		<field name="id" type="long" />
+		<field name="pageTemplateId" type="String" />
+		<field name="groupId" type="long" />
+		<field name="layoutId" type="long" />
+		<field name="imageId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="type" type="String" />
+		<field name="defaultTemplate" type="boolean" />
+		<field name="defaultMobileTemplate" type="boolean" />
+	</model>
+</model-hints>

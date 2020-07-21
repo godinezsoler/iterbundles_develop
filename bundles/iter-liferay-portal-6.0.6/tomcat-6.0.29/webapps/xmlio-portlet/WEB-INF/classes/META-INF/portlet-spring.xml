@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelLocalService" class="com.protecmedia.iter.xmlio.service.impl.ChannelLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelService" class="com.protecmedia.iter.xmlio.service.impl.ChannelServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.ChannelPersistence" class="com.protecmedia.iter.xmlio.service.persistence.ChannelPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLocalService" class="com.protecmedia.iter.xmlio.service.impl.ChannelControlLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelControlLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelControlLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlService" class="com.protecmedia.iter.xmlio.service.impl.ChannelControlServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelControlServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelControlService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.ChannelControlPersistence" class="com.protecmedia.iter.xmlio.service.persistence.ChannelControlPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLogLocalService" class="com.protecmedia.iter.xmlio.service.impl.ChannelControlLogLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLogLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelControlLogLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelControlLogLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLogService" class="com.protecmedia.iter.xmlio.service.impl.ChannelControlLogServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ChannelControlLogServiceUtil" class="com.protecmedia.iter.xmlio.service.ChannelControlLogServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ChannelControlLogService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.ChannelControlLogPersistence" class="com.protecmedia.iter.xmlio.service.persistence.ChannelControlLogPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveLocalService" class="com.protecmedia.iter.xmlio.service.impl.LiveLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.LiveService" class="com.protecmedia.iter.xmlio.service.impl.LiveServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.LivePersistence" class="com.protecmedia.iter.xmlio.service.persistence.LivePersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.LivePoolLocalService" class="com.protecmedia.iter.xmlio.service.impl.LivePoolLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LivePoolLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.LivePoolLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LivePoolLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.LivePoolService" class="com.protecmedia.iter.xmlio.service.impl.LivePoolServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LivePoolServiceUtil" class="com.protecmedia.iter.xmlio.service.LivePoolServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LivePoolService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.LivePoolPersistence" class="com.protecmedia.iter.xmlio.service.persistence.LivePoolPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveConfigurationLocalService" class="com.protecmedia.iter.xmlio.service.impl.LiveConfigurationLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveConfigurationLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveConfigurationLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveConfigurationLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.LiveConfigurationService" class="com.protecmedia.iter.xmlio.service.impl.LiveConfigurationServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveConfigurationServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveConfigurationServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveConfigurationService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.LiveConfigurationPersistence" class="com.protecmedia.iter.xmlio.service.persistence.LiveConfigurationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveControlLocalService" class="com.protecmedia.iter.xmlio.service.impl.LiveControlLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveControlLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveControlLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveControlLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.LiveControlService" class="com.protecmedia.iter.xmlio.service.impl.LiveControlServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.LiveControlServiceUtil" class="com.protecmedia.iter.xmlio.service.LiveControlServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.LiveControlService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.persistence.LiveControlPersistence" class="com.protecmedia.iter.xmlio.service.persistence.LiveControlPersistenceChildImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.xmlio.service.ContextVarsPublishLocalService" class="com.protecmedia.iter.xmlio.service.impl.ContextVarsPublishLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ContextVarsPublishLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.ContextVarsPublishLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ContextVarsPublishLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ContextVarsPublishService" class="com.protecmedia.iter.xmlio.service.impl.ContextVarsPublishServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ContextVarsPublishServiceUtil" class="com.protecmedia.iter.xmlio.service.ContextVarsPublishServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ContextVarsPublishService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.xmlio.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.IterPortletInstanceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.JournalArticleImportLocalService" class="com.protecmedia.iter.xmlio.service.impl.JournalArticleImportLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.JournalArticleImportLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.JournalArticleImportLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.JournalArticleImportLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.JournalArticleImportService" class="com.protecmedia.iter.xmlio.service.impl.JournalArticleImportServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.JournalArticleImportServiceUtil" class="com.protecmedia.iter.xmlio.service.JournalArticleImportServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.JournalArticleImportService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ImportMgrLocalService" class="com.protecmedia.iter.xmlio.service.impl.ImportMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ImportMgrLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.ImportMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ImportMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.ImportMgrService" class="com.protecmedia.iter.xmlio.service.impl.ImportMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.ImportMgrServiceUtil" class="com.protecmedia.iter.xmlio.service.ImportMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.ImportMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationLocalService" class="com.protecmedia.iter.xmlio.service.impl.DaylyTopicsPublicationLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationService" class="com.protecmedia.iter.xmlio.service.impl.DaylyTopicsPublicationServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationServiceUtil" class="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.DaylyTopicsPublicationService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CatalogPublicationLocalService" class="com.protecmedia.iter.xmlio.service.impl.CatalogPublicationLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CatalogPublicationLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.CatalogPublicationLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CatalogPublicationLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CatalogPublicationService" class="com.protecmedia.iter.xmlio.service.impl.CatalogPublicationServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CatalogPublicationServiceUtil" class="com.protecmedia.iter.xmlio.service.CatalogPublicationServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CatalogPublicationService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationLocalService" class="com.protecmedia.iter.xmlio.service.impl.CategoriesPropertiesPublicationLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationService" class="com.protecmedia.iter.xmlio.service.impl.CategoriesPropertiesPublicationServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationServiceUtil" class="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CategoriesPropertiesPublicationService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.WebsiteIOLocalService" class="com.protecmedia.iter.xmlio.service.impl.WebsiteIOLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.WebsiteIOLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.WebsiteIOLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.WebsiteIOLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.WebsiteIOService" class="com.protecmedia.iter.xmlio.service.impl.WebsiteIOServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.WebsiteIOServiceUtil" class="com.protecmedia.iter.xmlio.service.WebsiteIOServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.WebsiteIOService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.IterAdminIOLocalService" class="com.protecmedia.iter.xmlio.service.impl.IterAdminIOLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.IterAdminIOLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.IterAdminIOLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.IterAdminIOLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.IterAdminIOService" class="com.protecmedia.iter.xmlio.service.impl.IterAdminIOServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.IterAdminIOServiceUtil" class="com.protecmedia.iter.xmlio.service.IterAdminIOServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.IterAdminIOService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticLocalService" class="com.protecmedia.iter.xmlio.service.impl.DataProblemsDiagnosticLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticService" class="com.protecmedia.iter.xmlio.service.impl.DataProblemsDiagnosticServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticServiceUtil" class="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.DataProblemsDiagnosticService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CommunityPublisherLocalService" class="com.protecmedia.iter.xmlio.service.impl.CommunityPublisherLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CommunityPublisherLocalServiceUtil" class="com.protecmedia.iter.xmlio.service.CommunityPublisherLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CommunityPublisherLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.xmlio.service.CommunityPublisherService" class="com.protecmedia.iter.xmlio.service.impl.CommunityPublisherServiceImpl" />
+	<bean id="com.protecmedia.iter.xmlio.service.CommunityPublisherServiceUtil" class="com.protecmedia.iter.xmlio.service.CommunityPublisherServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.xmlio.service.CommunityPublisherService" />
+	</bean>
+</beans>

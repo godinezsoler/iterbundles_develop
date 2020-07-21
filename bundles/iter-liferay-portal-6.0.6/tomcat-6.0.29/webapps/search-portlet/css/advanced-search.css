@@ -1,0 +1,32 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.advance-search-config .aui-column-content {
+	padding: 0 5px 0 0;
+}
+
+.advance-search-config .aui-field-label {
+    margin-bottom: 5px;
+}
+
+.advance-search-config .title input[type="text"] {
+	width: 90%;
+}
+
+.advance-search-config .input-number input[type="text"] {
+	text-align: right;
+    width: 30px;
+}
+
+.advance-search-config .aui-column-content {
+	padding: 0 5px 0 0;
+}
+
+.advance-search-config label {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.advance-search-config .aui-panel-bd {
+    padding: 10px;
+}

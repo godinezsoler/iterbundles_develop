@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_ContextVarsMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.base.iter.protecmedia.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="deleteCtxVarImg" qname="operNS:deleteCtxVarImg" soapAction="">
+			<parameter xmlns:tns="urn:http.service.base.iter.protecmedia.com" qname="fileEntryIds" type="tns:ArrayOf_xsd_long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCategoryVariables" qname="operNS:getCategoryVariables" returnQName="getCategoryVariablesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLayoutVariables" qname="operNS:getLayoutVariables" returnQName="getLayoutVariablesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setVarContext" qname="operNS:setVarContext" returnQName="setVarContextReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xml" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="uploadCtxVarImg" qname="operNS:uploadCtxVarImg" returnQName="uploadCtxVarImgReturn" returnType="rtns:long" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="bytes" type="tns:base64Binary"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteCtxVarImg getCategoryVariables getLayoutVariables setVarContext uploadCtxVarImg" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.ContextVarsMgrServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.base.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ContextVarsMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ContextVarsMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_ContextVarsMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

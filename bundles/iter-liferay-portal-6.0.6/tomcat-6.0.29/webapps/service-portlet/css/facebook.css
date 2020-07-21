@@ -1,0 +1,173 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.fcbk .aui-field-content {
+	
+	margin-top:10px !important;
+	margin-left:10px !important;
+	margin-bottom:10px !important;
+	
+	}
+	
+.fcbk-doc{
+	
+	width: auto;
+	background-color: #3B5998;
+	padding-top:10px;
+	padding-rigth:10px;
+	padding-left:10px;
+	padding-bottom:15px;
+	}
+	
+/****************
+******HEADER*****
+*****************/
+
+.fcbk-header{
+	color:#EDEFF4;
+	font-family:Georgia,Times,Serif;
+	font-size:17px;
+	font-weight:normal;
+	
+	}
+
+.fcbk-body-top{
+	
+	margin-top: 10px;
+	
+	}
+	
+/****************
+******BODY*****
+*****************/
+
+.fcbk-body{
+	
+	margin-right: 10px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	
+	}
+	
+.fcbk-body-scroll{
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height:269px;
+	
+	}
+	
+.fcbk-feed{
+	
+	color: black;
+	width: 100%;
+	
+	}
+	
+		
+.fcbk-avatar-left{
+	
+	float:left;
+	width: 60px; 
+	}
+	
+	
+.fcbk-img{
+	
+	
+	}
+	
+	
+.fcbk-full-name {
+    color: #999999;
+    font-size: 9px;
+    
+}
+
+
+.fcbk-feed-text-right{
+	/**display: inline-table;
+	*/
+	
+	font-family:Georgia,Times,Serif;
+	font-size:10px;
+	font-weight:normal;
+	
+	
+	}
+	
+.fcbk-feed-text-right-title{
+	
+	color: #505050;
+	
+	}
+	
+.fcbk-feed-text-right-description{
+	
+	
+	}	
+	
+		
+.fcbk-user{
+	
+	color: #EDEFF4;
+	
+	}
+
+
+.fcbk-timestamp{
+	
+	color: white;
+	
+	}
+
+
+
+
+	
+	
+/****************
+******FOOTER*****
+*****************/
+
+.fcbk-footer{
+	width:100%; 
+	
+	}
+	
+.img-fcbk{
+	float:left;
+    background: url("../img/icoFacebook.png"); 
+    width: 51px;
+	height: 48px;
+	
+	
+	}
+.img-icon-fcbk{
+
+	width:50px;
+	height:25px;
+	
+}
+
+.txt-lnk-fcbk{
+	
+    font-family: Georgia,Times,Serif;
+    font-size: 12px;
+    font-weight: normal;
+    padding-top: 15px;
+	
+	}
+	
+	
+.fcbk-join-conv{
+	
+	color: white;
+	
+	}
+	
+.imgiconFcbk{
+	
+
+           
+}

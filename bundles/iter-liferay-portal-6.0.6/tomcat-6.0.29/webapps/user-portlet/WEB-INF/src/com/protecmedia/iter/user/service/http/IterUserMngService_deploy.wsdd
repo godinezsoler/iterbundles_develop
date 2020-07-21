@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_User_IterUserMngService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteUsers" qname="operNS:deleteUsers" returnQName="deleteUsersReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEncodedPass" qname="operNS:GetEncodedPass" returnQName="GetEncodedPassReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="test" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGridValues" qname="operNS:getGridValues" returnQName="getGridValuesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlGroupIdAndUsersIds" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPasswordSuperUser" qname="operNS:GetPasswordSuperUser" returnQName="GetPasswordSuperUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="user" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUserInfo" qname="operNS:getUserInfo" returnQName="getUserInfoReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUserInfo" qname="operNS:getUserInfo" returnQName="getUserInfoReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUsersId" qname="operNS:getUsersId" returnQName="getUsersIdReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlQueryFiltersAndOrders" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setPasswordSuperUser" qname="operNS:SetPasswordSuperUser" returnQName="SetPasswordSuperUserReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="superuser" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="user" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="test" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="changePss" type="tns:boolean"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="subscribeUsersToNewsletters" qname="operNS:subscribeUsersToNewsletters" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="scheduleIds" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlQueryFilters" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateUserInfo" qname="operNS:updateUserInfo" returnQName="updateUserInfoReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteUsers getEncodedPass getGridValues getPasswordSuperUser getUserInfo getUsersId setPasswordSuperUser subscribeUsersToNewsletters updateUserInfo" />
+		<parameter name="className" value="com.protecmedia.iter.user.service.http.IterUserMngServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterUserMngServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterUserMngServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_User_IterUserMngService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.user.iter.protecmedia.com" />
+	</service>
+</deployment>

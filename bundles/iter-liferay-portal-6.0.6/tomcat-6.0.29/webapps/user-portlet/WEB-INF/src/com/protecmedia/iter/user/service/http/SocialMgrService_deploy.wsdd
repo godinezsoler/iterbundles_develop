@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_User_SocialMgrService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteLoginWithFileEntry" qname="operNS:deleteLoginWithFileEntry" returnQName="deleteLoginWithFileEntryReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="exportData" qname="operNS:exportData" returnQName="exportDataReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="params" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getProfileAndScopes" qname="operNS:getProfileAndScopes" returnQName="getProfileAndScopesReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getProfileSocialFieldsConnections" qname="operNS:getProfileSocialFieldsConnections" returnQName="getProfileSocialFieldsConnectionsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSocialButtonsHTML" qname="operNS:getSocialButtonsHTML" returnQName="getSocialButtonsHTMLReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupid" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSocialConfig" qname="operNS:getSocialConfig" returnQName="getSocialConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="importData" qname="operNS:importData" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="data" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="initStatisticsTasks" qname="operNS:initStatisticsTasks" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setSocialConfig" qname="operNS:setSocialConfig" returnQName="setSocialConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="stopSocialStatisticsTask" qname="operNS:stopSocialStatisticsTask" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idConfig" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="serverAffinity" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateProfileSocialField" qname="operNS:updateProfileSocialField" returnQName="updateProfileSocialFieldReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateScopeSocialConfig" qname="operNS:updateScopeSocialConfig" returnQName="updateScopeSocialConfigReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="updateSocialStatisticsTask" qname="operNS:updateSocialStatisticsTask" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idConfig" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="previousServerAffinity" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deleteLoginWithFileEntry exportData getProfileAndScopes getProfileSocialFieldsConnections getSocialButtonsHTML getSocialConfig importData initStatisticsTasks setSocialConfig stopSocialStatisticsTask updateProfileSocialField updateScopeSocialConfig updateSocialStatisticsTask" />
+		<parameter name="className" value="com.protecmedia.iter.user.service.http.SocialMgrServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SocialMgrServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SocialMgrServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_User_SocialMgrService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.user.iter.protecmedia.com" />
+	</service>
+</deployment>

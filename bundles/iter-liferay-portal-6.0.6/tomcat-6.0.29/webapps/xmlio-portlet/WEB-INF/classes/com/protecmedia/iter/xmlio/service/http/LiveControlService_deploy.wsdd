@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Xmlio_LiveControlService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllRecordsFlex" qname="operNS:getAllRecordsFlex" returnQName="getAllRecordsFlexReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="xmlFilters" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="startIn" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="limit" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="sort" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="interruptPublication" qname="operNS:interruptPublication" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.xmlio.iter.protecmedia.com" name="unlockLiveControl" qname="operNS:unlockLiveControl" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="processId" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getAllRecordsFlex interruptPublication unlockLiveControl" />
+		<parameter name="className" value="com.protecmedia.iter.xmlio.service.http.LiveControlServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="LiveControlServiceSoap" />
+		<parameter name="wsdlServiceElement" value="LiveControlServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Xmlio_LiveControlService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.xmlio.iter.protecmedia.com" />
+	</service>
+</deployment>

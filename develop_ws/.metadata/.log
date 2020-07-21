@@ -1,0 +1,1344 @@
+!SESSION 2020-07-10 15:00:08.729 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-10 15:00:18.599
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-10 15:00:18.599
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2020-07-10 15:01:07.183 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-10 15:01:17.620
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-10 15:01:17.620
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2020-07-10 15:08:20.503 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-10 15:08:26.742
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-10 15:08:26.742
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:18.466
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for m. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:20.375
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for m. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:20.520
+!MESSAGE There should only ever be one match for a constructor search but found 4 when looking for e. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:21.218
+!MESSAGE There should only ever be one match for a constructor search but found 4 when looking for e. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.253
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.319
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.321
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.326
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.327
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.369
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.753
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.754
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.758
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.759
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-10 15:19:23.763
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-10 15:19:23.772
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:194)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2020-07-13 09:30:10.920 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-13 09:30:21.856
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-13 09:30:21.856
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jst.j2ee 4 2 2020-07-13 09:30:24.318
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jst.j2ee".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl$EAdapterList.data(BasicNotifierImpl.java:178)
+	at org.eclipse.wst.common.internal.emf.utilities.ExtendedEcoreUtil.getAdapter(ExtendedEcoreUtil.java:254)
+	at org.eclipse.wst.common.componentcore.internal.StructureEdit.getEclipseResource(StructureEdit.java:285)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findMatchingVirtualPathsSet(ResourceTreeNode.java:195)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResourcesSet(ResourceTreeNode.java:178)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResources(ResourceTreeNode.java:143)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.getProjectRelativePaths(VirtualResource.java:132)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingFiles(VirtualFile.java:104)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingResources(VirtualFile.java:93)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.exists(VirtualResource.java:88)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getNonBinaryComponentManifest(ManifestUtilities.java:124)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifest(ManifestUtilities.java:81)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifestClasspath(ManifestUtilities.java:147)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getManifestClasspath(J2EEModuleVirtualComponent.java:248)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.calculateManifestReferences(J2EEModuleVirtualComponent.java:368)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.cacheManifestReferences(J2EEModuleVirtualComponent.java:360)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getReferences(J2EEModuleVirtualComponent.java:151)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.update(J2EEComponentClasspathContainer.java:286)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.install(J2EEComponentClasspathContainer.java:487)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.install(J2EEComponentClasspathContainer.java:510)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathInitializer.initialize(J2EEComponentClasspathInitializer.java:48)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:2841)
+	at org.eclipse.jdt.internal.core.JavaModelManager$11.run(JavaModelManager.java:2747)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1871)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:2811)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainerUtils.getInstalledContainer(J2EEComponentClasspathContainerUtils.java:35)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainerUtils.getInstalledEARLibrariesContainer(J2EEComponentClasspathContainerUtils.java:44)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.processModules(J2EEComponentClasspathUpdater.java:306)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.access$4(J2EEComponentClasspathUpdater.java:293)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob$1.run(J2EEComponentClasspathUpdater.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.run(J2EEComponentClasspathUpdater.java:319)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.j2ee 4 0 2020-07-13 09:30:24.322
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl$EAdapterList.data(BasicNotifierImpl.java:178)
+	at org.eclipse.wst.common.internal.emf.utilities.ExtendedEcoreUtil.getAdapter(ExtendedEcoreUtil.java:254)
+	at org.eclipse.wst.common.componentcore.internal.StructureEdit.getEclipseResource(StructureEdit.java:285)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findMatchingVirtualPathsSet(ResourceTreeNode.java:195)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResourcesSet(ResourceTreeNode.java:178)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResources(ResourceTreeNode.java:143)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.getProjectRelativePaths(VirtualResource.java:132)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingFiles(VirtualFile.java:104)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingResources(VirtualFile.java:93)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.exists(VirtualResource.java:88)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getNonBinaryComponentManifest(ManifestUtilities.java:124)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifest(ManifestUtilities.java:81)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifestClasspath(ManifestUtilities.java:147)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getManifestClasspath(J2EEModuleVirtualComponent.java:248)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.calculateManifestReferences(J2EEModuleVirtualComponent.java:368)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.cacheManifestReferences(J2EEModuleVirtualComponent.java:360)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getReferences(J2EEModuleVirtualComponent.java:151)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.update(J2EEComponentClasspathContainer.java:286)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.install(J2EEComponentClasspathContainer.java:487)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainer.install(J2EEComponentClasspathContainer.java:510)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathInitializer.initialize(J2EEComponentClasspathInitializer.java:48)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeContainer(JavaModelManager.java:2841)
+	at org.eclipse.jdt.internal.core.JavaModelManager$11.run(JavaModelManager.java:2747)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.internal.core.JavaModelManager.initializeAllContainers(JavaModelManager.java:2787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getClasspathContainer(JavaModelManager.java:1871)
+	at org.eclipse.jdt.core.JavaCore.getClasspathContainer(JavaCore.java:2811)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainerUtils.getInstalledContainer(J2EEComponentClasspathContainerUtils.java:35)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathContainerUtils.getInstalledEARLibrariesContainer(J2EEComponentClasspathContainerUtils.java:44)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.processModules(J2EEComponentClasspathUpdater.java:306)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.access$4(J2EEComponentClasspathUpdater.java:293)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob$1.run(J2EEComponentClasspathUpdater.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.run(J2EEComponentClasspathUpdater.java:319)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.j2ee 4 2 2020-07-13 09:30:24.592
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jst.j2ee".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl$EAdapterList.data(BasicNotifierImpl.java:178)
+	at org.eclipse.wst.common.internal.emf.utilities.ExtendedEcoreUtil.getAdapter(ExtendedEcoreUtil.java:254)
+	at org.eclipse.wst.common.componentcore.internal.StructureEdit.getEclipseResource(StructureEdit.java:285)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findMatchingVirtualPathsSet(ResourceTreeNode.java:195)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResourcesSet(ResourceTreeNode.java:178)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResources(ResourceTreeNode.java:143)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.getProjectRelativePaths(VirtualResource.java:132)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingFiles(VirtualFile.java:104)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingResources(VirtualFile.java:93)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.exists(VirtualResource.java:88)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getNonBinaryComponentManifest(ManifestUtilities.java:124)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifest(ManifestUtilities.java:81)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifestClasspath(ManifestUtilities.java:147)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getManifestClasspath(J2EEModuleVirtualComponent.java:248)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.calculateManifestReferences(J2EEModuleVirtualComponent.java:368)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.cacheManifestReferences(J2EEModuleVirtualComponent.java:360)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getReferences(J2EEModuleVirtualComponent.java:176)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.computeReferences(WebAppLibrariesContainer.java:165)
+	at org.eclipse.jst.common.jdt.internal.classpath.FlexibleProjectContainer.computeClasspathEntries(FlexibleProjectContainer.java:200)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.computeClasspathEntries(WebAppLibrariesContainer.java:195)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.isOutOfDate(WebAppLibrariesContainer.java:121)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.refresh(WebAppLibrariesContainer.java:138)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.processModules(J2EEComponentClasspathUpdater.java:301)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.access$4(J2EEComponentClasspathUpdater.java:293)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob$1.run(J2EEComponentClasspathUpdater.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.run(J2EEComponentClasspathUpdater.java:319)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.j2ee 4 0 2020-07-13 09:30:24.594
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl$EAdapterList.data(BasicNotifierImpl.java:178)
+	at org.eclipse.wst.common.internal.emf.utilities.ExtendedEcoreUtil.getAdapter(ExtendedEcoreUtil.java:254)
+	at org.eclipse.wst.common.componentcore.internal.StructureEdit.getEclipseResource(StructureEdit.java:285)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findMatchingVirtualPathsSet(ResourceTreeNode.java:195)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResourcesSet(ResourceTreeNode.java:178)
+	at org.eclipse.wst.common.componentcore.internal.impl.ResourceTreeNode.findModuleResources(ResourceTreeNode.java:143)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.getProjectRelativePaths(VirtualResource.java:132)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingFiles(VirtualFile.java:104)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualFile.getUnderlyingResources(VirtualFile.java:93)
+	at org.eclipse.wst.common.componentcore.internal.resources.VirtualResource.exists(VirtualResource.java:88)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getNonBinaryComponentManifest(ManifestUtilities.java:124)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifest(ManifestUtilities.java:81)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.getManifestClasspath(ManifestUtilities.java:147)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getManifestClasspath(J2EEModuleVirtualComponent.java:248)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.calculateManifestReferences(J2EEModuleVirtualComponent.java:368)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.cacheManifestReferences(J2EEModuleVirtualComponent.java:360)
+	at org.eclipse.jst.j2ee.componentcore.J2EEModuleVirtualComponent.getReferences(J2EEModuleVirtualComponent.java:176)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.computeReferences(WebAppLibrariesContainer.java:165)
+	at org.eclipse.jst.common.jdt.internal.classpath.FlexibleProjectContainer.computeClasspathEntries(FlexibleProjectContainer.java:200)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.computeClasspathEntries(WebAppLibrariesContainer.java:195)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.isOutOfDate(WebAppLibrariesContainer.java:121)
+	at org.eclipse.jst.j2ee.internal.web.classpath.WebAppLibrariesContainer.refresh(WebAppLibrariesContainer.java:138)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.processModules(J2EEComponentClasspathUpdater.java:301)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.access$4(J2EEComponentClasspathUpdater.java:293)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob$1.run(J2EEComponentClasspathUpdater.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jst.j2ee.internal.common.classpath.J2EEComponentClasspathUpdater$ModuleUpdateJob.run(J2EEComponentClasspathUpdater.java:319)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:36.963
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.096
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.098
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.106
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.108
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.158
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.495
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.496
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.502
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.504
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:30:37.511
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 09:30:37.523
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.479
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.589
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.591
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.599
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.600
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:38.651
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:39.095
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:39.097
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:39.103
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:39.105
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 09:35:39.111
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 09:35:39.125
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2020-07-13 09:35:40.745
+!MESSAGE Taglib Index ZipException: C:/Desarrollos/IterWebCMS/develop/bundles/iter-liferay-portal-6.0.6/tomcat-6.0.29/lib/ext/base-portlet-service-6.0.6-3.5.0.1.jar error in opening zip file
+
+!ENTRY org.eclipse.core.resources 4 75 2020-07-13 09:35:42.402
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.jsdt.core 4 75 2020-07-13 09:35:42.403
+!MESSAGE Errors running builder 'JavaScript Validator' on project 'iter-hook'.
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.700
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.794
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.795
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.801
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.803
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:43.843
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:44.111
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:44.112
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:44.118
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:44.119
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:15:44.124
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 10:15:44.133
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.546
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.628
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.630
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.635
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.637
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:20.678
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:21.008
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:21.009
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:21.014
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:21.015
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:43:21.019
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 10:43:21.029
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2020-07-13 10:49:26.651 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-13 10:49:53.893
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-13 10:49:53.893
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.638
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.771
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.772
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.780
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.781
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:49:59.828
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:00.125
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:00.126
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:00.132
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:00.133
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:00.139
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 10:50:00.153
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.491
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.641
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.643
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.652
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.653
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:03.699
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:04.020
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:04.021
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:04.028
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:04.030
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 10:50:04.036
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 10:50:04.048
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2020-07-13 10:50:04.123
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.jsdt.core 4 75 2020-07-13 10:50:04.123
+!MESSAGE Errors running builder 'JavaScript Validator' on project 'iter-hook'.
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-13 10:51:27.305
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/portlet/DisqusCommentsPortlet.class'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/portlet/vssver2.scc'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/servlet/GetterCommentsCount.class'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/servlet/vssver2.scc'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/util/DisqusFriendlyURLMapper.class'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/com/protecmedia/disqus/util/vssver2.scc'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/content/Language.properties'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/content/vssver2.scc'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/disqus-portlet-friendly-url-routes.xml'.
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2020-07-13 10:51:27.305
+!MESSAGE Resource is out of sync with the file system: '/Disqus-portlet/docroot/WEB-INF/classes/vssver2.scc'.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2020-07-13 11:57:24.448
+!MESSAGE Server Liferay v6.0 CE Server (Tomcat 6) at localhost failed to start.
+!SESSION 2020-07-13 14:08:56.686 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-13 14:09:28.106
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-13 14:09:28.106
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:39.849
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:39.987
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:39.989
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:39.996
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:39.998
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.054
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.382
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.383
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.390
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.392
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:09:40.398
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 14:09:40.412
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2020-07-13 14:39:27.160 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-13 14:39:52.408
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-13 14:39:52.408
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.320
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.452
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.453
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.460
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.462
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.510
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.815
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.816
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.822
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.823
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 14:39:59.829
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 14:39:59.845
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2020-07-13 15:21:16.222 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\Desarrollos\IterWebCMS\develop\develop_ws -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-13 15:21:26.633
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-13 15:21:26.633
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.015
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.155
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.156
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.164
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.165
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.220
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.621
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.622
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.627
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.628
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:32.635
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 15:21:32.650
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.310
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for F. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.425
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.427
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.435
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.437
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.483
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.798
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.799
+!MESSAGE There should only ever be one match for a constructor search but found 2 when looking for C. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.805
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.806
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.wst.jsdt.core 2 2 2020-07-13 15:21:36.811
+!MESSAGE There should only ever be one match for a constructor search but found 3 when looking for r. Using the first match.
+
+!ENTRY org.eclipse.core.resources 4 2 2020-07-13 15:21:36.823
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2020-07-13 15:21:37.091
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.jsdt.core 4 75 2020-07-13 15:21:37.091
+!MESSAGE Errors running builder 'JavaScript Validator' on project 'iter-hook'.
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 16
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CaseStatement.resolveCase(CaseStatement.java:82)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.SwitchStatement.resolve(SwitchStatement.java:156)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:350)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolveStatements(AbstractMethodDeclaration.java:356)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MethodDeclaration.resolveStatements(MethodDeclaration.java:137)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:304)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.AbstractMethodDeclaration.resolve(AbstractMethodDeclaration.java:375)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.FunctionExpression.resolveType(FunctionExpression.java:58)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.MessageSend.resolveType(MessageSend.java:279)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.UnaryExpression.resolveType(UnaryExpression.java:66)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.Expression.resolve(Expression.java:477)
+	at org.eclipse.wst.jsdt.internal.compiler.ast.CompilationUnitDeclaration.resolve(CompilationUnitDeclaration.java:394)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.process(Compiler.java:604)
+	at org.eclipse.wst.jsdt.internal.compiler.Compiler.compile(Compiler.java:356)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:288)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.compile(BatchImageBuilder.java:86)
+	at org.eclipse.wst.jsdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:227)
+	at org.eclipse.wst.jsdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:58)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:291)
+	at org.eclipse.wst.jsdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:199)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

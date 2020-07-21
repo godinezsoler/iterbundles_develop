@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_ThemeWebResourcesService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="deliverTheme" qname="operNS:deliverTheme" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="themeSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getWebResourceByPlidAndPlace" qname="operNS:getWebResourceByPlidAndPlace" returnQName="getWebResourceByPlidAndPlaceReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="place" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentType" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="preDeliverTheme" qname="operNS:preDeliverTheme" returnQName="preDeliverThemeReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="themeSpec" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="unlockProcess" qname="operNS:unlockProcess" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="deliverTheme getWebResourceByPlidAndPlace preDeliverTheme unlockProcess" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.ThemeWebResourcesServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ThemeWebResourcesServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ThemeWebResourcesServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_ThemeWebResourcesService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

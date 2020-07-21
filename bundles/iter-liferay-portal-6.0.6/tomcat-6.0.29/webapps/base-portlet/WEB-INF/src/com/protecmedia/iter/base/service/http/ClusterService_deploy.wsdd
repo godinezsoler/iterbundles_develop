@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_ClusterService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="importContents" qname="operNS:importContents" returnQName="importContentsReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="importFileName" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="importContents" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.ClusterServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ClusterServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ClusterServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_ClusterService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

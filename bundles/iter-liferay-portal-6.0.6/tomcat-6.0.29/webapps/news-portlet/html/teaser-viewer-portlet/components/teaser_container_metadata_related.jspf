@@ -1,0 +1,76 @@
+<%
+	List<String[]> relatedMetadataArticles = TeaserContentUtil.getMetadatasLinks(companyId, scopeGroupId, teaserContentId, 
+			 structuresRelated, 0, maxItemsMetadata, date, 
+			 showNonActiveContents, orderBy, orderByType);
+	
+	if(relatedMetadataArticles != null && relatedMetadataArticles.size() > 0)
+	{
+		/* int pageIdx = 1; */
+		
+		for (int j = 0; j < relatedMetadataArticles.size(); j++)
+		{
+		
+			String[] articleData = relatedMetadataArticles.get(j);
+			String html = null;
+			
+			if(articleData != null)
+			{
+				try
+				{
+				
+					JournalArticle relatedArticle = JournalArticleLocalServiceUtil.getArticle(globalGroupId, articleData[0]);
+					
+					String relatedLinkName = relatedArticle.getTitle();
+					
+					String relatedUrlTitle = relatedArticle.getUrlTitle();
+					
+					faTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdRelatedArticle, templateIdRelatedGallery, 
+					templateIdRelatedPoll, templateIdRelatedMultimedia);
+					
+					raTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdRelatedArticleRestricted, 
+					templateIdRelatedGalleryRestricted, templateIdRelatedPollRestricted,
+					templateIdRelatedMultimediaRestricted);
+					
+					PageContent pc = PageContentLocalServiceUtil.getDefaultPageContentByContentId(scopeGroupId, relatedArticle.getArticleId());
+					String[] currentlayoutIds = new String[1];
+					long currentSelectedModelId = -1;
+					if(pc != null)
+					{
+						currentlayoutIds[0] = pc.getLayoutId();
+						currentSelectedModelId = pc.getArticleModelId();
+					}
+					else
+					{
+						currentlayoutIds[0] = layout.getUuid();		
+					}
+					
+					viewMode = PageContentLocalServiceUtil.getArticleContextInfo(scopeGroupId, relatedArticle.getArticleId(), null);
+					
+					templateMode = TeaserContentUtil.getTemplateMode(relatedArticle, modeArticleRelated, modeGalleryRelated, 
+					modePollRelated, modeMultimediaRelated);
+					
+					html = PageContentLocalServiceUtil.getArticleContent(relatedArticle, faTemplateId, raTemplateId, viewMode, 
+					themeDisplay, xmlRequest, templateMode, 
+					request, pageIdx, relatedMetadataArticles.size());
+					
+					if(Validator.isNotNull(html))
+					{
+						String currentCssClass 			= TeaserContentUtil.getCSSClass(pageIdx, relatedMetadataArticles.size(), relatedArticle, request);
+						String elementClass    			= IterKeys.METADATA_LINK_CLASS;
+						String linkType    	   			= IterKeys.METADATA_LINK_TYPE_CLASS;
+						String signedRelatedArticleId 	= IterURLUtil.getSignedArticleId( articleData[0] );
+%>
+						<%@ include file="teaser_container_related_row.jspf" %>
+<%
+						pageIdx++;
+					}
+				
+				}
+				catch (Exception e)
+				{
+					_log.error(e);
+				}
+			}
+		}
+	}
+%>

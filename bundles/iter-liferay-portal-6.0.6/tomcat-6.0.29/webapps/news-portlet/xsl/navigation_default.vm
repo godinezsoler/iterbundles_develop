@@ -1,0 +1,149 @@
+## Macro para menu horizontal/vertical simple y mega-menu horizontal/vertical
+
+#macro(drawMenu $menuItems $actualLevel)
+	#set ($actualLevel = $actualLevel +1)								
+
+	#foreach ($menu_child in $menuItems)	
+	
+		## Si el elemento no esta oculto o si esta oculto y es el elegido
+		#if( !$menu_child.isHidden() || ($menu_child.isHidden() && $menu_child == $menuItemSelected) )
+	
+			#set ($sectionName = $menu_child.getName())
+			
+			#if ( $actualLevel == 1 )
+				#set ($clastabnav = "tabnav")
+			#else
+				#set ($clastabnav = "")
+			#end	
+			
+			#set($selected = "")
+			#if($menu_child.isSelected() || $menu_child.isChildSelected())
+				#set($selected = "selected")
+			#end
+			
+			<li $liItemProp class="lst-item $clastabnav $selected sect-$menu_child.getLayoutId() sect-$menu_child.getMD5friendlyURL()">
+					
+			#set ($hasChildren = $menu_child.hasChildren($allMenuItems))
+			#set ($hasMegaMenu = $menu_child.hasDynamicMenu())
+
+			#if ( ($levels == -1 || $actualLevel < $levels) && ($hasChildren || $hasMegaMenu) )
+				<div class="tab-grp">	
+			#end	
+
+			#if ( $actualLevel == 1 )
+				#set ($clastabitem = "tab-item")
+			#else
+				#set ($clastabitem = "")
+			#end	
+				<a $aItemProp href="$menu_child.getURL()" $menu_child.getRelAttribute() class="$clastabitem lnk" $menu_child.getTarget() title="$sectionName">
+					<span class="iconBefore"></span>
+					#if ( $hasChildren )
+						<strong class="sectionName">#*
+					*##else#*
+						*#<span class="sectionName">#*
+					*##end#*	
+					
+	        		*#$sectionName#*
+	        		
+					*##if ( $hasChildren )#*
+	        			*#</strong>#*								
+					*##else#*
+						*#</span>#*
+					*##end	
+					<span class="iconAfter"></span>
+				</a>
+				
+				## Mega menu
+				#if ($withMegaMenu && $hasMegaMenu && ($levels == -1 || ($actualLevel < $levels) ) )
+					#set($thereIsMegaMenu = true)
+					
+					<span class="hasChildsIcon"></span>
+					<div class="child-nav cf">			
+						$menu_child.getDynamicMenu()
+					</div>
+				
+				## Menu normal
+				#elseif ( ($levels == -1 || ($actualLevel < $levels) ) && $hasChildren )
+					<span class="hasChildsIcon"></span>
+					<div class="child-nav cf">
+						#set ($nextLevel = $actualLevel + 1)	
+						<ul class="lst-std lst level-$nextLevel">
+							#if ( $actualLevel < 3 )
+								<div class="lst-items">
+							#end
+								#set($thereIsAChild = true)
+								#drawMenu($menu_child.getChildren($allMenuItems) $actualLevel)
+							#if ( $actualLevel < 3 )
+								</div>
+							#end
+						</ul>
+					</div>	
+				#end	
+				
+			## Volvemos a setearlo porque estos valores se cambian al entrar recursivamente en los hijos 
+			#set ($hasChildren = $menu_child.hasChildren($allMenuItems))
+			#set ($hasMegaMenu = $menu_child.hasDynamicMenu())
+			#if ( ($levels == -1 || $actualLevel < $levels) && ($hasChildren || $hasMegaMenu) )
+				</div>
+			#end
+			
+			</li>	
+		#end		
+	#end		
+		
+	#set ($actualLevel = $actualLevel - 1)	
+#end
+
+## Variables globales para quedarnos con si hay al menos un hijo y si hay al menos un megamenu
+#set($thereIsMegaMenu = false)
+#set($thereIsAChild   = false)
+
+
+## CAMBIA EL MENU DE HORIZONTAL A VERTICAL
+#set($vertical = "")
+#if ($orientation == "vertical")
+	#set($vertical = "vertical")
+#end
+
+## NO DESPLIEGA EL MENU CUANDO COLOCA LA CLASE "folded" 
+#set($classDesplegado = "")
+#if($desplegado == true)
+	#set($classDesplegado = "_unfolded")
+#end
+
+## ITER-800 Añadir a los datos estructurado del schema.org el SiteNavigationElemen (Marca de los elementos del menu)
+#set ($ulItemType = "")
+#set ($liItemProp = "")
+#set ($aItemProp  = "")
+#if($mainSiteNavigation == true && $microdata4GoogleDisabled == false)
+	#set ($ulItemType = "itemtype='https://schema.org/SiteNavigationElement' itemscope")
+	#set ($liItemProp = "itemprop='name'")
+	#set ($aItemProp  = "itemprop='url'")
+#end
+
+
+## MEGA MENU O SIMPLE
+#if($withMegaMenu)
+	<div id="menu_$uniqueDivId" class="menu_secc$classDesplegado mega_menu simple $vertical">
+#else
+	<div id="menu_$uniqueDivId" class="menu_secc$classDesplegado $vertical">
+#end
+	
+		<div class="nav-dropdown nav noSubNav">
+			<ul $ulItemType class="parent-nav lst cf">
+				#set ($actualLevel = 0)
+				#drawMenu($menuItems $actualLevel)
+			</ul>
+		</div>
+	</div>
+	
+## Cargamos el script cuando se haya comprobado que hay un megamenu o hijo que mostrar (cuando sepamos que hay animación que realizar)
+#if( ($thereIsMegaMenu && !$desplegado) || ($thereIsAChild && !$desplegado) )	
+	<script type="text/javascript">	
+		#if ( $HtmlOptimizer_isEnabled )
+			prepareMenuJs("$uniqueDivId");
+		#else
+			prepareMenuJs("portlet_$uniqueDivId");
+		#end	
+	</script>
+#end

@@ -1,0 +1,57 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
+
+#set ($numVariants = $articleToolbox.getNumVariants())
+
+#if( $numVariants > 0 )
+	<div id="experiment-render-container">
+		
+		#foreach($unused in [1..$numVariants])
+			#set ($variant = $velocityCount + 64)
+			#set ($variant = $stringUtil.asciiToChar($variant))
+
+			#if ( $velocityCount > 1)
+				#set ($variantImage = "TeaserImage_$variant")
+				#set ($variantHeadline = "TeaserHeadline_${variant}")
+				#set ($variantText = "TeaserText_${variant}")
+			#else
+				#set ($variantImage = "TeaserImage")
+				#set ($variantHeadline = "TeaserHeadline")
+				#set ($variantText = "TeaserText")
+			#end
+			
+			<div class="experiment-variant-header">$variant</div>
+			<div class="experiment-variant-image">
+				<img width="100%" height="auto" src='$articleToolbox.getImageURL("$variantImage", "0", null)' alt="Experiment image">
+			</div>
+			<div class="experiment-variant-text">
+				<div class="experiment-variant-text-wrapper">
+					<div class="experiment-variant-text-title">
+						$articleToolbox.getTag(null, "$variantHeadline").data
+					</div>
+					<div class="experiment-variant-text-body">
+						$articleToolbox.getTag(null, "$variantText").data
+					</div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">CTR</div>
+				<div class="experiment-variant-metric-body">
+					<div class="ctr experiment-variant-metric-value"></div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">Impressions</div>
+				<div class="experiment-variant-metric-body">
+					<div class="prints experiment-variant-metric-value"></div>
+				</div>
+			</div>
+			<div class="variant-$variant experiment-variant-metric">
+				<div class="experiment-variant-metric-header">Views</div>
+				<div class="experiment-variant-metric-body">
+					<div class="views experiment-variant-metric-value"></div>
+				</div>
+			</div>
+		#end
+
+	</div>
+#end

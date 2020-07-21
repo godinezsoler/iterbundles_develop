@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet>
+		<portlet-name>advanced-search-portlet</portlet-name>
+		<display-name>Basic Search</display-name>
+		<portlet-class>com.protecmedia.iter.search.portlet.AdvancedSearchPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/advanced-search-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Basic Search</title>
+			<short-title>Basic Search</short-title>
+			<keywords>Advanced Search</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>search-filters-portlet</portlet-name>
+		<display-name>Advanced Search</display-name>
+		<portlet-class>com.protecmedia.iter.search.portlet.SearchFiltersPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/search-filters-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Advanced Search</title>
+			<short-title>Advanced Search</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>keywords</supported-public-render-parameter>
+		<supported-public-render-parameter>order</supported-public-render-parameter>
+		<supported-public-render-parameter>startDate</supported-public-render-parameter>
+		<supported-public-render-parameter>endDate</supported-public-render-parameter>
+		<supported-public-render-parameter>checkArticle</supported-public-render-parameter>
+		<supported-public-render-parameter>checkPoll</supported-public-render-parameter>
+		<supported-public-render-parameter>filterquery</supported-public-render-parameter>
+		<supported-public-render-parameter>wildcard</supported-public-render-parameter>
+		<supported-public-render-parameter>categoryIds</supported-public-render-parameter>
+		<supported-public-render-parameter>layoutsPlid</supported-public-render-parameter>
+		<supported-public-render-parameter>delta</supported-public-render-parameter>
+		<supported-public-render-parameter>cur</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>search-results-portlet</portlet-name>
+		<display-name>Search Results</display-name>
+		<portlet-class>com.protecmedia.iter.search.portlet.SearchResultsPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/search-results-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Search Results</title>
+			<short-title>Search Results</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>keywords</supported-public-render-parameter>
+		<supported-public-render-parameter>order</supported-public-render-parameter>
+		<supported-public-render-parameter>startDate</supported-public-render-parameter>
+		<supported-public-render-parameter>endDate</supported-public-render-parameter>
+		<supported-public-render-parameter>checkArticle</supported-public-render-parameter>
+		<supported-public-render-parameter>checkPoll</supported-public-render-parameter>
+		<supported-public-render-parameter>filterquery</supported-public-render-parameter>
+		<supported-public-render-parameter>wildcard</supported-public-render-parameter>
+		<supported-public-render-parameter>categoryIds</supported-public-render-parameter>
+		<supported-public-render-parameter>layoutsPlid</supported-public-render-parameter>
+		<supported-public-render-parameter>delta</supported-public-render-parameter>
+		<supported-public-render-parameter>cur</supported-public-render-parameter>
+		<supported-public-render-parameter>content-section</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>calendar-portlet</portlet-name>
+		<display-name>Calendar</display-name>
+		<portlet-class>com.protecmedia.iter.search.portlet.CalendarPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/calendar-portlet/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Calendar</title>
+			<short-title>Calendar</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>faceted-results-portlet</portlet-name>
+		<display-name>Faceted Results</display-name>
+		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/faceted-results-portlet/facetedResultsView.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Faceted Results</title>
+			<short-title>Faceted Results</short-title>
+			<keywords>Faceted Results</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>filterquery</supported-public-render-parameter>
+	</portlet>
+	<public-render-parameter>
+		<identifier>keywords</identifier>
+		<qname xmlns:x="http://liferay.com/params">keywords</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>order</identifier>
+		<qname xmlns:x="http://liferay.com/params">order</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>startDate</identifier>
+		<qname xmlns:x="http://liferay.com/params">startDate</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>endDate</identifier>
+		<qname xmlns:x="http://liferay.com/params">endDate</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>checkArticle</identifier>
+		<qname xmlns:x="http://liferay.com/params">checkArticle</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>checkPoll</identifier>
+		<qname xmlns:x="http://liferay.com/params">checkPoll</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>filterquery</identifier>
+		<qname xmlns:x="http://liferay.com/params">filterquery</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>wildcard</identifier>
+		<qname xmlns:x="http://liferay.com/params">wildcard</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>categoryIds</identifier>
+		<qname xmlns:x="http://liferay.com/params">categoryIds</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>layoutsPlid</identifier>
+		<qname xmlns:x="http://liferay.com/params">layoutsPlid</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>delta</identifier>
+		<qname xmlns:x="http://liferay.com/params">delta</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>cur</identifier>
+		<qname xmlns:x="http://liferay.com/params">cur</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>content-section</identifier>
+		<qname xmlns:x="http://liferay.com/params">x:content-section</qname>
+	</public-render-parameter>
+</portlet-app>

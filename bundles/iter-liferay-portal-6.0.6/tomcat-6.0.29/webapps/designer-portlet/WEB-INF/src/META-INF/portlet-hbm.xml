@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.protecmedia.iter.designer.model.PageTemplate" />
+	<import class="com.protecmedia.iter.designer.model.IterPortletInstance" />
+	<class name="com.protecmedia.iter.designer.model.impl.PageTemplateImpl" table="Designer_PageTemplate">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="pageTemplateId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="layoutId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="imageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type" column="type_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="defaultTemplate" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="defaultMobileTemplate" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

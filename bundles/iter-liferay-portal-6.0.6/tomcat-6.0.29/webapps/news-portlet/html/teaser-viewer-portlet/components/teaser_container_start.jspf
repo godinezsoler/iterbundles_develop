@@ -1,0 +1,9 @@
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%	
+	if(!isNewsletterPage)
+	{
+%>
+			<<%=HtmlOptimizer.isEnabled() ? "section" : "ul"%> class="<%= mainCssClass%>">
+<%	
+	}
+%>

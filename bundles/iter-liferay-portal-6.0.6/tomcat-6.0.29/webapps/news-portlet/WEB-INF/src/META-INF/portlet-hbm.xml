@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.protecmedia.iter.news.model.Qualification" />
+	<import class="com.protecmedia.iter.news.model.PageContent" />
+	<import class="com.protecmedia.iter.news.model.ArticlePoll" />
+	<import class="com.protecmedia.iter.news.model.Comments" />
+	<import class="com.protecmedia.iter.news.model.Counters" />
+	<import class="com.protecmedia.iter.news.model.Categorize" />
+	<import class="com.protecmedia.iter.news.model.JournalArticle" />
+	<import class="com.protecmedia.iter.news.model.Metadata" />
+	<import class="com.protecmedia.iter.news.model.DLFileEntry" />
+	<import class="com.protecmedia.iter.news.model.Product" />
+	<import class="com.protecmedia.iter.news.model.Layout" />
+	<import class="com.protecmedia.iter.news.model.IterPortletInstance" />
+	<import class="com.protecmedia.iter.news.model.Catalog" />
+	<import class="com.protecmedia.iter.news.model.MetadataControl" />
+	<import class="com.protecmedia.iter.news.model.DaylyTopicMgr" />
+	<import class="com.protecmedia.iter.news.model.ExternalServices" />
+	<class name="com.protecmedia.iter.news.model.impl.QualificationImpl" table="News_Qualification">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" column="uuid_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="qualifId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.PageContentImpl" table="News_PageContent">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" column="uuid_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pageContentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contentGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="qualificationId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="layoutId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="defaultSection" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="online" column="online_" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="typeContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="orden" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="articleModelId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="vigenciahasta" type="org.hibernate.type.TimestampType" />
+		<property name="vigenciadesde" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.ArticlePollImpl" table="News_ArticlePoll">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pollId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.CommentsImpl" table="News_Comments">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="publicationDate" type="org.hibernate.type.TimestampType" />
+		<property name="numComment" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="active" column="active_" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="moderated" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.CountersImpl" table="News_Counters">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="counter" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="value" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="counterLast" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="operation" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="date" column="date_" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.CategorizeImpl" table="News_Categorize">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="dummy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.JournalArticleImpl" table="News_JournalArticle">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="dummy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.news.model.impl.MetadataImpl" table="News_Metadata">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" column="uuid_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="structureName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preferences" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

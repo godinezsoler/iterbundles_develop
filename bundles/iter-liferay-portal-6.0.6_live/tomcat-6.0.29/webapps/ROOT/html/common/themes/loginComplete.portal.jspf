@@ -1,0 +1,33 @@
+
+<%@page import="com.liferay.portal.kernel.util.GetterUtil"%>
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+<%@page import="com.liferay.portal.kernel.util.request.PublicIterParams"%>
+<% 
+if ( GetterUtil.getBoolean(String.valueOf(PublicIterParams.get(WebKeys.HAS_LOGINGFORM))) )
+{
+	// Si está presentado el usuario se deshabilitan los campos del formulario, y si no está presentado se habilitan	
+%>
+	<script type="text/javascript">
+	jQryIter(document).ready(function()
+	{
+<?php
+	if(strlen(getenv("ITER_USER"))!==0)		
+	{
+?>
+		jQryIter(".box.login input").attr('disabled', true);
+		jQryIter(".box.login a").attr('disabled', true);
+<?php
+	}
+	else
+	{
+?>
+		jQryIter(".box.login input").attr('disabled', false);
+		jQryIter(".box.login a").attr('disabled', false);
+
+<?php
+	}
+?>
+	</script>
+<% 
+}
+%>

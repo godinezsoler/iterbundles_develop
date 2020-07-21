@@ -1,0 +1,214 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.related-viewer .aui-panel-bd {
+	padding: 10px;
+}
+
+.related-viewer .aui-panel-hd {
+	border: 0;
+}
+
+.related-viewer .aui-panel-content {
+	border: 1px solid #CCCCCC;
+}
+
+.related-viewer .aui-fieldset-legend {
+	font-size: 100%;
+}
+
+.related-viewer .aui-legend {
+	border-bottom: none;
+}
+
+.related-viewer .displaying-article-id-holder .displaying-article-id {
+	color:#4DCF0C;
+}
+
+.related-viewer .aui-field {
+	margin-bottom: 5px;
+	display: block;
+}
+
+.related-viewer .aui-field-label {    
+    margin-bottom: 5px;
+}
+
+.related-viewer input[type="text"] {
+	width: 220px;
+}
+
+.related-viewer .aui-panel-bd {
+    padding: 10px;    
+}
+
+.related-viewer-config-templates .templates-thumbnail {
+    display: inline-table;
+    margin: 10px;
+    width: 120px;
+}
+
+.related-viewer-config-templates .aui-field-choice .aui-field-element.aui-field-label-right {
+	float: left;
+	width: 20px;
+}
+
+.related-viewer-config-templates .aui-field-choice .aui-field-label {
+	float: left;
+	width: 100px;
+}
+
+.related-viewer-config .distribution .aui-fieldset .aui-field-content {
+	margin: 0;
+}
+
+.related-viewer-config .aui-panel-bd, 
+.related-viewer-config-templates .aui-panel-bd {
+	padding: 10px;
+}
+
+.related-viewer-config .aui-column-content {
+	padding: 0 5px 0 0;
+}
+
+.related-viewer-config .aui-field-label,
+.related-viewer-config-templates .aui-field-label {
+    margin-bottom: 5px;
+}
+
+.related-viewer-config .aui-panel-hd {
+	border: 0;
+}
+
+.related-viewer-config .aui-panel-content {
+	border: 1px solid #CCCCCC;
+}
+
+.related-viewer-config .title input[type="text"] {
+	width: 90%;
+}
+
+
+.related-viewer-label-config .aui-fieldset-legend {
+	font-size: 100%;
+}
+
+.related-viewer-label-config .aui-legend {
+	border-bottom: none;
+}
+
+.related-viewer-label-config .result-range input[type="text"] {
+	text-align: right;
+    width: 30px;
+}
+
+.related-viewer-config .label-bold {
+	font-weight: bold;	
+	display: block;
+	margin-bottom: 5px;
+}
+
+.related-viewer-config .edit-source .aui-field-label {
+    margin-bottom: 0;
+}
+
+.carrusel {
+	border:1px solid #CCCCCC;
+}
+
+.carrusel h5 {
+	border-bottom:1px solid #CCCCCC;
+	padding:10px 10px 10px 20px;
+}
+
+.carrusel h5 span {
+	color:#082E7A;
+	font-size:18px;
+	line-height:20px;
+}
+
+.carrusel ol {
+	margin: 5px;
+	list-style: none outside none;
+}
+
+.carrusel.horizontal ol .carouselItem {
+	display:table-cell;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+#container .item {
+    display: inline;
+    float: left;
+    margin-right: 5px;
+    overflow: hidden;
+    padding: 0;
+    outline:medium none;
+}
+
+.nav-button {
+	background: url("../img/fondo_tabla_par.gif") repeat-x scroll left bottom transparent;
+	margin: 0 !important;
+}
+
+.nav-button ul {
+	float:left;
+	margin:6px 6px 6px 20px;
+}
+
+.nav-button ul li.nav-page-selected {
+	background:url("../img/bolo_blue.png") no-repeat scroll 0 5px transparent;
+}
+
+.nav-button ul li {
+	background:url("../img/bolo_gris.png") no-repeat scroll 0 5px transparent;
+	display:inline;
+	float:left;
+	padding-right:2px;	
+	width:7px;
+	text-indent: -9999em;
+}
+
+.nav-button ul li a {
+	text-indent:-9999em;
+	display:block;
+	outline:medium none;
+	overflow:hidden;
+}
+
+.nav-button .prev-button span, 
+.nav-button .more-button span, 
+.nav-button .next-button span {
+	background:none repeat scroll 0 0 #225588;
+	-moz-border-radius: 3px 3px 3px 3px;
+	border: 0;
+	color:#FFFFFF;
+	margin:5px;
+	padding:2px 10px;
+	text-shadow:none;
+	float: right;
+	cursor: pointer;
+}
+
+.nav-button .prev-button span {
+	margin-left:-110px;
+	margin-right:80px;
+}
+
+.nav-button .prev-button span:hover, 
+.nav-button .more-button span:hover, 
+.nav-button .next-button span:hover {
+	background:none repeat scroll 0 0 #333333;
+}
+
+.nav-button .disable-button span {
+	background:none repeat scroll 0 0 #333333;
+	cursor:auto;
+}
+
+.teaserItemPosition {
+    display: none;
+ }

@@ -1,0 +1,118 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.js .taglib-social-bookmarks ul {
+	display: block;
+}
+
+.js .taglib-social-bookmarks .show-bookmarks {
+	display: none;
+	border-width: 0px medium;
+}
+
+.js .taglib-social-bookmarks ul {
+	border-width: 0px medium;
+}
+
+.taglib-social-bookmarks li {
+	float: left;
+	font-size: 0px;
+	height: 20px;
+	margin: 3px;
+}
+
+.taglib-social-bookmarks li a {
+	display: block;
+}
+
+.content-tools-portlet {
+	background:none repeat scroll 0 0 #FFFFFF;
+	padding:10px;
+}
+
+li.nav_compartir {
+	display: inline-block;
+    list-style: none outside none;
+    min-width: 30px;
+}
+
+li.nav_compartir a {
+	display:block !important;
+	font-weight:bold !important;
+	min-height:17px;
+}
+
+.nav_compartir a.meneame {
+	background:
+		url("../img/meneame.gif")
+		no-repeat scroll left top transparent;
+}
+
+.nav_compartir a.delicious {
+	background:
+		url("../img/delicious.gif")
+		no-repeat scroll left top transparent;
+}
+
+.nav_compartir li.fresqui a {
+	background:
+		url("../img/fresqui.gif")
+		no-repeat scroll left top transparent;
+}
+
+.nav_compartir a.myspace  {
+	background:
+		url("../img/myspace.gif")
+		no-repeat scroll left top transparent;
+}
+
+.nav_compartir li.facebook a {
+	background:
+		url("../img/facebook.gif")
+		no-repeat scroll left top transparent;
+}
+
+.nav_compartir li.twitter a {
+	background:
+		url("../img/twitter.gif")
+		no-repeat scroll 0 2px transparent;
+}
+
+.nav_compartir li.livespaces a {
+	background:
+		url("../img/livespaces.gif")
+		no-repeat scroll 0 0 transparent;
+}
+
+.nav_compartir li.google a {
+	background:
+		url("../img/google.gif")
+		no-repeat scroll 0 0 transparent;
+}
+
+.nav_compartir li.technorati a {
+	background:
+		url("../img/technorati.gif")
+		no-repeat scroll 0 0 transparent;
+}
+
+.nav_compartir li.blinklist a {
+	background:
+		url("../img/blinklist.gif")
+		no-repeat scroll 0 0 transparent;
+}
+
+.nav_compartir li.msnreporter a {
+	background:
+		url("../img/msnreporter.gif")
+		no-repeat scroll 0 0 transparent;
+}
+
+/* CONFIGURATION */
+
+.content-social-portlet .content-social-config .aui-field-inline .aui-field-content, .aui-field-row .aui-field-content {
+
+ margin: 10px 5px 10px 0;
+ 
+ }
+

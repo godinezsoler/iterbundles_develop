@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.0.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_0_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>advanced-search-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/advanced-search.css</header-portlet-css>
+		<css-class-wrapper>advanced-search-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>search-filters-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<friendly-url-mapper-class>com.protecmedia.iter.search.util.SearchFriendlyURLMapper</friendly-url-mapper-class>
+		<friendly-url-routes>search-portlet-friendly-url-routes.xml</friendly-url-routes>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/search-filters.css</header-portlet-css>
+		<css-class-wrapper>search-filters-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>search-results-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<friendly-url-mapper-class>com.protecmedia.iter.search.util.SearchFriendlyURLMapper</friendly-url-mapper-class>
+		<friendly-url-routes>search-portlet-friendly-url-routes.xml</friendly-url-routes>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<render-weight>1000</render-weight>
+		<header-portlet-css>/css/search-results.css</header-portlet-css>
+		<css-class-wrapper>search-results-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>calendar-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/calendar.css</header-portlet-css>
+		<css-class-wrapper>calendar-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>faceted-results-portlet</portlet-name>
+		<icon>/icon.png</icon>
+		<layout-cacheable>false</layout-cacheable>
+		<instanceable>true</instanceable>
+		<footer-portlet-javascript>/js/faceted-results.js</footer-portlet-javascript>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

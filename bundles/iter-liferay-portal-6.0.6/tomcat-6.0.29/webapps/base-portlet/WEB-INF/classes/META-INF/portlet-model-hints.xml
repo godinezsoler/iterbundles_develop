@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.protecmedia.iter.base.model.Iter">
+		<field name="id" type="long" />
+		<field name="name" type="String" />
+		<field name="version" type="String" />
+		<field name="publicKey" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="cookieKey" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="environment" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.base.model.Communities">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="privateSearchUrl" type="String" />
+		<field name="publicSearchUrl" type="String" />
+		<field name="fuzzySearch" type="boolean" />
+		<field name="primarySectionBots" type="String" />
+		<field name="secondarySectionBots" type="String" />
+		<field name="noSectionBots" type="String" />
+		<field name="lastUpdated" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="loginconf" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="registerconf" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="facebookLanguage" type="String" />
+	</model>
+</model-hints>

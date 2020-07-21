@@ -1,0 +1,167 @@
+## Plantilla para presentar el menu con acordeon o pestanias (tabs)
+
+## Menu con acordeon
+#if($menuType == "accordion")	
+	<script type="text/javascript">
+		jQryIter(function() {			
+			jQryIter("#acc_$uniqueDivId").accordion({ heightStyle: "content"});			
+		});
+	</script>
+
+	## Este id debe ser unico en la pagina
+	<div id="acc_$uniqueDivId" class="iter-accordion">
+	
+		#foreach ($menuItem in $menuItems)		
+		
+			## Si no esta oculto o si esta oculto pero es el elegido
+			#if( !$menuItem.isHidden() || ($menuItem.isHidden() && $menuItem == $menuItemSelected) )
+		
+				<h3 class="ui-accordion-header-$menuItem.getLayoutId() ui-accordion-header-$menuItem.getMD5friendlyURL()">$menuItem.getName()</h3>
+				<div class="iter-accordion-content ui-accordion-content-$menuItem.getLayoutId() ui-accordion-content-$menuItem.getMD5friendlyURL()">
+				
+					## Mega menu
+					#if($menuItem.hasDynamicMenu())
+					
+						<div class="child-navig cf">			
+							$menuItem.getDynamicMenu()
+						</div>
+					
+					## Listado de hijos (un unico nivel)
+					#else
+						<span class="hasChildsIcon"></span>
+						<div class="child-navig cf">							
+							<ul class="lst-std lst level-2">							
+								<div class="lst-items">										
+														
+									#foreach ($child in $menuItem.getChildren($allMenuItems))										
+										## Si el hijo no esta oculto
+										#if( !$child.isHidden())
+											#set ($sectionName = $child.getName())
+										
+											#set($selected = "")
+											#if($child.isSelected() || $child.isChildSelected())
+												#set($selected = "selected")
+											#end
+										
+											<li class="lst-item $selected sect-$child.getLayoutId() sect-$child.getMD5friendlyURL()">
+												<a href="$child.getURL()" $child.getRelAttribute() class="lnk" $child.getTarget() title="$sectionName">
+													<span class="iconBefore"></span>												
+														<span class="sectionName">#*
+									        				*#$sectionName#*
+														*#</span>													
+													<span class="iconAfter"></span>
+												</a>										
+											</li>
+										#end
+									#end
+																
+								</div>														
+							</ul>
+						</div>				
+					#end
+				</div>
+			#end
+		#end		
+	</div>
+		
+		
+		
+		
+		
+		
+		
+		
+## Menu con tabs (OCULTO, NO SE USA)	
+#else	
+	<script type="text/javascript">
+		jQryIter(function() {			
+			jQryIter("#acc_$uniqueDivId").tabs();
+		});
+	</script>
+	
+	#set($widthHeading = 30)
+	#set($widthContent = 100 - $widthHeading)
+	#set($style="")
+	
+	## Vertical
+	#if ($orientation == "vertical")
+		## En vertical se necesitan unos estilos
+		#set($style = "style='width:$widthContent%'") 
+		 		
+		<div id="acc_$uniqueDivId" class="iter-tabs iter-tabs-vertical">
+			<div class="iter-tabs-leftColumn" style="width:$widthHeading%"></div>
+				<ul style="width:$widthHeading%">
+					
+	## Horizontal
+	#else
+		<div id="acc_$uniqueDivId" class="iter-tabs iter-tabs-horizontal">
+			<div class="iter-tabs-leftColumn"></div>
+				<ul>
+	#end				
+					#set($i = 0)
+					#foreach ($menuItem in $menuItems)					
+						## Si no esta oculto o si esta oculto pero es el elegido
+						#if( !$menuItem.isHidden() || ($menuItem.isHidden() && $menuItem == $menuItemSelected) )
+					
+							<li><a href="#tabs-$ids.get($i)">$menuItem.getName()</a></li>
+							#set($i = $i +1)
+						#end
+					#end			
+				</ul>
+		
+				#set($i = 0)
+				#foreach ($menuItem in $menuItems)
+					## Si no esta oculto o si esta oculto pero es el elegido
+					#if( !$menuItem.isHidden() || ($menuItem.isHidden() && $menuItem == $menuItemSelected) )					
+						<div id="tabs-$ids.get($i)" $style>
+						#set($i = $i +1)
+						
+							<div class="iter-tab-content">
+							
+								## Mega menu
+								#if($menuItem.hasDynamicMenu())
+								
+									<div class="child-navig cf">			
+										$menuItem.getDynamicMenu()
+									</div>
+								
+								## Listado de hijos (un unico nivel)
+								#else
+									<span class="hasChildsIcon"></span>
+									<div class="child-navig cf">							
+										<ul class="lst-std lst level-2">							
+											<div class="lst-items">										
+																	
+												#foreach ($child in $menuItem.getChildren($allMenuItems))										
+													## Si el hijo no esta oculto
+													#if( !$child.isHidden())
+														#set ($sectionName = $child.getName())
+													
+														#set($selected = "")
+														#if($child.isSelected() || $child.isChildSelected())
+															#set($selected = "selected")
+														#end
+													
+														<li class="lst-item $selected sect-$child.getLayoutId() sect-$child.getMD5friendlyURL()">
+															<a href="$child.getURL()" $child.getRelAttribute() class="lnk" $child.getTarget() title="$sectionName">
+																<span class="iconBefore"></span>												
+																	<span class="sectionName">#*
+												        				*#$sectionName#*
+																	*#</span>													
+																<span class="iconAfter"></span>
+															</a>										
+														</li>
+													#end
+												#end
+																			
+											</div>														
+										</ul>
+									</div>				
+								#end
+													
+							</div>
+						</div>
+					#end
+				#end
+		</div>
+#end		

@@ -1,0 +1,471 @@
+/* MENU SECCIONES */
+.menu_secc
+{
+    float: left;
+    /*width: 80%;*/
+}
+
+.menu_secc a{
+	zoom:1;
+	display:block;
+}
+
+.menu_secc li{
+	zoom:1;
+	vertical-align: bottom;
+}
+
+.menu_secc #nav
+{  
+    font-weight: bold;
+    font-family: dosisregular, 'Trebuchet MS', sans-serif;
+}
+.menu_secc #nav ul {
+    clear: both;
+    display: table;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_secc .lst-items {
+	display:inline-block;
+	zoom:1;
+}
+
+
+.menu_secc #nav .second-level .lst-item {
+	position: relative !important;
+
+}
+
+
+
+.menu_secc #nav .child-nav .second-level .lst-item .hasChildsIcon {
+	background: url("../images/ico_sprite_white.png") no-repeat transparent;
+	height: 9px;
+	width: 8px;
+	float: right;
+	margin-top: -10px;
+	display:inline-block;
+	zoom:1;
+}
+
+.menu_secc #nav .third-level {
+	display: none !important;
+	position: absolute !important;
+	left: 204px  !important;
+	top: 0px  !important;
+}
+
+.menu_secc #nav li
+{
+
+    white-space: nowrap;
+    background: #f3f3f3;
+    border-bottom: solid 1px #cecece;
+    border-left: solid 1px #cecece;
+    border-right: solid 1px #cecece;
+}
+
+
+
+/*.menu_secc #nav li:hover,*/
+.menu_secc #nav li.hover
+{
+    background: #1d2561;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+/*.menu_secc #nav li:hover a,*/
+.menu_secc #nav li.hover a
+{
+
+    color: #ffffff;
+}
+
+.menu_secc #nav li.highlight {
+	margin: 0px;	
+}
+
+
+
+.menu_secc #nav strong
+{
+    font-style: normal;
+    font-weight: bold;
+}
+
+.menu_secc .tabnav {
+    display: inline;
+    float: left;
+    padding: 10px 9.7px;
+}
+
+.menu_secc #nav .selected
+{
+    background: #ffffff;
+    border: none !important;
+}
+.menu_secc #nav li a {
+    text-decoration: none;
+    color: #4d4d4d;
+	display:block;
+
+}
+/* SUBSECCIONES */
+
+
+.menu_secc #nav .child-nav 
+{
+    background-color: #FFFFFF;
+    border: 1px solid #06598C;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: normal;
+    line-height: 100%;
+    border-top: none;
+	display:none;
+}
+
+.menu_secc #nav .parent-nav .tabnav {
+	font-size: 16px;
+}
+
+.menu_secc .nav-dropdown .child-nav {
+	position: absolute;
+    z-index: 100;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+.menu_secc .child-nav em 
+{
+    display: none !important;
+
+}
+
+.menu_secc .child-nav ul 
+{
+    display: inline-block !important;
+
+}
+
+.menu_secc .child-nav li {    
+    border-left: medium none !important;
+    border-right: medium none !important;
+    border-bottom: medium none !important;
+    border-top: 1px solid #6973B1 !important;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 8px;
+    text-transform: none !important;
+    width: 190px;
+    background: #1d2561 !important;
+}
+
+.menu_secc .child-nav li:first-child {
+	border-top: none !important;
+}
+
+.menu_secc .child-nav li:hover
+{
+     background: #1d2561 !important;
+     color: Fuchsia !important;
+}
+
+.menu_secc .child-nav li a{
+    color: #ffffff !important;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+
+
+/* MEGAMENU SIMPLE */
+.menu_secc.mega_menu.simple{
+	position:relative;
+	width: 100%;
+}
+
+.menu_secc.mega_menu.simple .nav-dropdown .child-nav{
+	margin-left: 0px;
+	left: 0px;
+	width: 100%;
+	background: none repeat scroll 0 0 #E4E2E2 !important;
+	border: none !important;
+}
+
+.menu_secc.mega_menu.simple .nav-dropdown  .lst-items .lst-item{
+	width:90%;
+	padding: 10px 5%;
+	background: none !important;
+	border: none !important;
+	font-size: 14px;
+	color: #000000 !important;
+	line-height:17px;
+}
+
+.menu_secc.mega_menu.simple .nav-dropdown  .lst-items .lst-item a{
+	color: #000000 !important;
+}
+
+.menu_secc.mega_menu.simple .nav-dropdown .lst-items{
+	width: 30%;
+	float: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.menu_secc.mega_menu.simple .nav-dropdown .megaSimple{
+	float:left;
+	width:70%;
+	background: #cccccc;
+}
+
+
+/* MEGAMENU COMPLEX */
+.menu_secc.mega_menu.complex{
+	position:relative;
+	width: 100%;
+}
+
+ .menu_secc.mega_menu .second-level{
+	width:100%;
+ }
+
+.menu_secc.mega_menu.complex .nav-dropdown .child-nav{
+	margin-left: 0px;
+	left: 0px;
+	width: 100%;
+	background: none repeat scroll 0 0 #E4E2E2 !important;
+	border: none !important;
+}
+
+
+.menu_secc.mega_menu.complex .nav-dropdown  .lst-items .lst-item{
+	width:91%;
+	padding: 10px 5%;
+	background: none !important;
+	border: none !important;
+	font-size: 14px;
+	color: #000000 !important;
+	line-height:17px;
+}
+
+.menu_secc.mega_menu.complex .nav-dropdown  .lst-items .lst-item.selected{
+
+	background: #cccccc !important;
+}
+
+
+.menu_secc.mega_menu.complex .nav-dropdown  .lst-items .lst-item a{
+	color: #000000 !important;
+}
+
+.menu_secc.mega_menu.complex .nav-dropdown .lst-items{
+	width: 30%;
+	float: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+}
+
+.menu_secc.mega_menu.complex .nav-dropdown .megaComplex{
+	float:left;
+	width:70%;
+	background: #cccccc;
+	display:none;
+}
+
+.closeMenu{
+	width:100%;
+	height:25px;
+	cursor:pointer;
+	text-align:center;
+	line-height:25px;
+	clear:both;
+}
+
+/*----- ESTILOS PARA MENÚ TIPO LA RAZÓN VERTICAL -----------*/
+.menu_secc.vertical{
+	position:relative;
+}
+
+.menu_secc.vertical .tabnav{
+	display:block;
+	float:none;
+	width:200px;
+}
+
+.menu_secc.vertical  .child-nav{
+	position: absolute;
+	top: 0px;
+	left: 218px;
+	bottom: 0px;
+	margin-left: 0;
+	margin-top:0;
+	border:0px !important;
+	background:#0a7ef4 !important;
+}
+
+.menu_secc.vertical #nav li{
+	background:#00AEEF;
+	color:white;
+	border:none;
+	padding:0px 9.7px;
+	height:42px;
+	line-height:42px;
+
+}
+
+.menu_secc.vertical #nav li a{
+	color:#ffffff;
+}
+
+.menu_secc.vertical #nav li.selected{
+	background:#cccccc;
+}
+
+.menu_secc.vertical #nav li:hover{
+	background:#0a7ef4;
+}
+
+.menu_secc.vertical #nav li:hover a{
+
+}
+
+.menu_secc.vertical #nav .second-level .lst-item{
+	position:static !important;
+}
+
+.menu_secc.vertical #nav .third-level {
+	display: none !important;
+	position: absolute !important;
+	left: 204px !important;
+	top: 0px !important;
+	bottom: 0px !important;
+}
+
+.menu_secc.vertical .child-nav li{
+	font-size: 16px;
+	padding: 0px 9.7px;
+	line-height: 42px;
+	border:none !important;
+	background:#0a7ef4 !important;
+	height:42px !important;
+}
+
+.menu_secc.vertical .child-nav li:hover{
+	background: #0a5af4 !important;
+}
+
+.menu_secc.vertical #nav .child-nav .second-level .lst-item .hasChildsIcon {
+	background: url("../images/ico_sprite_white.png") no-repeat transparent;
+	height: 8px;
+	width: 8px;
+	float: right;
+	margin-top: -24px;
+
+}
+
+.menu_secc.vertical .third-level{
+	background: #0a5af4 !important;
+}
+
+.menu_secc.vertical .third-level li{
+	background: #0a5af4 !important;
+}
+
+.menu_secc.vertical .third-level li:hover a{
+	color:#000000 !important;
+}
+
+.menu_secc.vertical .hasChildsIcon {
+	background: url("../images/ico_sprite_white.png") no-repeat transparent;
+	height: 9px;
+	width: 8px;
+	float: right;
+	margin-top: -24px;
+}
+
+/*----- ESTILOS PARA MEGA MENÚ SIMPLE VERTICAL -----------*/
+.menu_secc.mega_menu.simple.vertical .nav-dropdown .child-nav{
+	margin-left: 0px;
+	left: 218px;
+	width: auto;
+	background: none repeat scroll 0 0 #E4E2E2 !important;
+	border: none !important;
+}
+
+.menu_secc.mega_menu.simple.vertical .nav-dropdown .lst-items{
+	padding:0px;
+}
+
+
+.menu_secc.mega_menu.simple.vertical .nav-dropdown .megaSimple{
+	width: 507px;
+	background: #00AEEF;
+	bottom: 0;
+	position: absolute;
+	top: 0;
+	left: 176px;
+}
+
+
+.menu_secc.mega_menu.simple.vertical .closeMenu {
+	width: 682px;
+	height: 25px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 25px;
+	clear: both;
+	bottom: 0;
+	position: absolute;
+}
+
+.menu_secc.mega_menu.simple.vertical .nav-dropdown .lst-items{
+	width:175px;
+}
+
+
+
+/*----- ESTILOS PARA MEGA MENÚ COMPLEX VERTICAL -----------*/
+.menu_secc.mega_menu.complex.vertical .nav-dropdown .child-nav{
+	margin-left: 0px;
+	left: 218px;
+	width: auto;
+	background: none repeat scroll 0 0 #E4E2E2 !important;
+	border: none !important;
+}
+
+.menu_secc.mega_menu.complex.vertical .nav-dropdown .lst-items{
+	padding:0px;
+}
+
+
+.menu_secc.mega_menu.complex.vertical .nav-dropdown .megaComplex{
+	width: 507px;
+	background: #00AEEF;
+	bottom: 0;
+	position: absolute;
+	top: 0;
+	left: 176px;
+}
+
+
+.menu_secc.mega_menu.complex.vertical .closeMenu {
+	width: 682px;
+	height: 25px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 25px;
+	clear: both;
+	bottom: 0;
+	position: absolute;
+}
+
+.menu_secc.mega_menu.complex.vertical .nav-dropdown .lst-items{
+	width:175px;
+}

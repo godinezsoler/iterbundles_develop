@@ -1,0 +1,25 @@
+#container .item {
+    display: inline;
+    float: left;
+    margin-right: 5px;
+    overflow: hidden;
+    padding: 0;
+    outline:medium none;
+}
+
+.metadata-control-article .rightColumn
+{
+	float: right;
+}
+
+.metadata-control-article .aui-50 .opt-structures
+{
+	min-width: 193px;
+}
+
+.robots
+{
+	margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}

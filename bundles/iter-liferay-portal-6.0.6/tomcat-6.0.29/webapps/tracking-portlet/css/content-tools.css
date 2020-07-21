@@ -1,0 +1,144 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+/* Herramientas */
+.nav_herramientas {
+	margin:0 0 20px;
+	padding:5px 0 0;
+}
+
+ul.nav_herramientas {
+	list-style: none;
+	margin: 0;
+}
+
+.nav_herramientas li {
+	font-weight:bold;
+	height:16px;
+	list-style-type:none;
+	margin-bottom:3px;
+}
+
+.nav_herramientas li a:hover {
+	color:#9C0001;
+	text-decoration:none;
+}
+
+.nav_herramientas a {
+	font-weight:normal !important;
+	margin:0 0 1px;
+	padding:0 0 0 22px !important;
+	color:#666666;
+	outline:medium none;
+}
+
+.nav_herramientas li.enviar a {
+	background:
+		url("../img/b_enviar.png")
+		repeat scroll 0 0 transparent;
+}
+
+.nav_herramientas li a {
+	font-size:12px !important;
+}
+
+.nav_herramientas li.imprimir a {
+	background:
+		url("../img/b_imprimir.png")
+		repeat scroll 0 0 transparent;
+}
+
+.nav_herramientas li.valorar a {
+	background:
+		url("../img/b_valorar.png")
+		repeat scroll 0 0 transparent;
+}
+
+.nav_herramientas li.movil a {
+	background:
+		url("../img/b_movil.png")
+		repeat scroll 0 0 transparent;
+}
+
+.nav_herramientas li.rectificar a {
+	background:
+		url("../img/b_rectificar.png")
+		repeat scroll 0 0 transparent;
+}
+
+.nav_herramientas li.enviar a,.nav_herramientas li.imprimir a,.nav_herramientas li.valorar a,.nav_herramientas li.movil a,.nav_herramientas li.rectificar a
+	{
+	background-position: 0 -20px;
+	background-repeat: no-repeat;
+	text-decoration: none;
+}
+
+.nav_herramientas li.enviar a:hover,.nav_herramientas li.imprimir a:hover,.nav_herramientas li.valorar a:hover,.nav_herramientas li.movil a:hover,.nav_herramientas li.rectificar a:hover
+	{
+	background-position: 0 0;
+	text-decoration: none;
+}
+
+/* Aunmentar y disminuir letra */
+
+.text_size {
+	text-align: right;
+}
+
+.text_size .herramientas li, .text_size .herramientas li a {
+	height:16px;
+	padding:0;
+	width:16px;
+}
+
+.text_size .herramientas li {
+	float:left;
+	margin:0 0 0 2px;
+}
+
+.text_size * {
+	color:#999999;
+	font-weight:bold;
+}
+
+.text_size ul {
+	display: inline-table;
+}
+
+.text_size ul, .text_size ol, .text_size li {
+	list-style:none outside none;
+	margin: 0;
+}
+
+.text_size .herramientas li.disminuyeletra a {
+	background:url("../img/menos.gif") no-repeat scroll 0 -20px transparent;
+}
+
+.text_size .herramientas li.aumentaletra a {
+	background:url("../img/mas.gif") no-repeat scroll 0 -20px transparent;
+}
+
+.text_size .herramientas li.aumentaletra a:hover, .text_size .herramientas li.disminuyeletra a:hover {
+	background-position:0 0;
+}
+
+.text_size .herramientas li a {
+	display:block;
+	text-indent:-9999px;
+	text-align:left;
+	outline:medium none;
+}
+
+.text_size .herramientas li, .metadata_noticia .herramientas li a {
+	height:16px;
+	padding:0;
+	width:16px;
+}
+
+/* Ampliar y reducir letra */
+
+.teaser .sizeletra4 p{font-size: 10px !important; line-height: 16px !important;}
+.teaser .sizeletra5 p{font-size: 12px !important; line-height: 18px !important;}
+.teaser .sizeletra6 p{font-size: 14px !important; line-height: 20px !important;}
+.teaser .sizeletra7 p{font-size: 16px !important; line-height: 22px !important;}
+.teaser .sizeletra8 p{font-size: 18px !important; line-height: 24px !important;}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+
+<display>
+	<!--category name="category.7iteruser"-->
+	<category name="category.1iternews">
+		<portlet id="login-portlet"></portlet>
+		<portlet id="login-form-portlet"></portlet>
+		<portlet id="form-portlet"></portlet>
+		<portlet id="newsletterportlet"></portlet>
+		<portlet id="register-user-portlet"></portlet>
+		<portlet id="forgot-password-portlet"></portlet>
+		<portlet id="edit-user-profile-portlet"></portlet>
+		<portlet id="unregister-user-portlet"></portlet>
+		<portlet id="paywall-status-portlet"></portlet>
+	</category>
+</display>

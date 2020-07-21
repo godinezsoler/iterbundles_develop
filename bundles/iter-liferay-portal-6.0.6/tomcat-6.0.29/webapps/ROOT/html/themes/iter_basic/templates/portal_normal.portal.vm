@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html>
+
+<head>
+	<title>$the_title</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+	
+	#if($is_signed_in)
+		#dockbar()
+	#end
+	
+	<div id="wrapper">
+		<header id="banner" role="banner">
+			<hgroup id="heading">
+########################
+## Catalogo de cabecera
+########################
+			</hgroup>
+	
+			#if ($has_navigation)
+				#parse ("$full_templates_path/navigation.vm")
+			#end
+		</header>
+	
+		<div id="content">
+			#if ($selectable)
+				$theme.include($content_include)
+			#else
+				$portletDisplay.recycle()
+	
+				$portletDisplay.setTitle($the_title)
+	
+				$theme.wrapPortlet("portlet.vm", $content_include)
+			#end
+		</div>
+	
+		<footer id="footer" role="contentinfo">
+########################
+## Catalogo de pie
+########################
+		</footer>
+	</div>
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

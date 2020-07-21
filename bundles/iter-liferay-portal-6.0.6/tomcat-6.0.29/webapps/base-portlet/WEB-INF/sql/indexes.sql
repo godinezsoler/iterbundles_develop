@@ -1,0 +1,1 @@
+create unique index IX_BC3942B on Base_Communities (groupId);

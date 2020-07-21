@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+
+<display>
+	<category name="category.1iternews">
+		<portlet id="teaser-viewer-portlet"></portlet>
+		<portlet id="teaser-viewer-nr-portlet"></portlet>
+		<portlet id="related-viewer-portlet"></portlet>
+		<portlet id="content-viewer-portlet"></portlet>
+		<portlet id="alert-portlet"></portlet>
+		<portlet id="breadcrumb-portlet"></portlet>
+		<portlet id="article-topics-portlet"></portlet>
+		<portlet id="hot-topics-portlet"></portlet>
+		<portlet id="date-portlet"></portlet>
+		<portlet id="htmlcontainer-portlet"></portlet>
+		<portlet id="metadata-locator-portlet"></portlet>
+		<portlet id="catalog-portlet"></portlet>
+		<portlet id="menu-portlet"></portlet>
+		<portlet id="dayly-topics-portlet"></portlet>
+		<portlet id="velocitycontainer-portlet"></portlet>
+		<portlet id="proxy-portlet"></portlet>
+		<portlet id="paywall-portlet"></portlet>
+		<portlet id="article-recommendations-portlet"></portlet>
+	</category>
+	<category name="category.hidden">
+		<portlet id="pagecontent-portlet"></portlet>
+		<portlet id="statistics-schedule-portlet"></portlet>
+		<portlet id="counter-portlet"></portlet>
+		<portlet id="metadata-page-portlet"></portlet>
+	</category>
+</display>

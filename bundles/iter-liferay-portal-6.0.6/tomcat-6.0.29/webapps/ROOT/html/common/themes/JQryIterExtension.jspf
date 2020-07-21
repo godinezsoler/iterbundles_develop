@@ -1,0 +1,43 @@
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="com.liferay.portal.kernel.velocity.IterVelocityTools"%>
+<%@page import="com.protecmedia.iter.base.service.util.JQryIterExtensionTools"%>
+<%@page import="com.liferay.portal.kernel.util.request.IterRequest"%>
+
+<script type="text/javascript">
+     (function($)
+     {
+         $.contextSections = function ()
+         {
+            return <%= JQryIterExtensionTools.getContextSections() %>;
+         };
+
+         $.contextIsArticlePage = function ()
+         {
+            return <%= IterRequest.isDetailRequest() %>;
+         };
+         
+         $.articleId = function ()
+         {
+             return "<%= IterRequest.getOriginalRequest().getAttribute("ARTICLEURL_ARTICLEID") != null ? IterRequest.getOriginalRequest().getAttribute("ARTICLEURL_ARTICLEID") : StringPool.BLANK %>";
+         };
+         
+         $.contextIs = function (contextType)
+         {
+			if (contextType== '<%= com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_HOMEPAGE %>' )
+				return <%= IterVelocityTools.contextIs( com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_HOMEPAGE) %>;
+			else if( contextType== '<%= com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_ARTICLEPAGE %>')
+ 	        	return <%= IterVelocityTools.contextIs( com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_ARTICLEPAGE) %>;
+ 	        else if( contextType== '<%=com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_SEARCHPAGE %>')
+ 	 	       	return <%= IterVelocityTools.contextIs( com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_SEARCHPAGE) %>;
+ 	 	    else if( contextType== '<%=com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_SECTIONPAGE %>')
+ 	 	 	    return <%= IterVelocityTools.contextIs( com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_SECTIONPAGE) %>;
+ 	 	 	else if( contextType== '<%= com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_METADATAPAGE %>')
+ 	 	 	 	return <%= IterVelocityTools.contextIs( com.liferay.portal.kernel.util.WebKeys.CONTEXTTYPE_METADATAPAGE) %>;     
+         };
+         
+
+     })( jQryIter );
+ </script>
+ 
+     
+ 

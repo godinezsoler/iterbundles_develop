@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_User_IterRegisterService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="deleteExpiredUsers" qname="operNS:deleteExpiredUsers" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getDelayToDeleteExpiredUsers" qname="operNS:getDelayToDeleteExpiredUsers" returnQName="getDelayToDeleteExpiredUsersReturn" returnType="rtns:long" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.user.iter.protecmedia.com" name="initOrUpdateUserToDeleteTask" qname="operNS:initOrUpdateUserToDeleteTask" soapAction=""> </operation>
+		<parameter name="allowedMethods" value="deleteExpiredUsers getDelayToDeleteExpiredUsers initOrUpdateUserToDeleteTask" />
+		<parameter name="className" value="com.protecmedia.iter.user.service.http.IterRegisterServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IterRegisterServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IterRegisterServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_User_IterRegisterService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.user.iter.protecmedia.com" />
+	</service>
+</deployment>

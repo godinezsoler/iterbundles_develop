@@ -1,0 +1,65 @@
+<%@page import="com.protecmedia.iter.tracking.util.TrackingUtil"%>
+<%@page import="com.liferay.portal.kernel.util.PHPUtil"%>
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
+<%@page import="com.protecmedia.iter.tracking.util.UserFeedbackTools"%>
+<%@page import="com.protecmedia.iter.base.service.util.IterKeys"%>
+<%@page import="com.liferay.portal.kernel.util.CookieUtil"%>
+
+<%
+
+
+	if(feedbackData!=null)
+	{
+		int options = feedbackData.size();
+		if(options>1)
+		{
+%>
+			
+			<div class="iter-user-feedback-wrapper">
+				<div class="iter-user-feedback-title">
+					<%= feedbackData.get(0).get("question") %>
+				</div>
+				<div class="iter-user-feedback-description">
+				
+				</div>
+<%
+				int idx = 1;
+				String pos = "";
+				for(Map<String,Object> choice : feedbackData)
+				{
+					pos = idx==1 ? "first" : idx==options ? "last" : "";  
+%>
+					<div class="iter-user-feedback-rating-blocks <%=pos%> n<%=idx%>">
+						<a class="feedback-function" href="javascript:void(0)" idFeedbackValue="<%=choice.get("choiceid")%>">
+							<div class="block-value">
+								<span class="block-value-label">0</span>
+								<div class="block-value-percent p0"></div>
+							</div>
+
+							<div class="block-text">
+								<span class="block-text-label"><%=choice.get("label")%></span>
+							</div>
+						</a>
+					</div>
+<%
+					idx++;
+				}
+%>			
+			</div>
+<%
+
+		}
+		else if(_log.isDebugEnabled())
+		{
+			_log.debug("There is not enough answers defined for the group " + scopeGrpId);
+		}
+	}
+	else if(_log.isDebugEnabled())
+	{
+		_log.debug("There is no any question defined for the group " + scopeGrpId);
+	}
+%>

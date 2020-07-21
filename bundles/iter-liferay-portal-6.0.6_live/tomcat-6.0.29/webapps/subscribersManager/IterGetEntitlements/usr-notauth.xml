@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<itwresponse version="1.0">
+    <field name="code">
+        <string>KO</string>
+    </field>
+    <field name="msg">
+        <string>User identity could not be verified. Please, try it again</string>
+    </field>
+</itwresponse>

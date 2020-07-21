@@ -1,0 +1,53 @@
+#parse ($init)
+
+#if(!$themeDisplay.isWidget() && !$themeDisplay.isWidgetFragment())
+
+<!DOCTYPE html>
+
+<html dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title</title>
+
+	$theme.include($top_head_include)
+
+	#css ($css_main_file)
+	#js ($js_main_file)
+</head>
+
+<body class="portal-popup $css_class">
+
+#end
+
+$theme.include($content_include)
+
+##La siguiente linea saca basura que parece inservible
+##$theme.include($bottom_ext_include)
+
+#if(!$themeDisplay.isWidget() && !$themeDisplay.isWidgetFragment())
+
+</body>
+
+</html>
+
+#end
+
+
+## Este es codigo minimo que necesita un widget para que incluya la jQuery y el AUI
+## Es importante recordar que el .vm que cuenta es el portal_pop_up.vm que esta en el tema
+##<!DOCTYPE html>
+##
+###parse ($init)
+##
+##<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+##
+##<head>
+##	$theme.include($top_head_include)
+##</head>
+##
+##<body class="$css_class">
+##	$theme.include($content_include)
+##</body>
+##
+##$theme.include($bottom_ext_include)
+##</html>

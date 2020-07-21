@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.protecmedia.iter.xmlio.model.Channel">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="type" type="String" />
+		<field name="mode" type="String" />
+		<field name="filePath" type="String" />
+		<field name="xslPath" type="String" />
+		<field name="ftpServer" type="String" />
+		<field name="ftpUser" type="String" />
+		<field name="ftpPassword" type="String" />
+		<field name="status" type="boolean" />
+		<field name="program" type="boolean" />
+		<field name="programHour" type="int" />
+		<field name="programMin" type="int" />
+		<field name="rangeType" type="String" />
+		<field name="rangeTimeAll" type="boolean" />
+		<field name="rangeTimeValue" type="int" />
+		<field name="rangeTimeUnit" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.ChannelControl">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="type" type="String" />
+		<field name="operation" type="String" />
+		<field name="status" type="String" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="operations" type="long" />
+		<field name="errors" type="long" />
+		<field name="fileSize" type="long" />
+		<field name="errorLog" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.ChannelControlLog">
+		<field name="id" type="long" />
+		<field name="channelControlId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="globalId" type="String" />
+		<field name="operation" type="String" />
+		<field name="classNameValue" type="String" />
+		<field name="errorLog" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.Live">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="classNameValue" type="String" />
+		<field name="globalId" type="String" />
+		<field name="localId" type="String" />
+		<field name="operation" type="String" />
+		<field name="status" type="String" />
+		<field name="modifiedDate" type="Date" />
+		<field name="performDate" type="Date" />
+		<field name="errorLog" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="existInLive" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.LivePool">
+		<field name="id" type="long" />
+		<field name="livePoolId" type="long" />
+		<field name="liveParentId" type="long" />
+		<field name="liveChildId" type="long" />
+		<field name="processId" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.LiveConfiguration">
+		<field name="id" type="long" />
+		<field name="companyId" type="long" />
+		<field name="remoteIterServer" type="String" />
+		<field name="gatewayHost" type="String" />
+		<field name="localPath" type="String" />
+		<field name="outputMethod" type="String" />
+		<field name="ftpPath" type="String" />
+		<field name="ftpUser" type="String" />
+		<field name="ftpPassword" type="String" />
+		<field name="remotePath" type="String" />
+		<field name="destinationType" type="String" />
+		<field name="remoteChannelId" type="long" />
+		<field name="remoteUserId" type="long" />
+		<field name="remoteUserName" type="String" />
+		<field name="remoteUserPassword" type="String" />
+		<field name="remoteGlobalGroupId" type="long" />
+		<field name="remoteCompanyId" type="long" />
+		<field name="archive" type="boolean" />
+		<field name="connectionTimeOut" type="long" />
+		<field name="operationTimeOut" type="long" />
+	</model>
+	<model name="com.protecmedia.iter.xmlio.model.LiveControl">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="processId" type="String" />
+		<field name="subprocessId" type="String" />
+		<field name="type" type="String" />
+		<field name="status" type="String" />
+		<field name="fileSize" type="long" />
+		<field name="operations" type="long" />
+		<field name="errors" type="long" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="errorLog" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+	</model>
+</model-hints>

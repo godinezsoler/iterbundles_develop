@@ -1,0 +1,277 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.tracking-portlet .activate {
+	background:	url("../img/activate.png") no-repeat scroll 0 0 transparent;
+}
+
+.tracking-portlet .deactivate {
+	background:	url("../img/deactivate.png") no-repeat scroll 0 0 transparent;
+}
+
+.tracking-portlet .activate span,
+.tracking-portlet .deactivate span {
+	text-indent: -9999px;
+	font-size: 0;
+}
+
+.tracking-portlet .filter-form .aui-field-label {    
+    margin-bottom: 5px;
+}
+
+.tracking-portlet .filter-form .aui-field {
+	display: block;
+    margin-bottom: 10px;
+}
+
+.tracking-portlet .filter-form input[type="text"] {
+	width: 90%;
+}
+
+.tracking-portlet .filter-form .user-field {
+	width: 95%;
+	margin-bottom: 0;
+}
+
+.tracking-portlet .taglib-header {
+	width: 90%;
+}
+
+.tracking-portlet .chart {
+	background-color: #CCCCCC;
+    height: 400px;
+    padding: 1%;
+    width: 98%;
+}
+
+.tracking-portlet .sends {
+	color: red;
+}
+
+.tracking-portlet .aui-field-label {    
+    margin-bottom: 5px;
+}
+
+.tracking-portlet .aui-field {
+	display: block;
+    margin-bottom: 10px;
+}
+
+.tracking-portlet .filter-view-form .content-types .aui-field  {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+.tracking-portlet .filter-view-form .aui-fieldset {
+	margin-bottom: 0;
+}
+
+.tracking-portlet .filter-view-form input[type="text"] {
+	width: 90%;
+}
+
+.tracking-portlet .filter-view-form .aui-field-inline .aui-field-content, .tracking-portlet .filter-view-form .aui-field-row .aui-field-content {
+    margin: 0 40px 0 0;
+}
+
+/* ---------------- */
+/*   Estilos Poll   */
+/* ---------------- */
+
+.tracking-portlet .poll {
+	color:#666666;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	line-height:20px;
+	text-align:justify;
+	border: 1px solid #CCCCCC;
+    margin: 5px;
+    padding: 10px;
+}
+
+.tracking-portlet .poll .titulo {
+	margin-bottom:10px;
+	overflow:hidden; 
+}
+
+.tracking-portlet .poll .titulo .imagen {
+	float:left;
+	width:20%;
+}
+
+.tracking-portlet .poll .titulo .texto {
+	float:left;
+	width:75%;
+}
+
+.tracking-portlet .poll .titulo .texto h1 {
+	margin: 0;
+}
+
+.tracking-portlet .poll.full .titulo .texto h1 {
+	margin:0 0 12px;
+}
+
+.tracking-portlet .poll.full .titulo .texto h1:hover {
+	text-underline: none;
+}
+
+.tracking-portlet .poll .entradilla p {
+	color:#666666;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	line-height:20px;
+	text-align:justify;
+}
+
+.tracking-portlet .poll .totalvotes span {
+	color:#666666;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+}
+
+.tracking-portlet .poll .vote form {
+	padding:5px 0;
+}
+
+.tracking-portlet .poll .vote .respuesta {
+	padding:5px 0;
+}
+
+.tracking-portlet .poll .vote .respuesta label {
+	padding-left:10px;
+}
+
+.tracking-portlet .poll .vote .respuesta input {
+	cursor:pointer;
+	float:left;
+	margin-top:4px;
+}
+
+.tracking-portlet .poll .vote .button {
+	text-align:center;
+	margin:10px 0;
+}
+
+.tracking-portlet .poll .link {
+	text-align:right;
+}
+
+.tracking-portlet .poll .link a:hover {
+	color:#5B677D;
+}
+
+.tracking-portlet .poll.full .vote .respuesta {
+	padding:5px 0;
+	overflow: hidden;
+}
+
+.tracking-portlet .poll.full .vote .respuesta .opcion {
+	float: left;
+	width: 40%;
+	margin-right: 2%;
+	margin-top:6px;
+}
+
+.tracking-portlet .poll.full .vote .respuesta .barrarespuesta {
+	border:1px solid #CCCCCC;
+	float:left;
+	height:30px;
+	width: 40%;
+	margin-right: 2%;
+}
+
+.tracking-portlet .poll.full .vote .respuesta .porcentajerespuesta {
+	float: left;
+	width: 15%;
+	margin-top:6px;
+}
+
+
+
+/* ---------------------------------------------*/
+/* ------------ Pages Tab ----------*/
+/* ---------------------------------------------*/
+
+.tracking-portlet .lfr-tree-controls div, .lfr-tree-controls a {
+	float:left;
+}
+
+.tracking-portlet .lfr-tree-controls-item {
+	padding:0 0 6px 6px;
+}
+
+.tracking-portlet .lfr-tree-controls-expand  {
+	background-image:url("/html/themes/control_panel/images/trees/expand_all.png");
+}
+
+.tracking-portlet .lfr-tree-controls-collapse  {
+	background-image:url("/html/themes/control_panel/images/trees/collapse_all.png");
+}
+
+.tracking-portlet .lfr-tree-controls-label  {
+	line-height:17px;
+	padding:0 2px;
+	text-decoration:none;
+}
+
+.tracking-portlet .aui-tree-label {
+	text-decoration: none;
+	color: #336699
+}
+
+.tracking-portlet .aui-tree-label a {
+	text-decoration: none;
+	color: #336699;
+}
+
+.tracking-portlet .aui-tree-label a:hover,
+.page-content-view-portlet .lfr-tree-controls-label:hover {
+	text-decoration: underline;
+	color: #0066CC;
+}
+
+.tracking-portlet .node-selected .aui-tree-data-content {
+	background:none repeat scroll 0 0 #EEEEEE;
+}
+
+.tracking-portlet .aui-tree-node-selected .aui-tree-label {
+	background: none;
+}
+
+.tracking-portlet .lfr-root-node div .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/root.png");
+}
+
+.tracking-portlet .lfr-root-node ul .aui-tree-expanded .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page_copy.png");
+}
+
+.tracking-portlet .lfr-root-node ul .aui-tree-collapsed .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");
+}
+
+.tracking-portlet .lfr-root-node ul .aui-tree-node-leaf .aui-tree-icon {
+	background-image:url("/html/themes/control_panel/images/trees/page.png");	
+}
+
+.lfr-search-container table tr td .checked {
+	background:url("/html/themes/control_panel/images/dockbar/checked.png") no-repeat scroll 0 50% transparent;
+	font-size:0;
+	margin-left:1px;
+	padding:12px 5px 5px 10px;
+	text-indent:-9999em;
+	width:10px;
+}
+
+.tracking-portlet .lfr-search-container .portlet-section-header th {
+	background-color:#FFFFFF;
+}
+
+
+
+

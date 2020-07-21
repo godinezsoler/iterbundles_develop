@@ -1,0 +1,66 @@
+$!iterVelocityTools.getHTTPPolicyReportDirective()
+$!iterVelocityTools.getHSTSCode()
+$!iterVelocityTools.getEarlyLoadScript()
+$!iterVelocityTools.getRFVCode()
+#globalbasic
+#parse ($init)
+#checkAccess()
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$html_lang">
+	#set($sectionHeader = $iterVelocityTools.getSectionCatalogHeader())
+	#set($sectionFooter = $iterVelocityTools.getSectionCatalogFooter())
+	
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+		
+		<title>$iterVelocityTools.getTitle("$the_title")</title>
+        #set($favicon = $iterVelocityTools.getVariable("0", "favicon"))
+        #if ($favicon && $favicon != "")
+		  <link rel="shortcut icon" href="$favicon" />
+        #end
+        #set($androidIcons = $iterVelocityTools.getAndroidIcons("0"))
+        #foreach( $icon in $androidIcons )
+    	  <link rel="icon" sizes="$icon.get(0)" href="$icon.get(1)" />
+  		#end
+  		## ITER-764 Estilos inline en HTML generado para ITER no validos para AMP
+  		<style amp-custom>
+  		.mln_uppercase_mln
+		{
+			text-transform:uppercase
+		}
+		
+		.mln_small-caps_mln
+		{
+			font-variant:small-caps
+		}
+		</style>
+		## Se inserta el código del ABTesting en este punto para, de ser necesario, 
+		## escriba también los tags og:image:width y og:image:height.
+		#getABTestingCode()
+		$!iterVelocityTools.getSlideshowCode()
+		$!iterVelocityTools.getMetatagsCode()
+		$theme.include($top_head_include)	
+		$theme.include("/html/common/themes/before-head-close.jsp")
+	</head>
+	
+	<body class="$css_class" $iterVelocityTools.getBodyCustomAttributes() $iterVelocityTools.getBodyInlineStyles()>
+		$theme.include("/html/common/themes/after-body-open.jsp")
+		#dockbar()
+
+		$iterVelocityTools.getWebBeacon()
+		<div class="iter-page-frame">
+			<header class="iter-header-wrapper" id="iter-header-wrapper">
+				$sectionHeader
+			</header>
+			<div class="iter-content-wrapper iter-droppable-zone" id="iter-content-wrapper">
+				$theme.include($content_include)
+			</div>
+			<footer class="iter-footer-wrapper" id="iter-footer-wrapper">
+				$sectionFooter
+			</footer>
+		</div>
+		$theme.include($bottom_include)
+	</body>
+	
+</html>
+
+

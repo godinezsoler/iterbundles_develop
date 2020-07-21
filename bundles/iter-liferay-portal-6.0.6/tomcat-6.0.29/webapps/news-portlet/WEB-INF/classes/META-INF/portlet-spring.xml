@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.news.service.QualificationLocalService" class="com.protecmedia.iter.news.service.impl.QualificationLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.QualificationLocalServiceUtil" class="com.protecmedia.iter.news.service.QualificationLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.QualificationLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.QualificationService" class="com.protecmedia.iter.news.service.impl.QualificationServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.QualificationServiceUtil" class="com.protecmedia.iter.news.service.QualificationServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.QualificationService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.QualificationPersistence" class="com.protecmedia.iter.news.service.persistence.QualificationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.PageContentLocalService" class="com.protecmedia.iter.news.service.impl.PageContentLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.PageContentLocalServiceUtil" class="com.protecmedia.iter.news.service.PageContentLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.PageContentLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.PageContentService" class="com.protecmedia.iter.news.service.impl.PageContentServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.PageContentServiceUtil" class="com.protecmedia.iter.news.service.PageContentServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.PageContentService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.PageContentPersistence" class="com.protecmedia.iter.news.service.persistence.PageContentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.ArticlePollLocalService" class="com.protecmedia.iter.news.service.impl.ArticlePollLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ArticlePollLocalServiceUtil" class="com.protecmedia.iter.news.service.ArticlePollLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ArticlePollLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.ArticlePollService" class="com.protecmedia.iter.news.service.impl.ArticlePollServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ArticlePollServiceUtil" class="com.protecmedia.iter.news.service.ArticlePollServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ArticlePollService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.ArticlePollPersistence" class="com.protecmedia.iter.news.service.persistence.ArticlePollPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.CommentsLocalService" class="com.protecmedia.iter.news.service.impl.CommentsLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CommentsLocalServiceUtil" class="com.protecmedia.iter.news.service.CommentsLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CommentsLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.CommentsService" class="com.protecmedia.iter.news.service.impl.CommentsServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CommentsServiceUtil" class="com.protecmedia.iter.news.service.CommentsServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CommentsService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.CommentsPersistence" class="com.protecmedia.iter.news.service.persistence.CommentsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.CountersLocalService" class="com.protecmedia.iter.news.service.impl.CountersLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CountersLocalServiceUtil" class="com.protecmedia.iter.news.service.CountersLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CountersLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.CountersService" class="com.protecmedia.iter.news.service.impl.CountersServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CountersServiceUtil" class="com.protecmedia.iter.news.service.CountersServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CountersService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.CountersPersistence" class="com.protecmedia.iter.news.service.persistence.CountersPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.CategorizeLocalService" class="com.protecmedia.iter.news.service.impl.CategorizeLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CategorizeLocalServiceUtil" class="com.protecmedia.iter.news.service.CategorizeLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CategorizeLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.CategorizeService" class="com.protecmedia.iter.news.service.impl.CategorizeServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CategorizeServiceUtil" class="com.protecmedia.iter.news.service.CategorizeServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CategorizeService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.CategorizePersistence" class="com.protecmedia.iter.news.service.persistence.CategorizePersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.JournalArticleLocalService" class="com.protecmedia.iter.news.service.impl.JournalArticleLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.JournalArticleLocalServiceUtil" class="com.protecmedia.iter.news.service.JournalArticleLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.JournalArticleLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.JournalArticleService" class="com.protecmedia.iter.news.service.impl.JournalArticleServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.JournalArticleServiceUtil" class="com.protecmedia.iter.news.service.JournalArticleServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.JournalArticleService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.JournalArticlePersistence" class="com.protecmedia.iter.news.service.persistence.JournalArticlePersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.MetadataLocalService" class="com.protecmedia.iter.news.service.impl.MetadataLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.MetadataLocalServiceUtil" class="com.protecmedia.iter.news.service.MetadataLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.MetadataLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.MetadataService" class="com.protecmedia.iter.news.service.impl.MetadataServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.MetadataServiceUtil" class="com.protecmedia.iter.news.service.MetadataServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.MetadataService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.persistence.MetadataPersistence" class="com.protecmedia.iter.news.service.persistence.MetadataPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.news.service.DLFileEntryLocalService" class="com.protecmedia.iter.news.service.impl.DLFileEntryLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.DLFileEntryLocalServiceUtil" class="com.protecmedia.iter.news.service.DLFileEntryLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.DLFileEntryLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.DLFileEntryService" class="com.protecmedia.iter.news.service.impl.DLFileEntryServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.DLFileEntryServiceUtil" class="com.protecmedia.iter.news.service.DLFileEntryServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.DLFileEntryService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.ProductLocalService" class="com.protecmedia.iter.news.service.impl.ProductLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ProductLocalServiceUtil" class="com.protecmedia.iter.news.service.ProductLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ProductLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.ProductService" class="com.protecmedia.iter.news.service.impl.ProductServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ProductServiceUtil" class="com.protecmedia.iter.news.service.ProductServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ProductService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.LayoutLocalService" class="com.protecmedia.iter.news.service.impl.LayoutLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.LayoutLocalServiceUtil" class="com.protecmedia.iter.news.service.LayoutLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.LayoutLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.LayoutService" class="com.protecmedia.iter.news.service.impl.LayoutServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.LayoutServiceUtil" class="com.protecmedia.iter.news.service.LayoutServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.LayoutService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.news.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.news.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.IterPortletInstanceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.CatalogLocalService" class="com.protecmedia.iter.news.service.impl.CatalogLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CatalogLocalServiceUtil" class="com.protecmedia.iter.news.service.CatalogLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CatalogLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.CatalogService" class="com.protecmedia.iter.news.service.impl.CatalogServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.CatalogServiceUtil" class="com.protecmedia.iter.news.service.CatalogServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.CatalogService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.MetadataControlLocalService" class="com.protecmedia.iter.news.service.impl.MetadataControlLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.MetadataControlLocalServiceUtil" class="com.protecmedia.iter.news.service.MetadataControlLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.MetadataControlLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.MetadataControlService" class="com.protecmedia.iter.news.service.impl.MetadataControlServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.MetadataControlServiceUtil" class="com.protecmedia.iter.news.service.MetadataControlServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.MetadataControlService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.DaylyTopicMgrLocalService" class="com.protecmedia.iter.news.service.impl.DaylyTopicMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.DaylyTopicMgrLocalServiceUtil" class="com.protecmedia.iter.news.service.DaylyTopicMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.DaylyTopicMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.DaylyTopicMgrService" class="com.protecmedia.iter.news.service.impl.DaylyTopicMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.DaylyTopicMgrServiceUtil" class="com.protecmedia.iter.news.service.DaylyTopicMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.DaylyTopicMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.ExternalServicesLocalService" class="com.protecmedia.iter.news.service.impl.ExternalServicesLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ExternalServicesLocalServiceUtil" class="com.protecmedia.iter.news.service.ExternalServicesLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ExternalServicesLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.news.service.ExternalServicesService" class="com.protecmedia.iter.news.service.impl.ExternalServicesServiceImpl" />
+	<bean id="com.protecmedia.iter.news.service.ExternalServicesServiceUtil" class="com.protecmedia.iter.news.service.ExternalServicesServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.news.service.ExternalServicesService" />
+	</bean>
+</beans>

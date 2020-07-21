@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+	<display-name>user-portlet</display-name>
+	<context-param>
+		<param-name>axis.servicesPath</param-name>
+		<param-value>/axis/</param-value>
+	</context-param>
+	<filter>
+		<filter-name>Axis Servlet Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>portal_property_prefix</param-name>
+			<param-value>axis.servlet.</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>JSON Servlet Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>portal_property_prefix</param-name>
+			<param-value>json.servlet.</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Secure Axis Servlet Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>basic_auth</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>portal_property_prefix</param-name>
+			<param-value>axis.servlet.</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Secure JSON Servlet Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.secure.SecureFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>basic_auth</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>portal_property_prefix</param-name>
+			<param-value>json.servlet.</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Thread Local Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.threadlocal.ThreadLocalFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.cache.CacheFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pattern</param-name>
+			<param-value>2</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Cache Filter - Resource JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.cache.CacheFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pattern</param-name>
+			<param-value>2</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>ETag Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.etag.ETagFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>ETag Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.etag.ETagFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>GZip Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.gzip.GZipFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Header Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.header.HeaderFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=315360000, public</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Expires</param-name>
+			<param-value>315360000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Vary</param-name>
+			<param-value>Accept-Encoding</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Header Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.header.HeaderFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=315360000, public</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Expires</param-name>
+			<param-value>315360000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Vary</param-name>
+			<param-value>Accept-Encoding</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Language Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.language.LanguageFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Minifier Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.minifier.MinifierFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Minifier Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.minifier.MinifierFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Thread Local Filter</filter-name>
+		<url-pattern>/axis/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Thread Local Filter</filter-name>
+		<url-pattern>/json/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Thread Local Filter</filter-name>
+		<url-pattern>/secure/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Axis Servlet Filter</filter-name>
+		<url-pattern>/axis/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>JSON Servlet Filter</filter-name>
+		<url-pattern>/json/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Secure Axis Servlet Filter</filter-name>
+		<url-pattern>/secure/axis/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Secure JSON Servlet Filter</filter-name>
+		<url-pattern>/secure/json/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.otf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.woff</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.woff2</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.svg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.ttf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.otf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.woff</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.woff2</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.svg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.ttf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.otf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.woff</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.woff2</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.svg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.ttf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Language Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.servlet.SerializableSessionAttributeListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.servlet.PortletContextListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.util.FileUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginWithDisqus</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.LoginWithDisqus</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginWithFacebook</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.LoginWithFacebook</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginWithTwitter</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.LoginWithTwitter</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginWithGooglePlus</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.LoginWithGooglePlus</servlet-class>
+	</servlet>
+	<servlet>
+		<description/>
+		<display-name>FormReceiver</display-name>
+		<servlet-name>FormReceiver</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.FormReceiver</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetEntitlements</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.GetEntitlements</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ResetUserCredentials</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.ResetUserCredentials</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EditUserProfile</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.EditUserProfile</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OTPServlet</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.OTPServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RegisterUser</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.RegisterUser</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RefreshUserEntitlements</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.RefreshUserEntitlements</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AMPAuthEndPoint</servlet-name>
+		<servlet-class>com.protecmedia.iter.user.servlet.AMPAuthEndPoint</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Set Portlet Class Loader Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.SetPortletClassLoaderServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Axis Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
+		<init-param>
+			<param-name>servlet-class</param-name>
+			<param-value>com.liferay.portal.servlet.AxisServlet</param-value>
+		</init-param>
+		<init-param>
+			<param-name>use-portlet-class-loader</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>JSON Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
+		<init-param>
+			<param-name>servlet-class</param-name>
+			<param-value>com.liferay.portal.servlet.JSONServlet</param-value>
+		</init-param>
+		<init-param>
+			<param-name>use-portlet-class-loader</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>loginportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.protecmedia.iter.user.portlet.LoginPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>loginformportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.protecmedia.iter.user.portlet.LoginFormPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>newsletterportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.protecmedia.iter.user.portlet.NewsletterPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>forgotpasswordportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.protecmedia.iter.user.portlet.ForgotPasswordPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>formportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.protecmedia.iter.user.portlet.FormPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>registeruserportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.util.bridges.mvc.MVCPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>edituserprofileportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.util.bridges.mvc.MVCPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>unregisteruserportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.util.bridges.mvc.MVCPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>paywallstatusportlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.util.bridges.mvc.MVCPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<url-pattern>/fileuploadservlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginWithDisqus</servlet-name>
+		<url-pattern>/login-with/disqus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginWithFacebook</servlet-name>
+		<url-pattern>/login-with/facebook</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginWithTwitter</servlet-name>
+		<url-pattern>/login-with/twitter</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginWithGooglePlus</servlet-name>
+		<url-pattern>/login-with/googleplus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FormReceiver</servlet-name>
+		<url-pattern>/FormReceiver</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetEntitlements</servlet-name>
+		<url-pattern>/getEntitlements</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResetUserCredentials</servlet-name>
+		<url-pattern>/reset-credentials</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditUserProfile</servlet-name>
+		<url-pattern>/edit-user-profile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OTPServlet</servlet-name>
+		<url-pattern>/otp/generation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterUser</servlet-name>
+		<url-pattern>/confirm-email</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RefreshUserEntitlements</servlet-name>
+		<url-pattern>/refreshuserentitlements</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AMPAuthEndPoint</servlet-name>
+		<url-pattern>/ampauthendpoint</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Axis Servlet</servlet-name>
+		<url-pattern>/axis/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Axis Servlet</servlet-name>
+		<url-pattern>/secure/axis/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JSON Servlet</servlet-name>
+		<url-pattern>/json/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JSON Servlet</servlet-name>
+		<url-pattern>/secure/json/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>loginportlet</servlet-name>
+		<url-pattern>/loginportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>loginformportlet</servlet-name>
+		<url-pattern>/loginformportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>newsletterportlet</servlet-name>
+		<url-pattern>/newsletterportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>forgotpasswordportlet</servlet-name>
+		<url-pattern>/forgotpasswordportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>formportlet</servlet-name>
+		<url-pattern>/formportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>registeruserportlet</servlet-name>
+		<url-pattern>/registeruserportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>edituserprofileportlet</servlet-name>
+		<url-pattern>/edituserprofileportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>unregisteruserportlet</servlet-name>
+		<url-pattern>/unregisteruserportlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>paywallstatusportlet</servlet-name>
+		<url-pattern>/paywallstatusportlet/*</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errors/error.htm</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errors/error.htm</location>
+	</error-page>
+	<error-page>
+		<error-code>400</error-code>
+		<location>/errors/error.htm</location>
+	</error-page>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://java.sun.com/portlet_2_0</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-portlet.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/portlet</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-portlet-ext.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/security</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-security.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/theme</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-theme.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/ui</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-ui.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/util</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-util.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/aui</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-aui.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

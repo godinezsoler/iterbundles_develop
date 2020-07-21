@@ -1,0 +1,147 @@
+/*****************
+* HEADER BUTTONS *
+******************/
+#extra-buttons {
+	display: inline-block;
+	margin: 7px 10px 5px 5px;
+}
+
+#extra-buttons button:hover, #extra-buttons button:active {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#extra-buttons .csv-export{
+	cursor:pointer;
+	border:none;
+	width:32px;
+	height:32px;
+	display: inline-block;
+	background-image: url('/tracking-portlet/img/statistics/csv-export-icon-64x64.png');
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+}
+
+/****************
+* RESUME BLOCKS *
+*****************/
+#resume-block-container
+{
+	text-align: center;
+}
+
+.resume-block {
+	cursor: pointer;
+}
+
+.resume-block-disabled {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE 5-7 */
+    -moz-opacity: 0.5; /* Netscape */
+    -khtml-opacity: 0.5;/* Safari 1.x */
+    opacity: 0.5; /* Good browsers */
+}
+
+.resume-logo {
+	width: 32px;
+    height: 42px;
+	background-size: 32px 32px !important;
+}
+
+#resume-registrations .resume-logo { background: url('/tracking-portlet/img/statistics/registros.svg') no-repeat center; }
+#resume-registrations-w .resume-logo { background: url('/tracking-portlet/img/statistics/registros-w.svg') no-repeat center; }
+
+#resume-social-registrations .resume-logo { background: url('/tracking-portlet/img/statistics/registros.redes.svg') no-repeat center; }
+#resume-social-registrations-w .resume-logo { background: url('/tracking-portlet/img/statistics/registros.redes-w.svg') no-repeat center; }
+
+#resume-profile-modifications .resume-logo { background: url('/tracking-portlet/img/statistics/mod.perfil.svg') no-repeat center; }
+#resume-profile-modifications-w .resume-logo { background: url('/tracking-portlet/img/statistics/mod.perfil-w.svg') no-repeat center; }
+
+#resume-social-account-bindigns .resume-logo { background: url('/tracking-portlet/img/statistics/vinculacion.redes.svg') no-repeat center; }
+#resume-social-account-bindigns-w .resume-logo { background: url('/tracking-portlet/img/statistics/vinculacion.redes-w.svg') no-repeat center; }
+
+#resume-recoveries .resume-logo { background: url('/tracking-portlet/img/statistics/restablecer.credenciales.svg') no-repeat center; }
+#resume-recoveries-w .resume-logo { background: url('/tracking-portlet/img/statistics/restablecer.credenciales-w.svg') no-repeat center; }
+
+#resume-account-deletes .resume-logo { background: url('/tracking-portlet/img/statistics/bajas.usuario.svg') no-repeat center; }
+#resume-account-deletes-w .resume-logo { background: url('/tracking-portlet/img/statistics/bajas.usuario-w.svg') no-repeat center; }
+
+.resume-block span {
+    margin-left: 10px;
+}
+
+/*********************
+* RESPONSIVE COLUMNS *
+**********************/
+.chart-container {
+	margin: 5px;
+    padding: 10px;
+    background: #fafafa;
+    box-shadow: 1px 1px 1px #e7e7e7;
+}
+
+.chart-container:hover {
+    box-shadow: 1px 1px 15px #c7c7c7;
+}
+
+.charts-container-2-columns {
+	position: relative;
+}
+
+#registration-chart-container canvas {
+	min-height: 250px;
+	max-height: 250px;
+}
+
+#bindings-chart-container canvas {
+	min-height: 250px;
+	max-height: 250px;
+}
+
+#favorites-resume-chart-container canvas {
+	min-height: 250px;
+	max-height: 250px;
+}
+
+#favorites-trend-chart-container canvas {
+	min-height: 250px;
+	max-height: 250px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 700px ) {
+	#registration-chart-container {
+		position: absolute;
+		top: -5px;
+		left: 0;
+		width: 300px;
+	}
+	
+	#bindings-chart-container {
+		margin: 5px 5px 5px 350px;
+	}
+	
+	#favorites-resume-chart-container {
+		position: absolute;
+		top: -5px;
+		left: 0;
+		width: 300px;
+	}
+	
+	#favorites-trend-chart-container {
+		margin: 5px 5px 5px 350px;
+	}
+}

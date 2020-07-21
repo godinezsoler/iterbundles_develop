@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_News_CommentsService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.news.iter.protecmedia.com" xmlns:cmp-ns="http://model.news.iter.protecmedia.com" qname="ns:ArrayOf_tns2_CommentsSoap" type="java:com.protecmedia.iter.news.model.CommentsSoap[]" innerType="cmp-ns:CommentsSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.news.iter.protecmedia.com" qname="ns:CommentsSoap" type="java:com.protecmedia.iter.news.model.CommentsSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="disableComment" qname="operNS:disableComment" returnQName="disableCommentReturn" returnType="rtns:CommentsSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="commentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="http://model.news.iter.protecmedia.com" name="enableComment" qname="operNS:enableComment" returnQName="enableCommentReturn" returnType="rtns:CommentsSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="commentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="urn:http.service.news.iter.protecmedia.com" xmlns:tns2="http://model.news.iter.protecmedia.com" name="getComments" qname="operNS:getComments" returnQName="getCommentsReturn" returnType="rtns:ArrayOf_tns2_CommentsSoap" returnItemType="tns2:CommentsSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.news.iter.protecmedia.com" xmlns:rtns="urn:http.service.news.iter.protecmedia.com" xmlns:tns2="http://model.news.iter.protecmedia.com" name="getComments" qname="operNS:getComments" returnQName="getCommentsReturn" returnType="rtns:ArrayOf_tns2_CommentsSoap" returnItemType="tns2:CommentsSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="contentId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="disableComment enableComment getComments" />
+		<parameter name="className" value="com.protecmedia.iter.news.service.http.CommentsServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.news.iter.protecmedia.com,urn:http.service.news.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CommentsServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CommentsServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_News_CommentsService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.news.iter.protecmedia.com" />
+	</service>
+</deployment>

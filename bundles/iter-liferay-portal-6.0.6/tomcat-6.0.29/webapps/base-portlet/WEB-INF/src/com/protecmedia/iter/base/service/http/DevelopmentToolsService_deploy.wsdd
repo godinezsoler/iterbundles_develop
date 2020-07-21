@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Base_DevelopmentToolsService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="clearAllCaches" qname="operNS:clearAllCaches" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="clearDBCache" qname="operNS:clearDBCache" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="clearVMCache" qname="operNS:clearVMCache" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getLayoutTypeSettings" qname="operNS:getLayoutTypeSettings" returnQName="getLayoutTypeSettingsReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.base.iter.protecmedia.com" name="rebuildAssetCategoryTree" qname="operNS:rebuildAssetCategoryTree" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="clearAllCaches clearDBCache clearVMCache getLayoutTypeSettings rebuildAssetCategoryTree" />
+		<parameter name="className" value="com.protecmedia.iter.base.service.http.DevelopmentToolsServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="DevelopmentToolsServiceSoap" />
+		<parameter name="wsdlServiceElement" value="DevelopmentToolsServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Base_DevelopmentToolsService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.base.iter.protecmedia.com" />
+	</service>
+</deployment>

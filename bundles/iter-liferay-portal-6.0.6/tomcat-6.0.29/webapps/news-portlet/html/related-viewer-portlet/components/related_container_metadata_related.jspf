@@ -1,0 +1,61 @@
+<%@page import="com.liferay.portal.util.HtmlOptimizer"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<%
+	
+	
+	String html = null;
+	String viewMode = null;
+	
+	try
+	{
+		if(articleData != null)
+		{
+			String relatedId = articleData[0];
+			JournalArticle relatedArticle = JournalArticleLocalServiceUtil.getArticle(globalGroupId, relatedId);
+			
+			String relatedLinkName = relatedArticle.getTitle();	
+			
+			String relatedUrlTitle = relatedArticle.getUrlTitle();
+											
+			viewMode = PageContentLocalServiceUtil.getArticleContextInfo(scopeGroupId, relatedId, null);
+													
+			String faTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdArticle, templateIdGallery, 
+													  templateIdPoll, templateIdMultimedia);
+
+			String raTemplateId = TeaserContentUtil.getTemplateId(relatedArticle, templateIdArticleRestricted, templateIdGalleryRestricted, 
+													  											  templateIdPollRestricted, templateIdMultimediaRestricted);
+											
+			int templateMode = TeaserContentUtil.getTemplateMode(relatedArticle, modeArticle, modeGallery, modePoll, modeMultimedia);
+											
+			html = PageContentLocalServiceUtil.getArticleContent(relatedArticle, faTemplateId, raTemplateId, 
+																								 viewMode, themeDisplay, xmlRequest, templateMode, 
+																								 request, currentIndex, listResultSize );
+			
+			String currentCssClass = TeaserContentUtil.getCSSClass(currentIndex, listResultSize, relatedArticle, request);
+			
+			String linkType    	   =  IterKeys.METADATA_LINK_TYPE_CLASS;
+			String elementClass    =  IterKeys.METADATA_LINK_CLASS;
+			String signedArticleId 	 =  IterURLUtil.getSignedArticleId(relatedId);
+											
+			if(Validator.isNotNull(html))
+			{
+				String elemTagName = HtmlOptimizer.isEnabled() ? "article" : "li";
+%> 
+				<<%=elemTagName%> class="element <%=currentCssClass%> <%=linkType%> <%=elementClass%>" iteridart="<%= signedArticleId %>">
+					<span class='teaserItemPosition <%=HtmlUtil.getRemovableClass()%>'><%=currentIndex%></span>
+					<div class="icon <%=elementClass%>"></div>
+					<div class="related-item-wrapper">
+						<%=html%>
+					</div>
+				</<%=elemTagName%>>
+<% 
+				currentIndex++;
+			}
+		}
+	}
+	catch (Exception e)
+	{	
+		_log.error(e);
+	}
+									
+%>

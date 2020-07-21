@@ -1,0 +1,23 @@
+<%	
+//se puede valorar si: se permiten valoraciones anónimas o se está presentado
+if (allowAnonymousVote) 
+{
+%>
+	<%@ include file="scripts_full.jsp"%>
+<%	
+}
+else
+{
+	out.print(" <?php $usrname = getenv('ITER_USER'); "); 
+	out.print(" if(strlen($usrname)!==0){ ?> ");
+%>
+	<%@ include file="scripts_full.jsp"%>
+<%
+	out.print(" <?php }else{ ?> ");
+%>
+	<%@ include file="scripts_restricted.jsp"%>
+<%
+	out.print(" <?php } ?> ");
+
+}
+%>

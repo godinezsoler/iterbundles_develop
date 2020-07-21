@@ -1,0 +1,58 @@
+<%	
+			int currentIndex = 1;
+			
+			if( teasertotalcount > 0)
+				request.setAttribute( VelocityContext.VELOCITYVAR_ITER_QUALIFICATION, qualificationName );
+			
+			for (int i = 0; i < teasertotalcount; i++)
+			{
+				String teaserContentId = "";
+				
+				try
+				{
+					String[] currentArticle = (String[]) listResult.get(i);
+					JournalArticle teaserContent = JournalArticleLocalServiceUtil.getArticle(globalGroupId, currentArticle[0]);										
+
+					if (teaserContent.isApproved())
+					{																		
+						teaserContentId = teaserContent.getArticleId();
+						
+						String faTemplateId = TeaserContentUtil.getTemplateId(teaserContent, templateIdArticle, templateIdGallery, 
+																			  templateIdPoll, templateIdMultimedia);
+						
+						String raTemplateId = TeaserContentUtil.getTemplateId(teaserContent, templateIdArticleRestricted, templateIdGalleryRestricted, 
+								  											  templateIdPollRestricted, templateIdMultimediaRestricted);
+						
+						String viewMode = PageContentLocalServiceUtil.getArticleContextInfo(scopeGroupId, teaserContentId, ctxLayouts);
+						
+						int templateMode = TeaserContentUtil.getTemplateMode(teaserContent, modeArticle, modeGallery, modePoll, modeMultimedia);
+						
+// 						renderRequest.setAttribute("redirect-url", PortalUtil.getLayoutFriendlyURL(layout, themeDisplay));
+						
+						String id = responseNamespace + i;	
+						String idCMS = teaserContentId;
+						
+						String teaserHTMLContent = PageContentLocalServiceUtil.getArticleContent(teaserContent, faTemplateId, raTemplateId, 
+																								 viewMode, themeDisplay, xmlRequest, templateMode, 
+																								 request, currentIndex, teasertotalcount);
+						
+						int resultsSize = teasertotalcount;
+						int resultsPageSize = teasertotalcount;
+%>														
+						<c:if test='<%= (Validator.isNotNull(teaserHTMLContent)) %>'>	
+						
+							<%@ include file="teaser_container_row.jspf" %>
+							
+						</c:if>
+<%					
+						currentIndex++;
+					}
+				} 
+				catch (Exception e) 
+				{	
+					System.out.println("Error painting no paged content");
+					e.printStackTrace();
+				}
+			}
+			
+%>

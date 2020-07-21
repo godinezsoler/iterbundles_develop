@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_Designer_PageTemplateService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.designer.iter.protecmedia.com" xmlns:cmp-ns="http://model.designer.iter.protecmedia.com" qname="ns:ArrayOf_tns2_PageTemplateSoap" type="java:com.protecmedia.iter.designer.model.PageTemplateSoap[]" innerType="cmp-ns:PageTemplateSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.designer.iter.protecmedia.com" qname="ns:PageTemplateSoap" type="java:com.protecmedia.iter.designer.model.PageTemplateSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="addPageTemplate2" qname="operNS:addPageTemplate2" returnQName="addPageTemplate2Return" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="header" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="footer" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="menu" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="addPageTemplate3" qname="operNS:addPageTemplate3" returnQName="addPageTemplate3Return" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="header" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="footer" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="menu" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="extraData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="addPageTemplateParentId" qname="operNS:addPageTemplateParentId" returnQName="addPageTemplateParentIdReturn" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="parentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="addPageTemplate" qname="operNS:addPageTemplate" returnQName="addPageTemplateReturn" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="description" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="clearLayout" qname="operNS:clearLayout" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="layoutId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="compareLayoutPageTemplate" qname="operNS:compareLayoutPageTemplate" returnQName="compareLayoutPageTemplateReturn" returnType="rtns:boolean" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="plid" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="deletePageTemplate" qname="operNS:deletePageTemplate" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="getPageTemplateByPageTemplateId" qname="operNS:getPageTemplateByPageTemplateId" returnQName="getPageTemplateByPageTemplateIdReturn" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="urn:http.service.designer.iter.protecmedia.com" xmlns:tns2="http://model.designer.iter.protecmedia.com" name="getPageTemplatesType" qname="operNS:getPageTemplatesType" returnQName="getPageTemplatesTypeReturn" returnType="rtns:ArrayOf_tns2_PageTemplateSoap" returnItemType="tns2:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="type" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="urn:http.service.designer.iter.protecmedia.com" xmlns:tns2="http://model.designer.iter.protecmedia.com" name="getPageTemplates" qname="operNS:getPageTemplates" returnQName="getPageTemplatesReturn" returnType="rtns:ArrayOf_tns2_PageTemplateSoap" returnItemType="tns2:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getURLPageTemplate" qname="operNS:getURLPageTemplate" returnQName="getURLPageTemplateReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="loadPageTemplate" qname="operNS:loadPageTemplate" returnQName="loadPageTemplateReturn" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="layoutId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="setDefaultPageTemplateMobile" qname="operNS:setDefaultPageTemplateMobile" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="setDefaultPageTemplate" qname="operNS:setDefaultPageTemplate" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId_" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="updatePageTemplate1" qname="operNS:updatePageTemplate1" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="header" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="footer" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="menu" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="extraData" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" xmlns:rtns="http://model.designer.iter.protecmedia.com" name="updatePageTemplateName" qname="operNS:updatePageTemplateName" returnQName="updatePageTemplateNameReturn" returnType="rtns:PageTemplateSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pageTemplateId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.designer.iter.protecmedia.com" name="updatePageTemplate" qname="operNS:updatePageTemplate" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="header" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="footer" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="menu" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addPageTemplate addPageTemplate2 addPageTemplate3 addPageTemplateParentId clearLayout compareLayoutPageTemplate deletePageTemplate getPageTemplateByPageTemplateId getPageTemplates getPageTemplatesType getURLPageTemplate loadPageTemplate setDefaultPageTemplate setDefaultPageTemplateMobile updatePageTemplate updatePageTemplate1 updatePageTemplateName" />
+		<parameter name="className" value="com.protecmedia.iter.designer.service.http.PageTemplateServiceSoap" />
+		<parameter name="schemaUnqualified" value="urn:http.service.designer.iter.protecmedia.com,http://model.designer.iter.protecmedia.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="PageTemplateServiceSoap" />
+		<parameter name="wsdlServiceElement" value="PageTemplateServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Designer_PageTemplateService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.designer.iter.protecmedia.com" />
+	</service>
+</deployment>

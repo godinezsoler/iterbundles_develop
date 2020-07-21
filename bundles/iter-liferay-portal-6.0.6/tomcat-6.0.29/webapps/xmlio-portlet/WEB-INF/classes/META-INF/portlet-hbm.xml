@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.protecmedia.iter.xmlio.model.Channel" />
+	<import class="com.protecmedia.iter.xmlio.model.ChannelControl" />
+	<import class="com.protecmedia.iter.xmlio.model.ChannelControlLog" />
+	<import class="com.protecmedia.iter.xmlio.model.Live" />
+	<import class="com.protecmedia.iter.xmlio.model.LivePool" />
+	<import class="com.protecmedia.iter.xmlio.model.LiveConfiguration" />
+	<import class="com.protecmedia.iter.xmlio.model.LiveControl" />
+	<import class="com.protecmedia.iter.xmlio.model.ContextVarsPublish" />
+	<import class="com.protecmedia.iter.xmlio.model.IterPortletInstance" />
+	<import class="com.protecmedia.iter.xmlio.model.JournalArticleImport" />
+	<import class="com.protecmedia.iter.xmlio.model.ImportMgr" />
+	<import class="com.protecmedia.iter.xmlio.model.DaylyTopicsPublication" />
+	<import class="com.protecmedia.iter.xmlio.model.CatalogPublication" />
+	<import class="com.protecmedia.iter.xmlio.model.CategoriesPropertiesPublication" />
+	<import class="com.protecmedia.iter.xmlio.model.WebsiteIO" />
+	<import class="com.protecmedia.iter.xmlio.model.IterAdminIO" />
+	<import class="com.protecmedia.iter.xmlio.model.DataProblemsDiagnostic" />
+	<import class="com.protecmedia.iter.xmlio.model.CommunityPublisher" />
+	<class name="com.protecmedia.iter.xmlio.model.impl.ChannelImpl" table="Xmlio_Channel">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type" column="type_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="filePath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="xslPath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpServer" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpPassword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="program" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="programHour" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="programMin" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="rangeType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rangeTimeAll" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="rangeTimeValue" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="rangeTimeUnit" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.ChannelControlImpl" table="Xmlio_ChannelControl">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type" column="type_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="operation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="operations" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="errors" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="fileSize" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="errorLog" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.ChannelControlLogImpl" table="Xmlio_ChannelControlLog">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="channelControlId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="globalId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="operation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="classNameValue" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="errorLog" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.LiveImpl" table="Xmlio_Live">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classNameValue" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="globalId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="localId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="operation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="performDate" type="org.hibernate.type.TimestampType" />
+		<property name="errorLog" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="existInLive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.LivePoolImpl" table="Xmlio_LivePool">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="livePoolId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="liveParentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="liveChildId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="processId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.LiveConfigurationImpl" table="Xmlio_LiveConfiguration">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="remoteIterServer" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gatewayHost" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="localPath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="outputMethod" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpPath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ftpPassword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remotePath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="destinationType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remoteChannelId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="remoteUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="remoteUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remoteUserPassword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remoteGlobalGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="remoteCompanyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="archive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="connectionTimeOut" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="operationTimeOut" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.protecmedia.iter.xmlio.model.impl.LiveControlImpl" table="Xmlio_LiveControl">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="processId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="subprocessId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type" column="type_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fileSize" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="operations" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="errors" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="errorLog" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

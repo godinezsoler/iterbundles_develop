@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.protecmedia.iter.base">
+	<author></author>
+	<namespace>Base</namespace>
+	<entity name="Iter" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Other columns -->
+		<column name="name" type="String"></column>
+		<column name="version" type="String"></column>
+		<column name="publicKey" type="String"></column>
+		<column name="cookieKey" type="String"></column>
+		<column name="environment" type="String"></column>
+	</entity>
+	<!-- Define the entity for the Base_Communities table -->
+	<entity name="Communities" local-service="true" remote-service="true" cache-enabled="true">
+		<!-- Primary key column -->
+		<column name="id" type="long" primary="true"></column>
+		<!-- Foreign key column -->
+		<column name="groupId" type="long"></column>
+		<!-- Other columns -->
+		<column name="privateSearchUrl" type="String"></column>
+		<column name="publicSearchUrl" type="String"></column>
+		<column name="fuzzySearch" type="boolean"></column>
+		<column name="primarySectionBots" type="String"></column>
+		<column name="secondarySectionBots" type="String"></column>
+		<column name="noSectionBots" type="String"></column>
+		<column name="lastUpdated" type="String"></column>
+		<column name="loginconf" type="String"></column>
+		<column name="registerconf" type="String"></column>
+		<column name="facebookLanguage" type="String"></column>
+		<finder name="GroupId" return-type="Communities" unique="true">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="ClonedPortlet" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="ImageResolution" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="DevelopmentTools" local-service="true" remote-service="true" cache-enabled="false"></entity>
+	<entity name="DLFileEntryMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="ContextVarsMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="NewsletterMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="SMTPServerMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterPortletInstance" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="CommentsConfig" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterForm" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterTabs" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterField" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="FormTransform" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="IterPortletPreferences" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="Captcha" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="StatisticMgr" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="WebResource" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="Frames" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="ThemeWebResources" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="GroupConfig" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="ApacheMgr" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="Rss" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="BlockerAdBlock" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="VisitsStatistics" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="Feedback" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="PageRenderer" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="ServerAffinity" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="URLShortener" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="AuthorizationKey" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<entity name="LiveServer" local-service="true" remote-service="false" cache-enabled="true"></entity>
+	<entity name="Cluster" local-service="true" remote-service="true" cache-enabled="true"></entity>
+	<exceptions>
+		<exception>DuplicateIter</exception>
+	</exceptions>
+</service-builder>

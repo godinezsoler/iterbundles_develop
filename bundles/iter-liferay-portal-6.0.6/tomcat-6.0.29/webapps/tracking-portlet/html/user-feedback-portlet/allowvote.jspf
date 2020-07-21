@@ -1,0 +1,9 @@
+<%	
+	//se puede valorar si: se permiten valoraciones anónimas o se está presentado
+	if (allowAnonymousVote || PortalLocalServiceUtil.getIterProductList(request) != null) 
+	{
+%>
+		<%@ include file="script_to_vote.jsp" %>
+<%	
+	}
+%>

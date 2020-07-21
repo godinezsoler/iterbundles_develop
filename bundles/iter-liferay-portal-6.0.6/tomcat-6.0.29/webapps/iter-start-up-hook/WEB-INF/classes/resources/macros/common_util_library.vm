@@ -1,0 +1,184 @@
+##Macro de velocity recuperarParrafosTexto##
+	##Descripcion: Esta macro se utiliza para recuperar todos los párrafos de texto de una estructura standard article.
+	##Parámetro 1: vTextos -> objectArray que contiene todos los bloques de texto (Variable $Text de Standard Article).
+	##Parámetro 2: bConcatCapitular -> booleano que indica si las capitulares se deben añadir al párrafo o no.
+	##Parámetro 3: bLadillos -> booleano que indica si se deben recuperar los ladillos. 
+	##Parámetro 4: vResultado -> objectArray  en el que se guardan todos los párrafos (incluyendo los ladillos).
+	
+	
+	
+	#macro (recuperarParrafosTexto $vTextos $bConcatCapitular $bLadillos $vResultado)
+	
+	
+				#set ($vResultado = [])   
+			    #set ($parrafoTemp="")
+				#set($index = 1)
+				#set($capitularCount = 0)
+                        
+                                
+				#if ($bConcatCapitular == true)						
+				
+					#set ($ladillos = $Paragraph_Title.getSiblings())
+					
+					#foreach($Texto in $vTextos.getSiblings())
+					  
+						#set($Capitular = false)
+						
+						#set($arraTemp = $Texto.data.split("</p>"))
+						#foreach($parrafo in $arraTemp)
+							#set($parrafo = $parrafo.replace("<p>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*p.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*p\s*.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*span.*?>",""))
+							#set($parrafo = $parrafo.replaceAll("<\s*\/\s*span\s*.*?>",""))
+							
+							#if(($velocityCount == 1) && ($index ==1))
+								#set ($parrafoTemp = $parrafo.trim())
+								##set ($parrafoTemp = $parrafoTemp.replace("<p>",""))
+								#if ($parrafoTemp.length()>1)
+									#set ($parrafoTemp = "")
+									
+									#set($temp = $vResultado.add($parrafo))	
+								 #elseif($parrafoTemp.length() == 1)
+									#set($Capitular = true)	
+									#set($capitularCount = $capitularCount + 1)								
+								#end
+									 
+								
+								
+							#elseif(($velocityCount == 1) && ($index == 2))
+								
+								#set($parrafoMix = "$parrafoTemp$parrafo")
+								
+								#set($temp = $vResultado.add($parrafoMix))
+							
+							#else
+								#if($parrafo != "")						
+									#set($temp = $vResultado.add($parrafo))
+								#end
+							#end
+							
+						#end
+						
+						#set($indexLadillo = $velocityCount - 1 - $capitularCount )
+						
+						
+						#if($Capitular == false)
+						
+							#if($bLadillos == true)
+								#if($ladillos)
+    								#if( $velocityCount - $capitularCount  <= $ladillos.size() )
+    								    
+    									#if ($ladillos.get($indexLadillo).data!="")
+    										#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+    										#set($temp = $vResultado.add($ladillo))
+    									#end
+									#end
+								#end
+							#end
+						#end
+						
+						
+						
+						#set ($index = $index +1)
+						
+					#end
+				
+				#else
+				
+					
+					#set($indexLadillo = 0)
+					#foreach($Texto in $vTextos.getSiblings())
+						
+						#set ($ladillos = $Paragraph_Title.getSiblings())
+						#set($arraTemp = $Texto.data.split("</p>"))
+						
+						
+						#foreach($parrafo in $arraTemp)
+							
+							
+							#set($parrafo = $parrafo.replace("<p>",""))
+                            
+							#if($parrafo != "")	
+								#set($temp = $vResultado.add($parrafo))
+							#end	
+		
+						#end
+						
+						#if($bLadillos == true)
+							
+							#if($ladillos.size() > $indexLadillo)
+								#set($ladillo = "<div class='ladillo'>" + $ladillos.get($indexLadillo).data + "</div> </p> ")
+								#set($temp = $vResultado.add($ladillo))
+								#set($indexLadillo = $indexLadillo + 1)
+							#end
+						#end
+						
+						
+					#end
+				
+				#end
+
+	#end
+	
+##Macro de velocity recortarTexto##
+	##Descripcion: Esta macro se utiliza para recortar textos
+	##Parámetro 1: vTextos -> objectArray que contiene todos los bloques de texto (Variable $Text de Standard Article).
+	##Parámetro 2: $iNumCaracteres -> entero que indica cuántos carácteres tendrá el texto (Se recorta por la palabra más cercana)
+	##Parámetro 3: sResultado -> string en el que se guarda una cadena que contiene el texto separado por párrafos "<p> </p>" .
+		
+	#macro (recortarTexto $vTextos $iNumCaracteres $sResultado)
+					
+			#foreach ($elem in $vTextos)
+				       			
+						#if ($iNumCaracteres > 0)
+							#set ($elem = $elem.replace("<p>",""))
+							#set ($elem = $elem.replaceAll("<.*?>",""))
+							
+							#if ($elem.length() < $iNumCaracteres)
+								#set ($sResultado = $sResultado + " " + $elem + " ")
+								#set ($iNumCaracteres = $iNumCaracteres - $elem.length())
+							#else
+								
+							
+							    #set($index = $elem.indexOf(" ", $iNumCaracteres))
+								
+								#if($index == -1)
+									#set ($sResultado =  " " + $elem + " ")
+								#else
+									#set ($sResultado = $sResultado  + " " + $elem.substring(0, $elem.indexOf(" ", $iNumCaracteres)))	
+									#set ($iNumCaracteres = 0)
+								#end
+							
+							
+							#end
+						#end
+			#end
+			
+			#set ($sResultado = "<p>" + $sResultado + "")
+			
+		
+	#end
+
+
+
+	
+##Macro de velocity pintarNumComments##
+	##Descripcion: Esta macro se utiliza mostrar el número de comentarios
+	
+	
+	#macro(pintarNumComments)
+			#set ($myservice = $serviceLocator.findService("news-portlet", "com.protecmedia.iter.news.service.CommentsLocalService"))
+			#set($numComments = $myservice.countByGorupArticleIdComments($getterUtil.getLong($groupId), $reserved-article-id.data, true))		
+			#if($numComments != 0)
+				<div class="botonesIconos"> 
+					<a href="$viewMode#comentarios">
+						<div class="comentariosIcono"> 
+							<p><span class="ncomentarios">$numComments</span> #language("comments")</p> 
+						</div> 
+					</a> 
+				</div>
+			
+			#end
+	#end
+

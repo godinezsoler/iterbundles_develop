@@ -1,0 +1,138 @@
+13-jul-2020 9:33:56 org.apache.catalina.core.AprLifecycleListener init
+INFO: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin/server;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/lib/i386;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\Java\jdk1.6.0_30\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.7.0_80\bin;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;D:\app\oracle\product\12.1.0\client_1\bin;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\ProgramData\Oracle\Java\javapath;c:\program files (x86)\imagemagick-6.3.9-q8;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Java\jdk1.6.0_30\bin;C:\oracle\product\11.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\SlikSvn\bin;C:\Program Files (x86)\ant\apache-ant-1.8.2\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit\;C:\Users\michel\AppData\Local\Programs\Fiddler;C:\Users\michel\AppData\Roaming\npm;C:\Users\michel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\michel\AppData\Local\JetBrains\IntelliJ IDEA 2018.3.4\bin;C:\Users\michel\AppData\Local\atom\bin;C:\Users\michel\AppData\Roaming\Composer\vendor\bin;C:\Program Files (x86)\Eclipse;
+13-jul-2020 9:33:56 org.apache.coyote.http11.Http11Protocol init
+INFO: Inicializando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:33:56 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 568 ms
+13-jul-2020 9:33:56 org.apache.catalina.core.StandardService start
+INFO: Arrancando servicio Catalina
+13-jul-2020 9:33:56 org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+13-jul-2020 9:33:56 org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Desplieque del descriptor de configuración ROOT.xml
+13-jul-2020 9:35:09 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio advertisement-portlet de la aplicación web
+13-jul-2020 9:35:12 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio base-portlet de la aplicación web
+13-jul-2020 9:35:18 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio designer-portlet de la aplicación web
+13-jul-2020 9:35:19 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio Disqus-portlet de la aplicación web
+13-jul-2020 9:35:20 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio iter-hook de la aplicación web
+13-jul-2020 9:35:21 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio iter-start-up-hook de la aplicación web
+13-jul-2020 9:35:21 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio mcm de la aplicación web
+13-jul-2020 9:35:21 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio news-portlet de la aplicación web
+13-jul-2020 9:35:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio ngportlets de la aplicación web
+13-jul-2020 9:35:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio publicidad de la aplicación web
+13-jul-2020 9:35:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio search-portlet de la aplicación web
+13-jul-2020 9:35:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio service-portlet de la aplicación web
+13-jul-2020 9:35:27 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio tracking-portlet de la aplicación web
+13-jul-2020 9:35:28 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio tunnel-web de la aplicación web
+13-jul-2020 9:35:31 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio user-portlet de la aplicación web
+13-jul-2020 9:35:34 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio xmlio-portlet de la aplicación web
+13-jul-2020 9:35:57 org.apache.coyote.http11.Http11Protocol start
+INFO: Arrancando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:35:57 org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+13-jul-2020 9:35:57 org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/50  config=null
+13-jul-2020 9:35:57 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 120956 ms
+13-jul-2020 9:51:14 org.apache.catalina.core.AprLifecycleListener init
+INFO: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin/server;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/lib/i386;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\Java\jdk1.6.0_30\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.7.0_80\bin;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;D:\app\oracle\product\12.1.0\client_1\bin;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\ProgramData\Oracle\Java\javapath;c:\program files (x86)\imagemagick-6.3.9-q8;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Java\jdk1.6.0_30\bin;C:\oracle\product\11.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\SlikSvn\bin;C:\Program Files (x86)\ant\apache-ant-1.8.2\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit\;C:\Users\michel\AppData\Local\Programs\Fiddler;C:\Users\michel\AppData\Roaming\npm;C:\Users\michel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\michel\AppData\Local\JetBrains\IntelliJ IDEA 2018.3.4\bin;C:\Users\michel\AppData\Local\atom\bin;C:\Users\michel\AppData\Roaming\Composer\vendor\bin;C:\Program Files (x86)\Eclipse;
+13-jul-2020 9:51:14 org.apache.coyote.http11.Http11Protocol init
+INFO: Inicializando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:51:14 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 560 ms
+13-jul-2020 9:51:14 org.apache.catalina.core.StandardService start
+INFO: Arrancando servicio Catalina
+13-jul-2020 9:51:14 org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+13-jul-2020 9:51:14 org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Desplieque del descriptor de configuración ROOT.xml
+13-jul-2020 9:52:26 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio advertisement-portlet de la aplicación web
+13-jul-2020 9:52:28 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio base-portlet de la aplicación web
+13-jul-2020 9:52:35 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio designer-portlet de la aplicación web
+13-jul-2020 9:52:36 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio Disqus-portlet de la aplicación web
+13-jul-2020 9:52:37 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio iter-hook de la aplicación web
+13-jul-2020 9:52:38 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio iter-start-up-hook de la aplicación web
+13-jul-2020 9:52:38 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio mcm de la aplicación web
+13-jul-2020 9:52:38 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio news-portlet de la aplicación web
+13-jul-2020 9:52:45 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio ngportlets de la aplicación web
+13-jul-2020 9:52:45 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio publicidad de la aplicación web
+13-jul-2020 9:52:45 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio search-portlet de la aplicación web
+13-jul-2020 9:52:46 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio service-portlet de la aplicación web
+13-jul-2020 9:52:47 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio tracking-portlet de la aplicación web
+13-jul-2020 9:52:47 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio tunnel-web de la aplicación web
+13-jul-2020 9:52:50 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio user-portlet de la aplicación web
+13-jul-2020 9:52:53 org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Despliegue del directorio xmlio-portlet de la aplicación web
+13-jul-2020 9:53:18 org.apache.coyote.http11.Http11Protocol start
+INFO: Arrancando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:53:19 org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+13-jul-2020 9:53:19 org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/62  config=null
+13-jul-2020 9:53:19 org.apache.catalina.startup.Catalina start
+INFO: Server startup in 124972 ms
+13-jul-2020 9:53:28 org.apache.catalina.startup.HostConfig checkResources
+INFO: Falló la recarga del contexto [/base-portlet]
+13-jul-2020 9:53:35 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [/base-portlet] appears to have started a thread named [MultiThreadedHttpConnectionManager cleanup] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:00 org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:57:01 org.apache.catalina.core.StandardService stop
+INFO: Parando servicio Catalina
+13-jul-2020 9:57:03 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:03 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [] appears to have started a thread named [pool-1-thread-1] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:03 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [] appears to have started a thread named [pool-1-thread-2] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:03 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [] appears to have started a thread named [pool-1-thread-3] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:03 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [] appears to have started a thread named [pool-1-thread-4] but has failed to stop it. This is very likely to create a memory leak.
+13-jul-2020 9:57:05 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+GRAVE: The web application [/base-portlet] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+13-jul-2020 9:57:05 org.apache.coyote.http11.Http11Protocol destroy
+INFO: Parando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:57:10 org.apache.catalina.core.AprLifecycleListener init
+INFO: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Desarrollos\IterWebCMS\develop\bundles\iter-liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin/server;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/bin;C:/Program Files (x86)/Java/jdk1.7.0_79/jre/lib/i386;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\Java\jdk1.6.0_30\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.7.0_80\bin;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;D:\app\oracle\product\12.1.0\client_1\bin;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Common Files\Protec;C:\Program Files\Common Files\Protec\PDFUtils;C:\Program Files (x86)\Common Files\Protec;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\ProgramData\Oracle\Java\javapath;c:\program files (x86)\imagemagick-6.3.9-q8;C:\Program Files (x86)\Common Files\Protec;C:\Program Files (x86)\Common Files\Protec\PDFUtils;C:\Program Files\Java\jdk1.6.0_30\bin;C:\oracle\product\11.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\SlikSvn\bin;C:\Program Files (x86)\ant\apache-ant-1.8.2\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Common Files\Protec\PDFUTILS70;C:\cygwin64\bin\;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit\;C:\Users\michel\AppData\Local\Programs\Fiddler;C:\Users\michel\AppData\Roaming\npm;C:\Users\michel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\michel\AppData\Local\JetBrains\IntelliJ IDEA 2018.3.4\bin;C:\Users\michel\AppData\Local\atom\bin;C:\Users\michel\AppData\Roaming\Composer\vendor\bin;C:\Program Files (x86)\Eclipse;
+13-jul-2020 9:57:10 org.apache.coyote.http11.Http11Protocol init
+INFO: Inicializando Coyote HTTP/1.1 en puerto http-8080
+13-jul-2020 9:57:10 org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 483 ms
+13-jul-2020 9:57:10 org.apache.catalina.core.StandardService start
+INFO: Arrancando servicio Catalina
+13-jul-2020 9:57:10 org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+13-jul-2020 9:57:10 org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Desplieque del descriptor de configuración ROOT.xml

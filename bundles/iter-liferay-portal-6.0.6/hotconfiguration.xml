@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<hotconfiguration>
+	<key name="apache.queue.maxoperations">1</key>
+	<key name="apache.queue.active">false</key>
+	<key name="apache.queue.offlinetimeout">10000</key>
+	
+	<!--CATEGORIA : GESTION DE CONTENIDOS-->
+		<!-- Select4Update -->
+		<key name="iter.select4updt.beforeselect">true</key>
+		<key name="iter.select4updt.beforeupdate">true</key>
+		<key name="iter.select4updt.beforereturn">true</key>
+
+		<!-- Web content -->
+		<key name="iter.hide.controlpanel.15">false</key>
+		<!--<key name="iter.hide.controlpanel.journal.templates">true</key>-->
+		<key name="iter.hide.controlpanel.journal.structures">false</key>
+ 	
+		<!--Paginas-->
+		<key name="iter.hide.controlpanel.156">false</key> 	
+		<key name="iter.hide.controlpanel.xmlioportlet_WAR_xmlioportlet">false</key>
+		
+		<!-- Tamanno de los subpaquetes de una publicacion global -->
+		<key name="iter.publication-proxy.split-pkg.size">275001</key>
+</hotconfiguration>

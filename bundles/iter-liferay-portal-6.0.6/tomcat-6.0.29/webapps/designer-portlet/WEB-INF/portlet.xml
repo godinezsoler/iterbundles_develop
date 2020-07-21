@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet>
+		<portlet-name>set-page-template-portlet</portlet-name>
+		<display-name>Set Page Template</display-name>
+		<portlet-class>com.protecmedia.iter.designer.portlet.SetPageTemplatePortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/set-page-template-portlet/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>view-load</name>
+			<value>/html/set-page-template-portlet/view_load.jsp</value>
+		</init-param>
+		<init-param>
+			<name>view-new</name>
+			<value>/html/set-page-template-portlet/view_new.jsp</value>
+		</init-param>
+		<init-param>
+			<name>view-templates-result</name>
+			<value>/html/set-page-template-portlet/templates_result.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Set Page Template</title>
+			<short-title>Set Page Template</short-title>
+			<keywords>Set Page Template</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>manage-page-template-portlet</portlet-name>
+		<display-name>Page Template</display-name>
+		<portlet-class>com.protecmedia.iter.designer.portlet.ManagePageTemplatePortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/html/manage-page-template-portlet/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-page-template-jsp</name>
+			<value>/html/manage-page-template-portlet/edit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>info-page-template-jsp</name>
+			<value>/html/manage-page-template-portlet/info.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Page Template</title>
+			<short-title>Page Template</short-title>
+			<keywords>Page Template</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+</portlet-app>

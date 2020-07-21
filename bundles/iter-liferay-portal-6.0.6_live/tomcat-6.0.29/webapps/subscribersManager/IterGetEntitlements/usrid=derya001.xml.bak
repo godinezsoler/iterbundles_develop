@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<itwresponse version="1.0">
+	<field name="code">
+		<string>OK</string>
+	</field>
+	<!--    <field name="msg">
+        <string>¡Su suscripción vence el próximo día 23 de Marzo de 2013!</string>
+    </field>-->
+	<field name="output">
+		<array>
+			<object>
+				<field name="type">
+					<string>basic</string>
+				</field>
+				<field name="entitle">
+					<string>TOTAL</string>
+				</field>
+				<field name="expires">
+					<string>20150323235959</string>
+				</field>
+			</object>
+			<object>
+				<field name="type">
+					<string>basic</string>
+				</field>
+				<field name="entitle">
+					<string>Suscripción Anual</string>
+				</field>
+				<field name="expires">
+					<string>20140325235959</string>
+				</field>
+			</object>
+			<object>
+				<field name="type">
+					<string>basic</string>
+				</field>
+				<field name="entitle">
+					<string>Suscripción Semanal</string>
+				</field>
+				<field name="expires">
+					<string>20130410235959</string>
+				</field>
+			</object>
+			<object>
+				<field name="type">
+					<string>basic</string>
+				</field>
+				<field name="entitle">
+					<string>Suscripción Mensual</string>
+				</field>
+				<field name="expires">
+					<string>20130425235959</string>
+				</field>
+			</object>
+		</array>
+	</field>
+</itwresponse>

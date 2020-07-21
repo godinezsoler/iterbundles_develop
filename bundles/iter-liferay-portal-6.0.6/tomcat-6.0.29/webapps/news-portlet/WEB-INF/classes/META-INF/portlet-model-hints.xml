@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.protecmedia.iter.news.model.Qualification">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="name" type="String" />
+		<field name="groupId" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="qualifId" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.PageContent">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="pageContentId" type="String" />
+		<field name="contentId" type="String" />
+		<field name="contentGroupId" type="long" />
+		<field name="qualificationId" type="String" />
+		<field name="layoutId" type="String" />
+		<field name="groupId" type="long" />
+		<field name="defaultSection" type="boolean" />
+		<field name="online" type="boolean" />
+		<field name="typeContent" type="String" />
+		<field name="orden" type="int" />
+		<field name="articleModelId" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="vigenciahasta" type="Date" />
+		<field name="vigenciadesde" type="Date" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.ArticlePoll">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="contentId" type="String" />
+		<field name="pollId" type="long" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.Comments">
+		<field name="id" type="long" />
+		<field name="contentId" type="String" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="message" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="email" type="String" />
+		<field name="publicationDate" type="Date" />
+		<field name="numComment" type="long" />
+		<field name="active" type="boolean" />
+		<field name="moderated" type="boolean" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.Counters">
+		<field name="id" type="long" />
+		<field name="contentId" type="String" />
+		<field name="groupId" type="long" />
+		<field name="counter" type="long" />
+		<field name="value" type="long" />
+		<field name="counterLast" type="long" />
+		<field name="operation" type="int" />
+		<field name="date" type="Date" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.Categorize">
+		<field name="id" type="long" />
+		<field name="dummy" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.JournalArticle">
+		<field name="id" type="long" />
+		<field name="dummy" type="String" />
+	</model>
+	<model name="com.protecmedia.iter.news.model.Metadata">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="structureName" type="String" />
+		<field name="preferences" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+	</model>
+</model-hints>

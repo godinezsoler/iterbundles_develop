@@ -1,0 +1,31 @@
+
+<% 
+if ( GetterUtil.getBoolean(String.valueOf(PublicIterParams.get(WebKeys.HAS_LOGINGFORM))) )
+{
+	// Si está presentado el usuario se deshabilitan los campos del formulario, y si no está presentado se habilitan
+	String isLogged = (PHPUtil.isApacheRequest(request)) ? "<?php echo (strlen(getenv(\"ITER_USER\"))!==0) ? \"true\" : \"false\" ?>" : "false";
+%>
+	<script type="text/javascript">
+	jQryIter(document).ready(function()
+	{
+		jQryIter(".box.login a").attr('disabled', <%=isLogged%>)
+		jQryIter(".box.login input").attr('disabled', <%=isLogged%>)
+		
+		jQryIter(".box.login").each(function(index)
+		{
+			// Se habilitan los controles si no está logueado y deshabilitan si lo está
+			jQryIter(this).find("a").attr('disabled', <%=isLogged%>)
+			jQryIter(this).find("input").attr('disabled', <%=isLogged%>)
+			
+			// Se establece el orden de tabulación por si hay varios formularios de login en la misma página
+			jQryIter(this).find(".userInput"		).attr('tabindex',index*6 + 1);
+			jQryIter(this).find(".inputPassword"	).attr('tabindex',index*6 + 2);
+			jQryIter(this).find(".keepMeLoggedLabel").attr('tabindex',index*6 + 3);
+			jQryIter(this).find(".btnLogin"			).attr('tabindex',index*6 + 4);
+			jQryIter(this).find(".rLink"			).attr('tabindex',index*6 + 5);
+		});
+	});
+	</script>
+<% 
+}
+%>

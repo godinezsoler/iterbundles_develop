@@ -1,0 +1,30 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.xmlio-portlet .aui-panel-bd {
+    padding: 10px;
+}
+
+.xmlio-portlet .aui-field-label {
+    font-weight: bold;
+    margin-bottom: 5px;                  
+}
+
+.xmlio-portlet .aui-field-inline {
+	margin-right: 15px;
+}
+
+.xmlio-portlet  input[type="text"], 
+.xmlio-portlet  textarea {
+	width: 90%;
+}
+
+.xmlio-portlet .xmliolive input[type="text"], 
+.xmlio-portlet .xmliolive textarea {
+	width: auto;
+}
+
+.xmlio-portlet .disabledLive{
+	color:#bbb;	
+	padding: 4px 5px;
+}

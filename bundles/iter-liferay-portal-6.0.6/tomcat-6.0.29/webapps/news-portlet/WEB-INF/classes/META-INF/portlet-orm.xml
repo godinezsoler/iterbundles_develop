@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.QualificationModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="name" />
+			<basic name="groupId" />
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="qualifId" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.PageContentModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="pageContentId" />
+			<basic name="contentId" />
+			<basic name="contentGroupId" />
+			<basic name="qualificationId" />
+			<basic name="layoutId" />
+			<basic name="groupId" />
+			<basic name="defaultSection" />
+			<basic name="online">
+				<column name="ONLINE_" />
+			</basic>
+			<basic name="typeContent" />
+			<basic name="orden" />
+			<basic name="articleModelId" />
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="vigenciahasta">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="vigenciadesde">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.ArticlePollModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="contentId" />
+			<basic name="pollId" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.CommentsModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="contentId" />
+			<basic name="groupId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="message" />
+			<basic name="email" />
+			<basic name="publicationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="numComment" />
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<basic name="moderated" />
+			<transient name="primaryKey" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.CountersModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="contentId" />
+			<basic name="groupId" />
+			<basic name="counter" />
+			<basic name="value" />
+			<basic name="counterLast" />
+			<basic name="operation" />
+			<basic name="date">
+				<column name="DATE_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.CategorizeModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="dummy" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.JournalArticleModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="dummy" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.protecmedia.iter.news.model.impl.MetadataModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="structureName" />
+			<basic name="preferences" />
+			<transient name="primaryKey" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.protecmedia.iter.news.model.impl.QualificationImpl" name="Qualification">
+		<table name="News_Qualification" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.PageContentImpl" name="PageContent">
+		<table name="News_PageContent" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.ArticlePollImpl" name="ArticlePoll">
+		<table name="News_ArticlePoll" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.CommentsImpl" name="Comments">
+		<table name="News_Comments" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.CountersImpl" name="Counters">
+		<table name="News_Counters" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.CategorizeImpl" name="Categorize">
+		<table name="News_Categorize" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.JournalArticleImpl" name="JournalArticle">
+		<table name="News_JournalArticle" />
+		<attributes />
+	</entity>
+	<entity class="com.protecmedia.iter.news.model.impl.MetadataImpl" name="Metadata">
+		<table name="News_Metadata" />
+		<attributes />
+	</entity>
+</entity-mappings>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.protecmedia.iter.services.model.Service">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="linkId" type="long" />
+		<field name="serviceId" type="String" />
+		<field name="title" type="String" />
+		<field name="imageId" type="long" />
+	</model>
+</model-hints>

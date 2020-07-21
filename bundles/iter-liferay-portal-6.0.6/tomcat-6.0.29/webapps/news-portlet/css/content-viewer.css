@@ -1,0 +1,105 @@
+/*
+Copyright (c) 2011 Promocion Tecnologica y Comercial, S.A - protecmedia.com. All rights reserved.
+*/
+.content-viewer .aui-panel-bd {
+	padding: 10px;
+}
+
+.content-viewer .aui-panel-hd {
+	border: 0;
+}
+
+.content-viewer .aui-panel-content {
+	border: 1px solid #CCCCCC;
+}
+
+.content-viewer .aui-fieldset-legend {
+	font-size: 100%;
+}
+
+.content-viewer .aui-legend {
+	border-bottom: none;
+}
+
+.content-viewer .displaying-article-id-holder .displaying-article-id {
+	color:#4DCF0C;
+}
+
+.content-viewer .aui-field {
+	margin-bottom: 5px;
+	display: block;
+}
+
+.content-viewer .aui-field-label {    
+    margin-bottom: 5px;
+}
+
+.content-viewer input[type="text"] {
+	width: 220px;
+}
+
+.content-viewer .aui-panel-bd {
+    padding: 10px;    
+}
+
+.content-viewer .content-viewer-form .aui-legend {
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 13px;
+}
+
+
+
+.content-viewer .content-viewer-form .aui-fieldset {
+	margin: 10px !important;
+}  
+
+.content-viewer .content-viewer-form .selected-template .aui-fieldset-content {
+	padding: 10px;
+}
+
+.content-viewer .content-viewer-form .aui-field-choice .aui-field-label {
+	display: inline;
+}
+
+
+
+.content-viewer .content-viewer-form .templates-thumbnail .selected-box:aui-field-focused {
+	border-color: red;
+}
+
+.content-viewer-form .previewImagesOn {
+	display: block;	
+}
+
+.content-viewer-form .previewImagesOff {
+	display: none;
+}
+
+.content-viewer-form .template-thumbnail-on {
+	border: 2px solid white;
+	width: 150px;
+	min-height: 185px;
+	float: left;
+}
+
+.content-viewer-form .template-thumbnail-off {
+	border: 2px solid white;
+	width: 150px;
+	min-height: 55px;
+	float: left;
+}
+
+.content-viewer-form .check-show-hide-images {
+	
+	margin-top:30px !important;
+	margin-left:10px !important;
+	margin-bottom:30px !important;
+	
+}
+
+/* ----------------------------------------------*/
+/* ------------ Metadata Page Portlet        ----------*/
+/* ----------------------------------------------*/
+.metadata-page-portlet{
+	display:none;
+}

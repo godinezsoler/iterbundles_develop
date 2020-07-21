@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.protecmedia.iter.base.service.IterLocalService" class="com.protecmedia.iter.base.service.impl.IterLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterLocalServiceUtil" class="com.protecmedia.iter.base.service.IterLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterService" class="com.protecmedia.iter.base.service.impl.IterServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterServiceUtil" class="com.protecmedia.iter.base.service.IterServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.persistence.IterPersistence" class="com.protecmedia.iter.base.service.persistence.IterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.base.service.CommunitiesLocalService" class="com.protecmedia.iter.base.service.impl.CommunitiesLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CommunitiesLocalServiceUtil" class="com.protecmedia.iter.base.service.CommunitiesLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CommunitiesLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.CommunitiesService" class="com.protecmedia.iter.base.service.impl.CommunitiesServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CommunitiesServiceUtil" class="com.protecmedia.iter.base.service.CommunitiesServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CommunitiesService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.persistence.CommunitiesPersistence" class="com.protecmedia.iter.base.service.persistence.CommunitiesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.protecmedia.iter.base.service.ClonedPortletLocalService" class="com.protecmedia.iter.base.service.impl.ClonedPortletLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ClonedPortletLocalServiceUtil" class="com.protecmedia.iter.base.service.ClonedPortletLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ClonedPortletLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ImageResolutionLocalService" class="com.protecmedia.iter.base.service.impl.ImageResolutionLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ImageResolutionLocalServiceUtil" class="com.protecmedia.iter.base.service.ImageResolutionLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ImageResolutionLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ImageResolutionService" class="com.protecmedia.iter.base.service.impl.ImageResolutionServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ImageResolutionServiceUtil" class="com.protecmedia.iter.base.service.ImageResolutionServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ImageResolutionService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.DevelopmentToolsLocalService" class="com.protecmedia.iter.base.service.impl.DevelopmentToolsLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.DevelopmentToolsLocalServiceUtil" class="com.protecmedia.iter.base.service.DevelopmentToolsLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.DevelopmentToolsLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.DevelopmentToolsService" class="com.protecmedia.iter.base.service.impl.DevelopmentToolsServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.DevelopmentToolsServiceUtil" class="com.protecmedia.iter.base.service.DevelopmentToolsServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.DevelopmentToolsService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.DLFileEntryMgrLocalService" class="com.protecmedia.iter.base.service.impl.DLFileEntryMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.DLFileEntryMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.DLFileEntryMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.DLFileEntryMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.DLFileEntryMgrService" class="com.protecmedia.iter.base.service.impl.DLFileEntryMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.DLFileEntryMgrServiceUtil" class="com.protecmedia.iter.base.service.DLFileEntryMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.DLFileEntryMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ContextVarsMgrLocalService" class="com.protecmedia.iter.base.service.impl.ContextVarsMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ContextVarsMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.ContextVarsMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ContextVarsMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ContextVarsMgrService" class="com.protecmedia.iter.base.service.impl.ContextVarsMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ContextVarsMgrServiceUtil" class="com.protecmedia.iter.base.service.ContextVarsMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ContextVarsMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.NewsletterMgrLocalService" class="com.protecmedia.iter.base.service.impl.NewsletterMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.NewsletterMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.NewsletterMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.NewsletterMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.NewsletterMgrService" class="com.protecmedia.iter.base.service.impl.NewsletterMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.NewsletterMgrServiceUtil" class="com.protecmedia.iter.base.service.NewsletterMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.NewsletterMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.SMTPServerMgrLocalService" class="com.protecmedia.iter.base.service.impl.SMTPServerMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.SMTPServerMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.SMTPServerMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.SMTPServerMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.SMTPServerMgrService" class="com.protecmedia.iter.base.service.impl.SMTPServerMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.SMTPServerMgrServiceUtil" class="com.protecmedia.iter.base.service.SMTPServerMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.SMTPServerMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterPortletInstanceLocalService" class="com.protecmedia.iter.base.service.impl.IterPortletInstanceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterPortletInstanceLocalServiceUtil" class="com.protecmedia.iter.base.service.IterPortletInstanceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterPortletInstanceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.CommentsConfigLocalService" class="com.protecmedia.iter.base.service.impl.CommentsConfigLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CommentsConfigLocalServiceUtil" class="com.protecmedia.iter.base.service.CommentsConfigLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CommentsConfigLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.CommentsConfigService" class="com.protecmedia.iter.base.service.impl.CommentsConfigServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CommentsConfigServiceUtil" class="com.protecmedia.iter.base.service.CommentsConfigServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CommentsConfigService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterFormLocalService" class="com.protecmedia.iter.base.service.impl.IterFormLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterFormLocalServiceUtil" class="com.protecmedia.iter.base.service.IterFormLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterFormLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterFormService" class="com.protecmedia.iter.base.service.impl.IterFormServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterFormServiceUtil" class="com.protecmedia.iter.base.service.IterFormServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterFormService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterTabsLocalService" class="com.protecmedia.iter.base.service.impl.IterTabsLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterTabsLocalServiceUtil" class="com.protecmedia.iter.base.service.IterTabsLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterTabsLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterTabsService" class="com.protecmedia.iter.base.service.impl.IterTabsServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterTabsServiceUtil" class="com.protecmedia.iter.base.service.IterTabsServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterTabsService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterFieldLocalService" class="com.protecmedia.iter.base.service.impl.IterFieldLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterFieldLocalServiceUtil" class="com.protecmedia.iter.base.service.IterFieldLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterFieldLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterFieldService" class="com.protecmedia.iter.base.service.impl.IterFieldServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterFieldServiceUtil" class="com.protecmedia.iter.base.service.IterFieldServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterFieldService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FormTransformLocalService" class="com.protecmedia.iter.base.service.impl.FormTransformLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FormTransformLocalServiceUtil" class="com.protecmedia.iter.base.service.FormTransformLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FormTransformLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FormTransformService" class="com.protecmedia.iter.base.service.impl.FormTransformServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FormTransformServiceUtil" class="com.protecmedia.iter.base.service.FormTransformServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FormTransformService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterPortletPreferencesLocalService" class="com.protecmedia.iter.base.service.impl.IterPortletPreferencesLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterPortletPreferencesLocalServiceUtil" class="com.protecmedia.iter.base.service.IterPortletPreferencesLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterPortletPreferencesLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.IterPortletPreferencesService" class="com.protecmedia.iter.base.service.impl.IterPortletPreferencesServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.IterPortletPreferencesServiceUtil" class="com.protecmedia.iter.base.service.IterPortletPreferencesServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.IterPortletPreferencesService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.CaptchaLocalService" class="com.protecmedia.iter.base.service.impl.CaptchaLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CaptchaLocalServiceUtil" class="com.protecmedia.iter.base.service.CaptchaLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CaptchaLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.CaptchaService" class="com.protecmedia.iter.base.service.impl.CaptchaServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.CaptchaServiceUtil" class="com.protecmedia.iter.base.service.CaptchaServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.CaptchaService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.StatisticMgrLocalService" class="com.protecmedia.iter.base.service.impl.StatisticMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.StatisticMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.StatisticMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.StatisticMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.WebResourceLocalService" class="com.protecmedia.iter.base.service.impl.WebResourceLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.WebResourceLocalServiceUtil" class="com.protecmedia.iter.base.service.WebResourceLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.WebResourceLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FramesLocalService" class="com.protecmedia.iter.base.service.impl.FramesLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FramesLocalServiceUtil" class="com.protecmedia.iter.base.service.FramesLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FramesLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FramesService" class="com.protecmedia.iter.base.service.impl.FramesServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FramesServiceUtil" class="com.protecmedia.iter.base.service.FramesServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FramesService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ThemeWebResourcesLocalService" class="com.protecmedia.iter.base.service.impl.ThemeWebResourcesLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ThemeWebResourcesLocalServiceUtil" class="com.protecmedia.iter.base.service.ThemeWebResourcesLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ThemeWebResourcesLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ThemeWebResourcesService" class="com.protecmedia.iter.base.service.impl.ThemeWebResourcesServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ThemeWebResourcesServiceUtil" class="com.protecmedia.iter.base.service.ThemeWebResourcesServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ThemeWebResourcesService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.GroupConfigLocalService" class="com.protecmedia.iter.base.service.impl.GroupConfigLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.GroupConfigLocalServiceUtil" class="com.protecmedia.iter.base.service.GroupConfigLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.GroupConfigLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.GroupConfigService" class="com.protecmedia.iter.base.service.impl.GroupConfigServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.GroupConfigServiceUtil" class="com.protecmedia.iter.base.service.GroupConfigServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.GroupConfigService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ApacheMgrLocalService" class="com.protecmedia.iter.base.service.impl.ApacheMgrLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ApacheMgrLocalServiceUtil" class="com.protecmedia.iter.base.service.ApacheMgrLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ApacheMgrLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ApacheMgrService" class="com.protecmedia.iter.base.service.impl.ApacheMgrServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ApacheMgrServiceUtil" class="com.protecmedia.iter.base.service.ApacheMgrServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ApacheMgrService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.RssLocalService" class="com.protecmedia.iter.base.service.impl.RssLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.RssLocalServiceUtil" class="com.protecmedia.iter.base.service.RssLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.RssLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.RssService" class="com.protecmedia.iter.base.service.impl.RssServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.RssServiceUtil" class="com.protecmedia.iter.base.service.RssServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.RssService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.BlockerAdBlockLocalService" class="com.protecmedia.iter.base.service.impl.BlockerAdBlockLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.BlockerAdBlockLocalServiceUtil" class="com.protecmedia.iter.base.service.BlockerAdBlockLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.BlockerAdBlockLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.BlockerAdBlockService" class="com.protecmedia.iter.base.service.impl.BlockerAdBlockServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.BlockerAdBlockServiceUtil" class="com.protecmedia.iter.base.service.BlockerAdBlockServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.BlockerAdBlockService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.VisitsStatisticsLocalService" class="com.protecmedia.iter.base.service.impl.VisitsStatisticsLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.VisitsStatisticsLocalServiceUtil" class="com.protecmedia.iter.base.service.VisitsStatisticsLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.VisitsStatisticsLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.VisitsStatisticsService" class="com.protecmedia.iter.base.service.impl.VisitsStatisticsServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.VisitsStatisticsServiceUtil" class="com.protecmedia.iter.base.service.VisitsStatisticsServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.VisitsStatisticsService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FeedbackLocalService" class="com.protecmedia.iter.base.service.impl.FeedbackLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FeedbackLocalServiceUtil" class="com.protecmedia.iter.base.service.FeedbackLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FeedbackLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.FeedbackService" class="com.protecmedia.iter.base.service.impl.FeedbackServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.FeedbackServiceUtil" class="com.protecmedia.iter.base.service.FeedbackServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.FeedbackService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.PageRendererLocalService" class="com.protecmedia.iter.base.service.impl.PageRendererLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.PageRendererLocalServiceUtil" class="com.protecmedia.iter.base.service.PageRendererLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.PageRendererLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ServerAffinityLocalService" class="com.protecmedia.iter.base.service.impl.ServerAffinityLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ServerAffinityLocalServiceUtil" class="com.protecmedia.iter.base.service.ServerAffinityLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ServerAffinityLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.URLShortenerLocalService" class="com.protecmedia.iter.base.service.impl.URLShortenerLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.URLShortenerLocalServiceUtil" class="com.protecmedia.iter.base.service.URLShortenerLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.URLShortenerLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.URLShortenerService" class="com.protecmedia.iter.base.service.impl.URLShortenerServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.URLShortenerServiceUtil" class="com.protecmedia.iter.base.service.URLShortenerServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.URLShortenerService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.AuthorizationKeyLocalService" class="com.protecmedia.iter.base.service.impl.AuthorizationKeyLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.AuthorizationKeyLocalServiceUtil" class="com.protecmedia.iter.base.service.AuthorizationKeyLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.AuthorizationKeyLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.AuthorizationKeyService" class="com.protecmedia.iter.base.service.impl.AuthorizationKeyServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.AuthorizationKeyServiceUtil" class="com.protecmedia.iter.base.service.AuthorizationKeyServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.AuthorizationKeyService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.LiveServerLocalService" class="com.protecmedia.iter.base.service.impl.LiveServerLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.LiveServerLocalServiceUtil" class="com.protecmedia.iter.base.service.LiveServerLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.LiveServerLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ClusterLocalService" class="com.protecmedia.iter.base.service.impl.ClusterLocalServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ClusterLocalServiceUtil" class="com.protecmedia.iter.base.service.ClusterLocalServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ClusterLocalService" />
+	</bean>
+	<bean id="com.protecmedia.iter.base.service.ClusterService" class="com.protecmedia.iter.base.service.impl.ClusterServiceImpl" />
+	<bean id="com.protecmedia.iter.base.service.ClusterServiceUtil" class="com.protecmedia.iter.base.service.ClusterServiceUtil">
+		<property name="service" ref="com.protecmedia.iter.base.service.ClusterService" />
+	</bean>
+</beans>
